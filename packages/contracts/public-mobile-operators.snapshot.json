@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "CRA57_MOBILE_OPERATOR_SNAPSHOT",
+  "source": {
+    "organization": "سازمان تنظیم مقررات و ارتباطات رادیویی",
+    "publication": "گزارش فصلنامه ۵۷",
+    "source_id": "CRA57_MOBILE_OP",
+    "publication_status": "OFFICIAL_SNAPSHOT",
+    "period": "1405-Q1"
+  },
+  "metrics": [
+    {
+      "id": "active_5g_sites",
+      "unit": "site",
+      "values": [
+        {
+          "operator": "همراه اول",
+          "value": 1432
+        },
+        {
+          "operator": "ایرانسل",
+          "value": 1171
+        },
+        {
+          "operator": "رایتل",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "id": "population_4g_coverage",
+      "unit": "percent",
+      "values": [
+        {
+          "operator": "همراه اول",
+          "value": 99.46
+        },
+        {
+          "operator": "ایرانسل",
+          "value": 94.52
+        },
+        {
+          "operator": "رایتل",
+          "value": 58.94
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Single quarter only; not a historical trend.",
+    "5G site count and 4G population coverage have different units and meanings.",
+    "Reported CRA57 observations; source table/page verification remains a release gate."
+  ]
+}
