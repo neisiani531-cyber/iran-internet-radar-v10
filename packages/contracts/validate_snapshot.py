@@ -5,8 +5,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "public-fixed-access.snapshot.json"
 TECHS = {"FTTx", "XDSL", "TDLTE", "WiFi"}
-EXPECTED_PERIODS = {"1404-Q1", "1405-Q1"}
-EXPECTED_TOTALS = {"1404-Q1": 11269057, "1405-Q1": 10470912}
+EXPECTED_PERIODS = {"1404-Q1", "1404-Q2", "1404-Q3", "1404-Q4", "1405-Q1"}
+EXPECTED_TOTALS = {"1404-Q1": 11269057, "1404-Q2": 11114129, "1404-Q3": 11194420, "1404-Q4": 10924513, "1405-Q1": 10470912}
 
 
 def validate():
@@ -15,7 +15,7 @@ def validate():
     assert data["source"]["source_id"] == "CRA57_FIXED_ACCESS"
     assert data["source"]["publication_status"] == "OFFICIAL_SNAPSHOT"
     observations = data["observations"]
-    assert len(observations) == 2, "Bootstrap has exactly two sourced periods"
+    assert len(observations) == 5, "CRA57 page 22 fixed technology has five sourced periods"
     periods = [x["period"] for x in observations]
     assert len(periods) == len(set(periods))
     assert set(periods) == EXPECTED_PERIODS
