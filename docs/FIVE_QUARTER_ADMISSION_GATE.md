@@ -1,23 +1,14 @@
-# Gate: complete five-quarter fixed-access history
+# CRA57 fixed access: five-quarter admission check
 
-**Status:** BLOCKED_ON_SOURCE (not blocked on software).
+Status: FIVE_PERIODS_IMPORTED / PDF_TEXT_CROSSCHECK_PASS / CI_AND_VISUAL_QA_PENDING
+Date: 2026-10-16
 
-The current public shared snapshot contains only `1404-Q1` and `1405-Q1`; these endpoints are tested. The intended five-quarter series also requires:
-- `1404-Q2` (تابستان ۱۴۰۴)
-- `1404-Q3` (پاییز ۱۴۰۴)
-- `1404-Q4` (زمستان ۱۴۰۴)
+Original existing project assets:
+- V9.7 `CRA57_FIXED_TECH_5_QUARTERS.csv`
+- Archived `CRA57.pdf`, printed page 22.
 
-Do not infer missing values by interpolation, copying nearby reports, or using a prose summary of the former V9 HTML. Before importing each quarter, supply the original report, page/table, units, value of each of the four technologies, and the published total. Compare the sum and note any official corrections.
+All 5 periods (1404-Q1 through 1405-Q1) were retrieved from the earlier project files and reconciled against the text layer of the archived report on page 22. Their four technology values add to their reported totals. Data now lives in `packages/contracts/public-fixed-access.snapshot.json`, consumed by React and FastAPI. The five-quarter validator and API tests were updated.
 
-## Admission checklist
-- Original source URL or archived report identifier; publisher and retrieval date
-- Page number and table title; quarter calendar interpretation
-- XDSL, FTTx, TDLTE, WiFi; totals and checked arithmetic
-- A meaningful per-observation provenance field when schema is expanded
-- Exact result of the new contract-parity tests and React Build
-- No change to scientific Q5 status of independent research dossiers
+Remaining before a publication claim: CI green after latest commits, visual PDF QA, browser E2E for 5 quarter rendering, verification of provenance version, and release sign-off. Q5 scientific research admission remains separate.
 
-The product and research repositories are separate sources of truth. Even a successful React or API CI cannot establish scientific acceptance of these missing observations.
-
-## Immediate safe work
-The contract-parity tests now compare all four technology values, every published quarter, and API metadata against the same JSON snapshot, instead of testing only isolated constants. Extend the existing snapshot validator and tests only after new original source evidence is available.
+This document supersedes the earlier `BLOCKED_ON_SOURCE` status and must not be used to claim the data is still missing.
