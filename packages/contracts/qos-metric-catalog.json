@@ -1,49 +1,124 @@
 {
   "schema_version": "1.0.0",
   "dataset_id": "CRA57_QOS_METRIC_CATALOG",
-  "publication_status": "SOURCE_REVIEW_REQUIRED",
+  "publication_status": "CRA57_EXTRACTED_SOURCE_PAGE_REVIEW",
   "period": "1405-Q1",
   "source": {
     "organization": "سازمان تنظیم مقررات و ارتباطات رادیویی",
     "publication": "گزارش فصلنامه ۵۷",
-    "review_status": "Metric definitions staged; exact metric values and source pages not verified in this repository"
+    "review_status": "Values transcribed from CRA57 page 15 extraction; PDF visual cross-check pending",
+    "page": 15,
+    "import_origin": "V9.11 CRA57_QOS_3G_4G_1405Q1.csv"
   },
   "metrics": [
     {
-      "id": "rtt_4g",
-      "name_fa": "تأخیر رفت‌وبرگشت 4G",
-      "unit": "ms",
-      "direction": "lower_is_better",
-      "value_status": "PENDING_SOURCE_PAGE",
-      "values": []
-    },
-    {
-      "id": "jitter_4g",
-      "name_fa": "نوسان تأخیر 4G",
-      "unit": "ms",
-      "direction": "lower_is_better",
-      "value_status": "PENDING_SOURCE_PAGE",
-      "values": []
-    },
-    {
-      "id": "drop_rate_4g",
-      "name_fa": "نرخ قطع ارتباط داده 4G",
-      "unit": "percent",
-      "direction": "lower_is_better",
-      "value_status": "PENDING_SOURCE_PAGE",
-      "values": []
-    },
-    {
-      "id": "access_success_4g",
-      "name_fa": "موفقیت برقراری ارتباط داده 4G",
+      "id": "access_success",
+      "name_fa": "موفقیت اتصال داده",
       "unit": "percent",
       "direction": "higher_is_better",
-      "value_status": "PENDING_SOURCE_PAGE",
-      "values": []
+      "value_status": "CRA57_PAGE15_EXTRACTED",
+      "values": [
+        {
+          "operator": "همراه اول",
+          "operator_id": "mci",
+          "generation": "3G",
+          "value": 99.42
+        },
+        {
+          "operator": "همراه اول",
+          "operator_id": "mci",
+          "generation": "4G",
+          "value": 99.65
+        },
+        {
+          "operator": "ایرانسل",
+          "operator_id": "mtn",
+          "generation": "3G",
+          "value": 97.88
+        },
+        {
+          "operator": "ایرانسل",
+          "operator_id": "mtn",
+          "generation": "4G",
+          "value": 99.31
+        },
+        {
+          "operator": "رایتل",
+          "operator_id": "rightel",
+          "generation": "3G",
+          "value": 99.33
+        },
+        {
+          "operator": "رایتل",
+          "operator_id": "rightel",
+          "generation": "4G",
+          "value": 99.46
+        }
+      ]
+    },
+    {
+      "id": "drop_rate",
+      "name_fa": "نرخ قطع اتصال داده",
+      "unit": "percent",
+      "direction": "lower_is_better",
+      "value_status": "CRA57_PAGE15_EXTRACTED",
+      "values": [
+        {
+          "operator": "همراه اول",
+          "operator_id": "mci",
+          "generation": "3G",
+          "value": 0.31
+        },
+        {
+          "operator": "همراه اول",
+          "operator_id": "mci",
+          "generation": "4G",
+          "value": 0.23
+        },
+        {
+          "operator": "ایرانسل",
+          "operator_id": "mtn",
+          "generation": "3G",
+          "value": 0.42
+        },
+        {
+          "operator": "ایرانسل",
+          "operator_id": "mtn",
+          "generation": "4G",
+          "value": 0.22
+        },
+        {
+          "operator": "رایتل",
+          "operator_id": "rightel",
+          "generation": "3G",
+          "value": 0.55
+        },
+        {
+          "operator": "رایتل",
+          "operator_id": "rightel",
+          "generation": "4G",
+          "value": 0.16
+        }
+      ]
     }
   ],
   "limitations": [
-    "Metric catalog only; no verified numeric QoS data has been imported.",
-    "3G/4G measurements may differ by methodology; do not compare without compatible sample methods."
+    "Single quarter 1405-Q1, not time series.",
+    "Twelve success/drop observations from CRA57 page 15 existing project extraction; re-check source PDF before scientific release.",
+    "RTT and Jitter page14 remain pending and are not represented as numerical zeros."
+  ],
+  "pending_metrics": [
+    {
+      "id": "rtt",
+      "unit": "ms",
+      "page": 14,
+      "status": "NOT_IMPORTED"
+    },
+    {
+      "id": "jitter",
+      "unit": "ms",
+      "page": 14,
+      "status": "NOT_IMPORTED"
+    }
   ]
 }
