@@ -39,6 +39,7 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
  const [tech,setTech]=useState<Tech>('FTTx');
  const [mobileMetric,setMobileMetric]=useState<Metric>('active_5g_sites');
  const [generation,setGeneration]=useState<'3G'|'4G'>('4G');
+ const [qualityMetric,setQualityMetric]=useState<'access_success'|'drop_rate'>('access_success');
  const [periodIndex,setPeriodIndex]=useState(metricRows.length-1);
  const [baselineIndex,setBaselineIndex]=useState(0);
  const [comparisonOpen,setComparisonOpen]=useState(true);
@@ -49,7 +50,7 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
  const currentFiberChange=periodIndex>0?ratio(current.technology_values.FTTx,metricRows[periodIndex-1].technology_values.FTTx):undefined;
  const metric=mobile.metrics.find(m=>m.id===mobileMetric)!;
  const max=Math.max(...metric.values.map(v=>v.value));
- const success=qos.metrics.find(m=>m.id==='access_success')!;
+ const quality=qos.metrics.find(m=>m.id===qualityMetric)!;
  const mobile5g=mobile.metrics.find(m=>m.id==='active_5g_sites')!;
  const sites=mobile5g.values.reduce((sum,item)=>sum+item.value,0);
  const share=current.technology_values.FTTx/current.reported_total*100;
@@ -88,8 +89,8 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
     <div className="cc-op-list">{metric.values.map((item,i)=><div className="cc-op" key={item.operator}><div className="cc-op-line"><span><i className={'cc-op-dot d'+i}/>{item.operator}</span><b>{nf(item.value)}{metric.unit==='percent'?'٪':''}</b></div><div className="cc-track"><span style={{width:(item.value/max*100)+'%',background:chartColors[i]}}/></div></div>)}</div>
     <div className="cc-panel-notice">مقایسه فقط درون یک شاخص معتبر است؛ تعداد سایت و درصد پوشش هم‌معنا نیستند.</div>
    </section>
-   <section className="cc-surface cc-quality"><div className="cc-panel-header"><div><span className="cc-overline">NETWORK EXPERIENCE</span><h2>کیفیت ارتباطات {generation}</h2><p>نرخ موفقیت اتصال داده، انتخاب نسل و مقایسه اپراتورها</p></div><button className="cc-text-button" onClick={()=>onNavigate('qos')}>شاخص‌های بیشتر ←</button></div>
-     <div className="cc-toggle"><button className={generation==='4G'?'on':''} onClick={()=>setGeneration('4G')}>4G</button><button className={generation==='3G'?'on':''} onClick={()=>setGeneration('3G')}>3G</button></div><div className="cc-quality-figures">{success.values.filter(x=>x.generation===generation).map(x=><div key={x.operator_id}><div className="cc-quality-ring" style={{background:'conic-gradient(#4bdcc9 '+x.value+'%,#263c4d 0)'}}><span>{nf(x.value)}٪</span></div><small>{x.operator}</small></div>)}</div>
+   <section className="cc-surface cc-quality"><div className="cc-panel-header"><div><span className="cc-overline">NETWORK EXPERIENCE</span><h2>کیفیت ارتباطات {generation}</h2><p>مقایسه شاخص کیفیت بین نسل‌های شبکه و اپراتورها</p></div><button className="cc-text-button" onClick={()=>onNavigate('qos')}>شاخص‌های بیشتر ←</button></div>
+     <div className="cc-toggle"><button className={qualityMetric==='access_success'?'on':''} onClick={()=>setQualityMetric('access_success')}>موفقیت اتصال</button><button className={qualityMetric==='drop_rate'?'on':''} onClick={()=>setQualityMetric('drop_rate')}>نرخ قطع</button></div><div className="cc-toggle"><button className={generation==='4G'?'on':''} onClick={()=>setGeneration('4G')}>4G</button><button className={generation==='3G'?'on':''} onClick={()=>setGeneration('3G')}>3G</button></div><div className="cc-quality-figures">{quality.values.filter(x=>x.generation===generation).map(x=><div key={x.operator_id}><div className="cc-quality-ring" style={{background:'conic-gradient(#4bdcc9 '+x.value+'%,#263c4d 0)'}}><span>{nf(x.value)}٪</span></div><small>{x.operator}</small></div>)}</div>
      <p className="cc-micro">منبع: CRA57، صفحه ۱۵. RTT و Jitter هنوز تکمیل نشده‌اند.</p>
    </section>
    <section className="cc-surface cc-research"><div className="cc-panel-header"><div><span className="cc-overline">EVIDENCE INTELLIGENCE</span><h2>اتاق شواهد پژوهشی</h2><p>اعتبار، قابلیت مقایسه و تعارض منابع</p></div><button className="cc-text-button" onClick={()=>onNavigate('research')}>ورود به پژوهش ←</button></div>
