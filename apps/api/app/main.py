@@ -96,3 +96,45 @@ def mobile_operators(metric: MobileMetric = "active_5g_sites"):
 def research_domains():
     catalog_path = Path(__file__).resolve().parents[3] / 'packages' / 'contracts' / 'research-catalog.json'
     return json.loads(catalog_path.read_text(encoding='utf-8'))
+
+
+P01_REGISTRY_PATH = Path(__file__).resolve().parents[3] / "packages" / "contracts" / "p01-research-registry.json"
+
+def load_p01_registry():
+    return json.loads(P01_REGISTRY_PATH.read_text(encoding="utf-8"))
+
+@app.get("/api/v1/research-evidence")
+def research_evidence(domain: str | None = None, study: str | None = None, q: str | None = None):
+    registry = load_p01_registry()
+    records = registry["records"]
+    if domain is not None:
+        if domain not in {"social", "experience", "economy"}:
+            raise HTTPException(status_code=422, detail="Unknown research domain")
+        records = [record for record in records if record["domain"] == domain]
+    if study is not None:
+        records = [record for record in records if record["study_family"] == study]
+    if q is not None:
+        needle = q.strip().casefold()
+        records = [record for record in records if needle in (record["crosswalk_id"] + " " + record["exact_construct"] + " " + record["study_family"]).casefold()]
+    return {
+        "publication_status": registry["publication_status"],
+        "q5_accepted": registry["q5_accepted"],
+        "count": len(records),
+        "records": records,
+        "source": registry["source"],
+        "limits": registry["limits"],
+    }
+
+@app.get("/api/v1/research-evidence/{crosswalk_id}")
+def research_evidence_detail(crosswalk_id: str):
+    registry = load_p01_registry()
+    record = next((item for item in registry["records"] if item["crosswalk_id"] == crosswalk_id), None)
+    if record is None:
+        raise HTTPException(status_code=404, detail="Research entry not found")
+    return {
+        "record": record,
+        "publication_status": registry["publication_status"],
+        "q5_accepted": registry["q5_accepted"],
+        "source": registry["source"],
+        "limits": registry["limits"],
+    }
