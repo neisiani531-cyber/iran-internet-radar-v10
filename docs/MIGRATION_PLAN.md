@@ -19,7 +19,7 @@
 - FastAPI اکنون Snapshot مشترک را در زمان راه‌اندازی بارگذاری می‌کند.
 - Workflow آزمون پایتون اعتبارسنجی Snapshot را قبل از pytest اجرا می‌کند.
 - **اجرای موفق CI تازه هنوز مستقل تأیید نشده است.**
-- Bootstrap React هنوز از داده تعبیه‌شده استفاده می‌کند؛ انتقال آن به قرارداد مشترک کار بعدی است.
+- Bootstrap React اکنون Snapshot مشترک `packages/contracts/public-fixed-access.snapshot.json` را وارد می‌کند و کارت‌ها و نمودار را از آن می‌سازد. هر دو Workflow وب و API، اعتبارسنجی این Snapshot را پیش از آزمون/Build اجرا می‌کنند. **نتیجه اجرای CI جدید هنوز بررسی نشده است.**
 
 ## ترتیب توسعه
 1. Baseline را Tag و Lockfile تثبیت کنیم؛ گزارش سبز Build را به SHA متناظر پیوند دهیم.
