@@ -21,7 +21,9 @@ jobs:
         with:
           node-version: "20"
       - name: Verify public data snapshot
-        run: python3 packages/contracts/validate_snapshot.py
+        run: |
+          python3 packages/contracts/validate_snapshot.py
+          python3 packages/contracts/validate_mobile.py
       - name: Install dependencies
         run: npm install --no-audit --no-fund
       - name: Build React + TypeScript
