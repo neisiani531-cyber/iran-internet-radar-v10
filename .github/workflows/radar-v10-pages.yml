@@ -1,0 +1,51 @@
+name: Radar V10 preview deployment
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'packages/contracts/**'
+      - 'index.html'
+      - 'package.json'
+      - 'tsconfig.json'
+      - 'vite.config.ts'
+      - '.github/workflows/radar-v10-pages.yml'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages-radar-v10
+  cancel-in-progress: true
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate public data
+        run: |
+          python3 packages/contracts/validate_snapshot.py
+          python3 packages/contracts/validate_mobile.py
+          python3 packages/contracts/validate_research.py
+          python3 packages/contracts/validate_p01_registry.py
+          python3 packages/contracts/validate_qos.py
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build React
+        run: npm run build
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
