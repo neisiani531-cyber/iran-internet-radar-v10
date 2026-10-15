@@ -14,7 +14,7 @@ OFFICIAL_SOURCE = {
     "organization": "سازمان تنظیم مقررات و ارتباطات رادیویی",
     "publication": "گزارش فصلنامه ۵۷",
     "publication_status": "OFFICIAL_SNAPSHOT",
-    "note": "Only two explicitly sourced spring observations are included in this bootstrap; intermediate quarters are not inferred.",
+    "note": "Five consecutive quarterly observations from CRA57 page 22; cross-checked against archived PDF text.",
 }
 SNAPSHOT_PATH = Path(__file__).resolve().parents[3] / "packages" / "contracts" / "public-fixed-access.snapshot.json"
 SNAPSHOT = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
@@ -48,7 +48,7 @@ def metadata():
         "technologies": ["FTTx", "XDSL", "TDLTE", "WiFi"],
         "research_q5_accepted": 0,
         "research_q5_asof": "2026-10-15",
-        "limitations": ["No intermediate-quarter extrapolation", "No raw or restricted research material"],
+        "limitations": SNAPSHOT["limitations"],
     }
 
 
