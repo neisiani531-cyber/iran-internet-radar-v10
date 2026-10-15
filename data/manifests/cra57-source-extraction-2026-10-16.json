@@ -1,0 +1,36 @@
+{
+  "manifest_version": "1.0",
+  "reviewed_at": "2026-10-16",
+  "source": "CRA57 (archived local project PDF)",
+  "verification_level": "PDF_TEXT_LAYER_CROSSCHECK",
+  "publication_gate": "CI_AND_VISUAL_E2E_PENDING",
+  "files": [
+    {
+      "name": "CRA57.pdf",
+      "archive_location": "RADAR_IRAN_V9_11_QOS",
+      "sha256": "3ca563e683de5aa30e55ae65b282dabca36d7d63fc63edbad83d6b304bfe0210",
+      "pages_checked": [
+        15,
+        22
+      ]
+    },
+    {
+      "name": "CRA57_FIXED_TECH_5_QUARTERS.csv",
+      "archive_location": "RADAR_IRAN_V9_7_INTERACTIVE",
+      "sha256": "46d1de5962636db7287947590fa906c0a184067e6fd4cb2da0f532e8aa1e058a",
+      "rows": 5,
+      "page": 22
+    },
+    {
+      "name": "CRA57_QOS_3G_4G_1405Q1.csv",
+      "archive_location": "RADAR_IRAN_V9_11_QOS",
+      "sha256": "52d4e4f7570bd10cc6be57a457ad8203d0af9a88dabc4c6a9dc2fec87c9784dd",
+      "rows": 12,
+      "page": 15
+    }
+  ],
+  "notes": [
+    "SHA256 identifies model workspace source files, not a publisher signed checksum.",
+    "No sensitive raw project archive uploaded to public repository."
+  ]
+}
