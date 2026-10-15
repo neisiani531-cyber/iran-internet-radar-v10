@@ -90,5 +90,6 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
    </section>
   </div>
   <section className="cc-source"><div><span className="cc-source-icon">ⓘ</span><div><strong>شفافیت داده، بخشی از طراحی است</strong><p>شاخص‌های نمایش‌داده‌شده بر اساس Snapshotهای عمومی قرارداد داده هستند. این صفحه داده زنده، نقشه پوشش مکانی یا برآورد ملیِ پژوهش‌های تأییدنشده را ادعا نمی‌کند.</p></div></div><button className="cc-source-badge cc-source-button" onClick={()=>setShowSources(!showSources)} aria-expanded={showSources}>{showSources?"بستن شناسنامه":"مشاهده شناسنامه شاخص‌ها"}</button></section>
+ {showSources&&<section className="cc-surface cc-provenance"><h2>شناسنامه منابع و محدوده اعتبار</h2><table><thead><tr><th>حوزه</th><th>دوره</th><th>منبع</th><th>وضعیت</th></tr></thead><tbody><tr><td>اینترنت ثابت و فیبر</td><td>پنج فصل ۱۴۰۴ تا بهار ۱۴۰۵</td><td>CRA57 صفحه ۲۲</td><td>تطبیق متن PDF، گیت انتشار مستقل</td></tr><tr><td>اپراتورهای سیار</td><td>بهار ۱۴۰۵</td><td>CRA57</td><td>Snapshot رسمی، محدود به یک فصل</td></tr><tr><td>کیفیت شبکه</td><td>بهار ۱۴۰۵</td><td>CRA57 صفحه ۱۵</td><td>تطبیق متن PDF، گیت انتشار مستقل</td></tr><tr><td>پژوهش کاربران</td><td>دوره‌های ناهمگن</td><td>رجیستری P01</td><td>پیش‌نمایش پژوهشی، پذیرش Q5 صفر</td></tr></tbody></table><p>تأیید یک Build نرم‌افزاری معادل پذیرش علمی داده‌ها نیست.</p></section>}
  </div>;
 }
