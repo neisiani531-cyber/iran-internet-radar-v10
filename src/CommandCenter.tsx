@@ -30,6 +30,7 @@ function Trend({technology}:{technology:Tech}){
    {points.map((p,i)=><g key={i}><circle cx={p.x} cy={p.y} r={i===4?6:4} fill="#071826" stroke={stroke} strokeWidth="2.5"/><text x={p.x} y={p.y-15} textAnchor="middle" fill="#d4eaf3" fontSize="12">{nf(nums[i])}</text></g>)}
    {points.map((p,i)=><text key={i} x={p.x} y="211" textAnchor="middle" fill="#8cabc0" fontSize="11">{['بهار ۰۴','تابستان','پاییز','زمستان','بهار ۰۵'][i]}</text>)}
   </svg>
+ {showSources&&<section className="cc-surface cc-provenance"><h2>شناسنامه داده‌ها و محدوده اعتبار</h2><table><thead><tr><th>حوزه</th><th>دوره</th><th>منبع</th><th>وضعیت</th></tr></thead><tbody><tr><td>اینترنت ثابت و فیبر</td><td>بهار ۱۴۰۴ تا بهار ۱۴۰۵</td><td>گزارش ۵۷، صفحه ۲۲</td><td>تطبیق متن PDF، کنترل انتشار در جریان</td></tr><tr><td>اپراتورهای 4G و 5G</td><td>بهار ۱۴۰۵</td><td>گزارش فصلنامه ۵۷</td><td>Snapshot رسمی، نیازمند گیت نهایی</td></tr><tr><td>کیفیت 3G و 4G</td><td>بهار ۱۴۰۵</td><td>گزارش ۵۷، صفحه ۱۵</td><td>تطبیق متن PDF، کنترل انتشار در جریان</td></tr><tr><td>شواهد کاربران و اقتصاد</td><td>دوره‌های متفاوت</td><td>رجیستری P01</td><td>پیش‌نمایش پژوهشی، Q5 پذیرفته‌شده: صفر</td></tr></tbody></table><p>نمودارها و درصدهای نمایش‌داده‌شده توصیفی هستند. مقایسه داده‌های ناهمگن به‌عنوان یک شاخص واحد مجاز نیست.</p></section>}
  </div>;
 }
 function MetricTile({eyebrow,value,note,trend,icon}:{eyebrow:string,value:string,note:string,trend?:number,icon:string}){
@@ -39,6 +40,7 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
  const [tech,setTech]=useState<Tech>('FTTx');
  const [mobileMetric,setMobileMetric]=useState<Metric>('active_5g_sites');
  const [periodIndex,setPeriodIndex]=useState(metricRows.length-1);
+ const [showSources,setShowSources]=useState(false);
  const current=metricRows[periodIndex];
  const changeFromPrevious=periodIndex>0?ratio(current.reported_total,metricRows[periodIndex-1].reported_total):undefined;
  const currentFiberChange=periodIndex>0?ratio(current.technology_values.FTTx,metricRows[periodIndex-1].technology_values.FTTx):undefined;
@@ -48,6 +50,7 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
  const mobile5g=mobile.metrics.find(m=>m.id==='active_5g_sites')!;
  const sites=mobile5g.values.reduce((sum,item)=>sum+item.value,0);
  const share=current.technology_values.FTTx/current.reported_total*100;
+ const printReport=()=>window.print();
  const exportCsv=()=>{const header='period,FTTx,XDSL,TDLTE,WiFi,total,source_id,source_page';const lines=metricRows.map(r=>[r.period,r.technology_values.FTTx,r.technology_values.XDSL,r.technology_values.TDLTE,r.technology_values.WiFi,r.reported_total,fixed.source.source_id,r.source_page].join(','));const csv='\uFEFF'+[header,...lines].join('\n');const file=new Blob([csv],{type:'text/csv;charset=utf-8'});const href=URL.createObjectURL(file);const a=document.createElement('a');a.href=href;a.download='radar-fixed-access-cra57.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(href);};
  return <div className="cc-root">
   <section className="cc-hero">
@@ -58,7 +61,7 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
    </div>
    <div className="cc-hero-visual" aria-hidden="true"><div className="cc-orbit cc-orbit-a"/><div className="cc-orbit cc-orbit-b"/><div className="cc-orbit cc-orbit-c"/><div className="cc-radar-sweep"/><div className="cc-radar-center"><span>IR</span><small>RADAR</small></div><span className="cc-dot d1"/><span className="cc-dot d2"/><span className="cc-dot d3"/><span className="cc-dot d4"/></div>
   </section>
-  <div className="cc-section-name"><span>نمای کلان ملی</span><div className="cc-toolbar"><label>دوره اینترنت ثابت <select value={periodIndex} onChange={e=>setPeriodIndex(Number(e.target.value))}>{metricRows.map((r,i)=><option key={r.period} value={i}>{r.period_label}</option>)}</select></label><button onClick={exportCsv} className="cc-text-button">دریافت CSV پنج‌فصلی ↓</button></div></div>
+  <div className="cc-section-name"><span>نمای کلان ملی</span><div className="cc-toolbar"><label>دوره اینترنت ثابت <select value={periodIndex} onChange={e=>setPeriodIndex(Number(e.target.value))}>{metricRows.map((r,i)=><option key={r.period} value={i}>{r.period_label}</option>)}</select></label><button onClick={exportCsv} className="cc-text-button">دریافت CSV پنج‌فصلی ↓</button><button onClick={printReport} className="cc-text-button">چاپ گزارش مدیریتی</button></div></div>
   <section className="cc-metrics">
    <MetricTile icon="◈" eyebrow="اشتراک اینترنت ثابت" value={nf(current.reported_total)} note={periodIndex===0?"دوره مبنا":"تغییر نسبت به فصل قبل"} trend={changeFromPrevious}/>
    <MetricTile icon="◇" eyebrow="اشتراک فیبر نوری FTTx" value={nf(current.technology_values.FTTx)} note={periodIndex===0?"دوره مبنا":"تغییر نسبت به فصل قبل"} trend={currentFiberChange}/>
@@ -86,6 +89,6 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
     <p className="cc-research-warning">شواهد پیمایش و شنود اجتماعی با جامعه‌ها و تعاریف متفاوت، شاخص قطعی ملی تلقی نمی‌شوند.</p>
    </section>
   </div>
-  <section className="cc-source"><div><span className="cc-source-icon">ⓘ</span><div><strong>شفافیت داده، بخشی از طراحی است</strong><p>شاخص‌های نمایش‌داده‌شده بر اساس Snapshotهای عمومی قرارداد داده هستند. این صفحه داده زنده، نقشه پوشش مکانی یا برآورد ملیِ پژوهش‌های تأییدنشده را ادعا نمی‌کند.</p></div></div><span className="cc-source-badge">قابل ردگیری تا منبع</span></section>
+  <section className="cc-source"><div><span className="cc-source-icon">ⓘ</span><div><strong>شفافیت داده، بخشی از طراحی است</strong><p>شاخص‌های نمایش‌داده‌شده بر اساس Snapshotهای عمومی قرارداد داده هستند. این صفحه داده زنده، نقشه پوشش مکانی یا برآورد ملیِ پژوهش‌های تأییدنشده را ادعا نمی‌کند.</p></div></div><button className="cc-source-badge cc-source-button" onClick={()=>setShowSources(!showSources)} aria-expanded={showSources}>{showSources?"بستن شناسنامه":"مشاهده شناسنامه شاخص‌ها"}</button></section>
  </div>;
 }
