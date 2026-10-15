@@ -6,7 +6,7 @@
   "source": {
     "organization": "سازمان تنظیم مقررات و ارتباطات رادیویی",
     "publication": "گزارش فصلنامه ۵۷",
-    "review_status": "Values transcribed from CRA57 page 15 extraction; PDF visual cross-check pending",
+    "review_status": "Text-layer cross-check completed against archived CRA57.pdf in existing project assets (page 15); visual verification and release QA remain pending",
     "page": 15,
     "import_origin": "V9.11 CRA57_QOS_3G_4G_1405Q1.csv"
   },
@@ -103,9 +103,9 @@
     }
   ],
   "limitations": [
-    "Single quarter 1405-Q1, not time series.",
-    "Twelve success/drop observations from CRA57 page 15 existing project extraction; re-check source PDF before scientific release.",
-    "RTT and Jitter page14 remain pending and are not represented as numerical zeros."
+    "Twelve QoS success/drop values cross-checked against text layer of archived CRA57.pdf, page 15.",
+    "3G/4G single-quarter data; do not extrapolate trends.",
+    "RTT/Jitter page14 are not yet imported."
   ],
   "pending_metrics": [
     {
