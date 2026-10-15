@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "source_repository": "neisiani53-create/iran-internet-research",
+  "as_of": "2026-10-15",
+  "publication_status": "RESEARCH_PREVIEW",
+  "q5_accepted": 0,
+  "domains": [
+    {
+      "id": "social",
+      "name": "شبکه‌های اجتماعی",
+      "status": "RESEARCH_PREVIEW",
+      "notes": "Survey findings are not automatically national population indicators."
+    },
+    {
+      "id": "experience",
+      "name": "رضایت و تجربه کاربران",
+      "status": "RESEARCH_PREVIEW",
+      "notes": "Complaints, surveys, and social listening have different populations and denominators."
+    },
+    {
+      "id": "economy",
+      "name": "اقتصاد دیجیتال",
+      "status": "RESEARCH_PREVIEW",
+      "notes": "VPN spending reports conflict and cannot be merged."
+    }
+  ],
+  "limitations": [
+    "No Q5 accepted dossier as of reference report.",
+    "Do not convert conflicting sources to official KPIs.",
+    "No private evidence data copied into public repository."
+  ]
+}
