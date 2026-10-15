@@ -38,12 +38,17 @@ function MetricTile({eyebrow,value,note,trend,icon}:{eyebrow:string,value:string
 export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mobile'|'qos'|'research')=>void}){
  const [tech,setTech]=useState<Tech>('FTTx');
  const [mobileMetric,setMobileMetric]=useState<Metric>('active_5g_sites');
+ const [periodIndex,setPeriodIndex]=useState(metricRows.length-1);
+ const current=metricRows[periodIndex];
+ const changeFromPrevious=periodIndex>0?ratio(current.reported_total,metricRows[periodIndex-1].reported_total):undefined;
+ const currentFiberChange=periodIndex>0?ratio(current.technology_values.FTTx,metricRows[periodIndex-1].technology_values.FTTx):undefined;
  const metric=mobile.metrics.find(m=>m.id===mobileMetric)!;
  const max=Math.max(...metric.values.map(v=>v.value));
  const success=qos.metrics.find(m=>m.id==='access_success')!;
  const mobile5g=mobile.metrics.find(m=>m.id==='active_5g_sites')!;
  const sites=mobile5g.values.reduce((sum,item)=>sum+item.value,0);
- const share=last.technology_values.FTTx/last.reported_total*100;
+ const share=current.technology_values.FTTx/current.reported_total*100;
+ const exportCsv=()=>{const header='period,FTTx,XDSL,TDLTE,WiFi,total,source_id,source_page';const lines=metricRows.map(r=>[r.period,r.technology_values.FTTx,r.technology_values.XDSL,r.technology_values.TDLTE,r.technology_values.WiFi,r.reported_total,fixed.source.source_id,r.source_page].join(','));const csv='\uFEFF'+[header,...lines].join('\n');const file=new Blob([csv],{type:'text/csv;charset=utf-8'});const href=URL.createObjectURL(file);const a=document.createElement('a');a.href=href;a.download='radar-fixed-access-cra57.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(href);};
  return <div className="cc-root">
   <section className="cc-hero">
    <div className="cc-hero-copy"><div className="cc-kicker"><span className="cc-pulse"/> مرکز فرماندهی داده | IRAN INTERNET RADAR</div>
@@ -53,11 +58,11 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
    </div>
    <div className="cc-hero-visual" aria-hidden="true"><div className="cc-orbit cc-orbit-a"/><div className="cc-orbit cc-orbit-b"/><div className="cc-orbit cc-orbit-c"/><div className="cc-radar-sweep"/><div className="cc-radar-center"><span>IR</span><small>RADAR</small></div><span className="cc-dot d1"/><span className="cc-dot d2"/><span className="cc-dot d3"/><span className="cc-dot d4"/></div>
   </section>
-  <div className="cc-section-name"><span>نمای کلان ملی</span><small>شاخص‌های گزارش‌شده، بدون برآوردهای ساختگی</small></div>
+  <div className="cc-section-name"><span>نمای کلان ملی</span><div className="cc-toolbar"><label>دوره اینترنت ثابت <select value={periodIndex} onChange={e=>setPeriodIndex(Number(e.target.value))}>{metricRows.map((r,i)=><option key={r.period} value={i}>{r.period_label}</option>)}</select></label><button onClick={exportCsv} className="cc-text-button">دریافت CSV پنج‌فصلی ↓</button></div></div>
   <section className="cc-metrics">
-   <MetricTile icon="◈" eyebrow="اشتراک اینترنت ثابت" value={nf(last.reported_total)} note="مجموع چهار فناوری" trend={fixedChange}/>
-   <MetricTile icon="◇" eyebrow="اشتراک فیبر نوری FTTx" value={nf(last.technology_values.FTTx)} note="تغییر نسبت به بهار ۱۴۰۴" trend={fiberChange}/>
-   <MetricTile icon="◎" eyebrow="سایت فعال 5G" value={nf(sites)} note="مجموع سه اپراتور گزارش‌شده"/>
+   <MetricTile icon="◈" eyebrow="اشتراک اینترنت ثابت" value={nf(current.reported_total)} note={periodIndex===0?"دوره مبنا":"تغییر نسبت به فصل قبل"} trend={changeFromPrevious}/>
+   <MetricTile icon="◇" eyebrow="اشتراک فیبر نوری FTTx" value={nf(current.technology_values.FTTx)} note={periodIndex===0?"دوره مبنا":"تغییر نسبت به فصل قبل"} trend={currentFiberChange}/>
+   <MetricTile icon="◎" eyebrow="سایت فعال 5G · بهار ۱۴۰۵" value={nf(sites)} note="مجموع سه اپراتور گزارش‌شده"/>
    <MetricTile icon="▦" eyebrow="سهم فیبر از اشتراک ثابت" value={nf(share)+'٪'} note="سهم در پایان دوره"/>
   </section>
   <div className="cc-dashboard-grid">
