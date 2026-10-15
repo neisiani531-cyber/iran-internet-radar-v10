@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "CRA57_FIXED_ACCESS",
+  "source": {
+    "organization": "سازمان تنظیم مقررات و ارتباطات رادیویی",
+    "publication": "گزارش فصلنامه ۵۷",
+    "source_id": "CRA57_FIXED_ACCESS",
+    "publication_status": "OFFICIAL_SNAPSHOT"
+  },
+  "observations": [
+    {
+      "period": "1404-Q1",
+      "period_label": "بهار ۱۴۰۴",
+      "technology_values": {
+        "FTTx": 691763,
+        "XDSL": 7634961,
+        "TDLTE": 2555209,
+        "WiFi": 387124
+      },
+      "reported_total": 11269057
+    },
+    {
+      "period": "1405-Q1",
+      "period_label": "بهار ۱۴۰۵",
+      "technology_values": {
+        "FTTx": 1037577,
+        "XDSL": 6562655,
+        "TDLTE": 2501421,
+        "WiFi": 369259
+      },
+      "reported_total": 10470912
+    }
+  ],
+  "limitations": [
+    "Only two explicitly verified seasonal snapshots in this public bootstrap.",
+    "No intermediate quarters inferred or extrapolated.",
+    "Research Q5 approval is independent of source publication status."
+  ]
+}
