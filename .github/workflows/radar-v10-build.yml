@@ -1,0 +1,32 @@
+name: Radar V10 React build
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "src/**"
+      - "index.html"
+      - "package.json"
+      - "tsconfig.json"
+      - ".github/workflows/radar-v10-build.yml"
+permissions:
+  contents: read
+jobs:
+  build-react:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build React + TypeScript
+        run: npm run build
+      - name: Upload deployable dist
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-v10-react-dist
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
