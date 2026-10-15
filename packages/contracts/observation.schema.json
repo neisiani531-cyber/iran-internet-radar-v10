@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/neisiani531-cyber/iran-internet-radar-v10/blob/main/packages/contracts/observation.schema.json",
+  "title": "Radar V10 Public Observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metric_id",
+    "period",
+    "technology",
+    "value",
+    "unit",
+    "source_id",
+    "publication_status"
+  ],
+  "properties": {
+    "metric_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "period": {
+      "type": "string",
+      "pattern": "^14[0-9]{2}-Q[1-4]$"
+    },
+    "technology": {
+      "type": "string",
+      "enum": [
+        "FTTx",
+        "XDSL",
+        "TDLTE",
+        "WiFi"
+      ]
+    },
+    "value": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unit": {
+      "const": "subscription"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "publication_status": {
+      "const": "OFFICIAL_SNAPSHOT"
+    },
+    "period_label": {
+      "type": "string"
+    },
+    "population": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "denominator": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
