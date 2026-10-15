@@ -80,3 +80,13 @@ def fixed_access_period(period: str):
         "total": sum(values.values()),
         "source": OFFICIAL_SOURCE,
     }
+
+
+MobileMetric = Literal["active_5g_sites", "population_4g_coverage"]
+MOBILE_SNAPSHOT_PATH = Path(__file__).resolve().parents[3] / "packages" / "contracts" / "public-mobile-operators.snapshot.json"
+
+@app.get("/api/v1/mobile-operators")
+def mobile_operators(metric: MobileMetric = "active_5g_sites"):
+    snapshot = json.loads(MOBILE_SNAPSHOT_PATH.read_text(encoding="utf-8"))
+    item = next(m for m in snapshot["metrics"] if m["id"] == metric)
+    return {"metric": item["id"], "unit": item["unit"], "values": item["values"], "period": snapshot["source"]["period"], "source": snapshot["source"], "limitations": snapshot["limitations"]}
