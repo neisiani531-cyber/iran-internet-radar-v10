@@ -90,3 +90,9 @@ def mobile_operators(metric: MobileMetric = "active_5g_sites"):
     snapshot = json.loads(MOBILE_SNAPSHOT_PATH.read_text(encoding="utf-8"))
     item = next(m for m in snapshot["metrics"] if m["id"] == metric)
     return {"metric": item["id"], "unit": item["unit"], "values": item["values"], "period": snapshot["source"]["period"], "source": snapshot["source"], "limitations": snapshot["limitations"]}
+
+
+@app.get('/api/v1/research-domains')
+def research_domains():
+    catalog_path = Path(__file__).resolve().parents[3] / 'packages' / 'contracts' / 'research-catalog.json'
+    return json.loads(catalog_path.read_text(encoding='utf-8'))
