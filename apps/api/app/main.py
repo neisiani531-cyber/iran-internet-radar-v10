@@ -138,3 +138,9 @@ def research_evidence_detail(crosswalk_id: str):
         "source": registry["source"],
         "limits": registry["limits"],
     }
+
+
+@app.get("/api/v1/qos-catalog")
+def qos_catalog():
+    catalog_path = Path(__file__).resolve().parents[3] / "packages" / "contracts" / "qos-metric-catalog.json"
+    return json.loads(catalog_path.read_text(encoding="utf-8"))
