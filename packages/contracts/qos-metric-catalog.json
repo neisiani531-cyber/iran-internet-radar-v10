@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "CRA57_QOS_METRIC_CATALOG",
+  "publication_status": "SOURCE_REVIEW_REQUIRED",
+  "period": "1405-Q1",
+  "source": {
+    "organization": "سازمان تنظیم مقررات و ارتباطات رادیویی",
+    "publication": "گزارش فصلنامه ۵۷",
+    "review_status": "Metric definitions staged; exact metric values and source pages not verified in this repository"
+  },
+  "metrics": [
+    {
+      "id": "rtt_4g",
+      "name_fa": "تأخیر رفت‌وبرگشت 4G",
+      "unit": "ms",
+      "direction": "lower_is_better",
+      "value_status": "PENDING_SOURCE_PAGE",
+      "values": []
+    },
+    {
+      "id": "jitter_4g",
+      "name_fa": "نوسان تأخیر 4G",
+      "unit": "ms",
+      "direction": "lower_is_better",
+      "value_status": "PENDING_SOURCE_PAGE",
+      "values": []
+    },
+    {
+      "id": "drop_rate_4g",
+      "name_fa": "نرخ قطع ارتباط داده 4G",
+      "unit": "percent",
+      "direction": "lower_is_better",
+      "value_status": "PENDING_SOURCE_PAGE",
+      "values": []
+    },
+    {
+      "id": "access_success_4g",
+      "name_fa": "موفقیت برقراری ارتباط داده 4G",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "value_status": "PENDING_SOURCE_PAGE",
+      "values": []
+    }
+  ],
+  "limitations": [
+    "Metric catalog only; no verified numeric QoS data has been imported.",
+    "3G/4G measurements may differ by methodology; do not compare without compatible sample methods."
+  ]
+}
