@@ -24,6 +24,7 @@ jobs:
         run: |
           python3 packages/contracts/validate_snapshot.py
           python3 packages/contracts/validate_mobile.py
+          python3 packages/contracts/validate_research.py
       - name: Install dependencies
         run: npm install --no-audit --no-fund
       - name: Build React + TypeScript
