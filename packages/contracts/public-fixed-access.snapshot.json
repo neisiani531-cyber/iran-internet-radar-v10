@@ -7,7 +7,8 @@
     "source_id": "CRA57_FIXED_ACCESS",
     "publication_status": "OFFICIAL_SNAPSHOT",
     "page": 22,
-    "import_origin": "V9.7 CRA57_FIXED_TECH_5_QUARTERS.csv"
+    "import_origin": "V9.7 CRA57_FIXED_TECH_5_QUARTERS.csv",
+    "review_status": "Text-layer cross-check completed against archived CRA57.pdf in existing project assets (page 22); visual verification and release QA remain pending"
   },
   "observations": [
     {
@@ -72,7 +73,8 @@
     }
   ],
   "limitations": [
-    "Five quarter figures transcribed from the existing project CRA57 page 22 extraction; verify against archived official PDF before formal release.",
-    "Q5 of private research dossiers remains independent."
+    "Five-quarter values cross-checked against text layer of archived CRA57.pdf, page 22.",
+    "Final visual PDF/QA and CI release gate still pending.",
+    "Private research dossier Q5 status is independent."
   ]
 }
