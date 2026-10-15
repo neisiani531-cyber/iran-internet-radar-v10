@@ -11,7 +11,7 @@ const rows:Point[]=(snapshot.observations as SourceRow[]).map(r=>({
   period:r.period_label,
   ...r.technology_values
 }));
-const latest = snapshot.observations.at(-1)!;
+const latest = snapshot.observations[snapshot.observations.length-1];
 const fttxDelta=(snapshot.observations[1].technology_values.FTTx/snapshot.observations[0].technology_values.FTTx-1)*100;
 const number=(v:number)=>new Intl.NumberFormat('fa-IR').format(v);
 function App(){
