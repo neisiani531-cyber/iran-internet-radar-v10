@@ -1,0 +1,86 @@
+import React, {useState} from 'react';
+import fixed from '../packages/contracts/public-fixed-access.snapshot.json';
+import mobile from '../packages/contracts/public-mobile-operators.snapshot.json';
+import qos from '../packages/contracts/qos-metric-catalog.json';
+import research from '../packages/contracts/p01-research-registry.json';
+import './command-center.css';
+
+const nf=(v:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2}).format(v);
+const metricRows=fixed.observations;
+const last=metricRows[metricRows.length-1];
+const first=metricRows[0];
+const ratio=(a:number,b:number)=>((a/b)-1)*100;
+const fixedChange=ratio(last.reported_total,first.reported_total);
+const fiberChange=ratio(last.technology_values.FTTx,first.technology_values.FTTx);
+const chartColors=['#48e5d0','#508fef','#f2b36f','#ae90e8'];
+const technologies=[{key:'FTTx',title:'فیبر نوری',color:chartColors[0]},{key:'XDSL',title:'XDSL',color:chartColors[1]},{key:'TDLTE',title:'TD-LTE',color:chartColors[2]},{key:'WiFi',title:'WiFi',color:chartColors[3]}] as const;
+type Tech=typeof technologies[number]['key'];
+type Metric='active_5g_sites'|'population_4g_coverage';
+const chartNumbers=(key:Tech)=>metricRows.map(r=>r.technology_values[key]);
+function Trend({technology}:{technology:Tech}){
+ const nums=chartNumbers(technology);const hi=Math.max(...nums)*1.08;const low=Math.min(...nums)*.9;
+ const points=nums.map((n,i)=>({x:44+(i*(530/(nums.length-1))),y:176-((n-low)/(hi-low))*140}));
+ const line=points.map(p=>p.x+','+p.y).join(' ');
+ const stroke=technologies.find(t=>t.key===technology)!.color;
+ return <div className="cc-chart" role="img" aria-label={'روند پنج‌فصلی '+technology}>
+  <svg viewBox="0 0 620 222" preserveAspectRatio="xMidYMid meet">
+   {[36,82,128,174].map(y=><line key={y} x1="35" x2="584" y1={y} y2={y} stroke="#294053" strokeDasharray="3 7"/>)}
+   <polygon points={points[0].x+',186 '+line+' '+points[points.length-1].x+',186'} fill={stroke} fillOpacity=".08"/>
+   <polyline points={line} fill="none" stroke={stroke} strokeWidth="3.2" strokeLinejoin="round" strokeLinecap="round"/>
+   {points.map((p,i)=><g key={i}><circle cx={p.x} cy={p.y} r={i===4?6:4} fill="#071826" stroke={stroke} strokeWidth="2.5"/><text x={p.x} y={p.y-15} textAnchor="middle" fill="#d4eaf3" fontSize="12">{nf(nums[i])}</text></g>)}
+   {points.map((p,i)=><text key={i} x={p.x} y="211" textAnchor="middle" fill="#8cabc0" fontSize="11">{['بهار ۰۴','تابستان','پاییز','زمستان','بهار ۰۵'][i]}</text>)}
+  </svg>
+ </div>;
+}
+function MetricTile({eyebrow,value,note,trend,icon}:{eyebrow:string,value:string,note:string,trend?:number,icon:string}){
+ return <article className="cc-metric"><div className="cc-metric-top"><span className="cc-metric-symbol">{icon}</span><span className="cc-muted">{eyebrow}</span></div><strong>{value}</strong><div className="cc-metric-bottom"><span>{note}</span>{trend!==undefined&&<b className={trend>=0?'cc-up':'cc-down'}>{trend>=0?'+':''}{nf(trend)}٪</b>}</div></article>
+}
+export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mobile'|'qos'|'research')=>void}){
+ const [tech,setTech]=useState<Tech>('FTTx');
+ const [mobileMetric,setMobileMetric]=useState<Metric>('active_5g_sites');
+ const metric=mobile.metrics.find(m=>m.id===mobileMetric)!;
+ const max=Math.max(...metric.values.map(v=>v.value));
+ const success=qos.metrics.find(m=>m.id==='access_success')!;
+ const mobile5g=mobile.metrics.find(m=>m.id==='active_5g_sites')!;
+ const sites=mobile5g.values.reduce((sum,item)=>sum+item.value,0);
+ const share=last.technology_values.FTTx/last.reported_total*100;
+ return <div className="cc-root">
+  <section className="cc-hero">
+   <div className="cc-hero-copy"><div className="cc-kicker"><span className="cc-pulse"/> مرکز فرماندهی داده | IRAN INTERNET RADAR</div>
+    <h1>نبض اینترنت ایران،<br/><em>در یک نگاه.</em></h1>
+    <p>نمای یکپارچه پایش زیرساخت، توسعه فیبر، اپراتورهای سیار و کیفیت شبکه؛ با ردگیری منبع و تفکیک روشن داده رسمی از شواهد در انتظار پذیرش.</p>
+    <div className="cc-tags"><span>مبنای داده: گزارش فصلنامه ۵۷</span><span>آخرین دوره: بهار ۱۴۰۵</span><span className="cc-tag-warn">نسخه نمایشی، نه داده زنده</span></div>
+   </div>
+   <div className="cc-hero-visual" aria-hidden="true"><div className="cc-orbit cc-orbit-a"/><div className="cc-orbit cc-orbit-b"/><div className="cc-orbit cc-orbit-c"/><div className="cc-radar-sweep"/><div className="cc-radar-center"><span>IR</span><small>RADAR</small></div><span className="cc-dot d1"/><span className="cc-dot d2"/><span className="cc-dot d3"/><span className="cc-dot d4"/></div>
+  </section>
+  <div className="cc-section-name"><span>نمای کلان ملی</span><small>شاخص‌های گزارش‌شده، بدون برآوردهای ساختگی</small></div>
+  <section className="cc-metrics">
+   <MetricTile icon="◈" eyebrow="اشتراک اینترنت ثابت" value={nf(last.reported_total)} note="مجموع چهار فناوری" trend={fixedChange}/>
+   <MetricTile icon="◇" eyebrow="اشتراک فیبر نوری FTTx" value={nf(last.technology_values.FTTx)} note="تغییر نسبت به بهار ۱۴۰۴" trend={fiberChange}/>
+   <MetricTile icon="◎" eyebrow="سایت فعال 5G" value={nf(sites)} note="مجموع سه اپراتور گزارش‌شده"/>
+   <MetricTile icon="▦" eyebrow="سهم فیبر از اشتراک ثابت" value={nf(share)+'٪'} note="سهم در پایان دوره"/>
+  </section>
+  <div className="cc-dashboard-grid">
+   <section className="cc-surface cc-trends"><div className="cc-panel-header"><div><span className="cc-overline">TECHNOLOGY TRANSITION</span><h2>روند تحول دسترسی ثابت</h2><p>پنج فصل متوالی، با تفکیک فناوری و امکان مقایسه روند</p></div><button className="cc-text-button" onClick={()=>onNavigate('fixed')}>تحلیل کامل ←</button></div>
+   <div className="cc-tech-tabs">{technologies.map(t=><button key={t.key} className={t.key===tech?'on':''} onClick={()=>setTech(t.key)}><span style={{background:t.color}}/>{t.title}</button>)}</div>
+   <Trend technology={tech}/>
+   <div className="cc-chart-foot"><span>مقدار نخست: <b>{nf(chartNumbers(tech)[0])}</b></span><span>مقدار آخر: <b>{nf(chartNumbers(tech)[4])}</b></span><span>تغییر سالانه: <b>{nf(ratio(chartNumbers(tech)[4],chartNumbers(tech)[0]))}٪</b></span></div>
+   </section>
+   <section className="cc-surface cc-operator"><div className="cc-panel-header"><div><span className="cc-overline">MOBILE NETWORK</span><h2>نبض اپراتورها</h2><p>مقایسه سه اپراتور در بهار ۱۴۰۵</p></div><button className="cc-text-button" onClick={()=>onNavigate('mobile')}>جزئیات ←</button></div>
+    <div className="cc-toggle"><button className={mobileMetric==='active_5g_sites'?'on':''} onClick={()=>setMobileMetric('active_5g_sites')}>سایت 5G</button><button className={mobileMetric==='population_4g_coverage'?'on':''} onClick={()=>setMobileMetric('population_4g_coverage')}>پوشش 4G</button></div>
+    <div className="cc-op-list">{metric.values.map((item,i)=><div className="cc-op" key={item.operator}><div className="cc-op-line"><span><i className={'cc-op-dot d'+i}/>{item.operator}</span><b>{nf(item.value)}{metric.unit==='percent'?'٪':''}</b></div><div className="cc-track"><span style={{width:(item.value/max*100)+'%',background:chartColors[i]}}/></div></div>)}</div>
+    <div className="cc-panel-notice">مقایسه فقط درون یک شاخص معتبر است؛ تعداد سایت و درصد پوشش هم‌معنا نیستند.</div>
+   </section>
+   <section className="cc-surface cc-quality"><div className="cc-panel-header"><div><span className="cc-overline">NETWORK EXPERIENCE</span><h2>کیفیت ارتباطات 4G</h2><p>نرخ موفقیت اتصال داده، به تفکیک اپراتور</p></div><button className="cc-text-button" onClick={()=>onNavigate('qos')}>شاخص‌های بیشتر ←</button></div>
+     <div className="cc-quality-figures">{success.values.filter(x=>x.generation==='4G').map(x=><div key={x.operator_id}><div className="cc-quality-ring" style={{background:'conic-gradient(#4bdcc9 '+x.value+'%,#263c4d 0)'}}><span>{nf(x.value)}٪</span></div><small>{x.operator}</small></div>)}</div>
+     <p className="cc-micro">منبع: CRA57، صفحه ۱۵. RTT و Jitter هنوز تکمیل نشده‌اند.</p>
+   </section>
+   <section className="cc-surface cc-research"><div className="cc-panel-header"><div><span className="cc-overline">EVIDENCE INTELLIGENCE</span><h2>اتاق شواهد پژوهشی</h2><p>اعتبار، قابلیت مقایسه و تعارض منابع</p></div><button className="cc-text-button" onClick={()=>onNavigate('research')}>ورود به پژوهش ←</button></div>
+    <div className="cc-evidence-number"><strong>{nf(research.records.length)}</strong><span>ردیف مقایسه شواهد P01</span></div>
+    <div className="cc-evidence-status"><span>پذیرش علمی Q5</span><b>۰ از ۲۰ پرونده</b></div><div className="cc-evidence-meter"><span/></div>
+    <p className="cc-research-warning">شواهد پیمایش و شنود اجتماعی با جامعه‌ها و تعاریف متفاوت، شاخص قطعی ملی تلقی نمی‌شوند.</p>
+   </section>
+  </div>
+  <section className="cc-source"><div><span className="cc-source-icon">ⓘ</span><div><strong>شفافیت داده، بخشی از طراحی است</strong><p>شاخص‌های نمایش‌داده‌شده بر اساس Snapshotهای عمومی قرارداد داده هستند. این صفحه داده زنده، نقشه پوشش مکانی یا برآورد ملیِ پژوهش‌های تأییدنشده را ادعا نمی‌کند.</p></div></div><span className="cc-source-badge">قابل ردگیری تا منبع</span></section>
+ </div>;
+}
