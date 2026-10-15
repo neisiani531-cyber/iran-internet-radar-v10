@@ -5,7 +5,9 @@
     "organization": "سازمان تنظیم مقررات و ارتباطات رادیویی",
     "publication": "گزارش فصلنامه ۵۷",
     "source_id": "CRA57_FIXED_ACCESS",
-    "publication_status": "OFFICIAL_SNAPSHOT"
+    "publication_status": "OFFICIAL_SNAPSHOT",
+    "page": 22,
+    "import_origin": "V9.7 CRA57_FIXED_TECH_5_QUARTERS.csv"
   },
   "observations": [
     {
@@ -17,7 +19,44 @@
         "TDLTE": 2555209,
         "WiFi": 387124
       },
-      "reported_total": 11269057
+      "reported_total": 11269057,
+      "source_page": 22
+    },
+    {
+      "period": "1404-Q2",
+      "period_label": "تابستان ۱۴۰۴",
+      "technology_values": {
+        "FTTx": 806422,
+        "XDSL": 7493665,
+        "TDLTE": 2428081,
+        "WiFi": 385961
+      },
+      "reported_total": 11114129,
+      "source_page": 22
+    },
+    {
+      "period": "1404-Q3",
+      "period_label": "پاییز ۱۴۰۴",
+      "technology_values": {
+        "FTTx": 937072,
+        "XDSL": 7400060,
+        "TDLTE": 2469139,
+        "WiFi": 388149
+      },
+      "reported_total": 11194420,
+      "source_page": 22
+    },
+    {
+      "period": "1404-Q4",
+      "period_label": "زمستان ۱۴۰۴",
+      "technology_values": {
+        "FTTx": 1009494,
+        "XDSL": 7048298,
+        "TDLTE": 2496161,
+        "WiFi": 370560
+      },
+      "reported_total": 10924513,
+      "source_page": 22
     },
     {
       "period": "1405-Q1",
@@ -28,12 +67,12 @@
         "TDLTE": 2501421,
         "WiFi": 369259
       },
-      "reported_total": 10470912
+      "reported_total": 10470912,
+      "source_page": 22
     }
   ],
   "limitations": [
-    "Only two explicitly verified seasonal snapshots in this public bootstrap.",
-    "No intermediate quarters inferred or extrapolated.",
-    "Research Q5 approval is independent of source publication status."
+    "Five quarter figures transcribed from the existing project CRA57 page 22 extraction; verify against archived official PDF before formal release.",
+    "Q5 of private research dossiers remains independent."
   ]
 }
