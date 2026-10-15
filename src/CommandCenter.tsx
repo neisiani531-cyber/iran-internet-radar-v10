@@ -30,7 +30,6 @@ function Trend({technology}:{technology:Tech}){
    {points.map((p,i)=><g key={i}><circle cx={p.x} cy={p.y} r={i===4?6:4} fill="#071826" stroke={stroke} strokeWidth="2.5"/><text x={p.x} y={p.y-15} textAnchor="middle" fill="#d4eaf3" fontSize="12">{nf(nums[i])}</text></g>)}
    {points.map((p,i)=><text key={i} x={p.x} y="211" textAnchor="middle" fill="#8cabc0" fontSize="11">{['بهار ۰۴','تابستان','پاییز','زمستان','بهار ۰۵'][i]}</text>)}
   </svg>
- {showSources&&<section className="cc-surface cc-provenance"><h2>شناسنامه داده‌ها و محدوده اعتبار</h2><table><thead><tr><th>حوزه</th><th>دوره</th><th>منبع</th><th>وضعیت</th></tr></thead><tbody><tr><td>اینترنت ثابت و فیبر</td><td>بهار ۱۴۰۴ تا بهار ۱۴۰۵</td><td>گزارش ۵۷، صفحه ۲۲</td><td>تطبیق متن PDF، کنترل انتشار در جریان</td></tr><tr><td>اپراتورهای 4G و 5G</td><td>بهار ۱۴۰۵</td><td>گزارش فصلنامه ۵۷</td><td>Snapshot رسمی، نیازمند گیت نهایی</td></tr><tr><td>کیفیت 3G و 4G</td><td>بهار ۱۴۰۵</td><td>گزارش ۵۷، صفحه ۱۵</td><td>تطبیق متن PDF، کنترل انتشار در جریان</td></tr><tr><td>شواهد کاربران و اقتصاد</td><td>دوره‌های متفاوت</td><td>رجیستری P01</td><td>پیش‌نمایش پژوهشی، Q5 پذیرفته‌شده: صفر</td></tr></tbody></table><p>نمودارها و درصدهای نمایش‌داده‌شده توصیفی هستند. مقایسه داده‌های ناهمگن به‌عنوان یک شاخص واحد مجاز نیست.</p></section>}
  </div>;
 }
 function MetricTile({eyebrow,value,note,trend,icon}:{eyebrow:string,value:string,note:string,trend?:number,icon:string}){
