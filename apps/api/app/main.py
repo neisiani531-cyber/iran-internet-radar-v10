@@ -1,5 +1,6 @@
 """Public, source-attributed snapshot API for Radar V10. No private research data."""
-from datetime import date
+import json
+from pathlib import Path
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException
@@ -15,10 +16,13 @@ OFFICIAL_SOURCE = {
     "publication_status": "OFFICIAL_SNAPSHOT",
     "note": "Only two explicitly sourced spring observations are included in this bootstrap; intermediate quarters are not inferred.",
 }
-VALUES = (
-    {"period": "1404-Q1", "period_label": "بهار ۱۴۰۴", "FTTx": 691763, "XDSL": 7634961, "TDLTE": 2555209, "WiFi": 387124},
-    {"period": "1405-Q1", "period_label": "بهار ۱۴۰۵", "FTTx": 1037577, "XDSL": 6562655, "TDLTE": 2501421, "WiFi": 369259},
+SNAPSHOT_PATH = Path(__file__).resolve().parents[3] / "packages" / "contracts" / "public-fixed-access.snapshot.json"
+SNAPSHOT = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
+VALUES = tuple(
+    {"period": row["period"], "period_label": row["period_label"], **row["technology_values"]}
+    for row in SNAPSHOT["observations"]
 )
+
 
 
 class Observation(BaseModel):
