@@ -17,13 +17,26 @@ MAX_EVENTS = 200
 EVENT_TTL = 300
 events: deque[dict] = deque(maxlen=MAX_EVENTS)
 last_message_at: str | None = None
+last_success_at: str | None = None
+last_error: str | None = None
+last_ack_at: str | None = None
+received_history: deque[float] = deque(maxlen=3000)
+seen_keys: dict[tuple, float] = {}
 connected = False
 task: asyncio.Task | None = None
 stop_signal = asyncio.Event()
 
 def process_message(payload: dict) -> int:
     """Accept only RIS UPDATE announced/withdrawn prefixes. BGP != latency/QoE."""
-    global last_message_at
+    global last_message_at, last_success_at, last_error, last_ack_at
+    if payload.get("type") == "ris_subscribe_ok":
+        last_ack_at = datetime.now(timezone.utc).isoformat()
+        last_success_at = last_ack_at
+        return 0
+    if payload.get("type") == "ris_error":
+        last_error = str((payload.get("data") or {}).get("message", "RIS subscription error"))[:400]
+        log.error("RIS protocol error: %s", last_error)
+        return 0
     if payload.get("type") != "ris_message":
         return 0
     data = payload.get("data")
@@ -55,15 +68,29 @@ def process_message(payload: dict) -> int:
         if isinstance(prefix, str):
             rows.append(("withdrawal", prefix))
     for kind, prefix in rows:
+        try:
+            from ipaddress import ip_network
+            prefix = str(ip_network(prefix, strict=False))
+        except ValueError:
+            continue
+        key = (kind, prefix, origin_asn if kind=="announcement" else None, timestamp, str(peer))
+        now_mono = monotonic()
+        if key in seen_keys and now_mono-seen_keys[key]<EVENT_TTL:
+            continue
+        seen_keys[key]=now_mono
+        if len(seen_keys)>6000:
+            seen_keys.clear()
+        received_history.append(now_mono)
+        last_success_at = when
         events.append({"kind":kind,"prefix":prefix,"origin_asn":origin_asn if kind=="announcement" else None,
-                       "peer_asn":peer,"observed_at":when,"ris_timestamp":timestamp,
+                       "peer_asn":peer,"observed_at":when,"received_at":when,"ris_timestamp":timestamp,
                        "source":"RIPE_RIS_LIVE","measurement":"BGP_CONTROL_PLANE"})
     if rows:
         last_message_at = when
     return len(rows)
 
 async def run_monitor() -> None:
-    global connected
+    global connected, last_error
     import websockets
     backoff = 2
     while not stop_signal.is_set():
@@ -71,8 +98,7 @@ async def run_monitor() -> None:
             async with websockets.connect(RIS_URL, ping_interval=20, ping_timeout=20, max_size=2**21) as ws:
                 # RIS subscription syntax is supported: type UPDATE with AS path match.
                 for asn in ASN_ALLOWLIST:
-                    await ws.send(json.dumps({"type":"ris_subscribe","data":{"type":"UPDATE","host":None,"require":"all",
-                                          "filter":{"path":str(asn)}}}))
+                    await ws.send(json.dumps({"type":"ris_subscribe","data":{"type":"UPDATE","path":asn,"socketOptions":{"acknowledge":True}}}))
                 connected = True
                 backoff = 2
                 async for raw in ws:
@@ -85,6 +111,7 @@ async def run_monitor() -> None:
         except asyncio.CancelledError:
             raise
         except Exception as exc:
+            last_error = str(exc)[:400]
             log.warning("RIS transport disconnected: %s", exc)
         finally:
             connected = False
@@ -115,7 +142,11 @@ async def stop() -> None:
 @router.get("/status")
 def status():
     enabled = os.getenv("RADAR_ENABLE_RIS_LIVE", "0") == "1"
-    return {"mode":"LIVE_BGP" if enabled else "DISABLED","enabled":enabled,
+    now = monotonic()
+    count_60s=sum(1 for t in received_history if now-t<=60)
+    state="disabled" if not enabled else "down" if not connected else "live" if count_60s else "connecting"
+    return {"state":state,"last_success_at":last_success_at if enabled else None,"last_error":last_error if enabled else None,"last_ack_at":last_ack_at if enabled else None,"records_in_last_minute":count_60s if enabled else 0,
+            "mode":"LIVE_BGP" if enabled else "DISABLED","enabled":enabled,
             "connected":connected if enabled else False,"last_message_at":last_message_at if enabled else None,
             "event_count":len(events) if enabled else 0,"source":"RIPE_RIS_LIVE",
             "limitations":"BGP routing updates only; not provincial latency, DNS censorship, packet loss or health score."}
