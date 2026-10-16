@@ -18,7 +18,13 @@ export default function OfficialCatalog({initialGroup='all'}:{initialGroup?:stri
       <label>جست‌وجو <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="عنوان یا شناسه شاخص" aria-label="جست‌وجوی شاخص" /></label>
       <label>گروه <select value={group} onChange={e=>setGroup(e.target.value)}><option value="all">همه گروه‌ها</option>{Object.keys(data.groups).map(g=><option key={g} value={g}>{groupFa[g]||g} ({number(data.groups[g])})</option>)}</select></label>
       <label>دوره <select value={period} onChange={e=>setPeriod(e.target.value)}><option value="all">تمام دوره‌ها</option>{periods.map(p=><option key={p} value={p}>{p}</option>)}</select></label>
-    </div><p role="status">{number(rows.length)} شاخص از {number(data.total)} رکورد رسمی</p>
+    </div><div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:10,flexWrap:'wrap',marginBottom:12}}><p role="status">{number(rows.length)} شاخص از {number(data.total)} رکورد رسمی</p><button type="button" onClick={()=>{
+      const columns=['id','group','label','value','unit','period','page','source','status','denominator','method','note'] as const;
+      const cell=(v:unknown)=>'"'+String(v??'').replace(/"/g,'""')+'"';
+      const csv='\uFEFF'+[columns.map(cell).join(','),...rows.map(x=>columns.map(c=>cell(x[c])).join(','))].join('\r\n');
+      const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
+      const a=document.createElement('a');a.href=url;a.download='CRA57_filtered_official_metrics.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    }}>دریافت CSV شاخص‌های فیلترشده</button></div>
     {group==='fixed'&&(()=>{
       const points=data.observations.filter(x=>x.group==='fixed'&&x.id.startsWith('CRA57-FIBER-COV-')).sort((a,b)=>a.period.localeCompare(b.period,'fa'));
       if(points.length<2)return null;
