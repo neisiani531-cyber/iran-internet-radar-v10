@@ -43,3 +43,29 @@ def research_snapshot(dossier: str | None = None):
         "blocked_numeric_kpis": True,
         "note": "Research-only survey observations are not official, causal, or nationally approved KPIs.",
     }
+
+def historical_research_snapshot(dossier: str | None = None):
+    """Return approved-for-preview historical derivatives; never official KPIs."""
+    data = _read("historical-research-preview.json")
+    if data.get("publication_status") != "RESEARCH_PREVIEW_NOT_Q5":
+        raise ValueError("Unexpected historical publication status")
+    rows = data["observations"]
+    if len(rows) != 20 or len({x["observation_id"] for x in rows}) != 20:
+        raise ValueError("Historical registry count/unique identifiers changed")
+    blocked = [x for x in rows if x["dossier_id"] == "E01"]
+    research = [x for x in rows if x["dossier_id"] != "E01"]
+    if len(blocked) != 6 or len(research) != 14:
+        raise ValueError("Historical research/quarantine parity failed")
+    for x in rows:
+        if x.get("official_dashboard_approved") is not False or x.get("quality_gate") != "Q5_NOT_APPROVED":
+            raise ValueError("Historical evidence was improperly promoted")
+        if x["dossier_id"] == "E01":
+            if x.get("numeric_value") is not None or x.get("source_id") is not None or x.get("display_status") != "BLOCKED_FINANCIAL_ORIGINAL_MISSING" or not x.get("missing_source_reason"):
+                raise ValueError("Financial data quarantine violated")
+        elif x.get("display_status") != "RESEARCH_PREVIEW_NOT_Q5" or not x.get("source_id"):
+            raise ValueError("Ungated historical research row")
+    filtered = [x for x in rows if dossier is None or x["dossier_id"] == dossier]
+    return {"status": "RESEARCH_PREVIEW_NOT_Q5", "total": len(filtered),
+            "summary": data["summary"], "observations": filtered,
+            "officially_approved": 0, "blocked_financial": 6,
+            "note": "Historical research preview. E01 numeric values redacted; never a national KPI."}
