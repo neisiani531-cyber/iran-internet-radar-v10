@@ -1,0 +1,19 @@
+legacy_tab,legacy_capability,v10_destination,current_status,required_action,acceptance_gate,priority
+overview,مدیریتی و کارت شاخص,CommandCenter,PARTIAL,تطبیق همه کارت‌های پژوهشی و شاخص‌های مبنا با snapshot و تعریف شاخص,برابری منشأ و مقدار در هر مشاهده,P0
+overview,پوشش 4G و 5G,CommandCenter / infrastructure,MISSING_EQUIVALENT,بازیابی تفکیک پوشش جمعیتی و ارتباط با ITU و مشاهده تاریخی,عدم خلط پوشش با اشتراک و کیفیت,P1
+overview,آمار منشأ و قرنطینه پژوهشی,ResearchDetails,PARTIAL,اتصال دفتر اصلی و نمایش drill-down برحسب منبع و گیت,۲۲ شاهد و ۲۰ staging با وضعیت اصلی,P0
+mobile,انتخاب شاخص عملکرد اپراتور,Mobile / QoS,PARTIAL,حفظ مقادیر CRC53 و CRA57 با تفکیک دوره و تعریف,مقایسه‌های هم‌دوره و هم‌تعریف,P1
+experience,کارت‌های پیمایش رضایت و تجربه,ResearchInsights,PARTIAL,اتصال پنج شاهد ملت با مخرج روش و سؤال و وضعیت پژوهشی,هر رقم همراه مخرج و Q5 pending,P0
+policy,شاخص هزینه و اقتصاد,Economy / Governance,PARTIAL,بازگردانی سبد ITU و قرنطینه شش ردیف مالی و تعارض‌ها,عدم نمایش ۶ رکورد E01 در KPI,P0
+roadmap,نقشه راه اجرایی,Policy / S02,MISSING,توسعه S02 مبتنی بر شش سازوکار و گزینه‌های مسئول‌دار,تمایز فرضیه و اقدام پیشنهادی,P1
+evidence,جست‌وجو در شاهد و روش و منبع,EvidenceRoom,PARTIAL,دریافت روابط source evidence claim conflict و جست‌وجوی چندبعدی,نمایش گراف شواهد و تعارض بدون ارتقا,P0
+evidence,فیلتر پرونده و پنل جزئیات,EvidenceRoom,PARTIAL,بازگرداندن روش مخرج دوره منبع صفحه و وضعیت هر مشاهده,ردگیری دقیق تا سند و روش,P0
+data-lab,آزمایشگاه Tor و IRBlock,Resilience / DataLab,MISSING,انتقال آزمایشگاه با ۲۵ ردیف Tor و یک روز مفقود,frac ۱۰..۱۱۰ و حفظ شکاف ۲۷ ژوئن,P1
+global,بارگذاری دو فایل JSON پژوهشی,DataIngestion,MISSING,جایگزینی با adapter کنترل‌شده و snapshot فقط‌خواندنی,۲۰ staging و ۲۲ evidence بدون ارتقا,P0
+global,چاپ گزارش,CommandCenter,PARTIAL,کنترل چاپ واقعی و روش استناد,تست Chrome و Firefox و A4,P1
+global,نمایش تمام‌صفحه,AppShell,MISSING,افزودن کنترل fullscreen سازگار با مرورگر,تست تعامل مرورگر,P2
+global,بسته آفلاین مستقل,OfflineRelease,MISSING,تولید بسته React سازگار و آزمون بدون شبکه,آزمون واقعی offline و provenance,P1
+platform,۱۰ حوزه معماری V10,AppNavigation,PARTIAL,تفکیک ۱۰ دامنه و سه مسیر مدیر تحلیلگر پژوهشگر,پوشش دامنه بدون ادغام اجباری شاخص‌ها,P0
+platform,مدل معنایی مشترک و موتور مقایسه,Contracts / API,PARTIAL,پیاده‌سازی metric observation provenance source method denominator gate,تست قرارداد و مقایسه معتبر,P0
+platform,S01 شش سازوکار,ResearchInsights,PARTIAL,اتصال شش سازوکار به شواهد و فرضیه و قید علیت,بدون درصد سهم علّی ساختگی,P0
+platform,S02 نقشه اقدام,Policy / S02,MISSING,ورود تصمیم‌ها پس از شاهد و کنترل نقش قانونی,شاهد تا اقدام قابل رهگیری,P1
