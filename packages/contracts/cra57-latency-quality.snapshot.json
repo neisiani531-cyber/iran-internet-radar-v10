@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "source": {
+    "document": "CRA57",
+    "report_number": 57,
+    "period": "1405-Q1",
+    "printed_page": 14,
+    "method": "ORIGINAL_PDF_TEXT_LAYER_CROSSCHECK_2026_10_16"
+  },
+  "unit": "ms",
+  "observations": [
+    {
+      "metric": "rtt",
+      "network": "fixed",
+      "route": "domestic",
+      "value": 21.14
+    },
+    {
+      "metric": "rtt",
+      "network": "fixed",
+      "route": "international",
+      "value": 84.23
+    },
+    {
+      "metric": "rtt",
+      "network": "mobile",
+      "route": "domestic",
+      "value": 45.6
+    },
+    {
+      "metric": "rtt",
+      "network": "mobile",
+      "route": "international",
+      "value": 104.1
+    },
+    {
+      "metric": "jitter",
+      "network": "fixed",
+      "route": "domestic",
+      "value": 2.1
+    },
+    {
+      "metric": "jitter",
+      "network": "fixed",
+      "route": "international",
+      "value": 2.41
+    },
+    {
+      "metric": "jitter",
+      "network": "mobile",
+      "route": "domestic",
+      "value": 9.41
+    },
+    {
+      "metric": "jitter",
+      "network": "mobile",
+      "route": "international",
+      "value": 13.57
+    }
+  ],
+  "limitations": [
+    "RTT and jitter are aggregate network/route indicators, not per-operator results.",
+    "Only one quarter is available: no historical trend or causal inference.",
+    "PDF visual verification remains a separate quality gate."
+  ]
+}
