@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import survey from '../packages/contracts/p01-survey-research-preview.json';
 import fixed from '../packages/contracts/public-fixed-access.snapshot.json';
 import evidence from '../packages/contracts/evidence-metadata-public.json';
+import decisions from '../packages/contracts/s01-s02-decision-bridge.json';
 import './radar-assistant.css';
 
 type Message={role:'user'|'assistant';content:string};
@@ -9,6 +10,8 @@ const titles:Record<string,string>={command:'مرکز فرماندهی',fixed:'�
 const endpoint=((import.meta as ImportMeta & {env?:Record<string,string>}).env?.VITE_RADAR_ASSISTANT_API_URL as string|undefined)?.replace(/\/$/,'');
 function localSourceAnswer(q:string,page:string){
  const normalized=q.toLocaleLowerCase('fa');
+ const mechanism=decisions.records.find(x=>normalized.includes(x.mechanism_id.toLowerCase())||normalized.includes(x.title));
+ if(mechanism)return 'پرونده '+mechanism.mechanism_id+'، '+mechanism.title+': '+mechanism.proposed_action+'. پیش‌نیاز: '+mechanism.implementation_prerequisite+'. ریسک: '+mechanism.principal_risk+'. شرط بررسی: '+mechanism.decision_gate+'. نکته: '+mechanism.limitation+'. این پاسخ از پیش‌نویس S02 استخراج شده و تأیید یا تصمیم نهایی محسوب نمی‌شود؛ گفت‌وگوی آزاد تنها با اتصال سرور مدل زبانی فعال است.';
  const selected=survey.observations.find(x=>normalized.includes(x.evidence_id.toLowerCase())||normalized.includes(x.title.slice(0,7)));
  if(selected)return selected.title+': '+new Intl.NumberFormat('fa-IR',{maximumFractionDigits:1}).format(selected.value)+' درصد. '+selected.description+' منبع: '+selected.source_label+'، شاهد '+selected.evidence_id+'. این یافته هنوز Q5 ندارد و نباید به نتیجه قطعی کشوری یا رابطه علّی تبدیل شود.';
  if(/فیبر|fttx|xdsl|ثابت/.test(normalized)){
