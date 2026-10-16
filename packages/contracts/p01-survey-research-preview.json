@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "as_of": "2026-10-16",
+  "source_report": "MELLAT_21921",
+  "publication_status": "RESEARCH_PREVIEW_NOT_Q5",
+  "limitations": "Research-only reported survey responses; no causal attribution or national KPI approval. EV-P01-005 category reconciliation pending.",
+  "observations": [
+    {
+      "evidence_id": "EV-P01-002",
+      "value": 58.8,
+      "unit": "percent",
+      "title": "ارزیابی ضعیف سرعت اینترنت",
+      "description": "در میان کاربران اینترنتِ پاسخ‌دهنده به پیمایش ملت؛ ارزیابی ذهنی است، نه اندازه‌گیری Mbps.",
+      "publication_status": "RESEARCH_PREVIEW_NOT_Q5",
+      "quality_gate": "Q5_PENDING",
+      "source_label": "گزارش ملت ۲۱۹۲۱",
+      "official_dashboard_approved": false
+    },
+    {
+      "evidence_id": "EV-P01-003",
+      "value": 73.5,
+      "unit": "percent",
+      "title": "رضایت کم یا نداشتن رضایت از قیمت بسته",
+      "description": "جمع دو گزینه پاسخ به پرسش مشخص قیمت بسته اینترنت همراه؛ شاخص هزینه پرداختی خانوار نیست.",
+      "publication_status": "RESEARCH_PREVIEW_NOT_Q5",
+      "quality_gate": "Q5_PENDING",
+      "source_label": "گزارش ملت ۲۱۹۲۱",
+      "official_dashboard_approved": false
+    },
+    {
+      "evidence_id": "EV-P01-004",
+      "value": 64.7,
+      "unit": "percent",
+      "title": "گزارش استفاده از ابزار واسط برای شبکه‌های اجتماعی خارجی",
+      "description": "از کل پاسخگویان پیمایش، در چارچوب همان سؤال؛ معادل تمام موارد استفاده VPN نیست.",
+      "publication_status": "RESEARCH_PREVIEW_NOT_Q5",
+      "quality_gate": "Q5_PENDING",
+      "source_label": "گزارش ملت ۲۱۹۲۱",
+      "official_dashboard_approved": false
+    },
+    {
+      "evidence_id": "EV-P01-005",
+      "value": 38.7,
+      "unit": "percent",
+      "title": "اولویت اعلام‌شده رفع محدودیت دسترسی",
+      "description": "پاسخ به سؤال نخستین اولویت سیاست‌گذاری اینترنت؛ اختلاف کدگذاری برخی دسته‌ها هنوز باز است.",
+      "publication_status": "RESEARCH_PREVIEW_NOT_Q5",
+      "quality_gate": "Q5_PENDING",
+      "source_label": "گزارش ملت ۲۱۹۲۱",
+      "official_dashboard_approved": false
+    }
+  ]
+}
