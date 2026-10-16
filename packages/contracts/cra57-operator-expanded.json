@@ -1,0 +1,93 @@
+{
+  "source": "CRA Quarterly 57 Spring 1405",
+  "validation": "PDF_TEXT_LAYER_SPOTCHECK_PAGES_10_26",
+  "period": "1405-Q1",
+  "metrics": [
+    {
+      "key": "active_4g_sites",
+      "label": "سایت فعال 4G",
+      "unit": "سایت",
+      "page": 26,
+      "values": [
+        27701,
+        20274,
+        4022
+      ]
+    },
+    {
+      "key": "covered_villages",
+      "label": "روستاهای تحت پوشش",
+      "unit": "روستا",
+      "page": 10,
+      "values": [
+        44918,
+        19312,
+        946
+      ]
+    },
+    {
+      "key": "covered_roads_km",
+      "label": "راه‌های تحت پوشش",
+      "unit": "کیلومتر",
+      "page": 10,
+      "values": [
+        82830,
+        64350,
+        27563
+      ]
+    },
+    {
+      "key": "covered_cities_4g",
+      "label": "شهرهای تحت پوشش 4G",
+      "unit": "شهر",
+      "page": 10,
+      "values": [
+        1454,
+        1420,
+        406
+      ]
+    },
+    {
+      "key": "m2m_subscriptions",
+      "label": "اشتراک ماشین به ماشین M2M",
+      "unit": "اشتراک",
+      "page": 26,
+      "values": [
+        7410760,
+        2931902,
+        20050
+      ]
+    },
+    {
+      "key": "roaming_countries",
+      "label": "کشورهای دارای رومینگ",
+      "unit": "کشور",
+      "page": 26,
+      "values": [
+        140,
+        132,
+        134
+      ]
+    },
+    {
+      "key": "roaming_partner_operators",
+      "label": "اپراتورهای خارجی رومینگ",
+      "unit": "اپراتور",
+      "page": 26,
+      "values": [
+        325,
+        256,
+        190
+      ]
+    }
+  ],
+  "operators": [
+    "همراه اول",
+    "ایرانسل",
+    "رایتل"
+  ],
+  "limitations": [
+    "داده یک فصل است؛ روند زمانی ادعا نشود",
+    "بخش دیگری از ۱۳۰ شاخص تاریخی نسخه V9 نیازمند مهاجرت و کنترل جداگانه است"
+  ]
+}
