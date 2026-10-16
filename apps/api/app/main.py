@@ -1,6 +1,8 @@
 """Public, source-attributed snapshot API for Radar V10. No private research data."""
 import json
 import csv
+import os
+from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 from typing import Literal
 
@@ -8,6 +10,10 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 app = FastAPI(title="Iran Internet Radar V10 Public API", version="0.1.0")
+assistant_frontend = os.environ.get("RADAR_ASSISTANT_FRONTEND_ORIGIN", "").strip()
+if assistant_frontend:
+    app.add_middleware(CORSMiddleware, allow_origins=[assistant_frontend], allow_methods=["POST"], allow_headers=["Content-Type"])
+
 
 Technology = Literal["FTTx", "XDSL", "TDLTE", "WiFi"]
 OFFICIAL_SOURCE = {
