@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "publication_status": "RESEARCH_METADATA_ONLY_NOT_Q5",
+  "source_asset": "packages/contracts/evidence-metadata-public.json",
+  "scope": "PUBLIC_ALREADY_ADMITTED_REFERENCES_ONLY",
+  "officially_approved": 0,
+  "source_evidence_links": [
+    {
+      "source_id": "SRC-P01-001",
+      "evidence_id": "EV-P01-001"
+    },
+    {
+      "source_id": "SRC-P01-001",
+      "evidence_id": "EV-P01-002"
+    },
+    {
+      "source_id": "SRC-P01-001",
+      "evidence_id": "EV-P01-003"
+    },
+    {
+      "source_id": "SRC-P01-001",
+      "evidence_id": "EV-P01-004"
+    },
+    {
+      "source_id": "SRC-P01-001",
+      "evidence_id": "EV-P01-005"
+    },
+    {
+      "source_id": "SRC-T05-ITU-2024",
+      "evidence_id": "EV-T05-ITU-001"
+    },
+    {
+      "source_id": "SRC-T05-ITU-2024",
+      "evidence_id": "EV-T05-ITU-002"
+    },
+    {
+      "source_id": "SRC-E02-ITU-2025",
+      "evidence_id": "EV-E02-ITU-001"
+    },
+    {
+      "source_id": "SRC-T04-1405-001",
+      "evidence_id": "EV-T04-1405-001"
+    },
+    {
+      "source_id": "SRC-T04-1405-002",
+      "evidence_id": "EV-T04-1405-002"
+    },
+    {
+      "source_id": "SRC-T02-CRC53-1404",
+      "evidence_id": "EV-T02-MCI-SPEED"
+    },
+    {
+      "source_id": "SRC-T02-CRC53-1404",
+      "evidence_id": "EV-T02-MCI-DROP"
+    },
+    {
+      "source_id": "SRC-T02-CRC53-1404",
+      "evidence_id": "EV-T02-MCI-SETUP"
+    },
+    {
+      "source_id": "SRC-T02-CRC53-1404",
+      "evidence_id": "EV-T02-IR-SPEED"
+    },
+    {
+      "source_id": "SRC-T02-CRC53-1404",
+      "evidence_id": "EV-T02-IR-DROP"
+    },
+    {
+      "source_id": "SRC-T02-CRC53-1404",
+      "evidence_id": "EV-T02-IR-SETUP"
+    },
+    {
+      "source_id": "SRC-T02-CRC53-1404",
+      "evidence_id": "EV-T02-RI-SPEED"
+    },
+    {
+      "source_id": "SRC-T02-CRC53-1404",
+      "evidence_id": "EV-T02-RI-DROP"
+    },
+    {
+      "source_id": "SRC-T02-CRC53-1404",
+      "evidence_id": "EV-T02-RI-SETUP"
+    },
+    {
+      "source_id": "SRC-T07-CF-Q2-2025",
+      "evidence_id": "EV-T07-ASN-001"
+    },
+    {
+      "source_id": "SRC-T07-IODA-20250618-A",
+      "evidence_id": "EV-T07-ASN-002"
+    },
+    {
+      "source_id": "SRC-T07-IODA-20250618-B",
+      "evidence_id": "EV-T07-ASN-003"
+    }
+  ],
+  "claim_evidence_links": [
+    {
+      "claim_id": "P01-F001",
+      "evidence_id": "EV-P01-001"
+    },
+    {
+      "claim_id": "P01-F002",
+      "evidence_id": "EV-P01-002"
+    },
+    {
+      "claim_id": "P01-F002",
+      "evidence_id": "EV-P01-003"
+    },
+    {
+      "claim_id": "P01-F003",
+      "evidence_id": "EV-P01-004"
+    }
+  ],
+  "claim_ids": [
+    "P01-F001",
+    "P01-F002",
+    "P01-F003"
+  ],
+  "conflict_content_status": "NOT_PUBLISHED_PENDING_EXPLICIT_ADMISSION"
+}
