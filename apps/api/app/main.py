@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException
+from app import ris_live
 from pydantic import BaseModel, Field
 
 app = FastAPI(title="Iran Internet Radar V10 Public API", version="0.1.0")
@@ -202,3 +203,14 @@ def get_public_research_relations():
 
 from app.assistant_api import router as assistant_router
 app.include_router(assistant_router)
+
+app.include_router(ris_live.router)
+
+@app.on_event('startup')
+async def _start_ris():
+    if os.getenv('RADAR_ENABLE_RIS_LIVE','0') == '1':
+        ris_live.start()
+
+@app.on_event('shutdown')
+async def _stop_ris():
+    await ris_live.stop()
