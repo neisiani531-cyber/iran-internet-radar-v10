@@ -37,7 +37,7 @@ export default function RadarAssistant({area}:{area:string}){
   }else answer=localSourceAnswer(q,titles[area]||area);
   setMessages(old=>[...old,{role:'assistant',content:answer}]);setBusy(false);
  };
- return <><button className="ra-fab" onClick={()=>setOpen(x=>!x)} aria-expanded={open} aria-label="گشودن دستیار رادار">✦ دستیار هوشمند</button>
+ return <><button id="radar-assistant-toggle" className="ra-fab" onClick={()=>setOpen(x=>!x)} aria-expanded={open} aria-label="گشودن دستیار رادار">✦ دستیار هوشمند</button>
  {open&&<section className="ra-window" dir="rtl" aria-label="دستیار رادار"><div className="ra-header"><div><strong>دستیار رادار</strong><small>زمینه فعلی: {titles[area]||area} · {endpoint?'سرور قابل پیکربندی':'راهنمای محدود، بدون مدل زبانی'}</small></div><button onClick={()=>setOpen(false)} aria-label="بستن">×</button></div>
  <div className="ra-messages" role="log" aria-live="polite">{messages.map((m,i)=><div className={'ra-message '+m.role} key={i}>{m.content}</div>)}{busy&&<p>در حال بررسی پرسش…</p>}</div>
  <form className="ra-form" onSubmit={e=>{e.preventDefault();void send()}}><input value={question} onChange={e=>setQuestion(e.target.value)} placeholder="این شاخص چیست؟ منبعش کجاست؟" aria-label="پرسش از دستیار"/><button type="submit" disabled={!question.trim()||busy}>ارسال</button></form></section>}</>;
