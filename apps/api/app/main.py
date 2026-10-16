@@ -180,3 +180,11 @@ def get_research_snapshot(dossier: str | None = None):
         return research_snapshot(dossier)
     except ValueError as exc:
         raise HTTPException(status_code=503, detail='Research admission validation failed') from exc
+
+@app.get('/api/v1/historical-research')
+def get_historical_research(dossier: str | None = None):
+    from app.research_adapter import historical_research_snapshot
+    try:
+        return historical_research_snapshot(dossier)
+    except ValueError as exc:
+        raise HTTPException(status_code=503, detail='Historical research admission validation failed') from exc
