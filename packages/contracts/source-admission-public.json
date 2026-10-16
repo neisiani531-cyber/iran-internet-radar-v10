@@ -1,0 +1,178 @@
+{
+  "status": "RESEARCH_ADMISSION_MATRIX",
+  "as_of": "2026-10-15",
+  "source_path": "05_RADAR_DATA/SOURCE_TO_DASHBOARD_AI_MATRIX_2026-10-15.csv",
+  "entries": [
+    {
+      "source_family": "ITU_2024",
+      "dossier_ids": "T05,G03",
+      "evidence_status": "PRIMARY_REVIEWED",
+      "dashboard_use": "historical_KPI_cards",
+      "ai_use": "citation_based_numeric_QA",
+      "admission_rule": "REVIEW_ONLY",
+      "blocking_limit": "2024 country not current QoE"
+    },
+    {
+      "source_family": "ITU_2025_5GB",
+      "dossier_ids": "E02",
+      "evidence_status": "PRIMARY_WEB_VERIFIED_EXCEL_PENDING",
+      "dashboard_use": "historical_affordability_card",
+      "ai_use": "metric_definition_and_difference_from_household_cost",
+      "admission_rule": "REVIEW_ONLY",
+      "blocking_limit": "0.19 percent monthly GNI not household burden"
+    },
+    {
+      "source_family": "CRC53_QoS",
+      "dossier_ids": "T02",
+      "evidence_status": "REPORT_TEXT_MATCHED_REPUBLISHED_PDF",
+      "dashboard_use": "historical_operator_table",
+      "ai_use": "qualified_historical_QA",
+      "admission_rule": "REVIEW_ONLY",
+      "blocking_limit": "sample design official source pending"
+    },
+    {
+      "source_family": "MELLAT_21921",
+      "dossier_ids": "P01",
+      "evidence_status": "ORIGINAL_OFFICIAL_34P_PDF_REVIEWED_Q5_PENDING",
+      "dashboard_use": "research_only_five_survey_cards",
+      "ai_use": "question_denominator_and_category_derivation_QA",
+      "admission_rule": "REVIEW_ONLY",
+      "blocking_limit": "weights_and_microdata_unavailable_C003_C004_open_no_national_causes"
+    },
+    {
+      "source_family": "ISPA_1405",
+      "dossier_ids": "P01",
+      "evidence_status": "PRIMARY_PAGE_CANDIDATE_UNREAD",
+      "dashboard_use": "evidence_room_only",
+      "ai_use": "state_source_uncertainty",
+      "admission_rule": "HOLD_NUMERIC",
+      "blocking_limit": "full questionnaire tables absent"
+    },
+    {
+      "source_family": "SHARIF_83P6",
+      "dossier_ids": "P01,A02",
+      "evidence_status": "SECONDARY_ONLY",
+      "dashboard_use": "source_library_only",
+      "ai_use": "compare_methods_not_rates",
+      "admission_rule": "HOLD_NUMERIC",
+      "blocking_limit": "historic separate study instrument unknown"
+    },
+    {
+      "source_family": "GAMAAN_2026",
+      "dossier_ids": "P04",
+      "evidence_status": "AUTHOR_PUBLISHED_ONLINE_SURVEY",
+      "dashboard_use": "methodology_card_only",
+      "ai_use": "interpret_online_survey_limitations",
+      "admission_rule": "HOLD_NATIONAL_KPI",
+      "blocking_limit": "self selection non representative without replication"
+    },
+    {
+      "source_family": "CLOUDFLARE_IODA",
+      "dossier_ids": "T07",
+      "evidence_status": "PRIMARY_OBSERVER_REPORT_RAW_PENDING",
+      "dashboard_use": "historical_event_timeline",
+      "ai_use": "timeline_and_provenance_QA",
+      "admission_rule": "REVIEW_ONLY",
+      "blocking_limit": "no numeric time series actual fetch"
+    },
+    {
+      "source_family": "NETBLOCKS_KENTIK",
+      "dossier_ids": "T07",
+      "evidence_status": "REPORT_OR_POST_RAW_PENDING",
+      "dashboard_use": "claim_comparison_only",
+      "ai_use": "source_comparability_QA",
+      "admission_rule": "HOLD_NUMERIC",
+      "blocking_limit": "unmatched baselines vantage and metrics"
+    },
+    {
+      "source_family": "OONI_IRBLOCK",
+      "dossier_ids": "A01,T07",
+      "evidence_status": "PAPER_REVIEWED_ARTIFACT_PENDING",
+      "dashboard_use": "protocol_mechanism_explorer",
+      "ai_use": "explain_measurement_limits",
+      "admission_rule": "NO_RAW_DERIVED_KPI",
+      "blocking_limit": "country IP and domain sets not user outcomes"
+    },
+    {
+      "source_family": "ACADEMIC_ACM_ARXIV",
+      "dossier_ids": "T07",
+      "evidence_status": "PAPER_OR_ABSTRACT_REVIEWED",
+      "dashboard_use": "research_library",
+      "ai_use": "explain_BGP_vs_forwarding",
+      "admission_rule": "NO_RAW_DERIVED_KPI",
+      "blocking_limit": "sample vantage methods study-specific"
+    },
+    {
+      "source_family": "OPERATOR_FINANCIAL",
+      "dossier_ids": "E01",
+      "evidence_status": "SECONDARY_ORIGINAL_FILING_PENDING_SIX_ROWS_QUARANTINED",
+      "dashboard_use": "no_public_financial_cards",
+      "ai_use": "explain_unresolved_original_filings_and_legal_entities",
+      "admission_rule": "BLOCKED",
+      "blocking_limit": "six_E01_rows_have_null_original_source_and_explicit_missing_reason_FK_not_invented"
+    },
+    {
+      "source_family": "NIN_LAWS_POLICY",
+      "dossier_ids": "G01,G02",
+      "evidence_status": "FRAGMENTED_ORIGINAL_TEXT_PENDING",
+      "dashboard_use": "policy_trace_after_original",
+      "ai_use": "article_cited_retrieval_QA",
+      "admission_rule": "HOLD_LEGAL_ASSERTIONS",
+      "blocking_limit": "effective date agency and power unresolved"
+    },
+    {
+      "source_family": "FILTERWATCH_MEDIA_COMMUNITY",
+      "dossier_ids": "A01,T07,P01",
+      "evidence_status": "SOURCE_LEADS_AND_SECONDARY",
+      "dashboard_use": "source_library_not_numeric_KPI",
+      "ai_use": "attributed_claim_context_only",
+      "admission_rule": "CANDIDATE",
+      "blocking_limit": "many duplicated independent-source claims"
+    },
+    {
+      "source_family": "LEAKED_DATA_CLAIMS",
+      "dossier_ids": "A03",
+      "evidence_status": "UNVERIFIED_SENSITIVE",
+      "dashboard_use": "no_dashboard_individual_data",
+      "ai_use": "public_incident_summary_only_if_confirmed",
+      "admission_rule": "EXCLUDE_RAW",
+      "blocking_limit": "privacy and critical infrastructure sensitivity"
+    },
+    {
+      "source_family": "SHENAKHTIC_CGI_1403",
+      "dossier_ids": "G01,P01",
+      "evidence_status": "PEER_REVIEWED_ARTICLE_25P_METHOD_READ_Q5_PENDING",
+      "dashboard_use": "research_only_historical_composite_if_admitted",
+      "ai_use": "define_composite_weighting_and_not_current_internet_speed",
+      "admission_rule": "HOLD_NEW_NUMERIC",
+      "blocking_limit": "original_underlying_microdata_and_full_weight_reproduction_missing"
+    },
+    {
+      "source_family": "SHENAKHTIC_BEHAVIOR",
+      "dossier_ids": "P01,P02,E01",
+      "evidence_status": "PUBLISHER_DATAGRAM_MIXED_FULL_TEXT_AND_INDEX_ONLY",
+      "dashboard_use": "research_qualitative_only",
+      "ai_use": "distinguish_reported_survey_vs_modeled_scenario",
+      "admission_rule": "HOLD_NEW_NUMERIC",
+      "blocking_limit": "many_denominators_and_original_surveys_missing_no_population_generalization"
+    },
+    {
+      "source_family": "DATAAK_YEAR_OF_SURVIVAL",
+      "dossier_ids": "P01,P02,E01,E02,T07",
+      "evidence_status": "PUBLISHER_60P_PDF_READ_RAW_DATA_PENDING",
+      "dashboard_use": "research_context_and_candidates_only",
+      "ai_use": "explicit_publisher_source_pages_and_no_independent_count",
+      "admission_rule": "HOLD_NEW_NUMERIC",
+      "blocking_limit": "51_candidate_claims_no_raw_post_series_or_external_validation"
+    },
+    {
+      "source_family": "DATAAK_ISP_COMPLAINTS",
+      "dossier_ids": "P01,T02",
+      "evidence_status": "PUBLISHER_3P_INFOGRAPHIC_READ_METHOD_MISSING",
+      "dashboard_use": "qualitative_complaint_taxonomy_only",
+      "ai_use": "do_not_identify_percent_nationally_or_ISP_blame",
+      "admission_rule": "HOLD_NEW_NUMERIC",
+      "blocking_limit": "no_sample_time_classifier_validation_or_responsibility_basis"
+    }
+  ]
+}
