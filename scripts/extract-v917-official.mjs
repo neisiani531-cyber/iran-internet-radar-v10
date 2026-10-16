@@ -68,4 +68,7 @@ const migrationAudit={
  note:'Counts are not mutually exclusive. Restricted record payloads are not exported into the new public contracts.'
 };
 writeFileSync(resolve('public/data/v917-migration-manifest.json'),JSON.stringify(migrationAudit,null,2)+'\n');
+const pageIndex={schema_version:'1.0',source:'CRA57_V9.17',extraction:'LEGACY_PAGE_TEXT_PENDING_SOURCE_VISUAL_QA',pages:root.pdfPages.map(p=>({number:p.n,title:p.title,en:p.en,text:p.text}))};
+if(pageIndex.pages.length!==28||new Set(pageIndex.pages.map(p=>p.number)).size!==28)throw Error('Bad report page index');
+writeFileSync(resolve('public/data/v917-source-pages.json'),JSON.stringify(pageIndex,null,2)+'\n');
 console.log('V9.17 official catalog: ' + out.total + ' entries, ' + ids.size + ' unique IDs');
