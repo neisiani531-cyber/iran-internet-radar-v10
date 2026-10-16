@@ -5,6 +5,8 @@ import qos from '../packages/contracts/qos-metric-catalog.json';
 import research from '../packages/contracts/p01-research-registry.json';
 import surveyPreview from '../packages/contracts/p01-survey-research-preview.json';
 import historicalPreview from '../packages/contracts/historical-research-preview.json';
+import publicEvidence from '../packages/contracts/evidence-metadata-public.json';
+import evidenceRelations from '../packages/contracts/research-public-relations.json';
 import './command-center.css';
 
 const nf=(v:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2}).format(v);
@@ -38,6 +40,7 @@ function MetricTile({eyebrow,value,note,trend,icon}:{eyebrow:string,value:string
  return <article className="cc-metric"><div className="cc-metric-top"><span className="cc-metric-symbol">{icon}</span><span className="cc-muted">{eyebrow}</span></div><strong>{value}</strong><div className="cc-metric-bottom"><span>{note}</span>{trend!==undefined&&<b className={trend>=0?'cc-up':'cc-down'}>{trend>=0?'+':''}{nf(trend)}٪</b>}</div></article>
 }
 export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mobile'|'qos'|'research')=>void}){
+ const [selectedFinding,setSelectedFinding]=useState<string>(surveyPreview.observations[0].evidence_id);
  const [tech,setTech]=useState<Tech>('FTTx');
  const [mobileMetric,setMobileMetric]=useState<Metric>('active_5g_sites');
  const [generation,setGeneration]=useState<'3G'|'4G'>('4G');
@@ -46,6 +49,9 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
  const [baselineIndex,setBaselineIndex]=useState(0);
  const [comparisonOpen,setComparisonOpen]=useState(true);
  const [showSources,setShowSources]=useState(false);
+ const activeFinding=surveyPreview.observations.find(x=>x.evidence_id===selectedFinding)!;
+ const findingEvidence=publicEvidence.observations.find(x=>x.evidence_id===selectedFinding);
+ const findingClaims=evidenceRelations.claim_evidence_links.filter(x=>x.evidence_id===selectedFinding);
  const current=metricRows[periodIndex];
  const baseline=metricRows[baselineIndex];
  const changeFromPrevious=periodIndex>0?ratio(current.reported_total,metricRows[periodIndex-1].reported_total):undefined;
@@ -82,7 +88,8 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
  </section>
   <section className="cc-surface cc-intelligence" aria-label="تحلیل تجربه کاربران و شواهد تاریخی">
    <div className="cc-panel-header"><div><span className="cc-overline">NATIONAL RESEARCH INTELLIGENCE · S01</span><h2>تصویر مسئله از نگاه کاربران و داده‌های تاریخی</h2><p>چهار یافته پیمایش ملت ۲۱۹۲۱، در کنار ۱۴ مشاهده تاریخی پژوهشی. سنجه‌های ناهم‌تعریف با هم تجمیع نمی‌شوند.</p></div><button className="cc-text-button" onClick={()=>onNavigate('research')}>تحلیل سازوکارهای نارضایتی ←</button></div>
-   <div className="cc-intelligence-grid">{surveyPreview.observations.map(x=><article key={x.evidence_id} className="cc-intelligence-item"><span className="cc-intelligence-value">{nf(x.value)}٪</span><h3>{x.title}</h3><p>{x.description}</p><small>پیمایش ملت · {x.evidence_id} · پژوهشی / Q5 تأییدنشده</small></article>)}</div>
+   <div className="cc-intelligence-grid">{surveyPreview.observations.map(x=><button type="button" key={x.evidence_id} aria-pressed={selectedFinding===x.evidence_id} onClick={()=>setSelectedFinding(x.evidence_id)} className={"cc-intelligence-item cc-finding-button"+(selectedFinding===x.evidence_id?" selected":"")}><span className="cc-intelligence-value">{nf(x.value)}٪</span><h3>{x.title}</h3><p>{x.description}</p><small>پیمایش ملت · {x.evidence_id} · پژوهشی / Q5 تأییدنشده</small></button>)}</div>
+   <div className="cc-finding-detail" aria-live="polite"><div><span className="cc-overline">FINDING / EVIDENCE / INTERPRETATION</span><h3>{activeFinding.title}</h3><p>{activeFinding.description}</p><p>شاهد ثبت‌شده: {findingEvidence?.description||"شرح شاهد موجود نیست"}؛ وضعیت بررسی: {findingEvidence?.verification_status||"نامشخص"}</p></div><div><strong>ردیابی علمی</strong><p>منبع: {findingEvidence?.source_id||"نامشخص"} · شناسه شاهد: {selectedFinding}</p><p>ادعای مرتبط: {findingClaims.length?findingClaims.map(x=>x.claim_id).join("، "):"در قرارداد عمومی ثبت نشده"}</p><p>محدودیت: این نتیجه پیمایشی، سهم علّی نارضایتی یا سنجش مستقیم کیفیت شبکه نیست. گیت Q5 هنوز تأیید نشده است.</p><button className="cc-text-button" onClick={()=>onNavigate("research")}>بررسی فرضیه‌ها و سازوکارهای S01 ←</button></div></div>
    <div className="cc-intelligence-bottom"><div><strong>شواهد تاریخی آماده بررسی</strong><p>{nf(historicalPreview.observations.filter(x=>x.display_status==='RESEARCH_PREVIEW_NOT_Q5').length)} مشاهده از حوزه‌های کیفیت، پوشش، دسترسی و استطاعت پرداخت؛ هر مشاهده فقط با تعریف، دوره و منبع خودش قابل تفسیر است.</p></div><div><strong>کنترل انتشار</strong><p>{nf(historicalPreview.observations.filter(x=>x.display_status==='BLOCKED_FINANCIAL_ORIGINAL_MISSING').length)} رکورد مالی فاقد سند اصلی از نمایش عددی مسدود است. هیچ شاهدی مجوز Q5 ندارد.</p></div></div>
   </section>
   <div className="cc-dashboard-grid">
