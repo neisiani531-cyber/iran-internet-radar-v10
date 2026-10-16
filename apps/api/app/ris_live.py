@@ -67,6 +67,7 @@ def process_message(payload: dict) -> int:
     for prefix in data.get("withdrawals") or []:
         if isinstance(prefix, str):
             rows.append(("withdrawal", prefix))
+    admitted = 0
     for kind, prefix in rows:
         try:
             from ipaddress import ip_network
@@ -82,12 +83,13 @@ def process_message(payload: dict) -> int:
             seen_keys.clear()
         received_history.append(now_mono)
         last_success_at = when
+        admitted += 1
         events.append({"kind":kind,"prefix":prefix,"origin_asn":origin_asn if kind=="announcement" else None,
                        "peer_asn":peer,"observed_at":when,"received_at":when,"ris_timestamp":timestamp,
                        "source":"RIPE_RIS_LIVE","measurement":"BGP_CONTROL_PLANE"})
-    if rows:
+    if admitted:
         last_message_at = when
-    return len(rows)
+    return admitted
 
 async def run_monitor() -> None:
     global connected, last_error
@@ -144,7 +146,7 @@ def status():
     enabled = os.getenv("RADAR_ENABLE_RIS_LIVE", "0") == "1"
     now = monotonic()
     count_60s=sum(1 for t in received_history if now-t<=60)
-    state="disabled" if not enabled else "down" if not connected else "live" if count_60s else "connecting"
+    state="disabled" if not enabled else "down" if not connected else "live" if count_60s else "degraded" if last_ack_at else "connecting"
     return {"state":state,"last_success_at":last_success_at if enabled else None,"last_error":last_error if enabled else None,"last_ack_at":last_ack_at if enabled else None,"records_in_last_minute":count_60s if enabled else 0,
             "mode":"LIVE_BGP" if enabled else "DISABLED","enabled":enabled,
             "connected":connected if enabled else False,"last_message_at":last_message_at if enabled else None,
