@@ -6,7 +6,7 @@ import './radar-assistant.css';
 
 type Message={role:'user'|'assistant';content:string};
 const titles:Record<string,string>={command:'مرکز فرماندهی',fixed:'اینترنت ثابت و فیبر',mobile:'شبکه سیار و اپراتورها',qos:'کیفیت شبکه',research:'تجربه کاربران',evidence:'اتاق شواهد'};
-const endpoint=(import.meta.env.VITE_RADAR_ASSISTANT_API_URL as string|undefined)?.replace(/\/$/,'');
+const endpoint=((import.meta as ImportMeta & {env?:Record<string,string>}).env?.VITE_RADAR_ASSISTANT_API_URL as string|undefined)?.replace(/\/$/,'');
 function localSourceAnswer(q:string,page:string){
  const normalized=q.toLocaleLowerCase('fa');
  const selected=survey.observations.find(x=>normalized.includes(x.evidence_id.toLowerCase())||normalized.includes(x.title.slice(0,7)));
