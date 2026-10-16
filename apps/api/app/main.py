@@ -159,3 +159,15 @@ def source_admission(family: str | None = None, rule: str | None = None):
         rows = [row for row in rows if row["admission_rule"] == rule]
     return {"status": "RESEARCH_ADMISSION_MATRIX", "count": len(rows), "entries": rows,
             "note": "A source lead or research review does not grant Q5 or public numeric KPI admission."}
+
+
+@app.get("/api/v1/evidence-metadata")
+def evidence_metadata(dossier: str | None = None):
+    """Public metadata only: numerical research results remain gated."""
+    path = Path(__file__).resolve().parents[3] / "packages" / "contracts" / "evidence-metadata-public.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    entries = data["observations"]
+    if dossier is not None:
+        entries = [entry for entry in entries if entry["dossier_id"] == dossier]
+    return {"count": len(entries), "status": data["publication_status"],
+            "officially_approved": data["officially_approved"], "entries": entries}
