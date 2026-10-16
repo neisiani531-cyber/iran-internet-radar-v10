@@ -13,3 +13,5 @@ return <section className="panel" dir="rtl"><h2>آزمایشگاه داده‌ه
 {tab==='tic'&&<><h3>مشاهدات فصلی TIC</h3><p>این سری تا تطبیق با مرجع اصلی TIC، تنها یک پیش‌نمایش پژوهشی است. واحد و روش هر شاخص باید پیش از مقایسه بین گزارش‌ها تأیید شود.</p><div style={{overflowX:'auto'}}><table><thead><tr><th>دوره</th><th>RTT</th><th>PLR</th><th>Jitter</th></tr></thead><tbody>{data.tic.quarterly.map(x=><tr key={x.id}><td>{x.year} / {x.quarter}</td><td>{fmt(x.rtt)}</td><td>{fmt(x.plr)}</td><td>{fmt(x.jitter)}</td></tr>)}</tbody></table></div></>}
 {tab==='mechanisms'&&<><h3>سازوکارهای پژوهشی تصمیم‌سازی S01</h3><p>این موارد فرضیه‌های پژوهشی هستند؛ اقدامات مصوب S02 یا استنتاج علّی قطعی نیستند.</p><div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(210px,1fr))',gap:12}}>{data.mechanisms.map(x=><article key={x.id} style={{background:'#112d40',borderRadius:12,padding:14}}><strong>{x.id} | {x.name}</strong><p>وضعیت: فرضیه پژوهشی</p></article>)}</div></>}
 </>}</section>;
+
+}
