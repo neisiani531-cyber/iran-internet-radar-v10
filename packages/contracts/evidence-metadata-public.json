@@ -1,0 +1,261 @@
+{
+  "schema_version": "1.0.0",
+  "publication_status": "RESEARCH_METADATA_ONLY_NOT_Q5",
+  "source_repository": "neisiani53-create/iran-internet-research",
+  "source_asset": "05_DASHBOARD/radar_offline_data_bundle_2026-10-15.html",
+  "source_blob_sha": "d353ec05d54c600db184c283076dc84ce7083bc1",
+  "as_of": "2026-10-15",
+  "officially_approved": 0,
+  "observations": [
+    {
+      "evidence_id": "EV-P01-001",
+      "dossier_id": "P01",
+      "source_id": "SRC-P01-001",
+      "description": "جمع رضایت کم و اصلاً رضایت ندارم از عملکرد دولت در بهبود اینترنت",
+      "source_verification_status": "PRIMARY_PDF_FULL_34P_READ_QUESTION_LIST_AVAILABLE",
+      "verification_status": "PRIMARY_OFFICIAL_REPORT_REVIEWED",
+      "linked_claim_ids": [
+        "P01-F001"
+      ],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-P01-002",
+      "dossier_id": "P01",
+      "source_id": "SRC-P01-001",
+      "description": "سهم کاربران ارزیابی‌کننده سرعت اینترنت به‌صورت ضعیف یا خیلی ضعیف",
+      "source_verification_status": "PRIMARY_PDF_FULL_34P_READ_QUESTION_LIST_AVAILABLE",
+      "verification_status": "PRIMARY_OFFICIAL_REPORT_REVIEWED",
+      "linked_claim_ids": [
+        "P01-F002"
+      ],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-P01-003",
+      "dossier_id": "P01",
+      "source_id": "SRC-P01-001",
+      "description": "جمع رضایت کم و اصلاً رضایت ندارم از قیمت بسته‌های اینترنت موبایل",
+      "source_verification_status": "PRIMARY_PDF_FULL_34P_READ_QUESTION_LIST_AVAILABLE",
+      "verification_status": "PRIMARY_OFFICIAL_REPORT_REVIEWED",
+      "linked_claim_ids": [
+        "P01-F002"
+      ],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-P01-004",
+      "dossier_id": "P01",
+      "source_id": "SRC-P01-001",
+      "description": "استفاده از فیلترشکن برای دسترسی به شبکه‌های اجتماعی خارجی",
+      "source_verification_status": "PRIMARY_PDF_FULL_34P_READ_QUESTION_LIST_AVAILABLE",
+      "verification_status": "PRIMARY_OFFICIAL_REPORT_REVIEWED",
+      "linked_claim_ids": [
+        "P01-F003"
+      ],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-P01-005",
+      "dossier_id": "P01",
+      "source_id": "SRC-P01-001",
+      "description": "اولویت رفع فیلترینگ در پاسخ به سؤال نخستین اولویت سیاست‌گذاری اینترنت",
+      "source_verification_status": "PRIMARY_PDF_FULL_34P_READ_QUESTION_LIST_AVAILABLE",
+      "verification_status": "PRIMARY_PDF_VERIFIED_HTML_CATEGORY_RECONCILIATION_PENDING",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T05-ITU-001",
+      "dossier_id": "T05",
+      "source_id": "SRC-T05-ITU-2024",
+      "description": "پوشش جمعیتی 4G/LTE ایران",
+      "source_verification_status": "VERIFIED_IN_PRIOR_RESEARCH",
+      "verification_status": "PRIMARY_REVIEWED",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T05-ITU-002",
+      "dossier_id": "T05",
+      "source_id": "SRC-T05-ITU-2024",
+      "description": "پوشش جمعیتی 5G ایران",
+      "source_verification_status": "VERIFIED_IN_PRIOR_RESEARCH",
+      "verification_status": "PRIMARY_REVIEWED",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-E02-ITU-001",
+      "dossier_id": "E02",
+      "source_id": "SRC-E02-ITU-2025",
+      "description": "استطاعت پرداخت سبد داده صرفاً موبایل 5GB ایران",
+      "source_verification_status": "VERIFIED_IN_PRIOR_RESEARCH",
+      "verification_status": "PRIMARY_REVIEWED",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T04-1405-001",
+      "dossier_id": "T04",
+      "source_id": "SRC-T04-1405-001",
+      "description": "اتصالات فیبر گزارش‌شده",
+      "source_verification_status": "REPORTED_NOT_ADMIN_VERIFIED",
+      "verification_status": "REPORTED_UNVERIFIED",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T04-1405-002",
+      "dossier_id": "T04",
+      "source_id": "SRC-T04-1405-002",
+      "description": "شروع قیمت برخی مودم‌های فیبر",
+      "source_verification_status": "REPORTED_NOT_MARKET_VERIFIED",
+      "verification_status": "REPORTED_UNVERIFIED",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T02-MCI-SPEED",
+      "dossier_id": "T02",
+      "source_id": "SRC-T02-CRC53-1404",
+      "description": "میانگین سرعت دانلود 4G همراه اول",
+      "source_verification_status": "REPORT_TEXT_MATCHED_OFFICIAL_COPY_PENDING",
+      "verification_status": "REPORT_TEXT_MATCHED_REPUBLISHED_PDF",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T02-MCI-DROP",
+      "dossier_id": "T02",
+      "source_id": "SRC-T02-CRC53-1404",
+      "description": "نرخ قطعی سرویس داده 4G همراه اول",
+      "source_verification_status": "REPORT_TEXT_MATCHED_OFFICIAL_COPY_PENDING",
+      "verification_status": "REPORT_TEXT_MATCHED_REPUBLISHED_PDF",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T02-MCI-SETUP",
+      "dossier_id": "T02",
+      "source_id": "SRC-T02-CRC53-1404",
+      "description": "موفقیت برقراری سرویس داده 4G همراه اول",
+      "source_verification_status": "REPORT_TEXT_MATCHED_OFFICIAL_COPY_PENDING",
+      "verification_status": "REPORT_TEXT_MATCHED_REPUBLISHED_PDF",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T02-IR-SPEED",
+      "dossier_id": "T02",
+      "source_id": "SRC-T02-CRC53-1404",
+      "description": "میانگین سرعت دانلود 4G ایرانسل",
+      "source_verification_status": "REPORT_TEXT_MATCHED_OFFICIAL_COPY_PENDING",
+      "verification_status": "REPORT_TEXT_MATCHED_REPUBLISHED_PDF",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T02-IR-DROP",
+      "dossier_id": "T02",
+      "source_id": "SRC-T02-CRC53-1404",
+      "description": "نرخ قطعی سرویس داده 4G ایرانسل",
+      "source_verification_status": "REPORT_TEXT_MATCHED_OFFICIAL_COPY_PENDING",
+      "verification_status": "REPORT_TEXT_MATCHED_REPUBLISHED_PDF",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T02-IR-SETUP",
+      "dossier_id": "T02",
+      "source_id": "SRC-T02-CRC53-1404",
+      "description": "موفقیت برقراری سرویس داده 4G ایرانسل",
+      "source_verification_status": "REPORT_TEXT_MATCHED_OFFICIAL_COPY_PENDING",
+      "verification_status": "REPORT_TEXT_MATCHED_REPUBLISHED_PDF",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T02-RI-SPEED",
+      "dossier_id": "T02",
+      "source_id": "SRC-T02-CRC53-1404",
+      "description": "میانگین سرعت دانلود 4G رایتل",
+      "source_verification_status": "REPORT_TEXT_MATCHED_OFFICIAL_COPY_PENDING",
+      "verification_status": "REPORT_TEXT_MATCHED_REPUBLISHED_PDF",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T02-RI-DROP",
+      "dossier_id": "T02",
+      "source_id": "SRC-T02-CRC53-1404",
+      "description": "نرخ قطعی سرویس داده 4G رایتل",
+      "source_verification_status": "REPORT_TEXT_MATCHED_OFFICIAL_COPY_PENDING",
+      "verification_status": "REPORT_TEXT_MATCHED_REPUBLISHED_PDF",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T02-RI-SETUP",
+      "dossier_id": "T02",
+      "source_id": "SRC-T02-CRC53-1404",
+      "description": "موفقیت برقراری سرویس داده 4G رایتل",
+      "source_verification_status": "REPORT_TEXT_MATCHED_OFFICIAL_COPY_PENDING",
+      "verification_status": "REPORT_TEXT_MATCHED_REPUBLISHED_PDF",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T07-ASN-001",
+      "dossier_id": "T07",
+      "source_id": "SRC-T07-CF-Q2-2025",
+      "description": "تفاوت زمان بازگشت ترافیک شش گروه شبکه در رخداد 17 ژوئن 2025",
+      "source_verification_status": "PUBLIC_REPORT_REVIEWED_RAW_NOT_RETRIEVED",
+      "verification_status": "PUBLIC_PRIMARY_REPORT_REVIEWED_RAW_PENDING",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T07-ASN-002",
+      "dossier_id": "T07",
+      "source_id": "SRC-T07-IODA-20250618-A",
+      "description": "ثبت نشانه پاسخ گویی برخی شبکه ها شامل همراه اول و رایتل هنگام افت عمده",
+      "source_verification_status": "PUBLIC_POST_REVIEWED_RAW_NOT_RETRIEVED",
+      "verification_status": "PUBLIC_PRIMARY_POST_REVIEWED_RAW_PENDING",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    },
+    {
+      "evidence_id": "EV-T07-ASN-003",
+      "dossier_id": "T07",
+      "source_id": "SRC-T07-IODA-20250618-B",
+      "description": "مشاهده گزارش شده بهبود کوتاه مدت سپس بازگشت وضعیت شدید",
+      "source_verification_status": "PUBLIC_POST_REVIEWED_RAW_NOT_RETRIEVED",
+      "verification_status": "PUBLIC_PRIMARY_POST_REVIEWED_RAW_PENDING",
+      "linked_claim_ids": [],
+      "official_dashboard_approved": false,
+      "public_numeric_value": null
+    }
+  ]
+}
