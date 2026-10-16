@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 
 const input = resolve('public/legacy/v9-17.html');
 const html = readFileSync(input, 'utf8');
-const match = html.match(/<script\\b(?=[^>]*\\bid=["']radarPayload["'])[^>]*>([\\s\\S]*?)<\\/script>/i);
+const match = html.match(/<script\b(?=[^>]*\bid=["']radarPayload["'])[^>]*>([\s\S]*?)<\/script>/i);
 if (!match) throw new Error('V9.17 embedded radarPayload was not found');
 const root = JSON.parse(match[1]);
 if (!Array.isArray(root.official) || root.official.length !== 130) {
