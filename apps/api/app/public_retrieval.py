@@ -32,6 +32,8 @@ def retrieve(question, focus="", limit=6):
     action_rank = sorted(bridge["records"], key=lambda x: score(" ".join((x["title"],x["mechanism_id"],x["limitation"],x["proposed_action"]))), reverse=True)
     matched_evidence = [x for x in evidence_rank if score(x["description"]+" "+x["evidence_id"]+" "+x["dossier_id"])>0][:limit]
     matched_actions = [x for x in action_rank if score(x["title"]+" "+x["mechanism_id"]+" "+x["proposed_action"])>0][:3]
+    selected_ids = {ref for action in matched_actions for ref in (([action["user_evidence_id"]] if action["user_evidence_id"] else [])+action["technical_evidence_ids"])}
+    matched_evidence = list({x["evidence_id"]:x for x in ([row for row in rows if row["evidence_id"] in selected_ids] + matched_evidence)}.values())[:limit]
     return {
         "evidence": [{"evidence_id":x["evidence_id"],"source_id":x["source_id"],"title":x["description"],"verification_status":x["verification_status"],"public_numeric_value":None,"q5":"NOT_APPROVED"} for x in matched_evidence],
         "draft_actions": [{"mechanism_id":x["mechanism_id"],"title":x["title"],"linked_evidence":([x["user_evidence_id"]] if x["user_evidence_id"] else [])+x["technical_evidence_ids"],"limitation":x["limitation"],"action":x["proposed_action"],"decision_gate":x["decision_gate"],"status":x["action_status"]} for x in matched_actions],
