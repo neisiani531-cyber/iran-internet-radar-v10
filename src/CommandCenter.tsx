@@ -40,7 +40,7 @@ function Trend({technology}:{technology:Tech}){
 function MetricTile({eyebrow,value,note,trend,icon}:{eyebrow:string,value:string,note:string,trend?:number,icon:string}){
  return <article className="cc-metric"><div className="cc-metric-top"><span className="cc-metric-symbol">{icon}</span><span className="cc-muted">{eyebrow}</span></div><strong>{value}</strong><div className="cc-metric-bottom"><span>{note}</span>{trend!==undefined&&<b className={trend>=0?'cc-up':'cc-down'}>{trend>=0?'+':''}{nf(trend)}٪</b>}</div></article>
 }
-export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mobile'|'qos'|'research')=>void}){
+export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mobile'|'qos'|'research'|'catalog'|'studio'|'researchlab'|'evidence'|'reach'|'services')=>void}){
  const [selectedFinding,setSelectedFinding]=useState<string>(surveyPreview.observations[0].evidence_id);
  const [tech,setTech]=useState<Tech>('FTTx');
  const [mobileMetric,setMobileMetric]=useState<Metric>('active_5g_sites');
@@ -83,6 +83,20 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
    <MetricTile icon="▦" eyebrow="سهم فیبر از اشتراک ثابت" value={nf(share)+'٪'} note="سهم در پایان دوره"/>
   </section>
 
+  <section className="cc-surface" aria-label="دروازه داده و شواهد">
+   <div className="cc-panel-header"><div><span className="cc-overline">NATIONAL DATA INTELLIGENCE</span><h2>از شاخص تا منبع، از شاهد تا تصمیم</h2><p>مسیرهای مستقیم و قابل پیگیری؛ داده رسمی و پژوهش تأییدنشده در یک طبقه قرار نمی‌گیرند.</p></div></div>
+   <div className="cc-data-gateway">
+    {([
+      {id:'catalog',title:'کاتالوگ رسمی',value:'۱۳۰ شاخص',note:'فصلنامه ۵۷ و صفحه منبع'},
+      {id:'studio',title:'آزمایشگاه داده رسمی',value:'۳ اپراتور',note:'پوشش، فیبر، فناوری ثابت و تأخیر'},
+      {id:'mobile',title:'روند اپراتورها',value:'۲۴ فصل',note:'اشتراک پهن‌باند سیار، نه سیم‌کارت فعال'},
+      {id:'evidence',title:'اتاق شواهد',value:String(publicEvidence.observations.length)+' شاهد',note:'فراداده پذیرفته‌شده برای انتشار؛ Q5 صفر'},
+      {id:'researchlab',title:'آزمایشگاه پژوهشی',value:'Tor / TIC',note:'پیش‌نمایش پژوهشی، نه آمار رسمی'},
+      {id:'reach',title:'پوشش و دسترسی',value:'رصد تفصیلی',note:'تفکیک پوشش از تجربه و اشتراک'}
+    ] as const).map(x=><button type="button" className="cc-gateway-item" key={x.id} onClick={()=>onNavigate(x.id)}><span>{x.title}</span><strong>{x.value}</strong><small>{x.note}</small><b>ورود به تحلیل ←</b></button>)}
+   </div>
+   <p className="cc-micro">دسترسی به داده به معنی تأیید علمی نهایی نیست. روابط علّی، مقادیر مفقود و دوره‌های ناهمسان بدون سند معتبر قطعی معرفی نمی‌شوند.</p>
+  </section>
   <section className="cc-surface cc-comparison">
   <div className="cc-panel-header"><div><span className="cc-overline">PERIOD COMPARISON</span><h2>مقایسه دو دوره گزارش</h2><p>تغییرات مطلق و نسبی بر اساس دو فصل انتخابی</p></div><button className="cc-text-button" onClick={()=>setComparisonOpen(!comparisonOpen)} aria-expanded={comparisonOpen}>{comparisonOpen?'جمع‌کردن':'نمایش مقایسه'}</button></div>
   {comparisonOpen&&<><div className="cc-toolbar"><button className="cc-text-button" onClick={exportComparison} disabled={baselineIndex===periodIndex}>دریافت مقایسه CSV ↓</button><label>دوره مبنا <select value={baselineIndex} onChange={e=>setBaselineIndex(Number(e.target.value))}>{metricRows.map((r,i)=><option value={i} key={r.period}>{r.period_label}</option>)}</select></label><label>دوره مقایسه <select value={periodIndex} onChange={e=>setPeriodIndex(Number(e.target.value))}>{metricRows.map((r,i)=><option value={i} key={r.period}>{r.period_label}</option>)}</select></label></div>{baselineIndex===periodIndex?<p>برای مشاهده تغییر، دو دوره متفاوت انتخاب کنید.</p>:<div className="cc-comparison-table"><table><thead><tr><th>شاخص</th><th>مبنا</th><th>مقایسه</th><th>تغییر مطلق</th><th>تغییر درصدی</th></tr></thead><tbody>{[...technologies.map(t=>({label:t.title,a:baseline.technology_values[t.key],b:current.technology_values[t.key]})),{label:'مجموع اینترنت ثابت',a:baseline.reported_total,b:current.reported_total}].map(row=><tr key={row.label}><td>{row.label}</td><td>{nf(row.a)}</td><td>{nf(row.b)}</td><td className={row.b-row.a>=0?'cc-up':'cc-down'}>{row.b-row.a>=0?'+':''}{nf(row.b-row.a)}</td><td className={row.b-row.a>=0?'cc-up':'cc-down'}>{row.b-row.a>=0?'+':''}{nf(ratio(row.b,row.a))}٪</td></tr>)}</tbody></table></div>}</>}
