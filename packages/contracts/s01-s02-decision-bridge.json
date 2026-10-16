@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "as_of": "2026-10-16",
   "status": "PROPOSED_S01_TO_S02_WORKING_LINK_NOT_Q5",
   "source_research": "04_SYNTHESIS/S01_DISSATISFACTION_MECHANISM_MATRIX_V02_2026-10-15.md",
@@ -25,7 +25,17 @@
       "baseline_kpi": null,
       "target_kpi": null,
       "budget": null,
-      "approval_required": true
+      "approval_required": true,
+      "implementation_prerequisite": "تعریف جمعیت هدف و دوره مشترک پیمایش و سنجش شبکه؛ دسترسی قانونی به نمونه‌های تجمیعی",
+      "evaluation_indicator_definition": "توزیع شاخص‌های سرعت، RTT و اتلاف بسته در ساعات اوج به تفکیک فناوری و اپراتور",
+      "principal_risk": "خطای نمونه‌گیری و انتساب نادرست مسئولیت کیفیت",
+      "decision_gate": "اعتبارسنجی روش QoE و امکان تطبیق با پرسشنامه",
+      "timeline_30_days": "تکمیل تعریف، مسئولیت پیشنهادی و نیاز داده برای بررسی",
+      "timeline_90_days": "اجرای طرح نمونه/پایلوت صرفاً پس از تأیید قانونی و روش‌شناختی",
+      "timeline_180_days": "ارزیابی نتایج پایلوت، کیفیت داده و امکان تعمیم، مشروط به تأمین شواهد",
+      "timeline_365_days": "پیشنهاد برنامه تداوم/گسترش فقط پس از ارزیابی و تصویب",
+      "legal_owner_verification": "PENDING_G02_ORIGINAL_LEGAL_INSTRUMENT",
+      "risk_assessment_status": "PRELIMINARY_NOT_VALIDATED"
     },
     {
       "mechanism_id": "M02",
@@ -41,7 +51,17 @@
       "baseline_kpi": null,
       "target_kpi": null,
       "budget": null,
-      "approval_required": true
+      "approval_required": true,
+      "implementation_prerequisite": "بررسی متن مصوبات و صلاحیت نهادهای ذی‌ربط؛ تعریف دسته خدمات مجاز برای آزمون",
+      "evaluation_indicator_definition": "نسبت آزمون‌های دارای علت اختلال طبقه‌بندی‌شده به کل آزمون‌های معتبر",
+      "principal_risk": "اختلاط انسداد خدمت با خرابی فنی یا محدودیت خارجی",
+      "decision_gate": "تأیید چارچوب قانونی و پروتکل آزمون دسترسی",
+      "timeline_30_days": "تکمیل تعریف، مسئولیت پیشنهادی و نیاز داده برای بررسی",
+      "timeline_90_days": "اجرای طرح نمونه/پایلوت صرفاً پس از تأیید قانونی و روش‌شناختی",
+      "timeline_180_days": "ارزیابی نتایج پایلوت، کیفیت داده و امکان تعمیم، مشروط به تأمین شواهد",
+      "timeline_365_days": "پیشنهاد برنامه تداوم/گسترش فقط پس از ارزیابی و تصویب",
+      "legal_owner_verification": "PENDING_G02_ORIGINAL_LEGAL_INSTRUMENT",
+      "risk_assessment_status": "PRELIMINARY_NOT_VALIDATED"
     },
     {
       "mechanism_id": "M03",
@@ -61,7 +81,17 @@
       "baseline_kpi": null,
       "target_kpi": null,
       "budget": null,
-      "approval_required": true
+      "approval_required": true,
+      "implementation_prerequisite": "گردآوری سری زمانی اولیه دارای منشأ و ثبت یکسان UTC؛ تعریف رخداد و بازیابی",
+      "evaluation_indicator_definition": "زمان بازیابی جزئی و کامل برای هر دسته خدمت، بدون تجمیع نابه‌جا",
+      "principal_risk": "تفسیر پاسخ‌دهی نسبی به‌عنوان بازیابی کامل و سوگیری مشاهده‌گر",
+      "decision_gate": "بازاجرای مستقل دست‌کم یک رخداد بر داده خام",
+      "timeline_30_days": "تکمیل تعریف، مسئولیت پیشنهادی و نیاز داده برای بررسی",
+      "timeline_90_days": "اجرای طرح نمونه/پایلوت صرفاً پس از تأیید قانونی و روش‌شناختی",
+      "timeline_180_days": "ارزیابی نتایج پایلوت، کیفیت داده و امکان تعمیم، مشروط به تأمین شواهد",
+      "timeline_365_days": "پیشنهاد برنامه تداوم/گسترش فقط پس از ارزیابی و تصویب",
+      "legal_owner_verification": "PENDING_G02_ORIGINAL_LEGAL_INSTRUMENT",
+      "risk_assessment_status": "PRELIMINARY_NOT_VALIDATED"
     },
     {
       "mechanism_id": "M04",
@@ -79,7 +109,17 @@
       "baseline_kpi": null,
       "target_kpi": null,
       "budget": null,
-      "approval_required": true
+      "approval_required": true,
+      "implementation_prerequisite": "تعریف واحد خانوار/کاربر، دوره مصرف و داده پرداخت واقعی با حریم خصوصی",
+      "evaluation_indicator_definition": "هزینه مؤثر استفاده بر حسب فناوری و سبد مصرف، با توزیع گروه‌های درآمدی",
+      "principal_risk": "اتکا به قیمت آگهی یا برآورد بازار به‌جای پرداخت واقعی",
+      "decision_gate": "تأیید مخرج، نمونه و سناریوهای حساسیت",
+      "timeline_30_days": "تکمیل تعریف، مسئولیت پیشنهادی و نیاز داده برای بررسی",
+      "timeline_90_days": "اجرای طرح نمونه/پایلوت صرفاً پس از تأیید قانونی و روش‌شناختی",
+      "timeline_180_days": "ارزیابی نتایج پایلوت، کیفیت داده و امکان تعمیم، مشروط به تأمین شواهد",
+      "timeline_365_days": "پیشنهاد برنامه تداوم/گسترش فقط پس از ارزیابی و تصویب",
+      "legal_owner_verification": "PENDING_G02_ORIGINAL_LEGAL_INSTRUMENT",
+      "risk_assessment_status": "PRELIMINARY_NOT_VALIDATED"
     },
     {
       "mechanism_id": "M05",
@@ -98,7 +138,17 @@
       "baseline_kpi": null,
       "target_kpi": null,
       "budget": null,
-      "approval_required": true
+      "approval_required": true,
+      "implementation_prerequisite": "تفکیک پوشش جمعیتی، اشتراک فعال و کیفیت تجربه؛ همسان‌سازی جغرافیا و زمان",
+      "evaluation_indicator_definition": "پوشش، اتصال فعال و QoE به‌صورت سه شاخص مجزا با داده‌مفقود مشخص",
+      "principal_risk": "استنتاج کیفیت از پوشش یا ایجاد نقشه استانی بدون نمونه معتبر",
+      "decision_gate": "تأیید تعاریف و کفایت نمونه منطقه‌ای",
+      "timeline_30_days": "تکمیل تعریف، مسئولیت پیشنهادی و نیاز داده برای بررسی",
+      "timeline_90_days": "اجرای طرح نمونه/پایلوت صرفاً پس از تأیید قانونی و روش‌شناختی",
+      "timeline_180_days": "ارزیابی نتایج پایلوت، کیفیت داده و امکان تعمیم، مشروط به تأمین شواهد",
+      "timeline_365_days": "پیشنهاد برنامه تداوم/گسترش فقط پس از ارزیابی و تصویب",
+      "legal_owner_verification": "PENDING_G02_ORIGINAL_LEGAL_INSTRUMENT",
+      "risk_assessment_status": "PRELIMINARY_NOT_VALIDATED"
     },
     {
       "mechanism_id": "M06",
@@ -114,7 +164,18 @@
       "baseline_kpi": null,
       "target_kpi": null,
       "budget": null,
-      "approval_required": true
+      "approval_required": true,
+      "implementation_prerequisite": "اعتبارسنجی نمونه بنگاه‌ها و مشاهده فروش واقعی؛ کنترل اثر اقتصاد کلان",
+      "evaluation_indicator_definition": "شاخص تداوم خدمت و فعالیت واقعی بنگاه در دوره‌های تعریف‌شده",
+      "principal_risk": "تعمیم خروجی نمونه پلتفرمی به تمام کسب‌وکارها",
+      "decision_gate": "پروتکل پنل ناشناس و اعتبارسنجی شاخص فعالیت",
+      "timeline_30_days": "تکمیل تعریف، مسئولیت پیشنهادی و نیاز داده برای بررسی",
+      "timeline_90_days": "اجرای طرح نمونه/پایلوت صرفاً پس از تأیید قانونی و روش‌شناختی",
+      "timeline_180_days": "ارزیابی نتایج پایلوت، کیفیت داده و امکان تعمیم، مشروط به تأمین شواهد",
+      "timeline_365_days": "پیشنهاد برنامه تداوم/گسترش فقط پس از ارزیابی و تصویب",
+      "legal_owner_verification": "PENDING_G02_ORIGINAL_LEGAL_INSTRUMENT",
+      "risk_assessment_status": "PRELIMINARY_NOT_VALIDATED"
     }
-  ]
+  ],
+  "details_status": "PROPOSED_WORKPLAN_NOT_APPROVED"
 }
