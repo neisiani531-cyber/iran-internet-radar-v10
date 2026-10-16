@@ -193,3 +193,6 @@ def get_historical_research(dossier: str | None = None):
 def get_public_research_relations():
     from app.research_adapter import public_research_relations
     return public_research_relations()
+
+from app.assistant_api import router as assistant_router
+app.include_router(assistant_router)
