@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "source": "CRA57_V9_130_metric_inventory.csv",
+  "source_report": "CRA57 Spring 1405 (28 pages)",
+  "expected_total": 130,
+  "groups": [
+    {
+      "id": "mobile",
+      "count": 54
+    },
+    {
+      "id": "fixed",
+      "count": 18
+    },
+    {
+      "id": "overview",
+      "count": 16
+    },
+    {
+      "id": "services",
+      "count": 16
+    },
+    {
+      "id": "other",
+      "count": 10
+    },
+    {
+      "id": "quality",
+      "count": 8
+    },
+    {
+      "id": "reach",
+      "count": 5
+    },
+    {
+      "id": "citizen",
+      "count": 3
+    }
+  ],
+  "migration_status": "PARTIAL_UNDER_QA",
+  "rules": [
+    "A V9 row is not an approved V10 metric until its page, period, unit, denominator and method have been checked.",
+    "Do not infer time series from single-quarter results.",
+    "Do not combine mobile subscriptions, active lines, population coverage and quality experience.",
+    "The inventory is a migration target, not a claim that 130 rows have passed QA."
+  ],
+  "current_imports": [
+    "public-fixed-access.snapshot.json",
+    "public-mobile-operators.snapshot.json",
+    "qos-metric-catalog.json",
+    "cra57-operator-expanded.json",
+    "cra57-mobile-broadband-history.json",
+    "cra57-latency-quality.snapshot.json"
+  ]
+}
