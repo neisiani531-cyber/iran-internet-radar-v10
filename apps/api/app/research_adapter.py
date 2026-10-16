@@ -69,3 +69,28 @@ def historical_research_snapshot(dossier: str | None = None):
             "summary": data["summary"], "observations": filtered,
             "officially_approved": 0, "blocked_financial": 6,
             "note": "Historical research preview. E01 numeric values redacted; never a national KPI."}
+
+def public_research_relations():
+    """Public-source projection: no private claim/conflict register is loaded."""
+    graph = _read("research-public-relations.json")
+    evidence = _read("evidence-metadata-public.json")
+    if graph.get("officially_approved") != 0 or graph.get("scope") != "PUBLIC_ALREADY_ADMITTED_REFERENCES_ONLY":
+        raise ValueError("Public graph publication gate violated")
+    if graph.get("conflict_content_status") != "NOT_PUBLISHED_PENDING_EXPLICIT_ADMISSION":
+        raise ValueError("Private conflicts cannot be published")
+    rows = evidence["observations"]
+    ids = {x["evidence_id"] for x in rows}
+    if len(ids) != len(rows):
+        raise ValueError("Duplicate evidence IDs")
+    source_pairs = {(x["source_id"], x["evidence_id"]) for x in rows}
+    actual_pairs = {(x["source_id"], x["evidence_id"]) for x in graph["source_evidence_links"]}
+    claim_pairs = {(claim, x["evidence_id"]) for x in rows for claim in x.get("linked_claim_ids", [])}
+    actual_claim_pairs = {(x["claim_id"], x["evidence_id"]) for x in graph["claim_evidence_links"]}
+    if source_pairs != actual_pairs or claim_pairs != actual_claim_pairs:
+        raise ValueError("Graph relationships diverge from admitted public evidence metadata")
+    if set(graph["claim_ids"]) != {pair[0] for pair in claim_pairs}:
+        raise ValueError("Claim registry mismatch")
+    return {"status": graph["publication_status"], "officially_approved": 0,
+            "evidence_count": len(rows), "source_links": graph["source_evidence_links"],
+            "claim_links": graph["claim_evidence_links"], "claim_ids": graph["claim_ids"],
+            "conflicts": [], "conflict_content_status": graph["conflict_content_status"]}
