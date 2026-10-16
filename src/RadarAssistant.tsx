@@ -21,7 +21,7 @@ function localSourceAnswer(q:string,page:string){
  if(/منبع|سند|از کجا|اعتبار|شاهد/.test(normalized))return 'اطلاعات این صفحه از قراردادهای منبع‌دار رادار استخراج شده‌اند. دفتر عمومی فعلاً '+evidence.observations.length+' شاهد دارد؛ پذیرش علمی نهایی پژوهش‌ها Q5 هنوز صفر است. در اتاق شواهد می‌توان شناسه منبع و وضعیت بررسی هر شاهد را دید. برای پاسخ مستند درباره یک عدد، عنوان همان شاخص را بنویسید.';
  return 'شما در بخش «'+page+'» هستید. می‌توانم در حالت محدود، منشأ برخی شاخص‌های ثبت‌شده را توضیح بدهم؛ اما این حالت یک مدل زبانی عمومی نیست و پاسخ آزاد و استدلالی قابل اتکا ارائه نمی‌کند. برای گفت‌وگوی طبیعی باید سرور امن مدل زبانی پیکربندی شود. سؤال مشخص درباره یک شاخص یا منبع بپرسید.';
 }
-export default function RadarAssistant({area}:{area:string}){
+export default function RadarAssistant({area,focus}:{area:string;focus:string}){
  const [open,setOpen]=useState(false);
  const [question,setQuestion]=useState('');
  const [busy,setBusy]=useState(false);
@@ -32,7 +32,7 @@ export default function RadarAssistant({area}:{area:string}){
   let answer='';
   if(endpoint){
    try{
-    const response=await fetch(endpoint+'/api/v1/assistant/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,page:area,history})});
+    const response=await fetch(endpoint+'/api/v1/assistant/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,page:area,focus,history})});
     if(!response.ok)throw Error('Assistant service unavailable');
     const payload=await response.json();
     answer=typeof payload.answer==='string'?payload.answer:'پاسخی از سرور دریافت نشد.';
@@ -41,7 +41,7 @@ export default function RadarAssistant({area}:{area:string}){
   setMessages(old=>[...old,{role:'assistant',content:answer}]);setBusy(false);
  };
  return <><button id="radar-assistant-toggle" className="ra-fab" onClick={()=>setOpen(x=>!x)} aria-expanded={open} aria-label="گشودن دستیار رادار">✦ دستیار هوشمند</button>
- {open&&<section className="ra-window" dir="rtl" aria-label="دستیار رادار"><div className="ra-header"><div><strong>دستیار رادار</strong><small>زمینه فعلی: {titles[area]||area} · {endpoint?'سرور قابل پیکربندی':'راهنمای محدود، بدون مدل زبانی'}</small></div><button onClick={()=>setOpen(false)} aria-label="بستن">×</button></div>
+ {open&&<section className="ra-window" dir="rtl" aria-label="دستیار رادار"><div className="ra-header"><div><strong>دستیار رادار</strong><small>زمینه فعلی: {titles[area]||area} · {focus} · {endpoint?'سرور قابل پیکربندی':'راهنمای محدود، بدون مدل زبانی'}</small></div><button onClick={()=>setOpen(false)} aria-label="بستن">×</button></div>
  <div className="ra-messages" role="log" aria-live="polite">{messages.map((m,i)=><div className={'ra-message '+m.role} key={i}>{m.content}</div>)}{busy&&<p>در حال بررسی پرسش…</p>}</div>
  <form className="ra-form" onSubmit={e=>{e.preventDefault();void send()}}><input value={question} onChange={e=>setQuestion(e.target.value)} placeholder="این شاخص چیست؟ منبعش کجاست؟" aria-label="پرسش از دستیار"/><button type="submit" disabled={!question.trim()||busy}>ارسال</button></form></section>}</>;
 }
