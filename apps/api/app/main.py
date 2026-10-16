@@ -171,3 +171,12 @@ def evidence_metadata(dossier: str | None = None):
         entries = [entry for entry in entries if entry["dossier_id"] == dossier]
     return {"count": len(entries), "status": data["publication_status"],
             "officially_approved": data["officially_approved"], "entries": entries}
+
+
+@app.get('/api/v1/research-snapshot')
+def get_research_snapshot(dossier: str | None = None):
+    from app.research_adapter import research_snapshot
+    try:
+        return research_snapshot(dossier)
+    except ValueError as exc:
+        raise HTTPException(status_code=503, detail='Research admission validation failed') from exc
