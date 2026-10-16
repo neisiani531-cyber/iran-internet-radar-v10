@@ -75,14 +75,6 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
    </div>
    <div className="cc-hero-visual" aria-hidden="true"><div className="cc-orbit cc-orbit-a"/><div className="cc-orbit cc-orbit-b"/><div className="cc-orbit cc-orbit-c"/><div className="cc-radar-sweep"/><div className="cc-radar-center"><span>IR</span><small>RADAR</small></div><span className="cc-dot d1"/><span className="cc-dot d2"/><span className="cc-dot d3"/><span className="cc-dot d4"/></div>
   </section>
-  <div className="cc-section-name"><span>نمای کلان ملی</span><div className="cc-toolbar"><label>دوره اینترنت ثابت <select value={periodIndex} onChange={e=>setPeriodIndex(Number(e.target.value))}>{metricRows.map((r,i)=><option key={r.period} value={i}>{r.period_label}</option>)}</select></label><button onClick={exportCsv} className="cc-text-button">دریافت CSV پنج‌فصلی ↓</button><button onClick={printReport} className="cc-text-button">چاپ گزارش مدیریتی</button></div></div>
-  <section className="cc-metrics">
-   <MetricTile icon="◈" eyebrow="اشتراک اینترنت ثابت" value={nf(current.reported_total)} note={periodIndex===0?"دوره مبنا":"تغییر نسبت به فصل قبل"} trend={changeFromPrevious}/>
-   <MetricTile icon="◇" eyebrow="اشتراک فیبر نوری FTTx" value={nf(current.technology_values.FTTx)} note={periodIndex===0?"دوره مبنا":"تغییر نسبت به فصل قبل"} trend={currentFiberChange}/>
-   <MetricTile icon="◎" eyebrow="سایت فعال 5G · بهار ۱۴۰۵" value={nf(sites)} note="مجموع سه اپراتور گزارش‌شده"/>
-   <MetricTile icon="▦" eyebrow="سهم فیبر از اشتراک ثابت" value={nf(share)+'٪'} note="سهم در پایان دوره"/>
-  </section>
-
   <section className="cc-surface" aria-label="دروازه داده و شواهد">
    <div className="cc-panel-header"><div><span className="cc-overline">NATIONAL DATA INTELLIGENCE</span><h2>از شاخص تا منبع، از شاهد تا تصمیم</h2><p>مسیرهای مستقیم و قابل پیگیری؛ داده رسمی و پژوهش تأییدنشده در یک طبقه قرار نمی‌گیرند.</p></div></div>
    <div className="cc-data-gateway">
@@ -97,6 +89,14 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
    </div>
    <p className="cc-micro">دسترسی به داده به معنی تأیید علمی نهایی نیست. روابط علّی، مقادیر مفقود و دوره‌های ناهمسان بدون سند معتبر قطعی معرفی نمی‌شوند.</p>
   </section>
+  <div className="cc-section-name"><span>نمای کلان ملی</span><div className="cc-toolbar"><label>دوره اینترنت ثابت <select value={periodIndex} onChange={e=>setPeriodIndex(Number(e.target.value))}>{metricRows.map((r,i)=><option key={r.period} value={i}>{r.period_label}</option>)}</select></label><button onClick={exportCsv} className="cc-text-button">دریافت CSV پنج‌فصلی ↓</button><button onClick={printReport} className="cc-text-button">چاپ گزارش مدیریتی</button></div></div>
+  <section className="cc-metrics">
+   <MetricTile icon="◈" eyebrow="اشتراک اینترنت ثابت" value={nf(current.reported_total)} note={periodIndex===0?"دوره مبنا":"تغییر نسبت به فصل قبل"} trend={changeFromPrevious}/>
+   <MetricTile icon="◇" eyebrow="اشتراک فیبر نوری FTTx" value={nf(current.technology_values.FTTx)} note={periodIndex===0?"دوره مبنا":"تغییر نسبت به فصل قبل"} trend={currentFiberChange}/>
+   <MetricTile icon="◎" eyebrow="سایت فعال 5G · بهار ۱۴۰۵" value={nf(sites)} note="مجموع سه اپراتور گزارش‌شده"/>
+   <MetricTile icon="▦" eyebrow="سهم فیبر از اشتراک ثابت" value={nf(share)+'٪'} note="سهم در پایان دوره"/>
+  </section>
+
   <section className="cc-surface cc-comparison">
   <div className="cc-panel-header"><div><span className="cc-overline">PERIOD COMPARISON</span><h2>مقایسه دو دوره گزارش</h2><p>تغییرات مطلق و نسبی بر اساس دو فصل انتخابی</p></div><button className="cc-text-button" onClick={()=>setComparisonOpen(!comparisonOpen)} aria-expanded={comparisonOpen}>{comparisonOpen?'جمع‌کردن':'نمایش مقایسه'}</button></div>
   {comparisonOpen&&<><div className="cc-toolbar"><button className="cc-text-button" onClick={exportComparison} disabled={baselineIndex===periodIndex}>دریافت مقایسه CSV ↓</button><label>دوره مبنا <select value={baselineIndex} onChange={e=>setBaselineIndex(Number(e.target.value))}>{metricRows.map((r,i)=><option value={i} key={r.period}>{r.period_label}</option>)}</select></label><label>دوره مقایسه <select value={periodIndex} onChange={e=>setPeriodIndex(Number(e.target.value))}>{metricRows.map((r,i)=><option value={i} key={r.period}>{r.period_label}</option>)}</select></label></div>{baselineIndex===periodIndex?<p>برای مشاهده تغییر، دو دوره متفاوت انتخاب کنید.</p>:<div className="cc-comparison-table"><table><thead><tr><th>شاخص</th><th>مبنا</th><th>مقایسه</th><th>تغییر مطلق</th><th>تغییر درصدی</th></tr></thead><tbody>{[...technologies.map(t=>({label:t.title,a:baseline.technology_values[t.key],b:current.technology_values[t.key]})),{label:'مجموع اینترنت ثابت',a:baseline.reported_total,b:current.reported_total}].map(row=><tr key={row.label}><td>{row.label}</td><td>{nf(row.a)}</td><td>{nf(row.b)}</td><td className={row.b-row.a>=0?'cc-up':'cc-down'}>{row.b-row.a>=0?'+':''}{nf(row.b-row.a)}</td><td className={row.b-row.a>=0?'cc-up':'cc-down'}>{row.b-row.a>=0?'+':''}{nf(ratio(row.b,row.a))}٪</td></tr>)}</tbody></table></div>}</>}
