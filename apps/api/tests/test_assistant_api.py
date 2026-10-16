@@ -22,6 +22,9 @@ def test_model_receives_page_and_public_evidence_not_secret(monkeypatch):
     assert response.json()["q5_approved"]==0
     assert "EV-P01-002" in captured["messages"][1]["content"]
     assert "research" in captured["messages"][1]["content"]
+    assert "M01" in captured["messages"][1]["content"]
+    assert "DRAFT_FOR_REVIEW_NOT_APPROVED" in captured["messages"][1]["content"]
+    assert "NOT_STARTED" in captured["messages"][1]["content"]
     assert all("test-placeholder" not in m["content"] for m in captured["messages"])
 
 def test_rejects_long_questions():
