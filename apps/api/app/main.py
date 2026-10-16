@@ -215,3 +215,7 @@ async def _start_ris():
 @app.on_event('shutdown')
 async def _stop_ris():
     await ris_live.stop()
+
+
+from app.regulatory_history import router as regulatory_router
+app.include_router(regulatory_router)
