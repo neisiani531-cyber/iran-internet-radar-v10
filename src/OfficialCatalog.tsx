@@ -1,10 +1,12 @@
 import React, {useEffect,useMemo,useState} from 'react';
+import SourcePageViewer from './SourcePageViewer';
 
 type Metric = {id:string;group:string;label:string;en?:string;value:number;unit:string;period:string;page:number;source:string;status:string;denominator?:string;method?:string;note?:string};
 type Catalog = {total:number;admission:string;groups:Record<string,number>;observations:Metric[]};
 const groupFa:Record<string,string>={mobile:'شبکه سیار',fixed:'اینترنت ثابت',overview:'شاخص‌های کلان',services:'خدمات',other:'سایر',quality:'کیفیت شبکه',reach:'دسترسی و پوشش',citizen:'خدمات شهروندی'};
 const number=(x:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:3}).format(x);
 export default function OfficialCatalog({initialGroup='all'}:{initialGroup?:string}){
+  const [pageOpen,setPageOpen]=useState(false);
   const [data,setData]=useState<Catalog|null>(null),[error,setError]=useState(''),[query,setQuery]=useState(''),[group,setGroup]=useState(initialGroup),[period,setPeriod]=useState('all'),[selected,setSelected]=useState<Metric|null>(null);
   useEffect(()=>{const controller=new AbortController();fetch(new URL('data/v917-official-catalog.json', document.baseURI).toString(),{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then((r:Catalog)=>{if(r.total!==130||r.observations.length!==130||new Set(r.observations.map(x=>x.id)).size!==130)throw Error('Catalog integrity failed');setData(r)}).catch(e=>{if(e.name!=='AbortError')setError(String(e))});return()=>controller.abort()},[]);
   const periods=useMemo(()=>[...new Set(data?.observations.map(x=>x.period)||[])].sort(),[data]);
@@ -35,7 +37,7 @@ export default function OfficialCatalog({initialGroup='all'}:{initialGroup?:stri
       </div>
     })()}
     <div style={{overflowX:'auto'}}><table style={{width:'100%'}}><thead><tr><th>شاخص</th><th>مقدار</th><th>واحد</th><th>دوره</th><th>صفحه</th><th>جزئیات</th></tr></thead><tbody>{rows.map(x=><tr key={x.id}><td>{x.label}<small style={{display:'block',opacity:.65}}>{x.id}</small></td><td>{number(x.value)}</td><td>{x.unit}</td><td>{x.period}</td><td>{number(x.page)}</td><td><button type="button" onClick={()=>setSelected(x)}>شناسنامه</button></td></tr>)}</tbody></table></div>
-    {selected&&<div className="detail" style={{marginTop:20,padding:16,border:'1px solid #557184',borderRadius:12}}><button onClick={()=>setSelected(null)} style={{float:'left'}}>بستن ×</button><h3>{selected.label}</h3><p>شناسه: {selected.id} | مقدار: {number(selected.value)} {selected.unit}</p><p>دوره: {selected.period} | منبع: فصلنامه ۵۷ رگولاتوری، صفحه {number(selected.page)}</p><p>تعریف مخرج: {selected.denominator||'ثبت نشده'}</p><p>روش: {selected.method||'ثبت نشده'}</p><p>وضعیت منبع: {selected.status} | تطبیق تصویری نهایی: انجام‌نشده</p><p><a href="/iran-internet-radar-v10/legacy/v9-17.html" target="_blank" rel="noreferrer">بازکردن نسخه مرجع V9.17 برای بررسی صفحه {number(selected.page)} ↗</a></p><p>شماره صفحه برای مراجعه دستی به گزارش است؛ پیوند بالا مستقیماً به همان صفحه پرش نمی‌کند.</p>{selected.note&&<p>{selected.note}</p>}</div>}
+    {selected&&<div className="detail" style={{marginTop:20,padding:16,border:'1px solid #557184',borderRadius:12}}><button onClick={()=>setSelected(null)} style={{float:'left'}}>بستن ×</button><h3>{selected.label}</h3><p>شناسه: {selected.id} | مقدار: {number(selected.value)} {selected.unit}</p><p>دوره: {selected.period} | منبع: فصلنامه ۵۷ رگولاتوری، صفحه {number(selected.page)}</p><p>تعریف مخرج: {selected.denominator||'ثبت نشده'}</p><p>روش: {selected.method||'ثبت نشده'}</p><p>وضعیت منبع: {selected.status} | تطبیق تصویری نهایی: انجام‌نشده</p><p><a href="/iran-internet-radar-v10/legacy/v9-17.html" target="_blank" rel="noreferrer">بازکردن نسخه مرجع V9.17 برای بررسی صفحه {number(selected.page)} ↗</a></p><button type="button" onClick={()=>setPageOpen(v=>!v)}>مشاهده متن صفحه {number(selected.page)} در رادار</button><p>متن صفحه به‌صورت مستقل قابل مشاهده است؛ برای کنترل جدول و تصویر منبع از نسخه مرجع استفاده کنید.</p>{selected.note&&<p>{selected.note}</p>}{pageOpen&&<SourcePageViewer page={selected.page} onClose={()=>setPageOpen(false)}/>}</div>}
     </>}
   </section>;
 }
