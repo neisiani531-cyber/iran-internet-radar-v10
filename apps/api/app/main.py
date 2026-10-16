@@ -12,8 +12,9 @@ from pydantic import BaseModel, Field
 
 app = FastAPI(title="Iran Internet Radar V10 Public API", version="0.1.0")
 assistant_frontend = os.environ.get("RADAR_ASSISTANT_FRONTEND_ORIGIN", "").strip()
-if assistant_frontend:
-    app.add_middleware(CORSMiddleware, allow_origins=[assistant_frontend], allow_methods=["POST"], allow_headers=["Content-Type"])
+allowed_origins = [origin for origin in [assistant_frontend, os.environ.get("RADAR_LIVE_FRONTEND_ORIGIN", "").strip()] if origin]
+if allowed_origins:
+    app.add_middleware(CORSMiddleware, allow_origins=list(set(allowed_origins)), allow_methods=["GET", "POST"], allow_headers=["Content-Type"])
 
 
 Technology = Literal["FTTx", "XDSL", "TDLTE", "WiFi"]
