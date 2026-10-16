@@ -9,6 +9,7 @@ export default function EvidenceRoom(){
  const items=evidence.observations.filter(x=>(sourceFilter==='all'||x.source_id===sourceFilter)&&(x.description+' '+x.evidence_id+' '+x.dossier_id+' '+x.source_id).includes(q));
  const current=evidence.observations.find(x=>x.evidence_id===selected);
  const claims=graph.claim_evidence_links.filter(x=>x.evidence_id===selected);
+ const claimSiblings=graph.claim_evidence_links.filter(x=>claims.some(c=>c.claim_id===x.claim_id)&&x.evidence_id!==selected);
  const siblings=graph.source_evidence_links.filter(x=>x.source_id===current?.source_id&&x.evidence_id!==selected);
  return <section dir="rtl" style={{padding:24}}>
   <h1>اتاق شواهد و ردیابی پژوهش</h1><p>مسیر سند، شاهد و ادعا در داده‌های پژوهشی قابل انتشار. هیچ یک از این شواهد تأیید نهایی Q5 ندارند.</p>
@@ -21,6 +22,7 @@ export default function EvidenceRoom(){
   <p>وضعیت بررسی: {current.verification_status}</p>
   <h3>ادعاهای متصل</h3><p>{claims.length?claims.map(x=>x.claim_id).join('، '):'ادعای مرتبط در قرارداد عمومی ثبت نشده است.'}</p>
   <h3>شواهد دیگر همین منبع</h3>{siblings.length?siblings.map(x=><button key={x.evidence_id} onClick={()=>{setSelected(x.evidence_id);setSourceFilter('all');setQ('')}} style={{display:'block',margin:'8px 0'}}>{x.evidence_id}</button>):<p>مورد دیگری ثبت نشده است.</p>}
+  <h3>شواهد متصل به همین ادعا</h3>{claimSiblings.length?claimSiblings.map(x=><button key={x.claim_id+x.evidence_id} onClick={()=>{setSelected(x.evidence_id);setSourceFilter('all');setQ('')}} style={{display:'block',margin:'8px 0'}}>{x.claim_id} ← {x.evidence_id}</button>):<p>شاهد هم‌ادعای دیگری ثبت نشده است.</p>}
   <h3>تعارض‌های پژوهشی</h3><p>متن تعارض‌ها در قرارداد عمومی منتشر نشده است. نبود اطلاعات به معنی رفع تعارض نیست.</p>
   <p>وضعیت علمی: پژوهشی و تأییدنشده برای شاخص رسمی.</p></>}</article></div>
  </section>;
