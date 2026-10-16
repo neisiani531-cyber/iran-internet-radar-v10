@@ -37,6 +37,7 @@ jobs:
           python packages/contracts/validate_mobile.py
           python packages/contracts/validate_research.py
           python packages/contracts/validate_p01_registry.py
+          python packages/contracts/validate_source_admission.py
           python packages/contracts/validate_qos.py
       - name: Install API and test dependencies
         run: python -m pip install -r requirements-dev.txt
