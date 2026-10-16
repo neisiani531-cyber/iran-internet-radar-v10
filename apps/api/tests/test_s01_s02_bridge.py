@@ -19,3 +19,7 @@ def test_decision_bridge_has_six_distinct_mechanisms_and_valid_evidence():
         assert x["approval_required"] is True
         assert x["action_status"]=="DRAFT_FOR_REVIEW_NOT_APPROVED"
         assert x["comparability_gate"]!="SAME_PERIOD_VERIFIED"
+        for name in ("implementation_prerequisite","evaluation_indicator_definition","principal_risk","decision_gate","timeline_30_days","timeline_90_days","timeline_180_days","timeline_365_days"):
+            assert isinstance(x[name],str) and len(x[name])>15
+        assert x["legal_owner_verification"]=="PENDING_G02_ORIGINAL_LEGAL_INSTRUMENT"
+        assert x["risk_assessment_status"]=="PRELIMINARY_NOT_VALIDATED"
