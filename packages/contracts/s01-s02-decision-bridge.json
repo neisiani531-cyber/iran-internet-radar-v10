@@ -1,0 +1,120 @@
+{
+  "schema_version": "0.1.0",
+  "as_of": "2026-10-16",
+  "status": "PROPOSED_S01_TO_S02_WORKING_LINK_NOT_Q5",
+  "source_research": "04_SYNTHESIS/S01_DISSATISFACTION_MECHANISM_MATRIX_V02_2026-10-15.md",
+  "source_s02": "04_ANALYSIS/S02_ACTION_ROADMAP.md",
+  "s02_source_status": "NOT_STARTED",
+  "no_policy_approval": true,
+  "records": [
+    {
+      "mechanism_id": "M01",
+      "title": "کیفیت تجربه اینترنت",
+      "user_evidence_id": "EV-P01-002",
+      "technical_evidence_ids": [
+        "EV-T02-MCI-SPEED",
+        "EV-T02-IR-SPEED",
+        "EV-T02-RI-SPEED"
+      ],
+      "comparability_gate": "NOT_SAME_PERIOD",
+      "limitation": "پیمایش تجربه سرعت مربوط به ۱۴۰۵ است؛ شاخص‌های 4G فصل بهار ۱۴۰۴ نمونه و دوره متفاوت دارند.",
+      "proposed_action": "تعریف شاخص کیفیت تجربه کاربران و گردآوری سرعت، تأخیر و اتلاف بسته در ساعت اوج و همان دوره و جامعه",
+      "priority": "P0",
+      "action_status": "DRAFT_FOR_REVIEW_NOT_APPROVED",
+      "owner": "NOT_VALIDATED",
+      "baseline_kpi": null,
+      "target_kpi": null,
+      "budget": null,
+      "approval_required": true
+    },
+    {
+      "mechanism_id": "M02",
+      "title": "اصطکاک دسترسی به خدمات",
+      "user_evidence_id": "EV-P01-004",
+      "technical_evidence_ids": [],
+      "comparability_gate": "NO_MATCHED_TECHNICAL_SERIES",
+      "limitation": "کاربرد VPN برای شبکه‌های اجتماعی خارجی است؛ آزمون مستقل هم‌دوره و جامعه همسان در قرارداد عمومی نداریم.",
+      "proposed_action": "چارچوب ردیابی علت اختلال خدمت، تفکیک دسترسی و کیفیت، و بررسی ضوابط قانونی",
+      "priority": "P0",
+      "action_status": "DRAFT_FOR_REVIEW_NOT_APPROVED",
+      "owner": "NOT_VALIDATED",
+      "baseline_kpi": null,
+      "target_kpi": null,
+      "budget": null,
+      "approval_required": true
+    },
+    {
+      "mechanism_id": "M03",
+      "title": "تاب‌آوری و قابلیت پیش‌بینی",
+      "user_evidence_id": null,
+      "technical_evidence_ids": [
+        "EV-T07-ASN-001",
+        "EV-T07-ASN-002",
+        "EV-T07-ASN-003"
+      ],
+      "comparability_gate": "NO_MATCHED_USER_SURVEY",
+      "limitation": "مشاهدات رخداد ۲۰۲۵ با داده فردی مواجهه و رضایت یکپارچه نشده و سری خام هنوز بازیابی نشده است.",
+      "proposed_action": "چارچوب طبقه‌بندی اختلال و سنجش بازیابی کامل و جزئی خدمات حیاتی و عمومی",
+      "priority": "P1",
+      "action_status": "DRAFT_FOR_REVIEW_NOT_APPROVED",
+      "owner": "NOT_VALIDATED",
+      "baseline_kpi": null,
+      "target_kpi": null,
+      "budget": null,
+      "approval_required": true
+    },
+    {
+      "mechanism_id": "M04",
+      "title": "هزینه مؤثر استفاده",
+      "user_evidence_id": "EV-P01-003",
+      "technical_evidence_ids": [
+        "EV-E02-ITU-001"
+      ],
+      "comparability_gate": "DIFFERENT_CONSTRUCT_AND_PERIOD",
+      "limitation": "رضایت از قیمت بسته همراه و سبد استاندارد ۵ گیگابایت ITU در دوره‌ها و مخرج‌های متفاوت‌اند.",
+      "proposed_action": "طراحی پیمایش هزینه واقعی بسته و تجهیزات و کیفیت دریافتی به تفکیک فناوری و دهک",
+      "priority": "P0",
+      "action_status": "DRAFT_FOR_REVIEW_NOT_APPROVED",
+      "owner": "NOT_VALIDATED",
+      "baseline_kpi": null,
+      "target_kpi": null,
+      "budget": null,
+      "approval_required": true
+    },
+    {
+      "mechanism_id": "M05",
+      "title": "پوشش در برابر تجربه",
+      "user_evidence_id": "EV-P01-002",
+      "technical_evidence_ids": [
+        "EV-T05-ITU-001",
+        "EV-T05-ITU-002"
+      ],
+      "comparability_gate": "DIFFERENT_CONSTRUCT_AND_PERIOD",
+      "limitation": "پوشش جمعیتی ۲۰۲۴ با ارزیابی تجربه کاربران در ۱۴۰۵ و اتصال فعال یکسان نیست.",
+      "proposed_action": "انتشار مستقل سه سنجه پوشش جمعیت، اشتراک فعال و کیفیت تجربه با تصریح داده مفقود",
+      "priority": "P1",
+      "action_status": "DRAFT_FOR_REVIEW_NOT_APPROVED",
+      "owner": "NOT_VALIDATED",
+      "baseline_kpi": null,
+      "target_kpi": null,
+      "budget": null,
+      "approval_required": true
+    },
+    {
+      "mechanism_id": "M06",
+      "title": "اعتماد و تداوم فعالیت اقتصادی",
+      "user_evidence_id": null,
+      "technical_evidence_ids": [],
+      "comparability_gate": "EVIDENCE_GAP",
+      "limitation": "شواهد هم‌نمونه فروش واقعی، فعالیت خدمات و تجربه اختلال در قرارداد عمومی پذیرفته نشده‌اند؛ برآورد ناشران نباید نرخ ملی تلقی شود.",
+      "proposed_action": "طرح پنل ناشناس کسب‌وکار و سنجش کیفیت خدمات بومی با کنترل عوامل اقتصاد کلان",
+      "priority": "P1",
+      "action_status": "DRAFT_FOR_REVIEW_NOT_APPROVED",
+      "owner": "NOT_VALIDATED",
+      "baseline_kpi": null,
+      "target_kpi": null,
+      "budget": null,
+      "approval_required": true
+    }
+  ]
+}
