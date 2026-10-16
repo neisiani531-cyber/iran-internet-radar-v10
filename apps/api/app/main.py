@@ -1,5 +1,6 @@
 """Public, source-attributed snapshot API for Radar V10. No private research data."""
 import json
+import csv
 from pathlib import Path
 from typing import Literal
 
@@ -144,3 +145,17 @@ def research_evidence_detail(crosswalk_id: str):
 def qos_catalog():
     catalog_path = Path(__file__).resolve().parents[3] / "packages" / "contracts" / "qos-metric-catalog.json"
     return json.loads(catalog_path.read_text(encoding="utf-8"))
+
+
+@app.get("/api/v1/source-admission")
+def source_admission(family: str | None = None, rule: str | None = None):
+    """Metadata only: exposes research admission semantics, never private evidence or automatic approvals."""
+    matrix_path = Path(__file__).resolve().parents[3] / "packages" / "contracts" / "source-admission-matrix.csv"
+    with matrix_path.open(encoding="utf-8-sig", newline="") as fp:
+        rows = list(csv.DictReader(fp))
+    if family is not None:
+        rows = [row for row in rows if family.casefold() in row["source_family"].casefold()]
+    if rule is not None:
+        rows = [row for row in rows if row["admission_rule"] == rule]
+    return {"status": "RESEARCH_ADMISSION_MATRIX", "count": len(rows), "entries": rows,
+            "note": "A source lead or research review does not grant Q5 or public numeric KPI admission."}
