@@ -29,3 +29,5 @@ return <section className="panel" dir="rtl"><h1>رصد زنده تغییرات �
 <h2>آخرین رویدادهای مشاهده‌شده ({records.length})</h2>
 {records.length?<div style={{maxHeight:540,overflow:'auto'}}><table><thead><tr><th>زمان دریافت</th><th>نوع</th><th>پیشوند IP</th><th>ASN مبدأ</th><th>جمع‌آورنده / Peer</th></tr></thead><tbody>{records.map((x,i)=><tr key={i}><td>{x.observed_at}</td><td>{x.kind==='withdrawal'?'Withdrawal':'Announcement'}</td><td dir="ltr">{x.prefix}</td><td>{x.origin_asn??'نامشخص'}</td><td>{x.peer_asn??'نامشخص'}</td></tr>)}</tbody></table></div>:<p>رویداد تأییدشده برای نمایش موجود نیست. مقدار صفر به معنی پایداری شبکه نیست.</p>}
 </section>;
+
+}
