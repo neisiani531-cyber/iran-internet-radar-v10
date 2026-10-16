@@ -39,5 +39,5 @@ const officialCompanion = {
  totals:{operators:root.operators.length,fiber_periods:root.coverage.length,technologies:root.technology.length,quality_rows:root.quality.length}
 };
 if(officialCompanion.operators.length!==3||officialCompanion.fiber_coverage_history.length!==10||officialCompanion.latency_quality.length!==4||officialCompanion.fixed_technology_history.periods.length!==5)throw Error('Unexpected V9.17 official companion structure');
-writeFileSync(resolve('public/data/v917-official-companion.json'),JSON.stringify(officialCompanion,null,2)+'\\n');
+writeFileSync(resolve('public/data/v917-official-companion.json'),JSON.stringify(officialCompanion,null,2)+'\n');
 console.log('V9.17 official catalog: ' + out.total + ' entries, ' + ids.size + ' unique IDs');
