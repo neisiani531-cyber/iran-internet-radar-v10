@@ -39,5 +39,6 @@ def retrieve(question, focus="", limit=6):
         "draft_actions": [{"mechanism_id":x["mechanism_id"],"title":x["title"],"linked_evidence":([x["user_evidence_id"]] if x["user_evidence_id"] else [])+x["technical_evidence_ids"],"limitation":x["limitation"],"action":x["proposed_action"],"decision_gate":x["decision_gate"],"status":x["action_status"]} for x in matched_actions],
         "retrieval_scope":"PUBLIC_METADATA_AND_DRAFT_ACTIONS_ONLY",
         "source_pdf_page_citations_available":False,
+        "pdf_page_citations_available":False,
         "q5_approved":0
     }
