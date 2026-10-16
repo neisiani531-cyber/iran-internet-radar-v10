@@ -59,3 +59,22 @@ table{width:100%;border-collapse:collapse;margin:18px 0}td,th{text-align:right;p
 footer{color:#667f99;font-size:11px;padding:30px 5px}
 @media(max-width:1100px){.sidebar{width:225px}.evidence-row{grid-template-columns:80px 115px 1fr}.evidence-row small{grid-column:1/-1}}
 @media(max-width:800px){.shell{display:block}.sidebar{position:relative;width:100%;height:auto;padding:14px;flex-direction:row;flex-wrap:wrap;align-items:center;border-left:0;border-bottom:1px solid #28485d}.brand{width:100%;margin:0 0 10px;font-size:17px}.section-label,.nav.locked,.foot,.spacer{display:none}.sidebar .nav{width:auto;padding:10px 12px;font-size:11px}.sidebar .nav.active{box-shadow:inset 0 -2px #52e6cc}main{padding:18px 13px}header{padding:25px 18px;border-radius:16px}.tag{display:none}.stats{grid-template-columns:1fr;gap:11px}.stats article{padding:20px}.panel{padding:18px}.controls{width:100%}.controls label{flex:1}.bar-row{grid-template-columns:80px minmax(40px,1fr) 95px;gap:9px;font-size:11px;padding:12px 4px}.bar-row strong{font-size:11px}.evidence-row{grid-template-columns:1fr 1fr}.evidence-row span:nth-child(3),.evidence-row small{grid-column:1/-1}}
+
+/* Radar V10: accessible sidebar navigation */
+@media (min-width: 801px) {
+  .sidebar {
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #416579 #071222;
+  }
+
+  .sidebar .nav {
+    flex-shrink: 0;
+  }
+
+  .sidebar .spacer {
+    flex-shrink: 0;
+  }
+}
