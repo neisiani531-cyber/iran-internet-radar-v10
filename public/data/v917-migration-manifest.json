@@ -1,0 +1,25 @@
+{
+  "version": "V9.17",
+  "status": "PARTIAL_NATIVE_MIGRATION",
+  "public_official": {
+    "official_metrics": 130,
+    "operator_snapshots": 3,
+    "fiber_coverage_points": 10,
+    "technologies": 4,
+    "latency_rows": 4,
+    "fixed_periods": 5
+  },
+  "public_exploratory": {
+    "tor": 25,
+    "tic_quarters": 9,
+    "mechanisms": 6
+  },
+  "restricted_not_exported": {
+    "legacy_evidence": 320,
+    "legacy_sources": 50,
+    "legacy_conflicts": 8,
+    "githubCentralEvidence": 22,
+    "surveys": 9
+  },
+  "note": "Counts are not mutually exclusive. Restricted record payloads are not exported into the new public contracts."
+}

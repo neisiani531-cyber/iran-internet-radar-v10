@@ -1,0 +1,453 @@
+{
+  "source": "CRA57",
+  "admission": "SOURCE_TRANSCRIPTION_PENDING_VISUAL_QA",
+  "operators": [
+    "MCI",
+    "MTN",
+    "RIGHTEL"
+  ],
+  "metrics": [
+    {
+      "key": "active",
+      "category": "subscribers",
+      "unit": "خط",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 94788376,
+          "source_id": "CRA57-MCI-active",
+          "page": 24,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 73405375,
+          "source_id": "CRA57-MTN-active",
+          "page": 24,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 6161405,
+          "source_id": "CRA57-RIGHTEL-active",
+          "page": 24,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "sites4g",
+      "category": "infrastructure",
+      "unit": "سایت",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 27701,
+          "source_id": "CRA57-MCI-sites4g",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 20274,
+          "source_id": "CRA57-MTN-sites4g",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 4022,
+          "source_id": "CRA57-RIGHTEL-sites4g",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "sites5g",
+      "category": "infrastructure",
+      "unit": "سایت",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 1432,
+          "source_id": "CRA57-MCI-sites5g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 1171,
+          "source_id": "CRA57-MTN-sites5g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 18,
+          "source_id": "CRA57-RIGHTEL-sites5g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "coverage3g",
+      "category": "coverage",
+      "unit": "درصد",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 99.62,
+          "source_id": "CRA57-MCI-coverage3g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 97.04,
+          "source_id": "CRA57-MTN-coverage3g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 60.89,
+          "source_id": "CRA57-RIGHTEL-coverage3g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "coverage4g",
+      "category": "coverage",
+      "unit": "درصد",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 99.46,
+          "source_id": "CRA57-MCI-coverage4g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 94.52,
+          "source_id": "CRA57-MTN-coverage4g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 58.94,
+          "source_id": "CRA57-RIGHTEL-coverage4g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "roadKm",
+      "category": "coverage",
+      "unit": "کیلومتر",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 82830,
+          "source_id": "CRA57-MCI-roadKm",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 64350,
+          "source_id": "CRA57-MTN-roadKm",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 27563,
+          "source_id": "CRA57-RIGHTEL-roadKm",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "villages",
+      "category": "coverage",
+      "unit": "روستا",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 44918,
+          "source_id": "CRA57-MCI-villages",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 19312,
+          "source_id": "CRA57-MTN-villages",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 946,
+          "source_id": "CRA57-RIGHTEL-villages",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "cities4g",
+      "category": "coverage",
+      "unit": "شهر",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 1454,
+          "source_id": "CRA57-MCI-cities4g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 1420,
+          "source_id": "CRA57-MTN-cities4g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 406,
+          "source_id": "CRA57-RIGHTEL-cities4g",
+          "page": 10,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "ping3g",
+      "category": "quality",
+      "unit": "Mbps",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 4.26,
+          "source_id": "CRA57-MCI-ping3g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 2.84,
+          "source_id": "CRA57-MTN-ping3g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 3.82,
+          "source_id": "CRA57-RIGHTEL-ping3g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "ping4g",
+      "category": "quality",
+      "unit": "Mbps",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 22.78,
+          "source_id": "CRA57-MCI-ping4g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 16.07,
+          "source_id": "CRA57-MTN-ping4g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 19.39,
+          "source_id": "CRA57-RIGHTEL-ping4g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "success3g",
+      "category": "quality",
+      "unit": "درصد",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 99.42,
+          "source_id": "CRA57-MCI-success3g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 97.88,
+          "source_id": "CRA57-MTN-success3g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 99.33,
+          "source_id": "CRA57-RIGHTEL-success3g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "success4g",
+      "category": "quality",
+      "unit": "درصد",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 99.65,
+          "source_id": "CRA57-MCI-success4g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 99.31,
+          "source_id": "CRA57-MTN-success4g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 99.46,
+          "source_id": "CRA57-RIGHTEL-success4g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "drop3g",
+      "category": "quality",
+      "unit": "درصد",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 0.31,
+          "source_id": "CRA57-MCI-drop3g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 0.42,
+          "source_id": "CRA57-MTN-drop3g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 0.55,
+          "source_id": "CRA57-RIGHTEL-drop3g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "drop4g",
+      "category": "quality",
+      "unit": "درصد",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 0.23,
+          "source_id": "CRA57-MCI-drop4g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 0.22,
+          "source_id": "CRA57-MTN-drop4g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 0.16,
+          "source_id": "CRA57-RIGHTEL-drop4g",
+          "page": 27,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "m2m",
+      "category": "services",
+      "unit": "اشتراک",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 7410760,
+          "source_id": "CRA57-MCI-m2m",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 2931902,
+          "source_id": "CRA57-MTN-m2m",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 20050,
+          "source_id": "CRA57-RIGHTEL-m2m",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "roamingCountries",
+      "category": "services",
+      "unit": "کشور",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 140,
+          "source_id": "CRA57-MCI-roamingCountries",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 132,
+          "source_id": "CRA57-MTN-roamingCountries",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 134,
+          "source_id": "CRA57-RIGHTEL-roamingCountries",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    },
+    {
+      "key": "roamingOperators",
+      "category": "services",
+      "unit": "اپراتور",
+      "period": "1405-Q1",
+      "operators": {
+        "MCI": {
+          "value": 325,
+          "source_id": "CRA57-MCI-roamingOperators",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        },
+        "MTN": {
+          "value": 256,
+          "source_id": "CRA57-MTN-roamingOperators",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        },
+        "RIGHTEL": {
+          "value": 190,
+          "source_id": "CRA57-RIGHTEL-roamingOperators",
+          "page": 26,
+          "status": "OFFICIAL_PDF"
+        }
+      }
+    }
+  ]
+}

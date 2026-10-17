@@ -10,6 +10,6 @@ return <div style={{border:'1px solid #42647c',background:'#10283b',borderRadius
 <p>این متن حاصل استخراج از گزارش است؛ احتمال خطا در ترتیب سطرها و نویسه‌های فارسی وجود دارد. برای استناد نهایی، تصویر صفحه اصلی در V9.17 را کنترل کنید.</p>
 <div className="controls"><label>انتخاب صفحه <select value={current} onChange={e=>setCurrent(Number(e.target.value))}>{pages.map(p=><option key={p.number} value={p.number}>{p.number} | {p.title}</option>)}</select></label></div>
 {error&&<p role="alert">{error}</p>}{item&&<><p>{item.title}</p><div style={{whiteSpace:'pre-wrap',maxHeight:440,overflow:'auto',background:'#081925',padding:14,borderRadius:8,lineHeight:1.9}}>{item.text||'متن قابل استخراج برای این صفحه موجود نیست.'}</div></>}
-<a href="/iran-internet-radar-v10/legacy/v9-17.html" target="_blank" rel="noreferrer">بازکردن نسخه اصلی دارای تصاویر گزارش ↗</a>
+<a href={import.meta.env.BASE_URL + "legacy/v9-17.html"} target="_blank" rel="noreferrer">بازکردن نسخه اصلی دارای تصاویر گزارش ↗</a>
 </div>;
 }

@@ -1,0 +1,23 @@
+{
+  "source": "CRA57",
+  "status": "IMPLEMENTED_SOURCE_QA_PENDING",
+  "families": {
+    "rtt_jitter": {
+      "observations": 8,
+      "source_page": 14,
+      "component": "LatencyQuality"
+    },
+    "access_success_drop_rate": {
+      "observations": 12,
+      "source_page": 15,
+      "component": "main.tsx"
+    }
+  },
+  "total_observations": 20,
+  "remaining": [
+    "VISUAL_SOURCE_QA",
+    "METRIC_DEFINITION_REVIEW",
+    "PUBLICATION_QA"
+  ],
+  "note": "RTT and Jitter exist in a separate contract; QoS pending flags are stale."
+}

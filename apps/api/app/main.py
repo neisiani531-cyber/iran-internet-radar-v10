@@ -215,3 +215,206 @@ async def _start_ris():
 @app.on_event('shutdown')
 async def _stop_ris():
     await ris_live.stop()
+
+
+from app.regulatory_history import router as regulatory_router
+app.include_router(regulatory_router)
+
+
+# Social Intelligence: aggregated public-search observations only.
+@app.get("/api/v1/social/summary")
+def social_intelligence_summary():
+    from datetime import datetime, timezone
+    from pathlib import Path
+    import json
+    from fastapi import HTTPException
+
+    path = Path("/app/social-data/social-summary.json")
+
+    if not path.is_file():
+        raise HTTPException(
+            status_code=503,
+            detail="Social summary is not available"
+        )
+
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+
+        if (
+            not isinstance(data, dict)
+            or data.get("source") != "BLUESKY_PUBLIC_SEARCH"
+            or not isinstance(data.get("total_unique_posts"), int)
+            or not isinstance(data.get("methodology"), dict)
+        ):
+            raise ValueError("Invalid social summary schema")
+
+        generated = datetime.fromisoformat(
+            data["generated_at_utc"].replace("Z", "+00:00")
+        )
+        if generated.tzinfo is None:
+            raise ValueError("Summary timestamp has no timezone")
+
+        age = max(
+            0,
+            int((datetime.now(timezone.utc) - generated).total_seconds())
+        )
+
+        last_success = data.get("latest_successful_collection_at")
+        if last_success:
+            last_dt = datetime.fromisoformat(
+                last_success.replace("Z", "+00:00")
+            )
+            if last_dt.tzinfo is None:
+                raise ValueError("Invalid collection timestamp")
+            success_age = max(
+                0, int(
+                    (datetime.now(timezone.utc) - last_dt).total_seconds()
+                )
+            )
+        else:
+            success_age = None
+
+        latest_status = data.get("source_health")
+
+        if success_age is None:
+            freshness = "MISSING"
+        elif success_age > 7200:
+            freshness = "STALE"
+        elif latest_status != "ok":
+            freshness = "DEGRADED"
+        else:
+            freshness = "RECENT"
+
+        data["freshness"] = freshness
+        data["age_seconds"] = age
+        data["last_success_age_seconds"] = success_age
+        data["national_representativeness"] = False
+
+        return data
+
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Social summary is invalid or unavailable"
+        ) from exc
+
+
+@app.get("/api/v1/social/timeline")
+def social_intelligence_timeline():
+    from pathlib import Path
+    import json
+    from fastapi import HTTPException
+
+    path = Path("/app/social-data/social-timeline.json")
+
+    if not path.is_file():
+        raise HTTPException(
+            status_code=503,
+            detail="Social timeline unavailable"
+        )
+
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+
+        if (
+            data.get("source") != "BLUESKY_PUBLIC_SEARCH"
+            or data.get("metric") != "FIRST_OBSERVED_UNIQUE_POSTS"
+            or not isinstance(data.get("hourly_observations"), list)
+            or not isinstance(data.get("collection_runs"), list)
+            or data.get("trend_validated") is not False
+            or data.get("national_representativeness") is not False
+        ):
+            raise ValueError("Invalid timeline")
+
+        return data
+
+    except (OSError, ValueError, TypeError, AttributeError) as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Invalid social timeline"
+        ) from exc
+
+
+@app.get("/api/v1/social/topics")
+def social_intelligence_topics():
+    from pathlib import Path
+    import json
+    from fastapi import HTTPException
+
+    path = Path("/app/social-data/social-topics.json")
+
+    if not path.is_file():
+        raise HTTPException(
+            status_code=503,
+            detail="Social topics unavailable"
+        )
+
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+
+        if (
+            not isinstance(data, dict)
+            or data.get("source") != "BLUESKY_PUBLIC_SEARCH"
+            or data.get("classifier_version") != "fa-topics-v1.1"
+            or not isinstance(data.get("topics"), list)
+            or len(data["topics"]) != 5
+            or data.get("validated_accuracy") is not False
+            or data.get("national_representativeness") is not False
+        ):
+            raise ValueError("Invalid social topics contract")
+
+        return data
+
+    except (OSError, ValueError, TypeError, AttributeError) as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Invalid social topics report"
+        ) from exc
+
+
+@app.get("/api/v1/social/claims")
+def social_intelligence_claims():
+    import json
+    from pathlib import Path
+    from fastapi import HTTPException
+
+    path = Path("/app/social-data/social-claims.json")
+
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+
+        if not isinstance(data, dict):
+            raise ValueError("Invalid payload")
+
+        if (
+            data.get("source") != "BLUESKY_PUBLIC_SEARCH"
+            or data.get("topic_classifier") != "fa-topics-v1.1"
+            or data.get("claim_analyzer") != "fa-claims-v1.3"
+            or data.get("validated_accuracy") is not False
+            or data.get("event_confirmation") is not False
+            or data.get("national_representativeness") is not False
+            or not isinstance(data.get("topic_claim_matrix"), list)
+            or not isinstance(data.get("claim_distribution"), list)
+        ):
+            raise ValueError("Invalid claims contract")
+
+        total = data.get("total_unique_posts")
+        analyzed = data.get("analyzed_unique_posts")
+        missing = data.get("not_analyzed_posts")
+
+        if (
+            type(total) is not int
+            or type(analyzed) is not int
+            or type(missing) is not int
+            or min(total, analyzed, missing) < 0
+            or total != analyzed + missing
+        ):
+            raise ValueError("Invalid analysis coverage")
+
+        return data
+
+    except (OSError, ValueError, TypeError, KeyError) as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Social claims report unavailable or invalid"
+        ) from exc
