@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import history from '../packages/contracts/cra57-mobile-broadband-history.json';
 import latency from '../packages/contracts/cra57-latency-quality.snapshot.json';
+import expanded from '../packages/contracts/cra57-operator-expanded.json';
 
 const fmt=(v:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2}).format(v);
 const colors=['#4ee0c2','#7aafff','#f4b66a'];
@@ -152,6 +153,30 @@ export default function RegulatoryPulse({
    </p>
   </div>
 
+  <section style={{...card,marginTop:22,marginBottom:22}} aria-label="توسعه شبکه در برابر شواهد کیفیت">
+   <h3 style={{margin:'0 0 8px'}}>توسعه ظرفیت شبکه و کیفیت تجربه: دو مفهوم متفاوت</h3>
+   <p style={{color:'#b5cada',fontSize:13}}>شاخص‌های توسعه 4G و پوشش روستاها برای هر اپراتور فقط در بهار ۱۴۰۵ موجودند. شاخص‌های RTT و Jitter به کل شبکه مربوط‌اند و قابل انتساب به هیچ اپراتور مشخصی نیستند.</p>
+   {history.periods[selected]===expanded.period?<>
+    <div style={{overflowX:'auto'}}>
+     <table style={{width:'100%',borderCollapse:'collapse',textAlign:'right'}}>
+      <thead><tr><th>اپراتور</th><th>اشتراک پهن‌باند سیار</th><th>سایت فعال 4G</th><th>شهر دارای پوشش 4G</th><th>روستای تحت پوشش</th></tr></thead>
+      <tbody>{expanded.operators.map((op,i)=>{
+       const historyIndex=history.operators.indexOf(op);
+       const value=(key:string)=>expanded.metrics.find(x=>x.key===key)?.values[i];
+       return <tr key={op}><td>{op}</td><td>{historyIndex<0?'فاقد داده':fmt(latest[historyIndex])}</td>
+        <td>{value('active_4g_sites')===undefined?'فاقد داده':fmt(value('active_4g_sites')!)}</td>
+        <td>{value('covered_cities_4g')===undefined?'فاقد داده':fmt(value('covered_cities_4g')!)}</td>
+        <td>{value('covered_villages')===undefined?'فاقد داده':fmt(value('covered_villages')!)}</td></tr>;
+      })}</tbody>
+     </table>
+    </div>
+    <p style={{fontSize:12,color:'#b5cada',marginBottom:0}}>اشتراک: صفحه {history.page}؛ توسعه شبکه: صفحات ۱۰ و ۲۶ فصلنامه ۵۷. مقادیر سایت و پوشش، شاخص توسعه‌اند نه سنجش کیفیت یا رضایت. نسبت‌گیری اشتراک به سایت، بدون تعریف پوشش و مبنای مشترک، معیار عملکرد ساخته‌شده محسوب می‌شود و در این نما انجام نشده است.</p>
+   </>:<p role="status" style={{color:'#f2c786'}}>شاخص‌های توسعه شبکه برای فصل انتخابی {history.periods[selected]} در قرارداد موجود نیستند. برای مقایسه مقطعی معتبر، به فصل ۱۴۰۵-Q1 بروید. مقادیر این فصل به دوره‌های دیگر تعمیم داده نمی‌شوند.</p>}
+   <div style={{marginTop:14,padding:12,border:'1px solid #57748a',borderRadius:10}}>
+    <strong>وضعیت استنتاج</strong>
+    <p style={{margin:'8px 0 0',fontSize:13}}>رشد اشتراک و توسعه پوشش، به‌تنهایی اثبات بهبود سرعت، تأخیر، پایداری یا رضایت کاربر نیستند. برای چنین نتیجه‌ای به داده هم‌دوره، هم‌منطقه و قابل مقایسه QoS/QoE نیاز داریم. کنترل تصویری مقادیر صفحات مرجع نیز تکمیل نشده است.</p>
+   </div>
+  </section>
   <h3 style={{marginTop:28}}>کیفیت شبکه، چهار مسیر مقایسه‌پذیر</h3>
   <div style={{display:'grid',
    gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:12}}>
