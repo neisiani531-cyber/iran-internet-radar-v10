@@ -30,6 +30,22 @@ export default function RegulatoryPulse({
  const selectedX=45+selected*680/(history.periods.length-1);
  const percent=(i:number)=>previous&&previous[i]>0?
    (latest[i]/previous[i]-1)*100:null;
+ const total=latest.reduce((sum,value)=>sum+value,0);
+ const baseline=history.values[0];
+ const totalBaseline=baseline.reduce((sum,value)=>sum+value,0);
+ const prevQuarter=selected>0?history.values[selected-1]:null;
+ const previousTotal=prevQuarter?.reduce((sum,value)=>sum+value,0);
+ const yearEarlier=selected>=4?history.values[selected-4]:null;
+ const previousYearTotal=yearEarlier?.reduce((sum,value)=>sum+value,0);
+ const deltaPercent=(current:number,base:number|undefined)=>base&&base>0?(current/base-1)*100:null;
+ const nationalGrowth=deltaPercent(total,previousYearTotal);
+ const sortedOperators=history.operators.map((name,index)=>({name,value:latest[index],index,
+  share:total>0?latest[index]/total*100:0,
+  annual:yearEarlier?deltaPercent(latest[index],yearEarlier[index]):null
+ })).sort((a,b)=>b.value-a.value);
+ const leading=sortedOperators[0];
+ const majorContribution=yearEarlier&&previousYearTotal!==undefined?
+  history.operators.map((name,index)=>({name,change:latest[index]-yearEarlier[index]})).sort((a,b)=>b.change-a.change):[];
  const qualityGroups=[
   ['fixed','domestic'],['fixed','international'],
   ['mobile','domestic'],['mobile','international']
@@ -75,6 +91,27 @@ export default function RegulatoryPulse({
     </p>
    </article>)}
   </div>
+
+  <section aria-label="تحلیل مقایسه‌ای اشتراک پهن‌باند سیار" style={{...card,marginBottom:20}}>
+   <h3 style={{margin:'0 0 12px'}}>خلاصه تحلیلی فصل منتخب</h3>
+   <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(170px,1fr))',gap:14}}>
+    <div><small>مجموع سه اپراتور در این جدول</small><strong style={{display:'block',fontSize:22}}>{fmt(total)}</strong><small>اشتراک پهن‌باند سیار، نه کل سیم‌کارت‌ها</small></div>
+    <div><small>تغییر نسبت به فصل قبل</small><strong style={{display:'block',fontSize:22}}>{deltaPercent(total,previousTotal)===null?'فاقد مبنا':fmt(deltaPercent(total,previousTotal)!)+'٪'}</strong></div>
+    <div><small>تغییر نسبت به فصل مشابه سال قبل</small><strong style={{display:'block',fontSize:22}}>{nationalGrowth===null?'فاقد مبنا':fmt(nationalGrowth)+'٪'}</strong></div>
+    <div><small>بیشترین تعداد اشتراک ثبت‌شده</small><strong style={{display:'block',fontSize:19}}>{leading.name}</strong><small>{fmt(leading.share)}٪ از مجموع همین سه اپراتور</small></div>
+   </div>
+   <div style={{overflowX:'auto',marginTop:16}}>
+    <table style={{width:'100%',borderCollapse:'collapse',textAlign:'right'}}>
+     <thead><tr><th>اپراتور</th><th>اشتراک</th><th>سهم از مجموع جدول</th><th>تغییر سالانه</th></tr></thead>
+     <tbody>{sortedOperators.map(x=><tr key={x.name}><td>{x.name}</td><td>{fmt(x.value)}</td><td>{fmt(x.share)}٪</td><td>{x.annual===null?'فاقد مبنا':(x.annual>=0?'+':'')+fmt(x.annual)+'٪'}</td></tr>)}</tbody>
+    </table>
+   </div>
+   <p style={{fontSize:12,color:'#b5cada',marginBottom:0}}>
+    مقایسه با اولین دوره ({history.periods[0]}): {totalBaseline>0?fmt((total/totalBaseline-1)*100)+'٪':'فاقد مبنا'}.
+    {majorContribution.length>0?' بیشترین افزایش عددی سالانه: '+majorContribution[0].name+' ('+fmt(majorContribution[0].change)+' اشتراک).':''}
+    این محاسبات فقط از داده‌های استخراج‌شده صفحه {history.page} انجام شده‌اند. سهم‌ها مربوط به مجموع اشتراک این سه اپراتورند و سهم بازار همه سیم‌کارت‌ها نیستند. داده‌ها همچنان در انتظار تطبیق تصویری با PDF مرجع‌اند.
+   </p>
+  </section>
 
   <div style={{...card,overflowX:'auto'}}>
    <div style={{display:'flex',gap:18,flexWrap:'wrap',marginBottom:10}}>
