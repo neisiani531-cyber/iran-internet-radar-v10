@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0",
+  "source": "CRA57",
+  "publication_status": "TRANSCRIBED_VISUAL_QA_PENDING",
+  "operators": [
+    {
+      "id": "mci",
+      "name": "همراه اول",
+      "en": "MCI",
+      "active": 94788376,
+      "sites5g": 1432,
+      "sites4g": 27701,
+      "coverage4g": 99.46,
+      "coverage3g": 99.62,
+      "coverage2g": 99.93,
+      "roadKm": 82830,
+      "villages": 44918,
+      "cities4g": 1454,
+      "ping3g": 4.26,
+      "ping4g": 22.78,
+      "success3g": 99.42,
+      "success4g": 99.65,
+      "drop3g": 0.31,
+      "drop4g": 0.23,
+      "m2m": 7410760,
+      "roamingCountries": 140,
+      "roamingOperators": 325
+    },
+    {
+      "id": "mtn",
+      "name": "ایرانسل",
+      "en": "Irancell",
+      "active": 73405375,
+      "sites5g": 1171,
+      "sites4g": 20274,
+      "coverage4g": 94.52,
+      "coverage3g": 97.04,
+      "coverage2g": 99.08,
+      "roadKm": 64350,
+      "villages": 19312,
+      "cities4g": 1420,
+      "ping3g": 2.84,
+      "ping4g": 16.07,
+      "success3g": 97.88,
+      "success4g": 99.31,
+      "drop3g": 0.42,
+      "drop4g": 0.22,
+      "m2m": 2931902,
+      "roamingCountries": 132,
+      "roamingOperators": 256
+    },
+    {
+      "id": "rightel",
+      "name": "رایتل",
+      "en": "Rightel",
+      "active": 6161405,
+      "sites5g": 18,
+      "sites4g": 4022,
+      "coverage4g": 58.94,
+      "coverage3g": 60.89,
+      "coverage2g": null,
+      "roadKm": 27563,
+      "villages": 946,
+      "cities4g": 406,
+      "ping3g": 3.82,
+      "ping4g": 19.39,
+      "success3g": 99.33,
+      "success4g": 99.46,
+      "drop3g": 0.55,
+      "drop4g": 0.16,
+      "m2m": 20050,
+      "roamingCountries": 134,
+      "roamingOperators": 190
+    }
+  ],
+  "fiber_coverage_history": [
+    [
+      "۱۴۰۲-۴",
+      7079542
+    ],
+    [
+      "۱۴۰۳-۱",
+      8069565
+    ],
+    [
+      "۱۴۰۳-۲",
+      8069565
+    ],
+    [
+      "۱۴۰۳-۳",
+      8069565
+    ],
+    [
+      "۱۴۰۳-۴",
+      8069565
+    ],
+    [
+      "۱۴۰۴-۱",
+      8227920
+    ],
+    [
+      "۱۴۰۴-۲",
+      8709087
+    ],
+    [
+      "۱۴۰۴-۳",
+      9205496
+    ],
+    [
+      "۱۴۰۴-۴",
+      10734562
+    ],
+    [
+      "۱۴۰۵-۱",
+      11126281
+    ]
+  ],
+  "fixed_technology_latest": [
+    [
+      "X-DSL",
+      6562655
+    ],
+    [
+      "FTTx",
+      1037577
+    ],
+    [
+      "TD-LTE",
+      2501421
+    ],
+    [
+      "WiFi",
+      369259
+    ]
+  ],
+  "latency_quality": [
+    [
+      "fixed",
+      "domestic",
+      21.14,
+      2.1
+    ],
+    [
+      "fixed",
+      "international",
+      84.23,
+      2.41
+    ],
+    [
+      "mobile",
+      "domestic",
+      45.6,
+      9.41
+    ],
+    [
+      "mobile",
+      "international",
+      104.1,
+      13.57
+    ]
+  ],
+  "fixed_technology_history": {
+    "source": "CRA57",
+    "page": 22,
+    "periods": [
+      {
+        "period": "1404-Q1",
+        "xdsl": 7634961,
+        "fttx": 691763,
+        "wifi": 387124,
+        "tdlte": 2555209,
+        "total": 11269057
+      },
+      {
+        "period": "1404-Q2",
+        "xdsl": 7493665,
+        "fttx": 806422,
+        "wifi": 385961,
+        "tdlte": 2428081,
+        "total": 11114129
+      },
+      {
+        "period": "1404-Q3",
+        "xdsl": 7400060,
+        "fttx": 937072,
+        "wifi": 388149,
+        "tdlte": 2469139,
+        "total": 11194420
+      },
+      {
+        "period": "1404-Q4",
+        "xdsl": 7048298,
+        "fttx": 1009494,
+        "wifi": 370560,
+        "tdlte": 2496161,
+        "total": 10924513
+      },
+      {
+        "period": "1405-Q1",
+        "xdsl": 6562655,
+        "fttx": 1037577,
+        "wifi": 369259,
+        "tdlte": 2501421,
+        "total": 10470912
+      }
+    ],
+    "unit": "connections",
+    "status": "OFFICIAL_TABLE_TRANSCRIPTION_VERIFIED_SUM",
+    "note": "5 rows transcribed from original PDF table; totals crosschecked with national KPI, p3."
+  },
+  "totals": {
+    "operators": 3,
+    "fiber_periods": 10,
+    "technologies": 4,
+    "quality_rows": 4
+  }
+}
