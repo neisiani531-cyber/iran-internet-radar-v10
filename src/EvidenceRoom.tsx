@@ -1,11 +1,17 @@
 import React,{useState} from 'react';
 import evidence from '../packages/contracts/evidence-metadata-public.json';
 import graph from '../packages/contracts/research-public-relations.json';
-export default function EvidenceRoom(){
+export default function EvidenceRoom({
+ initialEvidenceId
+}:{initialEvidenceId?:string}){
  const [q,setQ]=useState('');
  const [sourceFilter,setSourceFilter]=useState('all');
  const sources=[...new Set(evidence.observations.map(x=>x.source_id))].sort();
- const [selected,setSelected]=useState(evidence.observations[0].evidence_id);
+ const [selected,setSelected]=useState(
+ evidence.observations.some(x=>x.evidence_id===initialEvidenceId)
+  ? initialEvidenceId!
+  : evidence.observations[0].evidence_id
+);
  const items=evidence.observations.filter(x=>(sourceFilter==='all'||x.source_id===sourceFilter)&&(x.description+' '+x.evidence_id+' '+x.dossier_id+' '+x.source_id).includes(q));
  const current=evidence.observations.find(x=>x.evidence_id===selected);
  const claims=graph.claim_evidence_links.filter(x=>x.evidence_id===selected);
