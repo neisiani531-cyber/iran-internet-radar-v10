@@ -3,13 +3,14 @@
 from fastapi.testclient import TestClient
 
 from app.main import app
+from app.regulatory_history import router as regulatory_router
 
 
 def test_regulatory_operator_route_is_registered_once():
     matches = [
         route
-        for route in app.routes
-        if getattr(route, "path", None) == "/api/v1/regulatory/operator-indicators"
+        for route in regulatory_router.routes
+        if regulatory_router.prefix + getattr(route, "path", "") == "/api/v1/regulatory/operator-indicators"
         and "GET" in getattr(route, "methods", set())
     ]
     assert len(matches) == 1, "Duplicate GET operator-indicators route"
