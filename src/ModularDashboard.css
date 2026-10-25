@@ -35,3 +35,14 @@
 .md-drop-marker{position:absolute;inset-inline:8px;z-index:4;background:#54d6c8;color:#042a31;border-radius:5px;padding:3px 10px;text-align:center;font-size:11px;pointer-events:none;box-shadow:0 0 15px #39cbb655}
 .md-drop-before{top:-12px}.md-drop-after{bottom:-12px}
 @media(max-width:900px){.md-resize-handle{cursor:ns-resize}}
+
+.md-chart-shell{width:100%;height:100%;display:flex;flex-direction:column;min-width:0;min-height:0}
+.md-chart-canvas{position:relative;flex:1;min-height:0;direction:ltr}.md-chart-canvas>.md-chart-svg{width:100%;height:100%!important;min-height:0}
+.md-chart-shell .md-donut{height:100%;min-height:0}.md-donut small{display:block;margin-top:3px;font-size:10px;color:#a7c5d0}
+.md-chart-shell .md-legend{margin:6px 0 0;gap:8px;direction:rtl}.md-legend button{padding:3px 5px;border:1px solid transparent;background:none;color:#b8d5df;font:inherit;font-size:10px;border-radius:5px}
+.md-legend button[aria-pressed=false]{opacity:.45;text-decoration:line-through}.md-legend button:disabled{cursor:default}
+.md-chart-readout{position:absolute;top:20px;right:10px;max-width:min(290px,85%);padding:9px 12px;background:#03121ff2;border:1px solid #3c7282;border-radius:7px;pointer-events:none;direction:rtl;box-shadow:0 5px 20px #0007;color:#ddf5fc;font-size:10px;z-index:2}
+.md-chart-readout strong{display:block;margin-bottom:7px;line-height:1.8}.md-chart-readout>div{display:flex;justify-content:space-between;gap:15px;margin-top:5px}.md-chart-readout small{display:block;margin-top:8px;line-height:1.8;color:#afc5d2}
+.md-data-table{font-size:10px;color:#a4c2d1;border-top:1px solid #234452;margin-top:10px;padding-top:8px}.md-data-table summary{cursor:pointer;padding:5px}
+.md-data-table>div{overflow:auto;max-height:280px}.md-data-table table{margin:8px 0;min-width:300px}.md-data-table caption{text-align:right;font-size:10px;color:#9cb6c9;padding:8px}
+.md-data-table td,.md-data-table th{font-size:10px;padding:9px 7px;white-space:nowrap}.md-data-table th[scope=row]{white-space:normal;min-width:140px}.md-chart-empty{padding:20px;color:#a4c2d1;font-size:12px}

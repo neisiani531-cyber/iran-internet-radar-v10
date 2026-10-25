@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-import { mkdir } from 'node:fs/promises';
+import { mkdir,readFile } from 'node:fs/promises';
 
 const base=process.env.RADAR_PREVIEW_URL||'http://127.0.0.1:4173/iran-internet-radar-v10/';
 await mkdir('visual-review',{recursive:true});
@@ -68,6 +68,36 @@ try {
  const mobile=page.locator('[data-widget="mobile"]');
  const fixed=page.locator('[data-widget="fixed"]');
  const survey=page.locator('[data-widget="survey"]');
+ // Verify inspection and tabular values against the actual source contract.
+ const mobileSource=JSON.parse(await readFile('packages/contracts/cra57-mobile-broadband-history.json','utf8'));
+ const formatValue=value=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2}).format(value);
+ const mobileChart=mobile.locator('.md-chart-svg');
+ await mobileChart.focus();
+ await mobileChart.press('Home');
+ const firstReadout=await mobile.locator('.md-chart-readout').innerText();
+ if(!firstReadout.includes('تابستان ۱۳۹۹')||!firstReadout.includes(formatValue(mobileSource.values[0][0])))throw Error('Chart inspection differs from first source observation');
+ await mobileChart.press('End');
+ const finalReadout=await mobile.locator('.md-chart-readout').innerText();
+ if(!finalReadout.includes('بهار ۱۴۰۵')||!finalReadout.includes(formatValue(mobileSource.values.at(-1)[0])))throw Error('Chart inspection differs from latest source observation');
+ await mobileChart.press('Escape');
+ if(await mobile.locator('.md-chart-readout').count()!==0)throw Error('Chart Escape did not close readout');
+ const legendButtons=mobile.locator('.md-legend button');
+ await legendButtons.nth(0).click();
+ await legendButtons.nth(1).click();
+ if(!await legendButtons.nth(2).isDisabled())throw Error('Chart permits hiding every series');
+ await legendButtons.nth(0).click();
+ await legendButtons.nth(1).click();
+ await mobile.locator('.md-data-table summary').click();
+ if(await mobile.locator('.md-data-table tbody tr').count()!==24)throw Error('Historical data table lost periods');
+ const firstCell=await mobile.locator('.md-data-table tbody tr').first().locator('td').first().innerText();
+ if(firstCell!==formatValue(mobileSource.values[0][0]))throw Error('Data table differs from source observation');
+ await mobile.locator('.md-data-table summary').click();
+ await survey.locator('.md-chart-svg').focus();
+ await survey.locator('.md-chart-svg').press('End');
+ const surveyReadout=await survey.locator('.md-chart-readout').innerText();
+ if(!surveyReadout.includes('اولویت اعلام‌شده رفع محدودیت دسترسی')||!surveyReadout.includes('اختلاف کدگذاری'))throw Error('Survey question or limitation absent');
+ await survey.locator('.md-chart-svg').press('Escape');
+
  // Resize both axes through a real pointer gesture; columns snap to a 12-column grid.
  const gridBox=await page.locator('.md-grid').boundingBox();
  const corner=fixed.getByRole('button',{name:'تغییر اندازه دوبعدی روند فناوری‌های اینترنت ثابت',exact:true});

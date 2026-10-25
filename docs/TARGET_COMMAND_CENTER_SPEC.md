@@ -79,3 +79,11 @@ DO NOT auto-deploy to 185.105.101.70. Changes stay on integration/radar-v10-2026
 - Modular studio remains mounted below the hero, retaining all persisted preferences and resizing controls; supporting evidence/incident/decision panels follow it.
 - Responsive layouts retain all panels. Browser regression checks centered/aligned map, period-mismatch empty state, source links, mobile overflow and all previous layout gestures.
 - Outstanding: final art direction, richer time/axis/tooltips, additional qualified data-connected widget types and approved staging deployment.
+
+### Chart inspection follow-up
+- Extracted reusable `AnalyticsChart` from the modular layout component; no new dependency or data source.
+- Charts use their actual container dimensions, source periods/questions and units, numeric Y axes, and responsive tick density.
+- Pointer crosshair/readout and keyboard Home/End/arrow inspection expose exact source values. Series toggles retain at least one visible series. Donut remains restricted to compatible datasets and names its latest period.
+- Survey bars use separate question labels, percentage scale, and source-specific descriptions; they do not imply a temporal series or common denominator.
+- Expandable data tables expose all supplied observations, including the complete 24-quarter mobile series. Invalid/incomplete chart arrays receive an empty state rather than substituted zeroes.
+- Chromium checks first/latest readouts and tabular values against the mobile source contract, survey qualification text, legend constraints, and existing layout regressions.
