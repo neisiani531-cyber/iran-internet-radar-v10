@@ -20,6 +20,7 @@ try {
  const first=widgets.first().locator('.md-grip');
  const third=widgets.nth(2);
  await first.dragTo(third);
+ await page.waitForFunction(()=>document.querySelector('.md-widget h3')?.textContent?.includes('فناوری‌های اینترنت ثابت'),{timeout:5000}).catch(()=>{});
  const firstTitle=await widgets.first().locator('h3').innerText();
  if(!firstTitle.includes('فناوری‌های اینترنت ثابت'))throw new Error('Widget drag ordering failed: '+firstTitle);
  await page.reload({waitUntil:'networkidle'});
