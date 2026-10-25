@@ -28,6 +28,7 @@ try {
  await heightControl.dispatchEvent('input');
  await page.waitForFunction(()=>Math.abs(Array.from(document.querySelectorAll('.md-widget')).find(el=>el.querySelector('h3')?.textContent?.includes('پهن‌باند سیار'))?.querySelector('.md-size-body')?.getBoundingClientRect().height-360)<3);
  await page.reload({waitUntil:'networkidle'});
+ await page.getByRole('button',{name:'ویرایش چیدمان'}).click();
  const savedHeight=await page.getByRole('slider',{name:'ارتفاع نمودار روند اشتراک پهن‌باند سیار'}).inputValue();
  if(savedHeight!=='360')throw new Error('Widget height not persisted: '+savedHeight);
  const persisted=await page.locator('.md-widget').first().locator('h3').innerText();
