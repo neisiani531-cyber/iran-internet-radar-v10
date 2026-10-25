@@ -5,3 +5,10 @@
 .md-drop-target{border-color:#6df1d7;box-shadow:inset 0 0 0 2px #54d6c8,0 0 26px #39cbb624}
 .md-widget{transition:border-color .18s,box-shadow .18s}
 @media(prefers-reduced-motion:reduce){.md-widget{transition:none}}
+
+.md-size-body{min-height:180px;min-width:0;display:flex;align-items:stretch}
+.md-size-body>.md-chart-svg{height:100%!important;width:100%}
+.md-size-body>.md-donut{min-height:0;height:100%;width:100%}
+.md-height-label{display:flex;align-items:center;gap:8px;flex:1 1 250px;font-size:11px;color:#b9e4eb}
+.md-height-label input{width:125px;accent-color:#45d9c9;cursor:pointer}
+.md-height-label span{white-space:nowrap}
