@@ -23,7 +23,13 @@ try {
  await page.waitForFunction(()=>document.querySelector('.md-widget h3')?.textContent?.includes('تجربه کاربران'),null,{timeout:10000});
  const firstTitle=await widgets.first().locator('h3').innerText();
  if(!firstTitle.includes('تجربه کاربران'))throw new Error('Widget drag ordering failed: '+firstTitle);
+ const heightControl=page.getByRole('slider',{name:'ارتفاع نمودار روند اشتراک پهن‌باند سیار'});
+ await heightControl.fill('360');
+ await heightControl.dispatchEvent('input');
+ await page.waitForFunction(()=>Math.abs(document.querySelector('.md-widget .md-size-body')?.getBoundingClientRect().height-360)<3);
  await page.reload({waitUntil:'networkidle'});
+ const savedHeight=await page.getByRole('slider',{name:'ارتفاع نمودار روند اشتراک پهن‌باند سیار'}).inputValue();
+ if(savedHeight!=='360')throw new Error('Widget height not persisted: '+savedHeight);
  const persisted=await page.locator('.md-widget').first().locator('h3').innerText();
  if(!persisted.includes('تجربه کاربران'))throw new Error('Widget order not persisted');
  await page.getByRole('button',{name:'چیدمان پیش‌فرض'}).click();
