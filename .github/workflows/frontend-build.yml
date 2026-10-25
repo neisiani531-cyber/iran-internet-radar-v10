@@ -39,3 +39,23 @@ jobs:
           name: radar-v10-frontend-review
           path: dist-review/
           retention-days: 7
+      - name: Install browser test dependency
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install chromium --with-deps
+      - name: Start preview and verify dashboard in Chromium
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/radar-preview.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4173/iran-internet-radar-v10/ -o /dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/visual-smoke.mjs
+      - name: Upload actual browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-v10-browser-screenshots
+          path: visual-review/
+          if-no-files-found: warn
+          retention-days: 7
