@@ -4,7 +4,7 @@ import './IranProvinceMap.css';
 type Geometry={type:'MultiPolygon'|'Polygon';coordinates:number[][][][]|number[][][]};
 type Feature={type:'Feature';properties:Record<string,string>;geometry:Geometry};
 type GeoJSON={type:'FeatureCollection';features:Feature[]};
-const SOURCE='https://raw.githubusercontent.com/ssepehrnoush/Iran-geojson-map-boundaries/master/ir_states_boundaries_coordinates.geojson';
+const SOURCE=new URL('data/iran-provinces.geojson',document.baseURI).toString();
 const getId=(p:Record<string,string>)=>p['ISO3166-2']||p['ref']||'';
 const name=(p:Record<string,string>)=>p['name:fa']||p.name||'استان بدون نام';
 function rings(feature:Feature):number[][][][]{
