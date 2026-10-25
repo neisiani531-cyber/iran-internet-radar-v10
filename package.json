@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "node scripts/extract-v917-official.mjs && node scripts/verify-v917-migration.mjs && tsc --noEmit && vite build",
+    "build": "node scripts/extract-v917-official.mjs && node scripts/verify-v917-migration.mjs && node scripts/prepare-iran-provinces.mjs && tsc --noEmit && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "data:v917": "node scripts/extract-v917-official.mjs",
     "test:migration": "node scripts/extract-v917-official.mjs && node scripts/verify-v917-migration.mjs"
