@@ -46,3 +46,6 @@
 .md-data-table{font-size:10px;color:#a4c2d1;border-top:1px solid #234452;margin-top:10px;padding-top:8px}.md-data-table summary{cursor:pointer;padding:5px}
 .md-data-table>div{overflow:auto;max-height:280px}.md-data-table table{margin:8px 0;min-width:300px}.md-data-table caption{text-align:right;font-size:10px;color:#9cb6c9;padding:8px}
 .md-data-table td,.md-data-table th{font-size:10px;padding:9px 7px;white-space:nowrap}.md-data-table th[scope=row]{white-space:normal;min-width:140px}.md-chart-empty{padding:20px;color:#a4c2d1;font-size:12px}
+
+.md-scope{font-size:10px;color:#9dbccf;line-height:1.9;margin:0 0 10px;padding-top:4px;border-top:1px solid #183a4b}
+.md-chart-empty{width:100%;display:grid;place-content:center;text-align:center;line-height:2;background:#061b2a;border:1px dashed #355b6f;border-radius:8px}

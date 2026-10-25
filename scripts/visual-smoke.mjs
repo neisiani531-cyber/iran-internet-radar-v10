@@ -167,6 +167,28 @@ try {
   }
   await widget.locator('.md-data-table summary').click();
  }
+ // Linked scope: historical cutoff and operator selection must agree across views.
+ const periodFilter=page.locator('.tc-filters select').nth(0);
+ const operatorFilter=page.locator('.tc-filters select').nth(1);
+ await operatorFilter.selectOption(mobileSource.operators[0]);
+ if(await mobile.locator('.md-legend button').count()!==1)throw Error('Operator filter did not reach mobile chart');
+ if(await access.locator('svg[data-chart-mode="heatmap"] rect').count()!==2)throw Error('Operator filter did not reach QoS heatmap');
+ await periodFilter.selectOption(mobileSource.periods.at(-2));
+ await access.locator('.md-chart-empty').waitFor();
+ await drop.locator('.md-chart-empty').waitFor();
+ if(await access.locator('svg[data-chart-mode]').count()!==0)throw Error('QoS chart shown for unavailable period');
+ await mobile.locator('.md-data-table summary').click();
+ if(await mobile.locator('tbody tr').count()!==23)throw Error('Mobile history ignores selected end period');
+ const cutoffValue=await mobile.locator('tbody tr').last().locator('td').innerText();
+ if(cutoffValue!==formatValue(mobileSource.values.at(-2)[0]))throw Error('Mobile period/operator value mismatch');
+ await mobile.locator('.md-data-table summary').click();
+ await mobile.getByRole('combobox').selectOption('donut');
+ if(!await mobile.locator('.md-donut').innerText().then(text=>text.includes('زمستان ۱۴۰۴')))throw Error('Donut uses a later period than selected');
+ if(await fixed.getByRole('slider').inputValue()!=='330')throw Error('Filters reset layout dimensions');
+ await page.getByRole('button',{name:'بازنشانی فیلترها',exact:true}).click();
+ if(await access.locator('svg[data-chart-mode="heatmap"] rect').count()!==6)throw Error('QoS unavailable state did not recover');
+ if(await mobile.getByRole('combobox').inputValue()!=='donut')throw Error('Scope reset discarded chart preference');
+ await mobile.getByRole('combobox').selectOption('area');
  await access.screenshot({path:'visual-review/qos-heatmap.png'});
  await page.reload({waitUntil:'networkidle'});
  if(await access.getByRole('combobox').inputValue()!=='heatmap'||await drop.count()!==1)throw Error('QoS widget configuration not saved');

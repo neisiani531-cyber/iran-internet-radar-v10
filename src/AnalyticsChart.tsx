@@ -1,6 +1,6 @@
 import React,{useEffect,useRef,useState} from 'react';
 export type ChartMode='line'|'bar'|'area'|'donut'|'heatmap';
-export type ChartData={series:number[][];labels:string[];categories:string[];ticks?:string[];unit:string;descriptions?:string[];ceiling?:number;categoryLabel?:string};
+export type ChartData={series:number[][];labels:string[];categories:string[];ticks?:string[];unit:string;descriptions?:string[];ceiling?:number;categoryLabel?:string;emptyMessage?:string};
 const colors=['#44dfd0','#64a4fb','#f7ae59','#d78ef8'];
 const fa=(v:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2}).format(v);
 const compact=(v:number)=>v>=1e6?fa(v/1e6)+'م':v>=1e3?fa(v/1e3)+'ه':fa(v);
@@ -10,16 +10,17 @@ export function ChartDataTable({data,title}:{data:ChartData;title:string}){
  return <details className="md-data-table"><summary>جدول مقادیر · {title}</summary><div tabIndex={0} aria-label={'جدول قابل پیمایش '+title}><table><caption>{title} · {data.unit} · مقادیر منبع بدون گرد کردن</caption><thead><tr><th scope="col">{data.categoryLabel??'دوره / پرسش'}</th>{data.labels.map(label=><th scope="col" key={label}>{label}</th>)}</tr></thead><tbody>{data.categories.map((category,i)=><tr key={category}><th scope="row">{category}</th>{data.series.map((row,j)=><td key={j}>{fa(row[i])}</td>)}</tr>)}</tbody></table></div></details>;
 }
 export default function AnalyticsChart({data,mode,title}:{data:ChartData;mode:ChartMode;title:string}){
+ const complete=valid(data);
  const canvasRef=useRef<HTMLDivElement>(null);
  const [size,setSize]=useState({width:620,height:230});
  useEffect(()=>{
   if(!canvasRef.current)return;
   const observer=new ResizeObserver(entries=>{const box=entries[0]?.contentRect;if(!box)return;const width=Math.max(280,Math.round(box.width)),height=Math.max(100,Math.round(box.height));setSize(old=>old.width===width&&old.height===height?old:{width,height});});
   observer.observe(canvasRef.current);return ()=>observer.disconnect();
- },[]);
+ },[complete]);
  const [active,setActive]=useState<number|null>(null);
  const [muted,setMuted]=useState<number[]>([]);
- if(!valid(data))return <div className="md-chart-empty" role="status">داده کامل و معتبر برای رسم این نمودار موجود نیست.</div>;
+ if(!complete)return <div className="md-chart-empty" role="status">{data.emptyMessage??'داده کامل و معتبر برای رسم این نمودار موجود نیست.'}</div>;
  const visible=data.series.map((_,i)=>i).filter(i=>!muted.includes(i));
  const {width:w,height:h}=size;const l=64,r=25,t=25,b=38;
  const max=data.ceiling??(mode==='bar'&&data.unit==='درصد پاسخ'?100:(Math.max(...visible.flatMap(i=>data.series[i]))||1));

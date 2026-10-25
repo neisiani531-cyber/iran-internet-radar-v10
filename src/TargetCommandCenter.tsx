@@ -85,7 +85,7 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
     <p className="tc-note">CRA57 · صفحه ۱۴ · بهار ۱۴۰۵ · در انتظار کنترل تصویری. مقادیر تجمیعی‌اند؛ به اپراتور خاص نسبت داده نمی‌شوند.</p>
    </section>
   </div>
-  <ModularDashboard/>
+  <ModularDashboard selectedPeriod={period} selectedOperator={operator}/>
   <div className="tc-main-grid">
    <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">PUBLIC EXPERIENCE</span><h2>تجربه کاربران</h2></div>{sectionLink('research','پژوهش‌ها')}</div>
     <div className="tc-surveys">{survey.observations.map(x=><article key={x.evidence_id}><strong>{fa(x.value)}٪</strong><span>{x.title}</span><small>{x.evidence_id} · Q5 تأیید نشده</small></article>)}</div>

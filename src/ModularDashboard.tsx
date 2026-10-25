@@ -48,7 +48,7 @@ function readLayout(value:unknown,profile:Profile):Layout{
 }
 const periodLabel=(period:string)=>period.replace(/^(\d{4})-Q([1-4])$/,(_,year,quarter)=>['بهار','تابستان','پاییز','زمستان'][Number(quarter)-1]+' '+year.replace(/\d/g,(digit:string)=>'۰۱۲۳۴۵۶۷۸۹'[Number(digit)]));
 const fa=(v:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:1}).format(v);
-export default function ModularDashboard(){
+export default function ModularDashboard({selectedPeriod=history.periods[history.periods.length-1],selectedOperator='all'}:{selectedPeriod?:string;selectedOperator?:string}){
  const [saved,setSaved]=useState<LayoutStore>(defaultStore);
  const {active,layouts}=saved;
  const {order,modes,hidden,wide,heights,widths}=layouts[active];
@@ -123,18 +123,20 @@ export default function ModularDashboard(){
  },[edit,hydrated,hidden,order,active]);
  const data=useMemo(()=>{
   const h=history as {periods:string[];operators:string[];values:number[][]};
+  const end=h.periods.indexOf(selectedPeriod)+1;
+  const operatorsInScope=h.operators.map((name,index)=>({name,index})).filter(o=>selectedOperator==='all'||o.name===selectedOperator);
   function qualityData(metricId:string){
    const metric=qos.metrics.find(m=>m.id===metricId);
-   const operators=[...new Set(metric?.values.map(v=>v.operator)??[])];
+   const operators=[...new Set(metric?.values.map(v=>v.operator)??[])].filter(name=>selectedOperator==='all'||selectedOperator===name);
    const generations=['3G','4G'];
    const rows=generations.map(g=>operators.map(operator=>metric?.values.find(v=>v.operator===operator&&v.generation===g)?.value));
-   if(!operators.length||rows.some(row=>row.some(value=>value===undefined)))return {series:[],labels:[],categories:[],unit:'درصد'};
+   if(selectedPeriod!==qos.period||!operators.length||rows.some(row=>row.some(value=>value===undefined)))return {series:[],labels:[],categories:[],unit:'درصد',emptyMessage:'برای فصل و اپراتور انتخاب‌شده داده کیفیت قابل مقایسه موجود نیست؛ منبع فقط بهار ۱۴۰۵ را پوشش می‌دهد.'};
    return {series:rows as number[][],labels:generations,categories:operators,unit:'درصد',categoryLabel:'اپراتور',ceiling:metricId==='access_success'?100:undefined};
   }
-  return {mobile:{series:h.operators.map((_,j)=>h.values.map(row=>row[j])),labels:h.operators,categories:h.periods.map(periodLabel),unit:'اشتراک'},
+  return {mobile:{series:operatorsInScope.map(o=>h.values.slice(0,end).map(row=>row[o.index])),labels:operatorsInScope.map(o=>o.name),categories:h.periods.slice(0,end).map(periodLabel),unit:'اشتراک',emptyMessage:'برای انتخاب فعلی داده تاریخی اشتراک سیار موجود نیست.'},
    fixed:{series:['FTTx','XDSL','TDLTE','WiFi'].map(k=>fixed.observations.map(r=>r.technology_values[k as keyof typeof r.technology_values])),labels:['FTTx','XDSL','TDLTE','WiFi'],categories:fixed.observations.map(r=>r.period_label),unit:'اشتراک'},
    survey:{series:[survey.observations.map(r=>r.value)],labels:['پاسخ به پرسش'],categories:survey.observations.map(r=>r.title),ticks:['سرعت','قیمت بسته','ابزار واسط','رفع محدودیت'],descriptions:survey.observations.map(r=>r.description),unit:'درصد پاسخ'},access:qualityData('access_success'),drop:qualityData('drop_rate')};
- },[]);
+ },[selectedPeriod,selectedOperator]);
  function reorder(source:WidgetId,target:WidgetId,after=false){
   if(source===target)return;
   setOrder(old=>{const next=old.filter(x=>x!==source);next.splice(next.indexOf(target)+(after?1:0),0,source);return next});
@@ -153,7 +155,8 @@ export default function ModularDashboard(){
   <div className="md-grid" ref={gridRef}>{order.filter(id=>!hidden.includes(id)).map(id=>{const d=defs.find(x=>x.id===id)!;const metric=data[id];const mode=d.available.includes(modes[id])?modes[id]:d.available[0];return <article key={id} data-widget={id} style={{gridColumn:'span '+widths[id]}} className={'md-widget '+(wide.includes(id)?'md-wide':'')+(dragOver?.id===id?' md-drop-target':'')+(resizing===id?' md-resizing':'')} onDragOver={e=>{if(edit&&!resizeSession.current&&dragId.current&&dragId.current!==id){e.preventDefault();e.dataTransfer.dropEffect='move';const box=e.currentTarget.getBoundingClientRect();setDragOver({id,after:e.clientY>box.y+box.height/2})}}} onDrop={e=>{e.preventDefault();const source=dragId.current;if(edit&&!resizeSession.current&&source&&source!==id){const box=e.currentTarget.getBoundingClientRect();reorder(source,id,e.clientY>box.y+box.height/2);}dragId.current=null;setDragOver(null)}}>
    {dragOver?.id===id&&<div className={'md-drop-marker '+(dragOver.after?'md-drop-after':'md-drop-before')} aria-hidden="true">{dragOver.after?'قرارگیری پس از این پنل':'قرارگیری پیش از این پنل'}</div>}
    <div className="md-header"><div>{edit&&<button type="button" className="md-grip" draggable onDragStart={e=>{if(resizeSession.current){e.preventDefault();return;}dragId.current=id;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',id)}} onDragEnd={()=>{dragId.current=null;setDragOver(null)}} title="برای تغییر ترتیب بکشید" aria-label={'دستگیره جابه‌جایی '+d.title}>⠿ جابه‌جایی</button>}<small>{d.source}</small><h3>{d.title}</h3></div><div className="md-controls"><label>نوع نمودار <select aria-label={'نوع نمودار '+d.title} value={mode} onChange={e=>setModes(v=>({...v,[id]:e.target.value as Mode}))}>{d.available.map(x=><option key={x} value={x}>{({line:'خطی',bar:'میله‌ای',area:'سطحی',donut:'حلقه‌ای',heatmap:'نقشه حرارتی'} as const)[x]}</option>)}</select></label></div></div>
-   <div className={"md-size-body"+(edit?" md-resizable":"")} style={{height:heights[id]}} data-widget-id={id}>{<AnalyticsChart data={metric} mode={mode} title={d.title}/>}</div>
+   <p className="md-scope">{id==='mobile'?'بازه تاریخی تا '+periodLabel(selectedPeriod)+' · '+(selectedOperator==='all'?'هر سه اپراتور':selectedOperator):id==='access'||id==='drop'?'فصل انتخابی: '+periodLabel(selectedPeriod)+' · '+(selectedOperator==='all'?'هر سه اپراتور':selectedOperator):id==='fixed'?'فناوری‌های ثابت · دوره‌های مستقل منبع؛ فیلتر اپراتور سیار اعمال نمی‌شود.':'پیمایش ملت · جامعه پاسخ‌گویان مستقل؛ قابل انتساب به اپراتور انتخابی نیست.'}</p>
+   <div className={"md-size-body"+(edit?" md-resizable":"")} style={{height:heights[id]}} data-widget-id={id}>{<AnalyticsChart key={id+selectedPeriod+selectedOperator} data={metric} mode={mode} title={d.title}/>}</div>
    <ChartDataTable data={metric} title={d.title}/>
    {(id==='access'||id==='drop')&&<p className="md-warning">{id==='access'?'موفقیت اتصال: مقدار بیشتر مطلوب‌تر است.':'قطع اتصال: مقدار کمتر مطلوب‌تر است.'} داده فقط برای بهار ۱۴۰۵ موجود است؛ روند زمانی یا امتیاز کلی اپراتور نیست.{mode==='heatmap'?' شدت رنگ صرفاً مقدار همان شاخص را نشان می‌دهد.':''}</p>}
    {id==='survey'&&<p className="md-warning">درصدهای پرسش‌های متفاوت قابل جمع یا مقایسه مستقیم به‌عنوان یک سهم واحد نیستند؛ نمودار حلقه‌ای فقط در گروه‌های دارای مخرج مشترک مجاز است.</p>}

@@ -94,3 +94,11 @@ DO NOT auto-deploy to 185.105.101.70. Changes stay on integration/radar-v10-2026
 - QoS widgets read twelve actual operator/generation values from CRA57 page 15. Source period and pending visual-QA gate remain visible; single-quarter snapshots are not rendered as time trends.
 - Bar and heatmap are the only admitted chart modes for these widgets. Heatmap cells display actual percentages, generation rows, operator columns and an explicit numeric color domain; higher drop rate is not marked as better performance.
 - Browser regression adds both widgets, checks all twelve table values against their source, verifies six cells per heatmap and checks reload persistence. Real widget screenshot is captured as qos-heatmap.png.
+
+### Linked scope follow-up
+- The target page now passes its mobile period/operator selection into the existing modular studio.
+- Mobile history is truncated at the selected quarter and restricted to selected operators; donut composition uses that same endpoint.
+- QoS widgets filter their operator columns and show an explicit unavailable state for quarters other than their actual 1405-Q1 source period. Source values are never copied into earlier quarters.
+- Fixed access and survey widgets retain their independent source scopes with visible explanations, rather than being attributed to a mobile operator.
+- Scope changes do not reset chart choice or persisted layout dimensions. Inspector state resets when the underlying scope changes.
+- Browser regression checks selected-operator coverage, the 23-quarter cutoff and exact source endpoint, donut period, unavailable/recovery behavior, and preservation of layout/chart preferences.
