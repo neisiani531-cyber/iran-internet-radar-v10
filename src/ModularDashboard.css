@@ -17,3 +17,14 @@
 .md-size-body.md-resizable{resize:vertical;overflow:auto;max-height:480px;min-height:180px;border:1px dashed #36677c;border-radius:10px;scrollbar-color:#45b7ac #102d3e}
 .md-size-body.md-resizable::-webkit-resizer{background:linear-gradient(135deg,transparent 45%,#51dec8 48%,#51dec8 58%,transparent 61%)}
 .md-size-body.md-resizable:focus-within{border-color:#4ddcc5}
+
+.md-profile{display:flex;align-items:center;gap:7px;font-size:11px;color:#b9e4eb}
+.md-profile select{font:inherit;padding:7px;border:1px solid #33677a;border-radius:8px;background:#092739;color:#dcf6fa}
+.md-library{padding:15px 18px;margin-bottom:12px;border:1px solid #2f6476;border-radius:12px;background:#0a2232}
+.md-library p{margin:0 0 12px;color:#9dbdcd;font-size:11px}
+.md-library>div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #234454}
+.md-library strong,.md-library small{display:block}.md-library strong{font-size:12px}.md-library small{font-size:10px;color:#9dbdcd;margin-top:5px}
+.md-library button,.md-empty button{font:inherit;font-size:11px;background:#124052;color:#d5faf8;border:1px solid #33677a;border-radius:8px;padding:8px;cursor:pointer}
+.md-empty{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;border:1px dashed #33677a;padding:30px;margin-bottom:12px;font-size:12px;color:#b9e4eb}
+.md-grip{font-family:inherit}.md-root button:focus-visible,.md-root select:focus-visible{outline:2px solid #57e3d1;outline-offset:3px}
+@media(max-width:520px){.md-library>div{align-items:flex-start}.md-library button{flex-shrink:0}.md-tools{width:100%}.md-profile{flex:1 1 100%}}

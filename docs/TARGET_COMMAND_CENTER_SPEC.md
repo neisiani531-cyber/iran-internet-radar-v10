@@ -52,3 +52,13 @@ F. Parallel evidence acquisition backlog from empty-state inventory; stage deplo
 
 ## Release gate
 DO NOT auto-deploy to 185.105.101.70. Changes stay on integration/radar-v10-20261017 until tests + frontend build + review + controlled release.
+
+## Layout implementation checkpoint — 2026-10-25
+- Existing `ModularDashboard` retained; no chart/data adapter replacement.
+- Three separately persisted chart layouts: analyst, manager and large display. These are analytics-layout presets, not a replacement for the existing full-dashboard presentation toggle.
+- Widget library lists the three data-connected widgets; individual add/remove preserves chart mode, order, width and height. No placeholder feeds are fabricated.
+- Storage v2 migrates legacy v1 preferences into analyst layout; known IDs, compatible chart modes, bounded heights and active profile are validated. Reset affects only the selected profile. Browser storage failure is visible.
+- Reordering accepts only an internal active edit drag. Native height observation and existing accessible before/after controls remain available.
+- Browser regression now covers native mouse resize, combined wide/hidden/restored/reordered widgets, profile isolation across reload and reset, empty-layout recovery, mobile controls, legacy migration and invalid stored settings.
+- Remaining: two-dimensional grid resizing, stronger drag placement/compaction, extending the widget registry beyond the three current datasets, and applying the approved central-map visual composition to the full dashboard.
+- Release remains on the integration branch; no production deployment is authorized by this checkpoint.
