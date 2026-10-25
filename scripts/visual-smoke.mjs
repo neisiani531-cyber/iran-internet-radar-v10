@@ -31,10 +31,14 @@ try {
  const widgets=page.locator('.md-widget');
  if(await widgets.count()!==3)throw new Error('Expected three analytics widgets');
  await page.getByRole('button',{name:'ویرایش چیدمان'}).click();
+ // Keep both drag handles on screen: dragTo auto-scroll otherwise changes the
+ // source coordinates when font metrics put the third panel below the fold.
+ await page.setViewportSize({width:1600,height:1800});
  const first=widgets.first();
  const thirdGrip=widgets.nth(2).locator('.md-grip');
  await thirdGrip.dragTo(first.locator('h3'),{targetPosition:{x:20,y:5}});
  await page.waitForFunction(()=>document.querySelector('.md-widget h3')?.textContent?.includes('تجربه کاربران'),null,{timeout:10000});
+ await page.setViewportSize({width:1600,height:900});
  const firstTitle=await widgets.first().locator('h3').innerText();
  if(!firstTitle.includes('تجربه کاربران'))throw new Error('Widget drag ordering failed: '+firstTitle);
  const heightControl=page.getByRole('slider',{name:'ارتفاع نمودار روند اشتراک پهن‌باند سیار'});
