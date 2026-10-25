@@ -9,7 +9,7 @@ type Widget={id:WidgetId;title:string;source:string;available:Mode[]};
 const defs:Widget[]=[
  {id:'mobile',title:'روند اشتراک پهن‌باند سیار',source:'CRA57 · صفحه ۲۵ · در انتظار QA تصویری',available:['line','bar','area','donut']},
  {id:'fixed',title:'روند فناوری‌های اینترنت ثابت',source:'CRA57 · صفحه ۲۲ · در انتظار QA تصویری',available:['line','bar','area','donut']},
- {id:'survey',title:'یافته‌های منتخب تجربه کاربران',source:'پیمایش ملت · پژوهشی و فاقد پذیرش Q5',available:['bar','donut']}
+ {id:'survey',title:'یافته‌های منتخب تجربه کاربران',source:'پیمایش ملت · پژوهشی و فاقد پذیرش Q5',available:['bar']}
 ];
 const fa=(v:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:1}).format(v);
 const colors=['#44dfd0','#64a4fb','#f7ae59','#d78ef8'];
@@ -34,8 +34,9 @@ export default function ModularDashboard(){
  const [hidden,setHidden]=useState<WidgetId[]>([]);
  const [wide,setWide]=useState<WidgetId[]>(['mobile']);
  const [edit,setEdit]=useState(false);
- useEffect(()=>{try{const s=localStorage.getItem('radar-widget-layout-v1');if(!s)return;const v=JSON.parse(s);if(Array.isArray(v.order)&&v.order.length===3&&new Set(v.order).size===3&&v.order.every((x:unknown)=>defs.some(d=>d.id===x)))setOrder(v.order);if(v.modes&&typeof v.modes==='object')setModes(old=>({...old,...v.modes}));if(Array.isArray(v.hidden))setHidden(v.hidden.filter((x:WidgetId)=>defs.some(d=>d.id===x)));if(Array.isArray(v.wide))setWide(v.wide.filter((x:WidgetId)=>defs.some(d=>d.id===x)));}catch{}},[]);
- useEffect(()=>{try{localStorage.setItem('radar-widget-layout-v1',JSON.stringify({order,modes,hidden,wide}));}catch{}},[order,modes,hidden,wide]);
+ const [hydrated,setHydrated]=useState(false);
+ useEffect(()=>{try{const s=localStorage.getItem('radar-widget-layout-v1');if(!s)return;const v=JSON.parse(s);if(Array.isArray(v.order)&&v.order.length===3&&new Set(v.order).size===3&&v.order.every((x:unknown)=>defs.some(d=>d.id===x)))setOrder(v.order);if(v.modes&&typeof v.modes==='object')setModes(old=>({...old,...v.modes}));if(Array.isArray(v.hidden))setHidden(v.hidden.filter((x:WidgetId)=>defs.some(d=>d.id===x)));if(Array.isArray(v.wide))setWide(v.wide.filter((x:WidgetId)=>defs.some(d=>d.id===x)));}catch{}finally{setHydrated(true)}},[]);
+ useEffect(()=>{if(!hydrated)return;try{localStorage.setItem('radar-widget-layout-v1',JSON.stringify({order,modes,hidden,wide}));}catch{}},[order,modes,hidden,wide,hydrated]);
  const data=useMemo(()=>{
   const h=history as {periods:string[];operators:string[];values:number[][]};
   return {mobile:{series:h.operators.map((_,j)=>h.values.map(row=>row[j])),labels:h.operators},
