@@ -31,6 +31,22 @@ try {
  await page.getByRole('button',{name:'ویرایش چیدمان'}).click();
  const savedHeight=await page.getByRole('slider',{name:'ارتفاع نمودار روند اشتراک پهن‌باند سیار'}).inputValue();
  if(savedHeight!=='360')throw new Error('Widget height not persisted: '+savedHeight);
+ // Exercise the actual native corner with mouse input, including release outside.
+ const resizeBody=page.locator('[data-widget-id="mobile"]');
+ await resizeBody.scrollIntoViewIfNeeded();
+ const box=await resizeBody.boundingBox();
+ const rtl=await resizeBody.evaluate(el=>getComputedStyle(el).direction==='rtl');
+ const cornerX=rtl?box.x+4:box.x+box.width-4;
+ await page.mouse.move(cornerX,box.y+box.height-4);
+ await page.mouse.down();
+ await page.mouse.move(cornerX,box.y+box.height+56,{steps:12});
+ await page.mouse.up();
+ await page.waitForFunction(()=>Number(document.querySelector('[aria-label="ارتفاع نمودار روند اشتراک پهن‌باند سیار"]').value)>390);
+ const nativeHeight=await page.getByRole('slider',{name:'ارتفاع نمودار روند اشتراک پهن‌باند سیار'}).inputValue();
+ await page.reload({waitUntil:'networkidle'});
+ await page.getByRole('button',{name:'ویرایش چیدمان'}).click();
+ const restoredNative=await page.getByRole('slider',{name:'ارتفاع نمودار روند اشتراک پهن‌باند سیار'}).inputValue();
+ if(restoredNative!==nativeHeight)throw new Error('Native resize not persisted: '+restoredNative+' vs '+nativeHeight);
  const persisted=await page.locator('.md-widget').first().locator('h3').innerText();
  if(!persisted.includes('تجربه کاربران'))throw new Error('Widget order not persisted');
  await page.getByRole('button',{name:'چیدمان پیش‌فرض'}).click();
