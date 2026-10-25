@@ -14,6 +14,18 @@ try {
  await page.locator('.ipm-inner svg path').first().waitFor({timeout:25000});
  const count=await page.locator('.ipm-inner svg path').count();
  if(count!==31)throw new Error('Expected 31 map regions; got '+count);
+ const widgets=page.locator('.md-widget');
+ if(await widgets.count()!==3)throw new Error('Expected three analytics widgets');
+ await page.getByRole('button',{name:'ویرایش چیدمان'}).click();
+ const first=widgets.first().locator('.md-grip');
+ const third=widgets.nth(2);
+ await first.dragTo(third);
+ const firstTitle=await widgets.first().locator('h3').innerText();
+ if(!firstTitle.includes('فناوری‌های اینترنت ثابت'))throw new Error('Widget drag ordering failed: '+firstTitle);
+ await page.reload({waitUntil:'networkidle'});
+ const persisted=await page.locator('.md-widget').first().locator('h3').innerText();
+ if(!persisted.includes('فناوری‌های اینترنت ثابت'))throw new Error('Widget order not persisted');
+ await page.getByRole('button',{name:'چیدمان پیش‌فرض'}).click();
  await page.screenshot({path:'visual-review/desktop-1600.png',fullPage:true});
  await page.getByRole('button',{name:'حالت نمایش مدیریتی'}).click();
  await page.screenshot({path:'visual-review/management-tv.png',fullPage:true});
