@@ -41,14 +41,14 @@ export default function ModularDashboard(){
  const [hydrated,setHydrated]=useState(false);
  useEffect(()=>{try{const s=localStorage.getItem('radar-widget-layout-v1');if(!s)return;const v=JSON.parse(s);if(Array.isArray(v.order)&&v.order.length===3&&new Set(v.order).size===3&&v.order.every((x:unknown)=>defs.some(d=>d.id===x)))setOrder(v.order);if(v.modes&&typeof v.modes==='object')setModes(old=>({...old,...v.modes}));if(Array.isArray(v.hidden))setHidden(v.hidden.filter((x:WidgetId)=>defs.some(d=>d.id===x)));if(Array.isArray(v.wide))setWide(v.wide.filter((x:WidgetId)=>defs.some(d=>d.id===x)));if(v.heights&&typeof v.heights==='object')setHeights(old=>Object.fromEntries(defs.map(d=>[d.id,Number.isFinite(v.heights[d.id])?Math.max(180,Math.min(480,v.heights[d.id])):old[d.id]])) as Record<WidgetId,number>);}catch{}finally{setHydrated(true)}},[]);
  useEffect(()=>{if(!hydrated)return;try{localStorage.setItem('radar-widget-layout-v1',JSON.stringify({order,modes,hidden,wide,heights}));}catch{}},[order,modes,hidden,wide,heights,hydrated]);
- // Native resize can end outside the panel: observe its content box instead of
+ // Native resize can end outside the panel: observe its border box instead of
  // relying on a pointerup event bubbling from Chromium's resize control.
  useEffect(()=>{
   if(!edit||!hydrated||!gridRef.current)return;
   const observer=new ResizeObserver(entries=>{
    for(const entry of entries){
     const id=(entry.target as HTMLElement).dataset.widgetId as WidgetId;
-    const height=Math.max(180,Math.min(480,Math.round(entry.contentRect.height)));
+    const height=Math.max(180,Math.min(480,Math.round(entry.borderBoxSize[0]?.blockSize??entry.target.getBoundingClientRect().height)));
     setHeights(old=>Math.abs(old[id]-height)>1?{...old,[id]:height}:old);
    }
   });
