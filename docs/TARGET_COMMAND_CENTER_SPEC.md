@@ -102,3 +102,10 @@ DO NOT auto-deploy to 185.105.101.70. Changes stay on integration/radar-v10-2026
 - Fixed access and survey widgets retain their independent source scopes with visible explanations, rather than being attributed to a mobile operator.
 - Scope changes do not reset chart choice or persisted layout dimensions. Inspector state resets when the underlying scope changes.
 - Browser regression checks selected-operator coverage, the 23-quarter cutoff and exact source endpoint, donut period, unavailable/recovery behavior, and preservation of layout/chart preferences.
+
+### Paired QoS scatter widget
+- Added a sixth optional widget using the existing page-15 snapshot. Access-success and drop-rate observations are joined by operator and generation, within the same source quarter.
+- X is access success and Y is drop rate, both percentages. Stable colors identify operators; circle/diamond identifies 3G/4G. Numeric domains and the nonzero X origin are explicit.
+- Inspector supports pointer, focus and keyboard navigation. The attached table exposes both exact source values for every point.
+- Operator/period filters and unavailable states follow the same scope contract as other QoS widgets. No fitted trend, composite score, province attribution or causal conclusion is computed.
+- Regression verifies all six joined observations against twelve source values, keyboard focus, selected-operator coverage, missing-period behavior and six-widget restore-all. Actual widget screenshot is qos-scatter.png.

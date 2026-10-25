@@ -167,15 +167,38 @@ try {
   }
   await widget.locator('.md-data-table summary').click();
  }
+ // Paired QoS data joins by operator and generation, never by array position.
+ await page.getByRole('button',{name:'افزودن رابطه موفقیت و قطع اتصال داده',exact:true}).click();
+ const scatter=page.locator('[data-widget="qualityPair"]');
+ if(await scatter.locator('.qsc-point').count()!==6)throw Error('Scatter lacks six matched source observations');
+ if(await scatter.getByRole('combobox').locator('option').count()!==1)throw Error('Scatter permits incompatible modes');
+ await scatter.locator('.md-data-table summary').click();
+ const pairedRows=scatter.locator('tbody tr');
+ for(let i=0;i<6;i++){
+  const [operator,generation]=(await pairedRows.nth(i).locator('th').innerText()).split(' · ');
+  for(const [j,metricId] of ['access_success','drop_rate'].entries()){
+   const value=qosSource.metrics.find(m=>m.id===metricId).values.find(v=>v.operator===operator&&v.generation===generation).value;
+   if(await pairedRows.nth(i).locator('td').nth(j).innerText()!==formatValue(value))throw Error('Scatter paired unrelated source rows');
+  }
+ }
+ await scatter.locator('.md-data-table summary').click();
+ await scatter.locator('.qsc-point').last().focus();
+ if(!(await scatter.locator('.qsc-readout').innerText()).includes('رایتل · 4G'))throw Error('Scatter point keyboard focus mismatch');
+ await scatter.locator('svg').press('Home');
+ if(!(await scatter.locator('.qsc-readout').innerText()).includes('همراه اول · 3G'))throw Error('Scatter Home inspection failed');
+ await scatter.locator('svg').press('Escape');
+ await scatter.screenshot({path:'visual-review/qos-scatter.png'});
  // Linked scope: historical cutoff and operator selection must agree across views.
  const periodFilter=page.locator('.tc-filters select').nth(0);
  const operatorFilter=page.locator('.tc-filters select').nth(1);
  await operatorFilter.selectOption(mobileSource.operators[0]);
  if(await mobile.locator('.md-legend button').count()!==1)throw Error('Operator filter did not reach mobile chart');
  if(await access.locator('svg[data-chart-mode="heatmap"] rect').count()!==2)throw Error('Operator filter did not reach QoS heatmap');
+ if(await scatter.locator('.qsc-point').count()!==2)throw Error('Operator filter did not reach scatter');
  await periodFilter.selectOption(mobileSource.periods.at(-2));
  await access.locator('.md-chart-empty').waitFor();
  await drop.locator('.md-chart-empty').waitFor();
+ await scatter.locator('.md-chart-empty').waitFor();
  if(await access.locator('svg[data-chart-mode]').count()!==0)throw Error('QoS chart shown for unavailable period');
  await mobile.locator('.md-data-table summary').click();
  if(await mobile.locator('tbody tr').count()!==23)throw Error('Mobile history ignores selected end period');
@@ -195,6 +218,7 @@ try {
  await page.getByRole('button',{name:'ویرایش چیدمان',exact:true}).click();
  await access.getByRole('button',{name:'پنهان کردن',exact:true}).click();
  await drop.getByRole('button',{name:'پنهان کردن',exact:true}).click();
+ await scatter.getByRole('button',{name:'پنهان کردن',exact:true}).click();
  await fixed.locator('.md-grip').dragTo(survey.locator('h3'),{targetPosition:{x:20,y:5}});
  const analystOrder=await widgets.evaluateAll(nodes=>nodes.map(el=>el.dataset.widget).join(','));
  await page.getByRole('combobox',{name:'چیدمان شخصی',exact:true}).selectOption('manager');
@@ -217,7 +241,7 @@ try {
  // Hide all, recover via explicit empty state, and verify mobile controls.
  for(let i=0;i<3;i++)await widgets.first().getByRole('button',{name:'پنهان کردن',exact:true}).click();
  await page.getByRole('button',{name:'بازیابی ویجت‌ها',exact:true}).click();
- if(await widgets.count()!==5)throw Error('Empty layout recovery failed');
+ if(await widgets.count()!==6)throw Error('Empty layout recovery failed');
  await page.setViewportSize({width:390,height:844});
  await fixed.getByRole('slider').fill('270');
  await fixed.getByRole('button',{name:'جابه‌جایی به قبل',exact:true}).click();

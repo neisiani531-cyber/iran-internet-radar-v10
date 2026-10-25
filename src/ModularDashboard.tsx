@@ -5,15 +5,17 @@ import survey from '../packages/contracts/p01-survey-research-preview.json';
 import qos from '../packages/contracts/qos-metric-catalog.json';
 import './ModularDashboard.css';
 import AnalyticsChart,{ChartDataTable} from './AnalyticsChart';
-type Mode='line'|'bar'|'area'|'donut'|'heatmap';
-type WidgetId='mobile'|'fixed'|'survey'|'access'|'drop';
+import QoSScatter from './QoSScatter';
+type Mode='line'|'bar'|'area'|'donut'|'heatmap'|'scatter';
+type WidgetId='mobile'|'fixed'|'survey'|'access'|'drop'|'qualityPair';
 type Widget={id:WidgetId;title:string;source:string;available:Mode[];initialHidden?:boolean};
 const defs:Widget[]=[
  {id:'mobile',title:'روند اشتراک پهن‌باند سیار',source:'CRA57 · صفحه ۲۵ · در انتظار QA تصویری',available:['line','bar','area','donut']},
  {id:'fixed',title:'روند فناوری‌های اینترنت ثابت',source:'CRA57 · صفحه ۲۲ · در انتظار QA تصویری',available:['line','bar','area','donut']},
  {id:'survey',title:'یافته‌های منتخب تجربه کاربران',source:'پیمایش ملت · پژوهشی و فاقد پذیرش Q5',available:['bar']},
  {id:'access',title:'موفقیت اتصال داده در نسل‌های سیار',source:'CRA57 · صفحه ۱۵ · بهار ۱۴۰۵ · در انتظار QA تصویری',available:['bar','heatmap'],initialHidden:true},
- {id:'drop',title:'نرخ قطع اتصال داده در نسل‌های سیار',source:'CRA57 · صفحه ۱۵ · بهار ۱۴۰۵ · در انتظار QA تصویری',available:['bar','heatmap'],initialHidden:true}
+ {id:'drop',title:'نرخ قطع اتصال داده در نسل‌های سیار',source:'CRA57 · صفحه ۱۵ · بهار ۱۴۰۵ · در انتظار QA تصویری',available:['bar','heatmap'],initialHidden:true},
+ {id:'qualityPair',title:'رابطه موفقیت و قطع اتصال داده',source:'CRA57 · صفحه ۱۵ · بهار ۱۴۰۵ · در انتظار QA تصویری',available:['scatter'],initialHidden:true}
 ];
 type Profile='analyst'|'manager'|'tv';
 type Layout={order:WidgetId[];modes:Record<WidgetId,Mode>;hidden:WidgetId[];wide:WidgetId[];heights:Record<WidgetId,number>;widths:Record<WidgetId,number>};
@@ -21,7 +23,7 @@ type LayoutStore={active:Profile;layouts:Record<Profile,Layout>};
 const storageKey='radar-widget-layout-v2';
 const profileNames:Record<Profile,string>={analyst:'تحلیلگر',manager:'مدیریتی',tv:'نمایشگر بزرگ'};
 function defaultLayout(profile:Profile):Layout{
- return {order:defs.map(d=>d.id),modes:{mobile:'area',fixed:'line',survey:'bar',access:'bar',drop:'heatmap'},
+ return {order:defs.map(d=>d.id),modes:{mobile:'area',fixed:'line',survey:'bar',access:'bar',drop:'heatmap',qualityPair:'scatter'},
   hidden:[...(profile==='manager'?['survey' as WidgetId]:[]),...defs.filter(d=>d.initialHidden).map(d=>d.id)],wide:profile==='tv'?[]:['mobile'],
   widths:Object.fromEntries(defs.map(d=>[d.id,profile!=='tv'&&d.id==='mobile'?12:6])) as Record<WidgetId,number>,
   heights:Object.fromEntries(defs.map(d=>[d.id,profile==='tv'?300:d.id==='mobile'?240:210])) as Record<WidgetId,number>};
@@ -133,9 +135,17 @@ export default function ModularDashboard({selectedPeriod=history.periods[history
    if(selectedPeriod!==qos.period||!operators.length||rows.some(row=>row.some(value=>value===undefined)))return {series:[],labels:[],categories:[],unit:'درصد',emptyMessage:'برای فصل و اپراتور انتخاب‌شده داده کیفیت قابل مقایسه موجود نیست؛ منبع فقط بهار ۱۴۰۵ را پوشش می‌دهد.'};
    return {series:rows as number[][],labels:generations,categories:operators,unit:'درصد',categoryLabel:'اپراتور',ceiling:metricId==='access_success'?100:undefined};
   }
+  function pairData(){
+   const access=qos.metrics.find(metric=>metric.id==='access_success');
+   const drop=qos.metrics.find(metric=>metric.id==='drop_rate');
+   const rows=access?.values.filter(row=>selectedOperator==='all'||row.operator===selectedOperator)??[];
+   const paired=rows.map(row=>({row,drop:drop?.values.find(other=>other.operator===row.operator&&other.generation===row.generation)?.value}));
+   if(selectedPeriod!==qos.period||!paired.length||paired.some(pair=>pair.drop===undefined))return {series:[],labels:[],categories:[],unit:'درصد',emptyMessage:'برای انتخاب فعلی، جفت داده هم‌دوره موفقیت و قطع اتصال موجود نیست؛ منبع فقط بهار ۱۴۰۵ را پوشش می‌دهد.'};
+   return {series:[paired.map(pair=>pair.row.value),paired.map(pair=>pair.drop as number)],labels:['موفقیت اتصال','نرخ قطع'],categories:paired.map(pair=>pair.row.operator+' · '+pair.row.generation),unit:'درصد',categoryLabel:'اپراتور · نسل'};
+  }
   return {mobile:{series:operatorsInScope.map(o=>h.values.slice(0,end).map(row=>row[o.index])),labels:operatorsInScope.map(o=>o.name),categories:h.periods.slice(0,end).map(periodLabel),unit:'اشتراک',emptyMessage:'برای انتخاب فعلی داده تاریخی اشتراک سیار موجود نیست.'},
    fixed:{series:['FTTx','XDSL','TDLTE','WiFi'].map(k=>fixed.observations.map(r=>r.technology_values[k as keyof typeof r.technology_values])),labels:['FTTx','XDSL','TDLTE','WiFi'],categories:fixed.observations.map(r=>r.period_label),unit:'اشتراک'},
-   survey:{series:[survey.observations.map(r=>r.value)],labels:['پاسخ به پرسش'],categories:survey.observations.map(r=>r.title),ticks:['سرعت','قیمت بسته','ابزار واسط','رفع محدودیت'],descriptions:survey.observations.map(r=>r.description),unit:'درصد پاسخ'},access:qualityData('access_success'),drop:qualityData('drop_rate')};
+   survey:{series:[survey.observations.map(r=>r.value)],labels:['پاسخ به پرسش'],categories:survey.observations.map(r=>r.title),ticks:['سرعت','قیمت بسته','ابزار واسط','رفع محدودیت'],descriptions:survey.observations.map(r=>r.description),unit:'درصد پاسخ'},access:qualityData('access_success'),drop:qualityData('drop_rate'),qualityPair:pairData()};
  },[selectedPeriod,selectedOperator]);
  function reorder(source:WidgetId,target:WidgetId,after=false){
   if(source===target)return;
@@ -154,9 +164,9 @@ export default function ModularDashboard({selectedPeriod=history.periods[history
   {hidden.length===defs.length&&<div className="md-empty" role="status">همه ویجت‌های این چیدمان پنهان شده‌اند.<button onClick={()=>setHidden([])}>بازیابی ویجت‌ها</button></div>}
   <div className="md-grid" ref={gridRef}>{order.filter(id=>!hidden.includes(id)).map(id=>{const d=defs.find(x=>x.id===id)!;const metric=data[id];const mode=d.available.includes(modes[id])?modes[id]:d.available[0];return <article key={id} data-widget={id} style={{gridColumn:'span '+widths[id]}} className={'md-widget '+(wide.includes(id)?'md-wide':'')+(dragOver?.id===id?' md-drop-target':'')+(resizing===id?' md-resizing':'')} onDragOver={e=>{if(edit&&!resizeSession.current&&dragId.current&&dragId.current!==id){e.preventDefault();e.dataTransfer.dropEffect='move';const box=e.currentTarget.getBoundingClientRect();setDragOver({id,after:e.clientY>box.y+box.height/2})}}} onDrop={e=>{e.preventDefault();const source=dragId.current;if(edit&&!resizeSession.current&&source&&source!==id){const box=e.currentTarget.getBoundingClientRect();reorder(source,id,e.clientY>box.y+box.height/2);}dragId.current=null;setDragOver(null)}}>
    {dragOver?.id===id&&<div className={'md-drop-marker '+(dragOver.after?'md-drop-after':'md-drop-before')} aria-hidden="true">{dragOver.after?'قرارگیری پس از این پنل':'قرارگیری پیش از این پنل'}</div>}
-   <div className="md-header"><div>{edit&&<button type="button" className="md-grip" draggable onDragStart={e=>{if(resizeSession.current){e.preventDefault();return;}dragId.current=id;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',id)}} onDragEnd={()=>{dragId.current=null;setDragOver(null)}} title="برای تغییر ترتیب بکشید" aria-label={'دستگیره جابه‌جایی '+d.title}>⠿ جابه‌جایی</button>}<small>{d.source}</small><h3>{d.title}</h3></div><div className="md-controls"><label>نوع نمودار <select aria-label={'نوع نمودار '+d.title} value={mode} onChange={e=>setModes(v=>({...v,[id]:e.target.value as Mode}))}>{d.available.map(x=><option key={x} value={x}>{({line:'خطی',bar:'میله‌ای',area:'سطحی',donut:'حلقه‌ای',heatmap:'نقشه حرارتی'} as const)[x]}</option>)}</select></label></div></div>
-   <p className="md-scope">{id==='mobile'?'بازه تاریخی تا '+periodLabel(selectedPeriod)+' · '+(selectedOperator==='all'?'هر سه اپراتور':selectedOperator):id==='access'||id==='drop'?'فصل انتخابی: '+periodLabel(selectedPeriod)+' · '+(selectedOperator==='all'?'هر سه اپراتور':selectedOperator):id==='fixed'?'فناوری‌های ثابت · دوره‌های مستقل منبع؛ فیلتر اپراتور سیار اعمال نمی‌شود.':'پیمایش ملت · جامعه پاسخ‌گویان مستقل؛ قابل انتساب به اپراتور انتخابی نیست.'}</p>
-   <div className={"md-size-body"+(edit?" md-resizable":"")} style={{height:heights[id]}} data-widget-id={id}>{<AnalyticsChart key={id+selectedPeriod+selectedOperator} data={metric} mode={mode} title={d.title}/>}</div>
+   <div className="md-header"><div>{edit&&<button type="button" className="md-grip" draggable onDragStart={e=>{if(resizeSession.current){e.preventDefault();return;}dragId.current=id;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',id)}} onDragEnd={()=>{dragId.current=null;setDragOver(null)}} title="برای تغییر ترتیب بکشید" aria-label={'دستگیره جابه‌جایی '+d.title}>⠿ جابه‌جایی</button>}<small>{d.source}</small><h3>{d.title}</h3></div><div className="md-controls"><label>نوع نمودار <select aria-label={'نوع نمودار '+d.title} value={mode} onChange={e=>setModes(v=>({...v,[id]:e.target.value as Mode}))}>{d.available.map(x=><option key={x} value={x}>{({line:'خطی',bar:'میله‌ای',area:'سطحی',donut:'حلقه‌ای',heatmap:'نقشه حرارتی',scatter:'پراکندگی'} as const)[x]}</option>)}</select></label></div></div>
+   <p className="md-scope">{id==='mobile'?'بازه تاریخی تا '+periodLabel(selectedPeriod)+' · '+(selectedOperator==='all'?'هر سه اپراتور':selectedOperator):id==='access'||id==='drop'||id==='qualityPair'?'فصل انتخابی: '+periodLabel(selectedPeriod)+' · '+(selectedOperator==='all'?'هر سه اپراتور':selectedOperator):id==='fixed'?'فناوری‌های ثابت · دوره‌های مستقل منبع؛ فیلتر اپراتور سیار اعمال نمی‌شود.':'پیمایش ملت · جامعه پاسخ‌گویان مستقل؛ قابل انتساب به اپراتور انتخابی نیست.'}</p>
+   <div className={"md-size-body"+(edit?" md-resizable":"")} style={{height:heights[id]}} data-widget-id={id}>{mode==='scatter'?<QoSScatter key={id+selectedPeriod+selectedOperator} data={metric} title={d.title}/>:<AnalyticsChart key={id+selectedPeriod+selectedOperator} data={metric} mode={mode} title={d.title}/>}</div>
    <ChartDataTable data={metric} title={d.title}/>
    {(id==='access'||id==='drop')&&<p className="md-warning">{id==='access'?'موفقیت اتصال: مقدار بیشتر مطلوب‌تر است.':'قطع اتصال: مقدار کمتر مطلوب‌تر است.'} داده فقط برای بهار ۱۴۰۵ موجود است؛ روند زمانی یا امتیاز کلی اپراتور نیست.{mode==='heatmap'?' شدت رنگ صرفاً مقدار همان شاخص را نشان می‌دهد.':''}</p>}
    {id==='survey'&&<p className="md-warning">درصدهای پرسش‌های متفاوت قابل جمع یا مقایسه مستقیم به‌عنوان یک سهم واحد نیستند؛ نمودار حلقه‌ای فقط در گروه‌های دارای مخرج مشترک مجاز است.</p>}
