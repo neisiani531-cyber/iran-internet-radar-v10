@@ -10,7 +10,7 @@ def test_regulatory_operator_route_is_registered_once():
     matches = [
         route
         for route in regulatory_router.routes
-        if regulatory_router.prefix + getattr(route, "path", "") == "/api/v1/regulatory/operator-indicators"
+        if getattr(route, "path", "") == "/api/v1/regulatory/operator-indicators"
         and "GET" in getattr(route, "methods", set())
     ]
     assert len(matches) == 1, "Duplicate GET operator-indicators route"
