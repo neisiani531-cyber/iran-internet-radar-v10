@@ -1,0 +1,84 @@
+import React,{useState} from 'react';
+import fixed from '../packages/contracts/public-fixed-access.snapshot.json';
+import mobile from '../packages/contracts/public-mobile-operators.snapshot.json';
+import history from '../packages/contracts/cra57-mobile-broadband-history.json';
+import qos from '../packages/contracts/qos-metric-catalog.json';
+import latency from '../packages/contracts/cra57-latency-quality.snapshot.json';
+import survey from '../packages/contracts/p01-survey-research-preview.json';
+import './TargetCommandCenter.css';
+
+type Destination='fixed'|'mobile'|'qos'|'research'|'evidence'|'catalog'|'live';
+type Focus='national'|'operator'|'experience';
+const fa=(n:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2}).format(n);
+const current=fixed.observations[fixed.observations.length-1];
+const operatorPeriod=history.periods[history.periods.length-1];
+const statuses:Record<string,string>={pending:'در انتظار تأیید تصویری',research:'پیش‌نمایش پژوهشی',missing:'فاقد داده معتبر',official:'استخراج رسمی'};
+function Tile({title,value,unit,note,status='pending'}:{title:string;value:string;unit?:string;note:string;status?:keyof typeof statuses}){
+ return <article className="tc-tile"><small>{title}</small><div><strong>{value}</strong><span>{unit}</span></div><p>{note}</p><em className={'tc-status '+status}>{statuses[status]}</em></article>;
+}
+export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destination)=>void}){
+ const [period,setPeriod]=useState(operatorPeriod);
+ const [operator,setOperator]=useState('all');
+ const [focus,setFocus]=useState<Focus>('national');
+ const [mapLayer,setMapLayer]=useState<'quality'|'outage'|'coverage'>('quality');
+ const [selectedProvince,setSelectedProvince]=useState<string|null>(null);
+ const historyIdx=history.periods.indexOf(period);
+ const record=history.values[historyIdx];
+ const selectedOperators=history.operators.map((name,i)=>({name,index:i,count:record[i]})).filter(x=>operator==='all'||operator===x.name);
+ const qos4g=qos.metrics.find(x=>x.id==='access_success')?.values.filter(x=>x.generation==='4G')||[];
+ const fixedY=fixed.observations[0];
+ const fiberChange=(current.technology_values.FTTx/fixedY.technology_values.FTTx-1)*100;
+ const q=(metric:string,network:string,route:string)=>latency.observations.find(x=>x.metric===metric&&x.network===network&&x.route===route)?.value;
+ const sectionLink=(d:Destination,label:string)=><button type="button" className="tc-link" onClick={()=>onNavigate(d)}>{label} ←</button>;
+ return <div className="tc-root" dir="rtl">
+  <div className="tc-top">
+   <div><div className="tc-eyebrow">IRAN INTERNET RADAR · TARGET COMMAND CENTER</div><h1>مرکز فرماندهی اینترنت ایران</h1><p>رصد، شواهد و تصمیم‌سازی | پیش‌نمایش معماری هدف با داده‌های واقعی موجود</p></div>
+   <div className="tc-top-right"><div className="tc-label">آخرین دوره رسمی موجود در این نما <strong>بهار ۱۴۰۵</strong></div><span className="tc-pill">داده زنده ملی تأیید نشده</span></div>
+  </div>
+  <div className="tc-filters">
+   <label>فصل اشتراک سیار <select value={period} onChange={e=>setPeriod(e.target.value)}>{history.periods.map(x=><option key={x} value={x}>{x}</option>)}</select></label>
+   <label>اپراتور <select value={operator} onChange={e=>setOperator(e.target.value)}><option value="all">هر سه اپراتور</option>{history.operators.map(x=><option key={x} value={x}>{x}</option>)}</select></label>
+   <label>موضوع تصمیم <select value={focus} onChange={e=>setFocus(e.target.value as Focus)}><option value="national">تصویر ملی</option><option value="operator">اپراتورها</option><option value="experience">تجربه کاربران</option></select></label>
+   <button type="button" onClick={()=>{setPeriod(operatorPeriod);setOperator('all');setFocus('national');setSelectedProvince(null)}}>بازنشانی فیلترها</button>
+  </div>
+  <div className="tc-tiles">
+   <Tile title="کل اشتراک اینترنت ثابت" value={fa(current.reported_total)} unit="اشتراک" note="CRA57، صفحه ۲۲"/>
+   <Tile title="اشتراک FTTx" value={fa(current.technology_values.FTTx)} unit="اشتراک" note={'تغییر نسبت به بهار ۱۴۰۴: '+fa(fiberChange)+'٪'}/>
+   <Tile title="اشتراک پهن‌باند سیار" value={fa(selectedOperators.reduce((a,x)=>a+x.count,0))} unit="اشتراک" note={period+' · مجموع اپراتورهای انتخابی · صفحه ۲۵'}/>
+   <Tile title="RTT داخلی شبکه ثابت" value={q('rtt','fixed','domestic')===undefined?'—':fa(q('rtt','fixed','domestic')!)} unit="ms" note="تجمیعی، نه اپراتوری · صفحه ۱۴"/>
+   <Tile title="RTT بین‌الملل شبکه سیار" value={q('rtt','mobile','international')===undefined?'—':fa(q('rtt','mobile','international')!)} unit="ms" note="تجمیعی، نه اپراتوری · صفحه ۱۴"/>
+   <Tile title="شاخص ملی اختلال لحظه‌ای" value="—" note="داده ملی معتبر و لحظه‌ای متصل نیست" status="missing"/>
+  </div>
+  <div className="tc-main-grid">
+   <section className="tc-panel tc-map-panel"><div className="tc-heading"><div><span className="tc-eyebrow">GEO INTELLIGENCE</span><h2>نقشه پایش استانی ایران</h2></div><span className="tc-pill">پوشش داده استانی: ناموجود</span></div>
+    <div className="tc-layer">{([['quality','کیفیت'],['outage','اختلالات'],['coverage','پوشش']] as const).map(([id,label])=><button key={id} className={mapLayer===id?'selected':''} onClick={()=>{setMapLayer(id);setSelectedProvince(null)}}>{label}</button>)}</div>
+    <div className="tc-map-placeholder">
+     <svg aria-hidden="true" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid meet"><defs><pattern id="tc-grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#254458" strokeWidth=".5"/></pattern></defs><rect x="0" y="0" width="600" height="320" fill="url(#tc-grid)"/><circle cx="300" cy="160" r="110" fill="none" stroke="#22546b" strokeDasharray="5 8"/><circle cx="300" cy="160" r="72" fill="none" stroke="#22546b" strokeDasharray="4 9"/><path d="M300 35V285M170 160H430" stroke="#22546b" strokeDasharray="4 7"/><circle cx="300" cy="160" r="5" fill="#45d9c4"/></svg>
+     <div className="tc-no-geo"><strong>لایه جغرافیایی در انتظار داده و مرزبندی معتبر</strong><span>برای جلوگیری از نمایش اطلاعات ساختگی، رنگ‌بندی و رتبه استانی غیرفعال است.</span><span>لایه انتخاب‌شده: {mapLayer==='quality'?'کیفیت':mapLayer==='outage'?'اختلالات':'پوشش'}</span></div>
+    </div>
+    {selectedProvince&&<p>{selectedProvince}</p>}
+    <div className="tc-panel-foot">در نسخه بعد، نقشه صحیح ۳۱ استان و شناسنامه هر نقطه داده متصل می‌شود.</div>
+   </section>
+   <section className="tc-panel tc-op-panel"><div className="tc-heading"><div><span className="tc-eyebrow">OPERATOR INTELLIGENCE</span><h2>مقایسه تاریخی اپراتورها</h2></div>{sectionLink('mobile','جزئیات')}</div>
+    <div className="tc-operator-bars">{selectedOperators.map((x)=>{const max=Math.max(...record,1);const prev=historyIdx>=4?history.values[historyIdx-4][x.index]:undefined;return <div className="tc-bar" key={x.name}><div><b>{x.name}</b><span>{fa(x.count)}</span></div><div className="tc-track"><i style={{width:(x.count/max*100)+'%'}}/></div><small>{prev===undefined?'تغییر سالانه: فاقد مبنا':'تغییر سالانه: '+fa((x.count/prev-1)*100)+'٪'}</small></div>})}</div>
+    <p className="tc-note">داده ۲۴ فصل از صفحه ۲۵ فصلنامه ۵۷؛ مقادیر در انتظار کنترل تصویری منبع‌اند. این تعداد با کل سیم‌کارت‌های فعال متفاوت است.</p>
+    <div className="tc-subheading">کیفیت اتصال 4G <span>{period===qos.period?'بهار ۱۴۰۵':'دوره نامنطبق'}</span></div>
+    {period===qos.period?<div className="tc-mini-list">{qos4g.filter(x=>operator==='all'||x.operator===operator).map(x=><div key={x.operator}><span>{x.operator}</span><b>{fa(x.value)}٪</b></div>)}</div>:<div className="tc-empty">برای فصل انتخاب‌شده داده قابل مقایسه کیفیت اتصال موجود نیست.</div>}
+   </section>
+   <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">QUALITY & RESILIENCE</span><h2>کیفیت و تاب‌آوری</h2></div>{sectionLink('qos','تحلیل کامل')}</div>
+    <div className="tc-qos">{['fixed','mobile'].map(network=><div key={network}><strong>{network==='fixed'?'شبکه ثابت':'شبکه سیار'}</strong>{(['domestic','international'] as const).map(route=><div key={route}><span>{route==='domestic'?'داخلی':'بین‌الملل'}</span><b>{fa(q('rtt',network,route)||0)} ms</b><small>Jitter: {fa(q('jitter',network,route)||0)} ms</small></div>)}</div>)}</div>
+    <p className="tc-note">مشاهدات مقطعی و تجمیعی، نه پایش زنده یا امتیاز کیفیت اختصاصی اپراتور.</p>
+   </section>
+   <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">PUBLIC EXPERIENCE</span><h2>تجربه کاربران</h2></div>{sectionLink('research','پژوهش‌ها')}</div>
+    <div className="tc-surveys">{survey.observations.map(x=><article key={x.evidence_id}><strong>{fa(x.value)}٪</strong><span>{x.title}</span><small>{x.evidence_id} · Q5 تأیید نشده</small></article>)}</div>
+    <p className="tc-note">اعداد پیمایشی به سؤال و جامعه پاسخ‌گویان مربوط‌اند؛ امتیاز ملی یا علت قطعی نارضایتی نیستند.</p>
+   </section>
+   <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">INCIDENT & ROUTING</span><h2>رخدادها و مسیرهای ارتباطی</h2></div>{sectionLink('live','پایش BGP')}</div><div className="tc-empty">فید تأییدشده رخدادهای لحظه‌ای به این نما متصل نیست. هیچ رخداد فرضی نمایش داده نمی‌شود.</div></section>
+   <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">DECISION SUPPORT</span><h2>اتاق تصمیم و شواهد</h2></div>{sectionLink('evidence','دفتر شواهد')}</div>
+    <div className="tc-decision"><b>{focus==='experience'?'سؤال تصمیم: عوامل تجربه نامطلوب چیست؟':focus==='operator'?'سؤال تصمیم: آیا توسعه اپراتور با کیفیت همسو بوده؟':'سؤال تصمیم: وضعیت قابل دفاع اینترنت ایران چیست؟'}</b><p>برای استنتاج معتبر باید دوره، منطقه، جامعه، خدمت و روش سنجش هم‌تراز شوند. ارتباط هم‌زمان دو شاخص، به‌تنهایی اثبات علت نیست.</p></div>
+    <div className="tc-actions">{sectionLink('catalog','۱۳۰ شاخص رسمی')}{sectionLink('qos','تحلیل شکاف QoS/QoE')}{sectionLink('fixed','توسعه فیبر')}</div>
+   </section>
+  </div>
+  <footer className="tc-footer">مرکز فرماندهی هدف · نسخه توسعه · ارقام موجود برگرفته از قراردادهای داده و مشروط به گیت‌های اعتبار منبع · داده ساختگی وارد نشده است.</footer>
+ </div>;
+}
