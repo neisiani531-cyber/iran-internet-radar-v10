@@ -1,4 +1,4 @@
-import React,{useEffect,useMemo,useState} from 'react';
+import React,{useEffect,useMemo,useRef,useState} from 'react';
 import history from '../packages/contracts/cra57-mobile-broadband-history.json';
 import fixed from '../packages/contracts/public-fixed-access.snapshot.json';
 import survey from '../packages/contracts/p01-survey-research-preview.json';
@@ -34,6 +34,8 @@ export default function ModularDashboard(){
  const [hidden,setHidden]=useState<WidgetId[]>([]);
  const [wide,setWide]=useState<WidgetId[]>(['mobile']);
  const [edit,setEdit]=useState(false);
+ const dragId=useRef<WidgetId|null>(null);
+ const [dragOver,setDragOver]=useState<WidgetId|null>(null);
  const [hydrated,setHydrated]=useState(false);
  useEffect(()=>{try{const s=localStorage.getItem('radar-widget-layout-v1');if(!s)return;const v=JSON.parse(s);if(Array.isArray(v.order)&&v.order.length===3&&new Set(v.order).size===3&&v.order.every((x:unknown)=>defs.some(d=>d.id===x)))setOrder(v.order);if(v.modes&&typeof v.modes==='object')setModes(old=>({...old,...v.modes}));if(Array.isArray(v.hidden))setHidden(v.hidden.filter((x:WidgetId)=>defs.some(d=>d.id===x)));if(Array.isArray(v.wide))setWide(v.wide.filter((x:WidgetId)=>defs.some(d=>d.id===x)));}catch{}finally{setHydrated(true)}},[]);
  useEffect(()=>{if(!hydrated)return;try{localStorage.setItem('radar-widget-layout-v1',JSON.stringify({order,modes,hidden,wide}));}catch{}},[order,modes,hidden,wide,hydrated]);
@@ -43,15 +45,20 @@ export default function ModularDashboard(){
    fixed:{series:['FTTx','XDSL','TDLTE','WiFi'].map(k=>fixed.observations.map(r=>r.technology_values[k as keyof typeof r.technology_values])),labels:['FTTx','XDSL','TDLTE','WiFi']},
    survey:{series:[survey.observations.map(r=>r.value)],labels:['درصد پاسخ به پرسش‌های متفاوت']}};
  },[]);
+ function reorder(source:WidgetId,target:WidgetId){
+  if(source===target)return;
+  setOrder(old=>{const next=old.filter(x=>x!==source);next.splice(next.indexOf(target),0,source);return next});
+ }
+ function drop(target:WidgetId){const source=dragId.current;dragId.current=null;setDragOver(null);if(source)reorder(source,target)}
  function move(id:WidgetId,delta:number){setOrder(old=>{const i=old.indexOf(id),j=i+delta;if(j<0||j>=old.length)return old;const next=[...old];[next[i],next[j]]=[next[j],next[i]];return next})}
  return <section className="md-root" aria-label="ویجت‌های قابل تنظیم">
   <div className="md-toolbar"><div><span>VISUAL ANALYTICS STUDIO</span><h2>تحلیل‌های تصویری و چیدمان شخصی</h2></div><div className="md-tools"><button onClick={()=>setEdit(x=>!x)} aria-pressed={edit}>{edit?'پایان ویرایش':'ویرایش چیدمان'}</button><button onClick={()=>{setOrder(['mobile','fixed','survey']);setModes({mobile:'area',fixed:'line',survey:'bar'});setHidden([]);setWide(['mobile'])}}>چیدمان پیش‌فرض</button>{hidden.length>0&&<button onClick={()=>setHidden([])}>نمایش همه ویجت‌ها ({hidden.length})</button>}</div></div>
-  <div className="md-grid">{order.filter(id=>!hidden.includes(id)).map(id=>{const d=defs.find(x=>x.id===id)!;const metric=data[id];const mode=d.available.includes(modes[id])?modes[id]:d.available[0];return <article key={id} className={'md-widget '+(wide.includes(id)?'md-wide':'')}>
-   <div className="md-header"><div><small>{d.source}</small><h3>{d.title}</h3></div><div className="md-controls"><label>نوع نمودار <select aria-label={'نوع نمودار '+d.title} value={mode} onChange={e=>setModes(v=>({...v,[id]:e.target.value as Mode}))}>{d.available.map(x=><option key={x} value={x}>{({line:'خطی',bar:'میله‌ای',area:'سطحی',donut:'حلقه‌ای'} as const)[x]}</option>)}</select></label></div></div>
+  <div className="md-grid">{order.filter(id=>!hidden.includes(id)).map(id=>{const d=defs.find(x=>x.id===id)!;const metric=data[id];const mode=d.available.includes(modes[id])?modes[id]:d.available[0];return <article key={id} className={'md-widget '+(wide.includes(id)?'md-wide':'')+(dragOver===id?' md-drop-target':'')} onDragOver={e=>{if(edit&&dragId.current&&dragId.current!==id){e.preventDefault();setDragOver(id)}}} onDrop={e=>{e.preventDefault();drop(id)}}>
+   <div className="md-header"><div>{edit&&<div className="md-grip" draggable onDragStart={e=>{dragId.current=id;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',id)}} onDragEnd={()=>{dragId.current=null;setDragOver(null)}} title="برای تغییر ترتیب بکشید" aria-label={'دستگیره جابه‌جایی '+d.title}>⠿ جابه‌جایی</div>}<small>{d.source}</small><h3>{d.title}</h3></div><div className="md-controls"><label>نوع نمودار <select aria-label={'نوع نمودار '+d.title} value={mode} onChange={e=>setModes(v=>({...v,[id]:e.target.value as Mode}))}>{d.available.map(x=><option key={x} value={x}>{({line:'خطی',bar:'میله‌ای',area:'سطحی',donut:'حلقه‌ای'} as const)[x]}</option>)}</select></label></div></div>
    {plot(metric.series,mode,metric.labels)}
    {mode!=='donut'&&<div className="md-legend">{metric.labels.map((x,i)=><span key={x}><i style={{background:colors[i%colors.length]}}/>{x}</span>)}</div>}
    {id==='survey'&&<p className="md-warning">درصدهای پرسش‌های متفاوت قابل جمع یا مقایسه مستقیم به‌عنوان یک سهم واحد نیستند؛ نمودار حلقه‌ای فقط در گروه‌های دارای مخرج مشترک مجاز است.</p>}
-   {edit&&<div className="md-edit"><button onClick={()=>move(id,-1)}>جابجایی به قبل</button><button onClick={()=>move(id,1)}>جابجایی به بعد</button><button onClick={()=>setWide(v=>v.includes(id)?v.filter(x=>x!==id):[...v,id])}>{wide.includes(id)?'عرض معمولی':'عریض کردن'}</button><button onClick={()=>setHidden(v=>[...v,id])}>پنهان کردن</button></div>}
+   {edit&&<div className="md-edit"><button onClick={()=>move(id,-1)}>جابه‌جایی به قبل</button><button onClick={()=>move(id,1)}>جابه‌جایی به بعد</button><button onClick={()=>setWide(v=>v.includes(id)?v.filter(x=>x!==id):[...v,id])}>{wide.includes(id)?'عرض معمولی':'عریض کردن'}</button><button onClick={()=>setHidden(v=>[...v,id])}>پنهان کردن</button></div>}
   </article>})}</div>
  </section>;
 }
