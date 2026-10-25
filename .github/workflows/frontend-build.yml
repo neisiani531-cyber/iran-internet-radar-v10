@@ -28,3 +28,14 @@ jobs:
         run: npm ci
       - name: Verify migration, TypeScript and Vite build
         run: npm run build
+      - name: Package offline review bundle
+        run: |
+          cp -R dist dist-review
+          test -s dist-review/index.html
+          test -s dist-review/data/iran-provinces.geojson
+      - name: Upload visual-review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-v10-frontend-review
+          path: dist-review/
+          retention-days: 7
