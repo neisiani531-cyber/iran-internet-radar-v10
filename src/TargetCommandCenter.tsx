@@ -7,6 +7,7 @@ import latency from '../packages/contracts/cra57-latency-quality.snapshot.json';
 import survey from '../packages/contracts/p01-survey-research-preview.json';
 import './TargetCommandCenter.css';
 import IranProvinceMap from './IranProvinceMap';
+import ModularDashboard from './ModularDashboard';
 
 type Destination='fixed'|'mobile'|'qos'|'research'|'evidence'|'catalog'|'live';
 type Focus='national'|'operator'|'experience';
@@ -50,6 +51,7 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
    <Tile title="RTT بین‌الملل شبکه سیار" value={q('rtt','mobile','international')===undefined?'—':fa(q('rtt','mobile','international')!)} unit="ms" note="تجمیعی، نه اپراتوری · صفحه ۱۴"/>
    <Tile title="شاخص ملی اختلال لحظه‌ای" value="—" note="داده ملی معتبر و لحظه‌ای متصل نیست" status="missing"/>
   </div>
+  <ModularDashboard/>
   <div className="tc-main-grid">
    <section className="tc-panel tc-map-panel"><div className="tc-heading"><div><span className="tc-eyebrow">GEO INTELLIGENCE</span><h2>نقشه پایش استانی ایران</h2></div><span className="tc-pill">پوشش داده استانی: ناموجود</span></div>
     <div className="tc-layer">{([['quality','کیفیت'],['outage','اختلالات'],['coverage','پوشش']] as const).map(([id,label])=><button key={id} className={mapLayer===id?'selected':''} onClick={()=>{setMapLayer(id);}}>{label}</button>)}</div>
