@@ -12,3 +12,8 @@
 .md-height-label{display:flex;align-items:center;gap:8px;flex:1 1 250px;font-size:11px;color:#b9e4eb}
 .md-height-label input{width:125px;accent-color:#45d9c9;cursor:pointer}
 .md-height-label span{white-space:nowrap}
+
+/* Native corner-resize, enabled only while editing the layout. */
+.md-size-body.md-resizable{resize:vertical;overflow:auto;max-height:480px;min-height:180px;border:1px dashed #36677c;border-radius:10px;scrollbar-color:#45b7ac #102d3e}
+.md-size-body.md-resizable::-webkit-resizer{background:linear-gradient(135deg,transparent 45%,#51dec8 48%,#51dec8 58%,transparent 61%)}
+.md-size-body.md-resizable:focus-within{border-color:#4ddcc5}
