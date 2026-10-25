@@ -78,3 +78,17 @@ footer{color:#667f99;font-size:11px;padding:30px 5px}
     flex-shrink: 0;
   }
 }
+
+/* Mobile control room: retain navigation without consuming the first viewport. */
+@media(max-width:800px){
+ .shell>.sidebar{position:sticky;top:0;z-index:40;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;gap:5px;height:66px;padding:7px 10px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;background:#071523f5;backdrop-filter:blur(16px)}
+ .shell>.sidebar .brand{flex:0 0 auto;width:auto;font-size:13px;white-space:nowrap;margin:0 12px 0 0;padding:0}
+ .shell>.sidebar .nav{flex:0 0 auto;white-space:nowrap;width:auto;min-height:40px;padding:9px 11px}
+ .shell>.sidebar .section-label,.shell>.sidebar .foot,.shell>.sidebar .spacer{display:none}
+ .shell>main{padding:12px 9px 26px}
+}
+@media(max-width:480px){
+ .shell>.sidebar{height:58px}
+ .shell>.sidebar .brand{font-size:12px}
+ .shell>.sidebar .nav{font-size:11px}
+}
