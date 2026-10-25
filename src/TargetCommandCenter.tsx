@@ -5,6 +5,8 @@ import history from '../packages/contracts/cra57-mobile-broadband-history.json';
 import qos from '../packages/contracts/qos-metric-catalog.json';
 import latency from '../packages/contracts/cra57-latency-quality.snapshot.json';
 import survey from '../packages/contracts/p01-survey-research-preview.json';
+import admission from '../packages/contracts/source-admission-public.json';
+import evidence from '../packages/contracts/evidence-metadata-public.json';
 import './TargetCommandCenter.css';
 import IranProvinceMap from './IranProvinceMap';
 import ModularDashboard from './ModularDashboard';
@@ -17,6 +19,14 @@ const operatorPeriod=history.periods[history.periods.length-1];
 const statuses:Record<string,string>={pending:'در انتظار تأیید تصویری',research:'پیش‌نمایش پژوهشی',missing:'فاقد داده معتبر',official:'استخراج رسمی'};
 function Tile({title,value,unit,note,status='pending'}:{title:string;value:string;unit?:string;note:string;status?:keyof typeof statuses}){
  return <article className="tc-tile"><small>{title}</small><div><strong>{value}</strong><span>{unit}</span></div><p>{note}</p><em className={'tc-status '+status}>{statuses[status]}</em></article>;
+}
+function LatencyChart(){
+ const rows=latency.observations.filter(x=>x.metric==='rtt');
+ const max=Math.ceil(Math.max(...rows.map(x=>x.value))/25)*25;
+ return <div className="tc-latency-chart"><svg viewBox="0 0 360 230" role="img" aria-label="مقایسه RTT شبکه ثابت و سیار در مسیر داخلی و بین‌الملل؛ بهار ۱۴۰۵، میلی‌ثانیه">
+  {[0,.25,.5,.75,1].map(v=><g key={v}><line x1={112+v*190} x2={112+v*190} y1="18" y2="196" stroke="#234052" strokeDasharray="3 5"/><text x={112+v*190} y="218" textAnchor="middle" fill="#8cabbf" fontSize="11">{fa(v*max)}</text></g>)}
+  {rows.map((row,i)=>{const y=32+i*44;return <g key={row.network+row.route}><text x="104" y={y+5} textAnchor="end" fill="#c5dce8" fontSize="12">{(row.network==='fixed'?'ثابت':'سیار')+' · '+(row.route==='domestic'?'داخلی':'خارجی')}</text><rect x="112" y={y-8} width={190} height="13" rx="4" fill="#102b3e"/><rect x="112" y={y-8} width={190*row.value/max} height="13" rx="4" fill={row.network==='fixed'?'#41d9c6':'#72a7ff'}/><text x={118+190*row.value/max} y={y+4} fill="#e6faff" fontSize="11">{fa(row.value)}</text></g>})}
+ </svg><span className="tc-axis-caption">RTT · ms · بهار ۱۴۰۵</span></div>;
 }
 export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destination)=>void}){
  const [period,setPeriod]=useState(operatorPeriod);
@@ -51,8 +61,13 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
    <Tile title="RTT بین‌الملل شبکه سیار" value={q('rtt','mobile','international')===undefined?'—':fa(q('rtt','mobile','international')!)} unit="ms" note="تجمیعی، نه اپراتوری · صفحه ۱۴"/>
    <Tile title="شاخص ملی اختلال لحظه‌ای" value="—" note="داده ملی معتبر و لحظه‌ای متصل نیست" status="missing"/>
   </div>
-  <ModularDashboard/>
-  <div className="tc-main-grid">
+  <div className="tc-source-strip" aria-label="وضعیت منابع و پوشش داده">
+   <button onClick={()=>onNavigate('evidence')}><i className="tc-dot amber"/><span>ماتریس پذیرش منابع<strong>{fa(admission.entries.length)} خانواده منبع</strong></span><small>پذیرش هر منبع مستقل است</small></button>
+   <button onClick={()=>onNavigate('evidence')}><i className="tc-dot violet"/><span>دفتر شواهد پژوهشی<strong>{fa(evidence.observations.length)} شناسنامه</strong></span><small>پذیرش رسمی: {fa(evidence.officially_approved)}</small></button>
+   <button onClick={()=>onNavigate('mobile')}><i className="tc-dot cyan"/><span>سری تاریخی اشتراک سیار<strong>{fa(history.periods.length)} فصل</strong></span><small>در انتظار QA تصویری</small></button>
+   <div><i className="tc-dot muted"/><span>پوشش شاخص استانی<strong>داده متصل نیست</strong></span><small>مرزبندی ۳۱ استان فعال است</small></div>
+  </div>
+  <div className="tc-hero-grid">
    <section className="tc-panel tc-map-panel"><div className="tc-heading"><div><span className="tc-eyebrow">GEO INTELLIGENCE</span><h2>نقشه پایش استانی ایران</h2></div><span className="tc-pill">پوشش داده استانی: ناموجود</span></div>
     <div className="tc-layer">{([['quality','کیفیت'],['outage','اختلالات'],['coverage','پوشش']] as const).map(([id,label])=><button key={id} className={mapLayer===id?'selected':''} onClick={()=>{setMapLayer(id);}}>{label}</button>)}</div>
     <IranProvinceMap layer={mapLayer==='quality'?'کیفیت':mapLayer==='outage'?'اختلالات':'پوشش'}/>
@@ -64,10 +79,14 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
     <div className="tc-subheading">کیفیت اتصال 4G <span>{period===qos.period?'بهار ۱۴۰۵':'دوره نامنطبق'}</span></div>
     {period===qos.period?<div className="tc-mini-list">{qos4g.filter(x=>operator==='all'||x.operator===operator).map(x=><div key={x.operator}><span>{x.operator}</span><b>{fa(x.value)}٪</b></div>)}</div>:<div className="tc-empty">برای فصل انتخاب‌شده داده قابل مقایسه کیفیت اتصال موجود نیست.</div>}
    </section>
-   <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">QUALITY & RESILIENCE</span><h2>کیفیت و تاب‌آوری</h2></div>{sectionLink('qos','تحلیل کامل')}</div>
-    <div className="tc-qos">{['fixed','mobile'].map(network=><div key={network}><strong>{network==='fixed'?'شبکه ثابت':'شبکه سیار'}</strong>{(['domestic','international'] as const).map(route=><div key={route}><span>{route==='domestic'?'داخلی':'بین‌الملل'}</span><b>{(q('rtt',network,route)===undefined?'فاقد داده':fa(q('rtt',network,route)!))} ms</b><small>Jitter: {(q('jitter',network,route)===undefined?'فاقد داده':fa(q('jitter',network,route)!))} ms</small></div>)}</div>)}</div>
-    <p className="tc-note">مشاهدات مقطعی و تجمیعی، نه پایش زنده یا امتیاز کیفیت اختصاصی اپراتور.</p>
+   <section className="tc-panel tc-quality-panel"><div className="tc-heading"><div><span className="tc-eyebrow">QUALITY & RESILIENCE</span><h2>کیفیت و تاب‌آوری</h2></div>{sectionLink('qos','تحلیل کامل')}</div>
+    <LatencyChart/>
+    <div className="tc-jitter-summary"><span>Jitter · ms</span>{['fixed','mobile'].map(network=><div key={network}><b>{network==='fixed'?'ثابت':'سیار'}</b><span>داخلی {q('jitter',network,'domestic')===undefined?'فاقد داده':fa(q('jitter',network,'domestic')!)}</span><span>بین‌الملل {q('jitter',network,'international')===undefined?'فاقد داده':fa(q('jitter',network,'international')!)}</span></div>)}</div>
+    <p className="tc-note">CRA57 · صفحه ۱۴ · بهار ۱۴۰۵ · در انتظار کنترل تصویری. مقادیر تجمیعی‌اند؛ به اپراتور خاص نسبت داده نمی‌شوند.</p>
    </section>
+  </div>
+  <ModularDashboard/>
+  <div className="tc-main-grid">
    <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">PUBLIC EXPERIENCE</span><h2>تجربه کاربران</h2></div>{sectionLink('research','پژوهش‌ها')}</div>
     <div className="tc-surveys">{survey.observations.map(x=><article key={x.evidence_id}><strong>{fa(x.value)}٪</strong><span>{x.title}</span><small>{x.evidence_id} · Q5 تأیید نشده</small></article>)}</div>
     <p className="tc-note">اعداد پیمایشی به سؤال و جامعه پاسخ‌گویان مربوط‌اند؛ امتیاز ملی یا علت قطعی نارضایتی نیستند.</p>

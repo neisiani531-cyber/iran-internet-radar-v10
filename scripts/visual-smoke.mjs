@@ -14,6 +14,20 @@ try {
  await page.locator('.ipm-inner svg path').first().waitFor({timeout:25000});
  const count=await page.locator('.ipm-inner svg path').count();
  if(count!==31)throw new Error('Expected 31 map regions; got '+count);
+ const hero=await page.locator('.tc-hero-grid').evaluate(el=>{
+  const rect=selector=>{const r=el.querySelector(selector).getBoundingClientRect();return {x:r.x,y:r.y,width:r.width}};
+  return {map:rect('.tc-map-panel'),operators:rect('.tc-op-panel'),quality:rect('.tc-quality-panel')};
+ });
+ if(!(hero.quality.x<hero.map.x&&hero.map.x<hero.operators.x))throw Error('Map not centered between analysis panels');
+ if(Math.max(hero.map.y,hero.quality.y,hero.operators.y)-Math.min(hero.map.y,hero.quality.y,hero.operators.y)>2)throw Error('Wide hero panels not aligned');
+ const mapY=await page.locator('.tc-map-panel').evaluate(el=>el.getBoundingClientRect().y);
+ const studioY=await page.locator('.md-root').evaluate(el=>el.getBoundingClientRect().y);
+ if(mapY>=studioY)throw Error('Central map must precede customizable studio');
+ if(await page.locator('.tc-source-strip>button').count()!==3)throw Error('Source strip links missing');
+ await page.locator('.tc-filters select').first().selectOption({index:0});
+ await page.getByText('برای فصل انتخاب‌شده داده قابل مقایسه کیفیت اتصال موجود نیست.',{exact:true}).waitFor();
+ await page.getByRole('button',{name:'بازنشانی فیلترها',exact:true}).click();
+ await page.locator('.tc-mini-list').waitFor();
  const widgets=page.locator('.md-widget');
  if(await widgets.count()!==3)throw new Error('Expected three analytics widgets');
  await page.getByRole('button',{name:'ویرایش چیدمان'}).click();
@@ -131,10 +145,13 @@ try {
  const beforeExternalDrop=await widgets.evaluateAll(nodes=>nodes.map(el=>el.dataset.widget).join(','));
  await mobile.evaluate(el=>{const transfer=new DataTransfer();transfer.setData('text/plain','fixed');el.dispatchEvent(new DragEvent('drop',{bubbles:true,dataTransfer:transfer}));});
  if(await widgets.evaluateAll(nodes=>nodes.map(el=>el.dataset.widget).join(','))!==beforeExternalDrop)throw Error('External drop reordered read-only layout');
+ await page.evaluate(()=>window.scrollTo(0,0));
  await page.screenshot({path:'visual-review/desktop-1600.png',fullPage:true});
  await page.getByRole('button',{name:'حالت نمایش مدیریتی'}).click();
  await page.screenshot({path:'visual-review/management-tv.png',fullPage:true});
  await page.setViewportSize({width:390,height:844});
+ if(await page.evaluate(()=>document.documentElement.scrollWidth)>392)throw Error('Mobile page overflows horizontally');
+ await page.evaluate(()=>window.scrollTo(0,0));
  await page.screenshot({path:'visual-review/mobile-390.png',fullPage:true});
  const legacy=await browser.newPage({viewport:{width:1200,height:900}});
  await legacy.addInitScript(()=>localStorage.setItem('radar-widget-layout-v1',JSON.stringify({order:['survey','fixed','mobile'],hidden:['fixed'],wide:['survey'],modes:{mobile:'donut',survey:'donut'},heights:{mobile:390,survey:-20}})));

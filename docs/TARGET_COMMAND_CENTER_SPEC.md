@@ -70,3 +70,12 @@ DO NOT auto-deploy to 185.105.101.70. Changes stay on integration/radar-v10-2026
 - Drag targets display a leading/trailing insertion marker; drops support both positions and still require an internal edit drag.
 - Native ResizeObserver updates are suspended during the custom gesture, preventing stale intermediate measurements from replacing the final pointer size.
 - Chromium regression covers real two-axis mouse resize, reload persistence, desktop/mobile width preservation, keyboard width adjustment and trailing insertion preview/drop in addition to previous coverage.
+
+### Wide composition follow-up
+- Target route alone now uses a compact navigation rail and full available canvas; other routes retain their existing shell.
+- Six compact snapshot cards and a source-admission/evidence metadata strip precede a three-panel hero: operators, central Iran map, aggregate RTT/Jitter.
+- Source counts are computed from existing public contracts. They are not feed health scores or claims of live national coverage.
+- RTT bars use the four actual CRA57 network/route observations, with period, milliseconds, aggregate scope and visual-QA limitation. Map remains neutral because provincial observations are absent.
+- Modular studio remains mounted below the hero, retaining all persisted preferences and resizing controls; supporting evidence/incident/decision panels follow it.
+- Responsive layouts retain all panels. Browser regression checks centered/aligned map, period-mismatch empty state, source links, mobile overflow and all previous layout gestures.
+- Outstanding: final art direction, richer time/axis/tooltips, additional qualified data-connected widget types and approved staging deployment.
