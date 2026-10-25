@@ -22,7 +22,7 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
  const [operator,setOperator]=useState('all');
  const [focus,setFocus]=useState<Focus>('national');
  const [mapLayer,setMapLayer]=useState<'quality'|'outage'|'coverage'>('quality');
- const [selectedProvince,setSelectedProvince]=useState<string|null>(null);
+ const [presentation,setPresentation]=useState(false);
  const historyIdx=history.periods.indexOf(period);
  const record=history.values[historyIdx];
  const selectedOperators=history.operators.map((name,i)=>({name,index:i,count:record[i]})).filter(x=>operator==='all'||operator===x.name);
@@ -31,16 +31,16 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
  const fiberChange=(current.technology_values.FTTx/fixedY.technology_values.FTTx-1)*100;
  const q=(metric:string,network:string,route:string)=>latency.observations.find(x=>x.metric===metric&&x.network===network&&x.route===route)?.value;
  const sectionLink=(d:Destination,label:string)=><button type="button" className="tc-link" onClick={()=>onNavigate(d)}>{label} ←</button>;
- return <div className="tc-root" dir="rtl">
+ return <div className={"tc-root"+(presentation?" tc-tv":"")} dir="rtl">
   <div className="tc-top">
    <div><div className="tc-eyebrow">IRAN INTERNET RADAR · TARGET COMMAND CENTER</div><h1>مرکز فرماندهی اینترنت ایران</h1><p>رصد، شواهد و تصمیم‌سازی | پیش‌نمایش معماری هدف با داده‌های واقعی موجود</p></div>
-   <div className="tc-top-right"><div className="tc-label">آخرین دوره رسمی موجود در این نما <strong>بهار ۱۴۰۵</strong></div><span className="tc-pill">داده زنده ملی تأیید نشده</span></div>
+   <div className="tc-top-right"><div className="tc-label">آخرین دوره رسمی موجود در این نما <strong>بهار ۱۴۰۵</strong></div><span className="tc-pill">داده زنده ملی تأیید نشده</span><button type="button" className="tc-presentation-toggle" aria-pressed={presentation} onClick={()=>setPresentation(v=>!v)}>{presentation?"خروج از حالت نمایش":"حالت نمایش مدیریتی"}</button></div>
   </div>
   <div className="tc-filters">
    <label>فصل اشتراک سیار <select value={period} onChange={e=>setPeriod(e.target.value)}>{history.periods.map(x=><option key={x} value={x}>{x}</option>)}</select></label>
    <label>اپراتور <select value={operator} onChange={e=>setOperator(e.target.value)}><option value="all">هر سه اپراتور</option>{history.operators.map(x=><option key={x} value={x}>{x}</option>)}</select></label>
    <label>موضوع تصمیم <select value={focus} onChange={e=>setFocus(e.target.value as Focus)}><option value="national">تصویر ملی</option><option value="operator">اپراتورها</option><option value="experience">تجربه کاربران</option></select></label>
-   <button type="button" onClick={()=>{setPeriod(operatorPeriod);setOperator('all');setFocus('national');setSelectedProvince(null)}}>بازنشانی فیلترها</button>
+   <button type="button" onClick={()=>{setPeriod(operatorPeriod);setOperator('all');setFocus('national');setMapLayer('quality')}}>بازنشانی فیلترها</button>
   </div>
   <div className="tc-tiles">
    <Tile title="کل اشتراک اینترنت ثابت" value={fa(current.reported_total)} unit="اشتراک" note="CRA57، صفحه ۲۲"/>
@@ -63,7 +63,7 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
     {period===qos.period?<div className="tc-mini-list">{qos4g.filter(x=>operator==='all'||x.operator===operator).map(x=><div key={x.operator}><span>{x.operator}</span><b>{fa(x.value)}٪</b></div>)}</div>:<div className="tc-empty">برای فصل انتخاب‌شده داده قابل مقایسه کیفیت اتصال موجود نیست.</div>}
    </section>
    <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">QUALITY & RESILIENCE</span><h2>کیفیت و تاب‌آوری</h2></div>{sectionLink('qos','تحلیل کامل')}</div>
-    <div className="tc-qos">{['fixed','mobile'].map(network=><div key={network}><strong>{network==='fixed'?'شبکه ثابت':'شبکه سیار'}</strong>{(['domestic','international'] as const).map(route=><div key={route}><span>{route==='domestic'?'داخلی':'بین‌الملل'}</span><b>{fa(q('rtt',network,route)||0)} ms</b><small>Jitter: {fa(q('jitter',network,route)||0)} ms</small></div>)}</div>)}</div>
+    <div className="tc-qos">{['fixed','mobile'].map(network=><div key={network}><strong>{network==='fixed'?'شبکه ثابت':'شبکه سیار'}</strong>{(['domestic','international'] as const).map(route=><div key={route}><span>{route==='domestic'?'داخلی':'بین‌الملل'}</span><b>{(q('rtt',network,route)===undefined?'فاقد داده':fa(q('rtt',network,route)!))} ms</b><small>Jitter: {(q('jitter',network,route)===undefined?'فاقد داده':fa(q('jitter',network,route)!))} ms</small></div>)}</div>)}</div>
     <p className="tc-note">مشاهدات مقطعی و تجمیعی، نه پایش زنده یا امتیاز کیفیت اختصاصی اپراتور.</p>
    </section>
    <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">PUBLIC EXPERIENCE</span><h2>تجربه کاربران</h2></div>{sectionLink('research','پژوهش‌ها')}</div>
