@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import history from '../packages/contracts/cra57-mobile-broadband-history.json';
 import latency from '../packages/contracts/cra57-latency-quality.snapshot.json';
 import expanded from '../packages/contracts/cra57-operator-expanded.json';
+import qos from '../packages/contracts/qos-metric-catalog.json';
+import survey from '../packages/contracts/p01-survey-research-preview.json';
 
 const fmt=(v:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2}).format(v);
 const colors=['#4ee0c2','#7aafff','#f4b66a'];
@@ -176,6 +178,27 @@ export default function RegulatoryPulse({
     <strong>وضعیت استنتاج</strong>
     <p style={{margin:'8px 0 0',fontSize:13}}>رشد اشتراک و توسعه پوشش، به‌تنهایی اثبات بهبود سرعت، تأخیر، پایداری یا رضایت کاربر نیستند. برای چنین نتیجه‌ای به داده هم‌دوره، هم‌منطقه و قابل مقایسه QoS/QoE نیاز داریم. کنترل تصویری مقادیر صفحات مرجع نیز تکمیل نشده است.</p>
    </div>
+  </section>
+  <section style={{...card,margin:'22px 0'}} aria-label="پُل شواهد کیفیت فنی و تجربه کاربران">
+   <h3 style={{marginTop:0}}>پُل شواهد: توسعه، کیفیت فنی و تجربه کاربران</h3>
+   <p style={{color:'#b5cada',fontSize:13}}>داده‌های رسمی QoS از فصل {qos.period} و {qos.source.publication}، صفحه {qos.source.page} است. یافته‌های پیمایشی از {survey.source_report} در وضعیت {survey.publication_status} قرار دارند.</p>
+   {history.periods[selected]===qos.period?<div style={{overflowX:'auto'}}>
+    <table style={{width:'100%',borderCollapse:'collapse',textAlign:'right'}}>
+     <thead><tr><th>اپراتور</th><th>موفقیت اتصال 4G</th><th>نرخ قطعی اتصال 4G</th><th>وضعیت تفسیر</th></tr></thead>
+     <tbody>{expanded.operators.map(op=>{
+      const success=qos.metrics.find(m=>m.id==='access_success')?.values.find(x=>x.operator===op&&x.generation==='4G');
+      const drops=qos.metrics.find(m=>m.id==='drop_rate')?.values.find(x=>x.operator===op&&x.generation==='4G');
+      return <tr key={op}><td>{op}</td><td>{success?fmt(success.value)+'٪':'فاقد داده'}</td><td>{drops?fmt(drops.value)+'٪':'فاقد داده'}</td><td>شاخص اتصال، نه تجربه کامل کاربر</td></tr>;
+     })}</tbody>
+    </table>
+   </div>:<p role="status" style={{color:'#f2c786'}}>شاخص‌های کیفیت اتصال برای {history.periods[selected]} موجود نیستند؛ فقط برای {qos.period} قابل مشاهده‌اند.</p>}
+   <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(210px,1fr))',gap:12,marginTop:14}}>
+    {survey.observations.map(item=><article key={item.evidence_id} style={{padding:12,borderRadius:10,background:'#133244',border:'1px solid #365970'}}>
+     <small>{item.title}</small><strong style={{display:'block',fontSize:22}}>{fmt(item.value)}٪</strong>
+     <small style={{color:'#f2c786'}}>{item.evidence_id} · پژوهشی، فاقد پذیرش Q5</small>
+    </article>)}
+   </div>
+   <p style={{fontSize:12,color:'#b5cada',marginBottom:0}}>این داده‌ها از نظر نمونه، دوره، خدمت و روش اندازه‌گیری هم‌تراز نشده‌اند؛ بنابراین کنار هم نمایش داده می‌شوند اما میانگین، امتیاز ترکیبی، رتبه رضایت اپراتورها یا رابطه علّی از آن‌ها محاسبه نمی‌شود.</p>
   </section>
   <h3 style={{marginTop:28}}>کیفیت شبکه، چهار مسیر مقایسه‌پذیر</h3>
   <div style={{display:'grid',
