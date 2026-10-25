@@ -87,3 +87,10 @@ DO NOT auto-deploy to 185.105.101.70. Changes stay on integration/radar-v10-2026
 - Survey bars use separate question labels, percentage scale, and source-specific descriptions; they do not imply a temporal series or common denominator.
 - Expandable data tables expose all supplied observations, including the complete 24-quarter mobile series. Invalid/incomplete chart arrays receive an empty state rather than substituted zeroes.
 - Chromium checks first/latest readouts and tabular values against the mobile source contract, survey qualification text, legend constraints, and existing layout regressions.
+
+### Source-backed QoS widget expansion
+- Widget registry now contains five entries: mobile history, fixed history, survey preview, 3G/4G access success and 3G/4G drop rate.
+- New optional widgets are initially hidden, including when upgrading old stored profiles; existing visible order and sizes remain intact. Library add/remove, profile persistence and restore-all cover all five widgets.
+- QoS widgets read twelve actual operator/generation values from CRA57 page 15. Source period and pending visual-QA gate remain visible; single-quarter snapshots are not rendered as time trends.
+- Bar and heatmap are the only admitted chart modes for these widgets. Heatmap cells display actual percentages, generation rows, operator columns and an explicit numeric color domain; higher drop rate is not marked as better performance.
+- Browser regression adds both widgets, checks all twelve table values against their source, verifies six cells per heatmap and checks reload persistence. Real widget screenshot is captured as qos-heatmap.png.

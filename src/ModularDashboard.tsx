@@ -2,15 +2,18 @@ import React,{useEffect,useMemo,useRef,useState} from 'react';
 import history from '../packages/contracts/cra57-mobile-broadband-history.json';
 import fixed from '../packages/contracts/public-fixed-access.snapshot.json';
 import survey from '../packages/contracts/p01-survey-research-preview.json';
+import qos from '../packages/contracts/qos-metric-catalog.json';
 import './ModularDashboard.css';
 import AnalyticsChart,{ChartDataTable} from './AnalyticsChart';
-type Mode='line'|'bar'|'area'|'donut';
-type WidgetId='mobile'|'fixed'|'survey';
-type Widget={id:WidgetId;title:string;source:string;available:Mode[]};
+type Mode='line'|'bar'|'area'|'donut'|'heatmap';
+type WidgetId='mobile'|'fixed'|'survey'|'access'|'drop';
+type Widget={id:WidgetId;title:string;source:string;available:Mode[];initialHidden?:boolean};
 const defs:Widget[]=[
  {id:'mobile',title:'روند اشتراک پهن‌باند سیار',source:'CRA57 · صفحه ۲۵ · در انتظار QA تصویری',available:['line','bar','area','donut']},
  {id:'fixed',title:'روند فناوری‌های اینترنت ثابت',source:'CRA57 · صفحه ۲۲ · در انتظار QA تصویری',available:['line','bar','area','donut']},
- {id:'survey',title:'یافته‌های منتخب تجربه کاربران',source:'پیمایش ملت · پژوهشی و فاقد پذیرش Q5',available:['bar']}
+ {id:'survey',title:'یافته‌های منتخب تجربه کاربران',source:'پیمایش ملت · پژوهشی و فاقد پذیرش Q5',available:['bar']},
+ {id:'access',title:'موفقیت اتصال داده در نسل‌های سیار',source:'CRA57 · صفحه ۱۵ · بهار ۱۴۰۵ · در انتظار QA تصویری',available:['bar','heatmap'],initialHidden:true},
+ {id:'drop',title:'نرخ قطع اتصال داده در نسل‌های سیار',source:'CRA57 · صفحه ۱۵ · بهار ۱۴۰۵ · در انتظار QA تصویری',available:['bar','heatmap'],initialHidden:true}
 ];
 type Profile='analyst'|'manager'|'tv';
 type Layout={order:WidgetId[];modes:Record<WidgetId,Mode>;hidden:WidgetId[];wide:WidgetId[];heights:Record<WidgetId,number>;widths:Record<WidgetId,number>};
@@ -18,10 +21,10 @@ type LayoutStore={active:Profile;layouts:Record<Profile,Layout>};
 const storageKey='radar-widget-layout-v2';
 const profileNames:Record<Profile,string>={analyst:'تحلیلگر',manager:'مدیریتی',tv:'نمایشگر بزرگ'};
 function defaultLayout(profile:Profile):Layout{
- return {order:['mobile','fixed','survey'],modes:{mobile:'area',fixed:'line',survey:'bar'},
-  hidden:profile==='manager'?['survey']:[],wide:profile==='tv'?[]:['mobile'],
-  widths:profile==='tv'?{mobile:6,fixed:6,survey:6}:{mobile:12,fixed:6,survey:6},
-  heights:profile==='tv'?{mobile:300,fixed:300,survey:300}:{mobile:240,fixed:210,survey:210}};
+ return {order:defs.map(d=>d.id),modes:{mobile:'area',fixed:'line',survey:'bar',access:'bar',drop:'heatmap'},
+  hidden:[...(profile==='manager'?['survey' as WidgetId]:[]),...defs.filter(d=>d.initialHidden).map(d=>d.id)],wide:profile==='tv'?[]:['mobile'],
+  widths:Object.fromEntries(defs.map(d=>[d.id,profile!=='tv'&&d.id==='mobile'?12:6])) as Record<WidgetId,number>,
+  heights:Object.fromEntries(defs.map(d=>[d.id,profile==='tv'?300:d.id==='mobile'?240:210])) as Record<WidgetId,number>};
 }
 function defaultStore():LayoutStore{return {active:'analyst',layouts:{analyst:defaultLayout('analyst'),manager:defaultLayout('manager'),tv:defaultLayout('tv')}};}
 function validId(value:unknown):value is WidgetId{return defs.some(d=>d.id===value);}
@@ -31,6 +34,8 @@ function readLayout(value:unknown,profile:Profile):Layout{
  const v=value as Partial<Layout>;
  if(Array.isArray(v.order))result.order=[...new Set(v.order.filter(validId)),...result.order.filter(id=>!v.order!.includes(id))];
  for(const key of ['hidden','wide'] as const)if(Array.isArray(v[key]))result[key]=[...new Set(v[key]!.filter(validId))];
+ // Newly registered optional widgets stay hidden when migrating an older layout.
+ result.hidden=[...new Set([...result.hidden,...defs.filter(d=>d.initialHidden&&(!Array.isArray(v.order)||!v.order.includes(d.id))).map(d=>d.id)])];
  for(const d of defs){
   if(v.modes&&d.available.includes(v.modes[d.id]))result.modes[d.id]=v.modes[d.id];
   const width=v.widths?.[d.id];
@@ -118,9 +123,17 @@ export default function ModularDashboard(){
  },[edit,hydrated,hidden,order,active]);
  const data=useMemo(()=>{
   const h=history as {periods:string[];operators:string[];values:number[][]};
+  function qualityData(metricId:string){
+   const metric=qos.metrics.find(m=>m.id===metricId);
+   const operators=[...new Set(metric?.values.map(v=>v.operator)??[])];
+   const generations=['3G','4G'];
+   const rows=generations.map(g=>operators.map(operator=>metric?.values.find(v=>v.operator===operator&&v.generation===g)?.value));
+   if(!operators.length||rows.some(row=>row.some(value=>value===undefined)))return {series:[],labels:[],categories:[],unit:'درصد'};
+   return {series:rows as number[][],labels:generations,categories:operators,unit:'درصد',categoryLabel:'اپراتور',ceiling:metricId==='access_success'?100:undefined};
+  }
   return {mobile:{series:h.operators.map((_,j)=>h.values.map(row=>row[j])),labels:h.operators,categories:h.periods.map(periodLabel),unit:'اشتراک'},
    fixed:{series:['FTTx','XDSL','TDLTE','WiFi'].map(k=>fixed.observations.map(r=>r.technology_values[k as keyof typeof r.technology_values])),labels:['FTTx','XDSL','TDLTE','WiFi'],categories:fixed.observations.map(r=>r.period_label),unit:'اشتراک'},
-   survey:{series:[survey.observations.map(r=>r.value)],labels:['پاسخ به پرسش'],categories:survey.observations.map(r=>r.title),ticks:['سرعت','قیمت بسته','ابزار واسط','رفع محدودیت'],descriptions:survey.observations.map(r=>r.description),unit:'درصد پاسخ'}};
+   survey:{series:[survey.observations.map(r=>r.value)],labels:['پاسخ به پرسش'],categories:survey.observations.map(r=>r.title),ticks:['سرعت','قیمت بسته','ابزار واسط','رفع محدودیت'],descriptions:survey.observations.map(r=>r.description),unit:'درصد پاسخ'},access:qualityData('access_success'),drop:qualityData('drop_rate')};
  },[]);
  function reorder(source:WidgetId,target:WidgetId,after=false){
   if(source===target)return;
@@ -139,9 +152,10 @@ export default function ModularDashboard(){
   {hidden.length===defs.length&&<div className="md-empty" role="status">همه ویجت‌های این چیدمان پنهان شده‌اند.<button onClick={()=>setHidden([])}>بازیابی ویجت‌ها</button></div>}
   <div className="md-grid" ref={gridRef}>{order.filter(id=>!hidden.includes(id)).map(id=>{const d=defs.find(x=>x.id===id)!;const metric=data[id];const mode=d.available.includes(modes[id])?modes[id]:d.available[0];return <article key={id} data-widget={id} style={{gridColumn:'span '+widths[id]}} className={'md-widget '+(wide.includes(id)?'md-wide':'')+(dragOver?.id===id?' md-drop-target':'')+(resizing===id?' md-resizing':'')} onDragOver={e=>{if(edit&&!resizeSession.current&&dragId.current&&dragId.current!==id){e.preventDefault();e.dataTransfer.dropEffect='move';const box=e.currentTarget.getBoundingClientRect();setDragOver({id,after:e.clientY>box.y+box.height/2})}}} onDrop={e=>{e.preventDefault();const source=dragId.current;if(edit&&!resizeSession.current&&source&&source!==id){const box=e.currentTarget.getBoundingClientRect();reorder(source,id,e.clientY>box.y+box.height/2);}dragId.current=null;setDragOver(null)}}>
    {dragOver?.id===id&&<div className={'md-drop-marker '+(dragOver.after?'md-drop-after':'md-drop-before')} aria-hidden="true">{dragOver.after?'قرارگیری پس از این پنل':'قرارگیری پیش از این پنل'}</div>}
-   <div className="md-header"><div>{edit&&<button type="button" className="md-grip" draggable onDragStart={e=>{if(resizeSession.current){e.preventDefault();return;}dragId.current=id;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',id)}} onDragEnd={()=>{dragId.current=null;setDragOver(null)}} title="برای تغییر ترتیب بکشید" aria-label={'دستگیره جابه‌جایی '+d.title}>⠿ جابه‌جایی</button>}<small>{d.source}</small><h3>{d.title}</h3></div><div className="md-controls"><label>نوع نمودار <select aria-label={'نوع نمودار '+d.title} value={mode} onChange={e=>setModes(v=>({...v,[id]:e.target.value as Mode}))}>{d.available.map(x=><option key={x} value={x}>{({line:'خطی',bar:'میله‌ای',area:'سطحی',donut:'حلقه‌ای'} as const)[x]}</option>)}</select></label></div></div>
+   <div className="md-header"><div>{edit&&<button type="button" className="md-grip" draggable onDragStart={e=>{if(resizeSession.current){e.preventDefault();return;}dragId.current=id;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',id)}} onDragEnd={()=>{dragId.current=null;setDragOver(null)}} title="برای تغییر ترتیب بکشید" aria-label={'دستگیره جابه‌جایی '+d.title}>⠿ جابه‌جایی</button>}<small>{d.source}</small><h3>{d.title}</h3></div><div className="md-controls"><label>نوع نمودار <select aria-label={'نوع نمودار '+d.title} value={mode} onChange={e=>setModes(v=>({...v,[id]:e.target.value as Mode}))}>{d.available.map(x=><option key={x} value={x}>{({line:'خطی',bar:'میله‌ای',area:'سطحی',donut:'حلقه‌ای',heatmap:'نقشه حرارتی'} as const)[x]}</option>)}</select></label></div></div>
    <div className={"md-size-body"+(edit?" md-resizable":"")} style={{height:heights[id]}} data-widget-id={id}>{<AnalyticsChart data={metric} mode={mode} title={d.title}/>}</div>
    <ChartDataTable data={metric} title={d.title}/>
+   {(id==='access'||id==='drop')&&<p className="md-warning">{id==='access'?'موفقیت اتصال: مقدار بیشتر مطلوب‌تر است.':'قطع اتصال: مقدار کمتر مطلوب‌تر است.'} داده فقط برای بهار ۱۴۰۵ موجود است؛ روند زمانی یا امتیاز کلی اپراتور نیست.{mode==='heatmap'?' شدت رنگ صرفاً مقدار همان شاخص را نشان می‌دهد.':''}</p>}
    {id==='survey'&&<p className="md-warning">درصدهای پرسش‌های متفاوت قابل جمع یا مقایسه مستقیم به‌عنوان یک سهم واحد نیستند؛ نمودار حلقه‌ای فقط در گروه‌های دارای مخرج مشترک مجاز است.</p>}
    {edit&&<button type="button" className="md-resize-handle" aria-label={'تغییر اندازه دوبعدی '+d.title} title="برای تغییر عرض و ارتفاع بکشید؛ با کلیدهای جهت نیز قابل تنظیم است" onPointerDown={e=>startResize(e,id)} onPointerMove={resizeMove} onPointerUp={e=>{resizeMove(e);endResize();}} onPointerCancel={endResize} onLostPointerCapture={endResize} onKeyDown={e=>{if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();setHeights(v=>({...v,[id]:Math.max(180,Math.min(480,v[id]+(e.key==='ArrowUp'?-30:30)))}));}if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();if(!window.matchMedia('(max-width:900px)').matches)setWidth(id,Math.max(6,Math.min(12,widths[id]+(e.key==='ArrowLeft'?1:-1))));}}}>⤢</button>}
    {edit&&<div className="md-edit"><label className="md-height-label">ارتفاع نمودار <input aria-label={'ارتفاع نمودار '+d.title} type="range" min="180" max="480" step="30" value={heights[id]} onChange={e=>setHeights(v=>({...v,[id]:Number(e.target.value)}))}/><span>{fa(heights[id])} px</span></label><button onClick={()=>move(id,-1)}>جابه‌جایی به قبل</button><button onClick={()=>move(id,1)}>جابه‌جایی به بعد</button><button onClick={()=>setWidth(id,wide.includes(id)?6:12)}>{wide.includes(id)?'عرض معمولی':'عریض کردن'}</button><button onClick={()=>setHidden(v=>[...v,id])}>پنهان کردن</button></div>}

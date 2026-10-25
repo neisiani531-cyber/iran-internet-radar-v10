@@ -143,6 +143,36 @@ try {
  if(!await fixed.evaluate(el=>el.classList.contains('md-wide')))throw Error('Restored widget lost width');
  if(await fixed.getByRole('combobox').inputValue()!=='donut')throw Error('Restored widget lost chart mode');
  if(await fixed.getByRole('slider').inputValue()!=='330')throw Error('Restored widget lost height');
+ // Add the two optional, source-backed QoS widgets without disturbing older layouts.
+ await page.getByRole('button',{name:'افزودن موفقیت اتصال داده در نسل‌های سیار',exact:true}).click();
+ await page.getByRole('button',{name:'افزودن نرخ قطع اتصال داده در نسل‌های سیار',exact:true}).click();
+ const access=page.locator('[data-widget="access"]');
+ const drop=page.locator('[data-widget="drop"]');
+ if(await widgets.count()!==5)throw Error('QoS widgets not added from library');
+ if(await access.getByRole('combobox').locator('option').count()!==2)throw Error('QoS permits incompatible chart modes');
+ await access.getByRole('combobox').selectOption('heatmap');
+ if(await access.locator('svg[data-chart-mode="heatmap"] rect').count()!==6)throw Error('Access heatmap lacks six source cells');
+ if(await drop.locator('svg[data-chart-mode="heatmap"] rect').count()!==6)throw Error('Drop heatmap lacks six source cells');
+ const qosSource=JSON.parse(await readFile('packages/contracts/qos-metric-catalog.json','utf8'));
+ for(const [widget,metricId] of [[access,'access_success'],[drop,'drop_rate']]){
+  await widget.locator('.md-data-table summary').click();
+  const rows=widget.locator('tbody tr');
+  if(await rows.count()!==3)throw Error('QoS table operator coverage incorrect');
+  for(let i=0;i<3;i++){
+   const operator=await rows.nth(i).locator('th').innerText();
+   for(const [j,generation] of ['3G','4G'].entries()){
+    const expected=qosSource.metrics.find(m=>m.id===metricId).values.find(v=>v.operator===operator&&v.generation===generation).value;
+    if(await rows.nth(i).locator('td').nth(j).innerText()!==formatValue(expected))throw Error('QoS widget value differs from source');
+   }
+  }
+  await widget.locator('.md-data-table summary').click();
+ }
+ await access.screenshot({path:'visual-review/qos-heatmap.png'});
+ await page.reload({waitUntil:'networkidle'});
+ if(await access.getByRole('combobox').inputValue()!=='heatmap'||await drop.count()!==1)throw Error('QoS widget configuration not saved');
+ await page.getByRole('button',{name:'ویرایش چیدمان',exact:true}).click();
+ await access.getByRole('button',{name:'پنهان کردن',exact:true}).click();
+ await drop.getByRole('button',{name:'پنهان کردن',exact:true}).click();
  await fixed.locator('.md-grip').dragTo(survey.locator('h3'),{targetPosition:{x:20,y:5}});
  const analystOrder=await widgets.evaluateAll(nodes=>nodes.map(el=>el.dataset.widget).join(','));
  await page.getByRole('combobox',{name:'چیدمان شخصی',exact:true}).selectOption('manager');
@@ -165,7 +195,7 @@ try {
  // Hide all, recover via explicit empty state, and verify mobile controls.
  for(let i=0;i<3;i++)await widgets.first().getByRole('button',{name:'پنهان کردن',exact:true}).click();
  await page.getByRole('button',{name:'بازیابی ویجت‌ها',exact:true}).click();
- if(await widgets.count()!==3)throw Error('Empty layout recovery failed');
+ if(await widgets.count()!==5)throw Error('Empty layout recovery failed');
  await page.setViewportSize({width:390,height:844});
  await fixed.getByRole('slider').fill('270');
  await fixed.getByRole('button',{name:'جابه‌جایی به قبل',exact:true}).click();
