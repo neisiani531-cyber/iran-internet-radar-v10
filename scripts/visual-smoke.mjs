@@ -54,6 +54,38 @@ try {
  const mobile=page.locator('[data-widget="mobile"]');
  const fixed=page.locator('[data-widget="fixed"]');
  const survey=page.locator('[data-widget="survey"]');
+ // Resize both axes through a real pointer gesture; columns snap to a 12-column grid.
+ const gridBox=await page.locator('.md-grid').boundingBox();
+ const corner=fixed.getByRole('button',{name:'تغییر اندازه دوبعدی روند فناوری‌های اینترنت ثابت',exact:true});
+ await corner.scrollIntoViewIfNeeded();
+ const cornerBox=await corner.boundingBox();
+ await page.mouse.move(cornerBox.x+15,cornerBox.y+13);
+ await page.mouse.down();
+ await page.mouse.move(cornerBox.x+15-gridBox.width/4,cornerBox.y+73,{steps:12});
+ await page.mouse.up();
+ await page.waitForFunction(()=>document.querySelector('[data-widget="fixed"]').style.gridColumn==='span 9');
+ if(Math.abs(await fixed.locator('.md-size-body').evaluate(el=>el.getBoundingClientRect().height)-270)>2)throw Error('Two-axis resize height failed: '+await fixed.locator('.md-size-body').evaluate(el=>el.getBoundingClientRect().height));
+ await page.reload({waitUntil:'networkidle'});
+ await page.getByRole('button',{name:'ویرایش چیدمان',exact:true}).click();
+ if(await fixed.evaluate(el=>el.style.gridColumn)!=='span 9')throw Error('Two-axis width not saved');
+ await page.setViewportSize({width:390,height:844});
+ const mobileWidth=await fixed.evaluate(el=>el.getBoundingClientRect().width);
+ const mobileGridWidth=await page.locator('.md-grid').evaluate(el=>el.getBoundingClientRect().width);
+ if(Math.abs(mobileWidth-mobileGridWidth)>2)throw Error('Mobile grid overflow');
+ await page.setViewportSize({width:1600,height:900});
+ if(await fixed.evaluate(el=>el.style.gridColumn)!=='span 9')throw Error('Mobile breakpoint overwrote desktop width');
+ await corner.focus();
+ for(let i=0;i<3;i++)await corner.press('ArrowRight');
+ if(await fixed.evaluate(el=>el.style.gridColumn)!=='span 6')throw Error('Keyboard resize failed');
+ // Preview and commit a trailing drop; before-drop behavior is already tested above.
+ await mobile.locator('.md-grip').evaluate(el=>{const transfer=new DataTransfer();window.__radarDrag=transfer;el.dispatchEvent(new DragEvent('dragstart',{bubbles:true,dataTransfer:transfer}));});
+ await survey.evaluate(el=>{const box=el.getBoundingClientRect();el.dispatchEvent(new DragEvent('dragover',{bubbles:true,cancelable:true,clientX:box.x+20,clientY:box.bottom-10,dataTransfer:window.__radarDrag}));});
+ await page.getByText('قرارگیری پس از این پنل',{exact:true}).waitFor();
+ await survey.evaluate(el=>{const box=el.getBoundingClientRect();el.dispatchEvent(new DragEvent('drop',{bubbles:true,cancelable:true,clientX:box.x+20,clientY:box.bottom-10,dataTransfer:window.__radarDrag}));delete window.__radarDrag;});
+ const afterOrder=await widgets.evaluateAll(nodes=>nodes.map(el=>el.dataset.widget));
+ if(afterOrder.indexOf('mobile')!==afterOrder.indexOf('survey')+1)throw Error('Trailing drop ordering failed');
+ if(await page.locator('.md-drop-marker').count()!==0)throw Error('Drop marker not cleared');
+ await page.getByRole('button',{name:'چیدمان پیش‌فرض',exact:true}).click();
  await fixed.getByRole('button',{name:'عریض کردن',exact:true}).click();
  await fixed.getByRole('combobox').selectOption('donut');
  await fixed.getByRole('slider').fill('330');
@@ -122,5 +154,5 @@ try {
  if(await invalid.locator('[data-widget="survey"] select').inputValue()!=='bar')throw Error('Invalid stored chart mode accepted');
  await invalid.close();
  if(errors.length)throw new Error('Browser runtime errors: '+errors.join(' | '));
- console.log('PASS: 31 provinces; native resize; combined width/order/hide/recovery; independent profiles; mobile persistence; legacy migration; desktop/TV/mobile screenshots');
+ console.log('PASS: 31 provinces; native and two-axis resize; trailing drop preview; combined width/order/hide/recovery; independent profiles; mobile persistence; legacy migration; desktop/TV/mobile screenshots');
 } finally {await browser.close();}

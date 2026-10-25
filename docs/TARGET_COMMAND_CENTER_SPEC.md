@@ -60,5 +60,13 @@ DO NOT auto-deploy to 185.105.101.70. Changes stay on integration/radar-v10-2026
 - Storage v2 migrates legacy v1 preferences into analyst layout; known IDs, compatible chart modes, bounded heights and active profile are validated. Reset affects only the selected profile. Browser storage failure is visible.
 - Reordering accepts only an internal active edit drag. Native height observation and existing accessible before/after controls remain available.
 - Browser regression now covers native mouse resize, combined wide/hidden/restored/reordered widgets, profile isolation across reload and reset, empty-layout recovery, mobile controls, legacy migration and invalid stored settings.
-- Remaining: two-dimensional grid resizing, stronger drag placement/compaction, extending the widget registry beyond the three current datasets, and applying the approved central-map visual composition to the full dashboard.
+- Remaining: extending the widget registry beyond the three current datasets, advanced grid compaction, and applying the approved central-map visual composition to the full dashboard.
 - Release remains on the integration branch; no production deployment is authorized by this checkpoint.
+
+### Two-axis layout follow-up
+- Added a captured-pointer corner handle that changes chart height (180–480 px) and panel width (6–12 snapped grid columns). Native vertical resizing and width buttons remain available.
+- RTL arrow keys provide a keyboard alternative. On narrow screens, panels occupy the available width while their desktop column preferences remain stored.
+- Existing v2 profiles gain validated column widths from their prior normal/wide setting. No stored layout is discarded.
+- Drag targets display a leading/trailing insertion marker; drops support both positions and still require an internal edit drag.
+- Native ResizeObserver updates are suspended during the custom gesture, preventing stale intermediate measurements from replacing the final pointer size.
+- Chromium regression covers real two-axis mouse resize, reload persistence, desktop/mobile width preservation, keyboard width adjustment and trailing insertion preview/drop in addition to previous coverage.
