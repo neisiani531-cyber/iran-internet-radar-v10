@@ -28,7 +28,7 @@ export default function AnalyticsChart({data,mode,title}:{data:ChartData;mode:Ch
  const y=(v:number)=>t+(1-v/max)*(h-t-b);
  const points=(row:number[])=>row.map((v,i)=>`${x(i)},${y(v)}`).join(' ');
  const index=active===null?null:Math.max(0,Math.min(n-1,active));
- function inspect(e:React.PointerEvent<SVGSVGElement>){const rect=e.currentTarget.getBoundingClientRect();const vx=(e.clientX-rect.left)/rect.width*w;setActive(Math.max(0,Math.min(n-1,Math.floor((vx-l)/(w-l-r)*n))));}
+ function inspect(e:React.PointerEvent<SVGSVGElement>){if(e.buttons!==0)return;const rect=e.currentTarget.getBoundingClientRect();const vx=(e.clientX-rect.left)/rect.width*w;setActive(Math.max(0,Math.min(n-1,Math.floor((vx-l)/(w-l-r)*n))));}
  function keyboard(e:React.KeyboardEvent<SVGSVGElement>){
   if(e.key==='Escape'){setActive(null);return;}
   if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();setActive(e.key==='Home'?0:e.key==='End'?n-1:Math.max(0,Math.min(n-1,(index??0)+(e.key==='ArrowRight'?1:-1))));}

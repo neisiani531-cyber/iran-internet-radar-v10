@@ -33,7 +33,7 @@ try {
  await page.getByRole('button',{name:'ویرایش چیدمان'}).click();
  const first=widgets.first();
  const thirdGrip=widgets.nth(2).locator('.md-grip');
- await thirdGrip.dragTo(first,{targetPosition:{x:25,y:75}});
+ await thirdGrip.dragTo(first.locator('h3'),{targetPosition:{x:20,y:5}});
  await page.waitForFunction(()=>document.querySelector('.md-widget h3')?.textContent?.includes('تجربه کاربران'),null,{timeout:10000});
  const firstTitle=await widgets.first().locator('h3').innerText();
  if(!firstTitle.includes('تجربه کاربران'))throw new Error('Widget drag ordering failed: '+firstTitle);
@@ -139,7 +139,7 @@ try {
  if(!await fixed.evaluate(el=>el.classList.contains('md-wide')))throw Error('Restored widget lost width');
  if(await fixed.getByRole('combobox').inputValue()!=='donut')throw Error('Restored widget lost chart mode');
  if(await fixed.getByRole('slider').inputValue()!=='330')throw Error('Restored widget lost height');
- await fixed.locator('.md-grip').dragTo(survey,{targetPosition:{x:25,y:75}});
+ await fixed.locator('.md-grip').dragTo(survey.locator('h3'),{targetPosition:{x:20,y:5}});
  const analystOrder=await widgets.evaluateAll(nodes=>nodes.map(el=>el.dataset.widget).join(','));
  await page.getByRole('combobox',{name:'چیدمان شخصی',exact:true}).selectOption('manager');
  if(await survey.count()!==0)throw Error('Manager preset should hide research widget');
@@ -202,4 +202,8 @@ try {
  await invalid.close();
  if(errors.length)throw new Error('Browser runtime errors: '+errors.join(' | '));
  console.log('PASS: 31 provinces; native and two-axis resize; trailing drop preview; combined width/order/hide/recovery; independent profiles; mobile persistence; legacy migration; desktop/TV/mobile screenshots');
+} catch(error){
+ const page=browser.contexts()[0]?.pages()[0];
+ if(page){await page.screenshot({path:'visual-review/failure.png',fullPage:true}).catch(()=>{});console.error('Layout at failure:',await page.locator('.md-widget').evaluateAll(nodes=>nodes.map(el=>({id:el.dataset.widget,box:{y:el.getBoundingClientRect().y,height:el.getBoundingClientRect().height}}))).catch(()=>[]));}
+ throw error;
 } finally {await browser.close();}
