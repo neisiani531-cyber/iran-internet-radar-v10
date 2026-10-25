@@ -6,6 +6,7 @@ import qos from '../packages/contracts/qos-metric-catalog.json';
 import latency from '../packages/contracts/cra57-latency-quality.snapshot.json';
 import survey from '../packages/contracts/p01-survey-research-preview.json';
 import './TargetCommandCenter.css';
+import IranProvinceMap from './IranProvinceMap';
 
 type Destination='fixed'|'mobile'|'qos'|'research'|'evidence'|'catalog'|'live';
 type Focus='national'|'operator'|'experience';
@@ -52,12 +53,8 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
   <div className="tc-main-grid">
    <section className="tc-panel tc-map-panel"><div className="tc-heading"><div><span className="tc-eyebrow">GEO INTELLIGENCE</span><h2>نقشه پایش استانی ایران</h2></div><span className="tc-pill">پوشش داده استانی: ناموجود</span></div>
     <div className="tc-layer">{([['quality','کیفیت'],['outage','اختلالات'],['coverage','پوشش']] as const).map(([id,label])=><button key={id} className={mapLayer===id?'selected':''} onClick={()=>{setMapLayer(id);setSelectedProvince(null)}}>{label}</button>)}</div>
-    <div className="tc-map-placeholder">
-     <svg aria-hidden="true" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid meet"><defs><pattern id="tc-grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#254458" strokeWidth=".5"/></pattern></defs><rect x="0" y="0" width="600" height="320" fill="url(#tc-grid)"/><circle cx="300" cy="160" r="110" fill="none" stroke="#22546b" strokeDasharray="5 8"/><circle cx="300" cy="160" r="72" fill="none" stroke="#22546b" strokeDasharray="4 9"/><path d="M300 35V285M170 160H430" stroke="#22546b" strokeDasharray="4 7"/><circle cx="300" cy="160" r="5" fill="#45d9c4"/></svg>
-     <div className="tc-no-geo"><strong>لایه جغرافیایی در انتظار داده و مرزبندی معتبر</strong><span>برای جلوگیری از نمایش اطلاعات ساختگی، رنگ‌بندی و رتبه استانی غیرفعال است.</span><span>لایه انتخاب‌شده: {mapLayer==='quality'?'کیفیت':mapLayer==='outage'?'اختلالات':'پوشش'}</span></div>
-    </div>
-    {selectedProvince&&<p>{selectedProvince}</p>}
-    <div className="tc-panel-foot">در نسخه بعد، نقشه صحیح ۳۱ استان و شناسنامه هر نقطه داده متصل می‌شود.</div>
+    <IranProvinceMap layer={mapLayer==='quality'?'کیفیت':mapLayer==='outage'?'اختلالات':'پوشش'}/>
+    <div className="tc-panel-foot">نقشه مرزی ۳۱ استان فعال است؛ داده‌های استانی معتبر برای رنگ‌بندی شاخص‌ها هنوز لازم است.</div>
    </section>
    <section className="tc-panel tc-op-panel"><div className="tc-heading"><div><span className="tc-eyebrow">OPERATOR INTELLIGENCE</span><h2>مقایسه تاریخی اپراتورها</h2></div>{sectionLink('mobile','جزئیات')}</div>
     <div className="tc-operator-bars">{selectedOperators.map((x)=>{const max=Math.max(...record,1);const prev=historyIdx>=4?history.values[historyIdx-4][x.index]:undefined;return <div className="tc-bar" key={x.name}><div><b>{x.name}</b><span>{fa(x.count)}</span></div><div className="tc-track"><i style={{width:(x.count/max*100)+'%'}}/></div><small>{prev===undefined?'تغییر سالانه: فاقد مبنا':'تغییر سالانه: '+fa((x.count/prev-1)*100)+'٪'}</small></div>})}</div>
