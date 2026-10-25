@@ -52,7 +52,7 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
   </div>
   <div className="tc-main-grid">
    <section className="tc-panel tc-map-panel"><div className="tc-heading"><div><span className="tc-eyebrow">GEO INTELLIGENCE</span><h2>نقشه پایش استانی ایران</h2></div><span className="tc-pill">پوشش داده استانی: ناموجود</span></div>
-    <div className="tc-layer">{([['quality','کیفیت'],['outage','اختلالات'],['coverage','پوشش']] as const).map(([id,label])=><button key={id} className={mapLayer===id?'selected':''} onClick={()=>{setMapLayer(id);setSelectedProvince(null)}}>{label}</button>)}</div>
+    <div className="tc-layer">{([['quality','کیفیت'],['outage','اختلالات'],['coverage','پوشش']] as const).map(([id,label])=><button key={id} className={mapLayer===id?'selected':''} onClick={()=>{setMapLayer(id);}}>{label}</button>)}</div>
     <IranProvinceMap layer={mapLayer==='quality'?'کیفیت':mapLayer==='outage'?'اختلالات':'پوشش'}/>
     <div className="tc-panel-foot">نقشه مرزی ۳۱ استان فعال است؛ داده‌های استانی معتبر برای رنگ‌بندی شاخص‌ها هنوز لازم است.</div>
    </section>
