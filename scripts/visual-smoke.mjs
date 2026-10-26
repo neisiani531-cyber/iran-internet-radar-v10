@@ -356,6 +356,28 @@ try {
   if(await panel.locator('tbody tr').count()!==10)throw Error('Retry failed to recover all quarters');
   await recovery.close();
  }
+ const navigation=await browser.newPage({viewport:{width:1920,height:1080}});
+ navigation.on('pageerror',error=>errors.push(error.message));
+ await navigation.goto(base,{waitUntil:'networkidle'});
+ const shellBounds=await navigation.locator('main').evaluate(el=>({x:el.getBoundingClientRect().x,width:el.getBoundingClientRect().width}));
+ if(shellBounds.x>2||shellBounds.width<1915)throw Error('Top navigation did not release full viewport width');
+ if(await navigation.locator('.sidebar').count()!==0)throw Error('Vertical navigation remains');
+ await navigation.getByRole('button',{name:'همه بخش‌ها',exact:false}).click();
+ const menu=navigation.getByRole('navigation',{name:'همه بخش‌های رادار',exact:true});
+ if(await menu.getByRole('button').count()!==15)throw Error('Top navigation lost a destination');
+ await menu.getByRole('button',{name:'کاوشگر ۱۳۰ شاخص رسمی',exact:false}).click();
+ await navigation.getByRole('button',{name:'مرکز فرماندهی',exact:true}).click();
+ await navigation.getByRole('heading',{name:'مرکز فرماندهی اینترنت ایران',exact:true}).waitFor();
+ await navigation.getByRole('button',{name:'همه بخش‌ها',exact:false}).click();
+ await menu.getByRole('button').first().focus();
+ await menu.getByRole('button').first().press('Escape');
+ if(await menu.count()!==0)throw Error('Escape failed to dismiss navigation menu');
+ await navigation.screenshot({path:'visual-review/wide-command-1920.png',fullPage:false});
+ await navigation.setViewportSize({width:390,height:844});
+ await navigation.getByRole('button',{name:'همه بخش‌ها',exact:false}).click();
+ if(!await menu.getByRole('button',{name:'کیفیت و تجربه',exact:false}).isVisible())throw Error('Mobile navigation destination inaccessible');
+ if(await navigation.evaluate(()=>document.documentElement.scrollWidth)>392)throw Error('Mobile top navigation overflows');
+ await navigation.close();
  if(errors.length)throw new Error('Browser runtime errors: '+errors.join(' | '));
  console.log('PASS: 31 provinces; native and two-axis resize; trailing drop preview; combined width/order/hide/recovery; independent profiles; mobile persistence; legacy migration; desktop/TV/mobile screenshots');
 } catch(error){

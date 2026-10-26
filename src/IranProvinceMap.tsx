@@ -59,7 +59,7 @@ export default function IranProvinceMap({layer}:{layer:string}){
   {error&&<div className="ipm-msg" role="alert">{error}</div>}
   {features&&<div className="ipm-inner">
    <svg viewBox={'0 0 '+width+' '+height} role="img" aria-label="نقشه واقعی مرزهای ۳۱ استان ایران؛ داده شاخص استانی هنوز موجود نیست">
-    {shapes.map(({feature,path})=><path key={getId(feature.properties)} d={path} fill={selected&&getId(selected.properties)===getId(feature.properties)?'#245b6f':'#173449'} fillRule="evenodd" stroke="#3f7189" strokeWidth=".6" tabIndex={0} role="button" aria-label={name(feature.properties)+'، داده استانی موجود نیست'} onClick={()=>setSelected(feature)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setSelected(feature)}}}/>)}
+    {shapes.map(({feature,path})=><path key={getId(feature.properties)} d={path} fill={selected&&getId(selected.properties)===getId(feature.properties)?'#28788b':'#164256'} fillRule="evenodd" stroke="#3f7189" strokeWidth=".6" tabIndex={0} role="button" aria-label={name(feature.properties)+'، داده استانی موجود نیست'} onClick={()=>setSelected(feature)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setSelected(feature)}}}/>)}
    </svg>
    <div className="ipm-detail"><b>{selected?name(selected.properties):'۳۱ استان ثبت‌شده'}</b><span>لایه {layer} | داده استانی قابل استناد موجود نیست</span><small>رنگ‌ها صرفاً مرزبندی و انتخاب را نشان می‌دهند، نه عملکرد استان</small></div>
   </div>}
