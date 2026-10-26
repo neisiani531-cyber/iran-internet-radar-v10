@@ -1,0 +1,102 @@
+{
+  "source": "CRA57",
+  "period": "1405-Q1",
+  "admission": "SOURCE_TRANSCRIPTION_PENDING_VISUAL_QA",
+  "fiber_coverage_history": [
+    {
+      "period": "۱۴۰۲-۴",
+      "households": 7079542,
+      "source_id": "CRA57-FIBER-COV-۱۴۰۲-۴",
+      "page": 4
+    },
+    {
+      "period": "۱۴۰۳-۱",
+      "households": 8069565,
+      "source_id": "CRA57-FIBER-COV-۱۴۰۳-۱",
+      "page": 4
+    },
+    {
+      "period": "۱۴۰۳-۲",
+      "households": 8069565,
+      "source_id": "CRA57-FIBER-COV-۱۴۰۳-۲",
+      "page": 4
+    },
+    {
+      "period": "۱۴۰۳-۳",
+      "households": 8069565,
+      "source_id": "CRA57-FIBER-COV-۱۴۰۳-۳",
+      "page": 4
+    },
+    {
+      "period": "۱۴۰۳-۴",
+      "households": 8069565,
+      "source_id": "CRA57-FIBER-COV-۱۴۰۳-۴",
+      "page": 4
+    },
+    {
+      "period": "۱۴۰۴-۱",
+      "households": 8227920,
+      "source_id": "CRA57-FIBER-COV-۱۴۰۴-۱",
+      "page": 4
+    },
+    {
+      "period": "۱۴۰۴-۲",
+      "households": 8709087,
+      "source_id": "CRA57-FIBER-COV-۱۴۰۴-۲",
+      "page": 4
+    },
+    {
+      "period": "۱۴۰۴-۳",
+      "households": 9205496,
+      "source_id": "CRA57-FIBER-COV-۱۴۰۴-۳",
+      "page": 4
+    },
+    {
+      "period": "۱۴۰۴-۴",
+      "households": 10734562,
+      "source_id": "CRA57-FIBER-COV-۱۴۰۴-۴",
+      "page": 4
+    },
+    {
+      "period": "۱۴۰۵-۱",
+      "households": 11126281,
+      "source_id": "CRA57-FIBER-COV-۱۴۰۵-۱",
+      "page": 4
+    }
+  ],
+  "technology": {
+    "XDSL": {
+      "subscriptions": 6562655,
+      "reported_share": 62.68,
+      "count_page": 22,
+      "share_page": 23
+    },
+    "FTTX": {
+      "subscriptions": 1037577,
+      "reported_share": 9.9,
+      "count_page": 22,
+      "share_page": 23
+    },
+    "TDLTE": {
+      "subscriptions": 2501421,
+      "reported_share": 23.89,
+      "count_page": 22,
+      "share_page": 23
+    },
+    "WIFI": {
+      "subscriptions": 369259,
+      "reported_share": 3.53,
+      "count_page": 22,
+      "share_page": 23
+    }
+  },
+  "coverage_to_subscription_ratio": {
+    "value_percent": 9.33,
+    "status": "DESCRIPTIVE_ONLY_DEFINITIONS_PENDING"
+  },
+  "flags": [
+    "REPEATED_COVERAGE_VALUES_1403",
+    "VISUAL_SOURCE_QA_PENDING",
+    "COVERAGE_IS_NOT_ACTIVE_SUBSCRIPTION"
+  ]
+}

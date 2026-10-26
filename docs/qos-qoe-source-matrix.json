@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.1",
+  "status": "WORKING_CROSSWALK_NOT_Q5",
+  "sources": {
+    "cra_latency": {
+      "count": 8,
+      "page": 14
+    },
+    "cra_connection": {
+      "count": 12,
+      "page": 15
+    },
+    "tic": {
+      "count": 9,
+      "status": "SOURCE_MATCHING_REQUIRED"
+    },
+    "survey": {
+      "count": 4,
+      "status": "RESEARCH_PREVIEW_NOT_Q5"
+    }
+  },
+  "mechanisms": [
+    {
+      "id": "M01",
+      "title": "کیفیت تجربه اینترنت",
+      "gate": "NOT_SAME_PERIOD",
+      "user_evidence": "EV-P01-002",
+      "technical_evidence": [
+        "EV-T02-MCI-SPEED",
+        "EV-T02-IR-SPEED",
+        "EV-T02-RI-SPEED"
+      ]
+    },
+    {
+      "id": "M02",
+      "title": "اصطکاک دسترسی به خدمات",
+      "gate": "NO_MATCHED_TECHNICAL_SERIES",
+      "user_evidence": "EV-P01-004",
+      "technical_evidence": []
+    },
+    {
+      "id": "M03",
+      "title": "تاب‌آوری و قابلیت پیش‌بینی",
+      "gate": "NO_MATCHED_USER_SURVEY",
+      "user_evidence": null,
+      "technical_evidence": [
+        "EV-T07-ASN-001",
+        "EV-T07-ASN-002",
+        "EV-T07-ASN-003"
+      ]
+    },
+    {
+      "id": "M04",
+      "title": "هزینه مؤثر استفاده",
+      "gate": "DIFFERENT_CONSTRUCT_AND_PERIOD",
+      "user_evidence": "EV-P01-003",
+      "technical_evidence": [
+        "EV-E02-ITU-001"
+      ]
+    },
+    {
+      "id": "M05",
+      "title": "پوشش در برابر تجربه",
+      "gate": "DIFFERENT_CONSTRUCT_AND_PERIOD",
+      "user_evidence": "EV-P01-002",
+      "technical_evidence": [
+        "EV-T05-ITU-001",
+        "EV-T05-ITU-002"
+      ]
+    },
+    {
+      "id": "M06",
+      "title": "اعتماد و تداوم فعالیت اقتصادی",
+      "gate": "EVIDENCE_GAP",
+      "user_evidence": null,
+      "technical_evidence": []
+    }
+  ],
+  "cross_source_comparison": "BLOCKED_PENDING_ALIGNMENT",
+  "requirements": [
+    "PERIOD_ALIGNMENT",
+    "POPULATION_ALIGNMENT",
+    "SERVICE_ALIGNMENT",
+    "MEASUREMENT_METHOD",
+    "SOURCE_VALIDATION",
+    "Q5_APPROVAL"
+  ],
+  "comparability_policy": {
+    "technical_within_source": "CONDITIONAL",
+    "technical_cross_source": "BLOCKED_UNTIL_METHOD_MATCH",
+    "technical_vs_survey": "BLOCKED_UNTIL_ALIGNMENT",
+    "causal_attribution": "NOT_ESTABLISHED"
+  },
+  "required_dimensions": [
+    "source_id",
+    "metric_definition",
+    "measurement_period",
+    "network_layer",
+    "measurement_point",
+    "technology",
+    "geographic_scope",
+    "population_or_sample",
+    "service_or_application",
+    "measurement_method",
+    "validation_status"
+  ],
+  "dashboard_policy": {
+    "show_sources_separately": true,
+    "allow_exploratory_side_by_side": true,
+    "allow_unqualified_correlation": false,
+    "allow_national_composite_score": false,
+    "show_missing_alignment": true
+  }
+}

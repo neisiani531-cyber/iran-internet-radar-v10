@@ -13,7 +13,7 @@ const historicalIndex=historical.operators.map(name=>operators.indexOf(name));
 const fullPeriods=historical.periods;
 const latestIndex=fullPeriods.length-1;
 const season=(s:string)=>{const m=/^(\d{4})-Q([1-4])$/.exec(s);return m?m[1]+' / '+['','بهار','تابستان','پاییز','زمستان'][Number(m[2])]:s;};
-const sourceLink='/iran-internet-radar-v10/legacy/v9-17.html';
+const sourceLink=import.meta.env.BASE_URL+'legacy/v9-17.html';
 
 export default function OperatorExplorer(){
  const [key,setKey]=useState('active_4g_sites');
@@ -31,6 +31,26 @@ export default function OperatorExplorer(){
  const percentChange=(idx:number,months:number)=>{const before=period-months;if(before<0)return null;const a=values[idx],b=historical.values[before][idx];return b===0?null:(a/b-1)*100;};
  const selectAll=()=>setShown([true,true,true]);
  const selectedPoints=historical.operators.map((name,i)=>({name,index:i,value:values[i]}));
+
+ const downloadHistory=()=>{
+  const header=['دوره',...historical.operators,'واحد','وضعیت اعتبارسنجی'];
+  const rows=historical.periods.map((period,i)=>[
+   period,
+   ...historical.values[i],
+   'اشتراک پهن‌باند سیار',
+   historical.validation
+  ]);
+  const csv=[header,...rows].map(row=>row.join(',')).join('\r\n');
+  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'});
+  const link=document.createElement('a');
+  const url=URL.createObjectURL(blob);
+  link.href=url;
+  link.download='radar-mobile-broadband-24-quarters.csv';
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+ };
  return <section className="panel" dir="rtl">
  <h2>مقایسه مستند اپراتورهای سیار</h2>
  <p>۹ شاخص رسمی مقطعی از فصلنامه آماری ۵۷، بهار ۱۴۰۵، و یک سری مستقل ۲۴ فصلی از اشتراک پهن‌باند سیار. مقایسه تنها بین مقادیر هم‌تعریف و هم‌دوره انجام می‌شود.</p>
@@ -43,9 +63,41 @@ export default function OperatorExplorer(){
  <div className="controls" style={{display:'flex',flexWrap:'wrap',alignItems:'end',gap:14}}>
  <label>دوره انتخابی <select value={period} onChange={e=>setPeriod(Number(e.target.value))}>{fullPeriods.map((p,i)=><option key={p} value={i}>{season(p)}</option>)}</select></label>
  <label>نمایش <select value={mode} onChange={e=>setMode(e.target.value as 'chart'|'table')}><option value="chart">نمودار</option><option value="table">جدول ۲۴ دوره</option></select></label>
- <button type="button" onClick={()=>setPeriod(latestIndex)}>آخرین دوره</button><button type="button" onClick={selectAll}>نمایش هر سه اپراتور</button>
+ <button type="button" onClick={downloadHistory}>دریافت CSV تاریخچه ۲۴ فصل</button><button type="button" onClick={()=>setPeriod(latestIndex)}>آخرین دوره</button><button type="button" onClick={selectAll}>نمایش هر سه اپراتور</button>
  </div>
- <div style={{display:'flex',flexWrap:'wrap',gap:16,margin:'16px 0'}}>{historical.operators.map((n,i)=><label key={n} style={{color:palette[i],cursor:'pointer'}}><input type="checkbox" checked={shown[i]} onChange={()=>setShown(v=>v.map((x,j)=>j===i?!x:x))}/> {n}</label>)}</div>
+
+ <div className="panel" style={{marginTop:20}}>
+  <h3>مقایسه تحلیلی سه اپراتور</h3>
+  <p>دوره منتخب: {season(fullPeriods[period])} |
+  منبع: فصلنامه ۵۷ رگولاتوری، صفحه ۲۵</p>
+  <div style={{overflowX:'auto'}}>
+   <table>
+    <thead><tr>
+     <th>اپراتور</th>
+     <th>اشتراک پهن‌باند</th>
+     <th>تغییر فصلی</th>
+     <th>تغییر سالانه</th>
+    </tr></thead>
+    <tbody>
+     {historical.operators.map((name,i)=>{
+      const q=percentChange(i,1);
+      const a=percentChange(i,4);
+      return <tr key={name}>
+       <td>{name}</td>
+       <td>{fmt(values[i])}</td>
+       <td>{q===null?'فاقد مبنا':fmt(q)+'٪'}</td>
+       <td>{a===null?'فاقد مبنا':fmt(a)+'٪'}</td>
+      </tr>;
+     })}
+    </tbody>
+   </table>
+  </div>
+  <p>تغییرات بر اساس اشتراک پهن‌باند سیار محاسبه شده‌اند،
+  نه کل سیم‌کارت‌های فعال. تطبیق تصویری با سند اصلی
+  هنوز در انتظار تأیید است.</p>
+ </div>
+
+<div style={{display:'flex',flexWrap:'wrap',gap:16,margin:'16px 0'}}>{historical.operators.map((n,i)=><label key={n} style={{color:palette[i],cursor:'pointer'}}><input type="checkbox" checked={shown[i]} onChange={()=>setShown(v=>v.map((x,j)=>j===i?!x:x))}/> {n}</label>)}</div>
  <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(170px,1fr))',gap:12,marginBottom:18}}>{selectedPoints.map(({name,index,value})=><article key={name} style={{padding:14,background:'#0c2638',borderRadius:12,border:'1px solid #29485c'}}><small>{name} · {season(fullPeriods[period])}</small><strong style={{display:'block',fontSize:21,margin:'8px 0'}}>{fmt(value)}</strong><small>اشتراک پهن‌باند</small><p style={{margin:'8px 0 0'}}>تغییر نسبت به فصل قبل: {percentChange(index,1)===null?'فاقد دوره مبنا':fmt(percentChange(index,1)! )+'٪'}</p><p style={{margin:'4px 0'}}>تغییر سالانه: {percentChange(index,4)===null?'فاقد دوره مبنا':fmt(percentChange(index,4)!)+'٪'}</p></article>)}</div>
  {mode==='chart'?<div style={{overflowX:'auto'}}><svg viewBox="0 0 780 260" role="img" aria-label="روند ۲۴ فصلی اشتراک پهن‌باند سیار با مقیاس متناسب با بیشینه داده" style={{width:'100%',minWidth:560,background:'#081b2b',borderRadius:13}}>
  {[0,1,2,3,4].map(i=><g key={i}><line x1="58" x2="748" y1={32+i*44.5} y2={32+i*44.5} stroke="#345064" strokeDasharray="4 6"/><text x="50" y={36+i*44.5} fill="#abc5d1" fontSize="11" textAnchor="end">{fmt(chartMax*(4-i)/4000000)}م</text></g>)}

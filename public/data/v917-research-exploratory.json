@@ -1,0 +1,256 @@
+{
+  "schema_version": "1.0",
+  "admission": "RESEARCH_EXPLORATORY_NOT_Q5",
+  "not_official_cra": true,
+  "source": "V9.17 curated legacy research preview",
+  "tor": {
+    "rows": [
+      {
+        "date": "2025-06-10",
+        "users": 7389,
+        "frac": 105
+      },
+      {
+        "date": "2025-06-11",
+        "users": 7381,
+        "frac": 106
+      },
+      {
+        "date": "2025-06-12",
+        "users": 7760,
+        "frac": 105
+      },
+      {
+        "date": "2025-06-13",
+        "users": 12712,
+        "frac": 105
+      },
+      {
+        "date": "2025-06-14",
+        "users": 22297,
+        "frac": 104
+      },
+      {
+        "date": "2025-06-15",
+        "users": 28602,
+        "frac": 97
+      },
+      {
+        "date": "2025-06-16",
+        "users": 31790,
+        "frac": 99
+      },
+      {
+        "date": "2025-06-17",
+        "users": 28988,
+        "frac": 99
+      },
+      {
+        "date": "2025-06-18",
+        "users": 15930,
+        "frac": 102
+      },
+      {
+        "date": "2025-06-19",
+        "users": 2649,
+        "frac": 105
+      },
+      {
+        "date": "2025-06-20",
+        "users": 2502,
+        "frac": 103
+      },
+      {
+        "date": "2025-06-21",
+        "users": 10021,
+        "frac": 104
+      },
+      {
+        "date": "2025-06-22",
+        "users": 12904,
+        "frac": 101
+      },
+      {
+        "date": "2025-06-23",
+        "users": 11754,
+        "frac": 104
+      },
+      {
+        "date": "2025-06-24",
+        "users": 12247,
+        "frac": 104
+      },
+      {
+        "date": "2025-06-25",
+        "users": 18598,
+        "frac": 107
+      },
+      {
+        "date": "2025-06-26",
+        "users": 18485,
+        "frac": 106
+      },
+      {
+        "date": "2025-06-28",
+        "users": 17550,
+        "frac": 97
+      },
+      {
+        "date": "2025-06-29",
+        "users": 19956,
+        "frac": 88
+      },
+      {
+        "date": "2025-06-30",
+        "users": 19768,
+        "frac": 87
+      },
+      {
+        "date": "2025-07-01",
+        "users": 20108,
+        "frac": 85
+      },
+      {
+        "date": "2025-07-02",
+        "users": 21007,
+        "frac": 84
+      },
+      {
+        "date": "2025-07-03",
+        "users": 20422,
+        "frac": 85
+      },
+      {
+        "date": "2025-07-04",
+        "users": 19875,
+        "frac": 87
+      },
+      {
+        "date": "2025-07-05",
+        "users": 16131,
+        "frac": 103
+      }
+    ],
+    "expected_missing_date": "2025-06-27",
+    "frac_domain": [
+      0,
+      110
+    ],
+    "note": "Tor frac is not a percentage constrained to 100"
+  },
+  "tic": {
+    "quarterly": [
+      {
+        "id": "TIC-Q-1403-1",
+        "year": 1403,
+        "quarter": 1,
+        "rtt": 34.315,
+        "plr": 0.0018,
+        "jitter": 0.114
+      },
+      {
+        "id": "TIC-Q-1403-2",
+        "year": 1403,
+        "quarter": 2,
+        "rtt": 34.26,
+        "plr": 0.003,
+        "jitter": 0.112
+      },
+      {
+        "id": "TIC-Q-1403-3",
+        "year": 1403,
+        "quarter": 3,
+        "rtt": 34.91,
+        "plr": 0.0253,
+        "jitter": 0.218
+      },
+      {
+        "id": "TIC-Q-1403-4",
+        "year": 1403,
+        "quarter": 4,
+        "rtt": 34.009,
+        "plr": 0.0143,
+        "jitter": 0.193
+      },
+      {
+        "id": "TIC-Q-1404-1",
+        "year": 1404,
+        "quarter": 1,
+        "rtt": 34.04,
+        "plr": 0.01,
+        "jitter": 0.169
+      },
+      {
+        "id": "TIC-Q-1404-2",
+        "year": 1404,
+        "quarter": 2,
+        "rtt": 33.45,
+        "plr": 0.0083,
+        "jitter": 0.151
+      },
+      {
+        "id": "TIC-Q-1404-3",
+        "year": 1404,
+        "quarter": 3,
+        "rtt": 31.61,
+        "plr": 0.04,
+        "jitter": 0.285,
+        "outlier": true
+      },
+      {
+        "id": "TIC-Q-1404-4",
+        "year": 1404,
+        "quarter": 4,
+        "rtt": 28.41,
+        "plr": 0.0122,
+        "jitter": 0.156
+      },
+      {
+        "id": "TIC-Q-1405-1",
+        "year": 1405,
+        "quarter": 1,
+        "rtt": 27.72,
+        "plr": 0.021,
+        "jitter": 0.128
+      }
+    ],
+    "validation": "REQUIRES_SOURCE_MATCHING"
+  },
+  "mechanisms": [
+    {
+      "id": "M01",
+      "name": "کیفیت تجربه اتصال",
+      "status": "RESEARCH_HYPOTHESIS"
+    },
+    {
+      "id": "M02",
+      "name": "اصطکاک دسترسی",
+      "status": "RESEARCH_HYPOTHESIS"
+    },
+    {
+      "id": "M03",
+      "name": "پایداری و تاب‌آوری",
+      "status": "RESEARCH_HYPOTHESIS"
+    },
+    {
+      "id": "M04",
+      "name": "هزینه مؤثر اتصال",
+      "status": "RESEARCH_HYPOTHESIS"
+    },
+    {
+      "id": "M05",
+      "name": "شکاف پوشش و کیفیت",
+      "status": "RESEARCH_HYPOTHESIS"
+    },
+    {
+      "id": "M06",
+      "name": "اقتصاد دیجیتال و اعتماد",
+      "status": "RESEARCH_HYPOTHESIS"
+    }
+  ],
+  "totals": {
+    "tor_rows": 25,
+    "tic_quarters": 9,
+    "mechanisms": 6
+  }
+}
