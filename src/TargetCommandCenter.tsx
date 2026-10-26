@@ -10,6 +10,8 @@ import evidence from '../packages/contracts/evidence-metadata-public.json';
 import './TargetCommandCenter.css';
 import IranProvinceMap from './IranProvinceMap';
 import ModularDashboard from './ModularDashboard';
+import AnalyticsChart from './AnalyticsChart';
+import OverviewSignals from './OverviewSignals';
 
 type Destination='fixed'|'mobile'|'qos'|'research'|'evidence'|'catalog'|'live';
 type Focus='national'|'operator'|'experience';
@@ -34,6 +36,7 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
  const [focus,setFocus]=useState<Focus>('national');
  const [mapLayer,setMapLayer]=useState<'quality'|'outage'|'coverage'>('quality');
  const [presentation,setPresentation]=useState(false);
+ const [operatorView,setOperatorView]=useState<'donut'|'area'>('donut');
  const historyIdx=history.periods.indexOf(period);
  const record=history.values[historyIdx];
  const selectedOperators=history.operators.map((name,i)=>({name,index:i,count:record[i]})).filter(x=>operator==='all'||operator===x.name);
@@ -53,14 +56,7 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
    <label>موضوع تصمیم <select value={focus} onChange={e=>setFocus(e.target.value as Focus)}><option value="national">تصویر ملی</option><option value="operator">اپراتورها</option><option value="experience">تجربه کاربران</option></select></label>
    <button type="button" onClick={()=>{setPeriod(operatorPeriod);setOperator('all');setFocus('national');setMapLayer('quality')}}>بازنشانی فیلترها</button>
   </div>
-  <div className="tc-tiles">
-   <Tile title="کل اشتراک اینترنت ثابت" value={fa(current.reported_total)} unit="اشتراک" note="CRA57، صفحه ۲۲"/>
-   <Tile title="اشتراک FTTx" value={fa(current.technology_values.FTTx)} unit="اشتراک" note={'تغییر نسبت به بهار ۱۴۰۴: '+fa(fiberChange)+'٪'}/>
-   <Tile title="اشتراک پهن‌باند سیار" value={fa(selectedOperators.reduce((a,x)=>a+x.count,0))} unit="اشتراک" note={period+' · مجموع اپراتورهای انتخابی · صفحه ۲۵'}/>
-   <Tile title="RTT داخلی شبکه ثابت" value={q('rtt','fixed','domestic')===undefined?'—':fa(q('rtt','fixed','domestic')!)} unit="ms" note="تجمیعی، نه اپراتوری · صفحه ۱۴"/>
-   <Tile title="RTT بین‌الملل شبکه سیار" value={q('rtt','mobile','international')===undefined?'—':fa(q('rtt','mobile','international')!)} unit="ms" note="تجمیعی، نه اپراتوری · صفحه ۱۴"/>
-   <Tile title="شاخص ملی اختلال لحظه‌ای" value="—" note="داده ملی معتبر و لحظه‌ای متصل نیست" status="missing"/>
-  </div>
+  <OverviewSignals period={period} selectedOperators={selectedOperators.map(x=>x.index)}/>
   <div className="tc-source-strip" aria-label="وضعیت منابع و پوشش داده">
    <button onClick={()=>onNavigate('evidence')}><i className="tc-dot amber"/><span>ماتریس پذیرش منابع<strong>{fa(admission.entries.length)} خانواده منبع</strong></span><small>پذیرش هر منبع مستقل است</small></button>
    <button onClick={()=>onNavigate('evidence')}><i className="tc-dot violet"/><span>دفتر شواهد پژوهشی<strong>{fa(evidence.observations.length)} شناسنامه</strong></span><small>پذیرش رسمی: {fa(evidence.officially_approved)}</small></button>
@@ -74,10 +70,11 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
     <div className="tc-panel-foot">نقشه مرزی ۳۱ استان فعال است؛ داده‌های استانی معتبر برای رنگ‌بندی شاخص‌ها هنوز لازم است.</div>
    </section>
    <section className="tc-panel tc-op-panel"><div className="tc-heading"><div><span className="tc-eyebrow">OPERATOR INTELLIGENCE</span><h2>مقایسه تاریخی اپراتورها</h2></div>{sectionLink('mobile','جزئیات')}</div>
-    <div className="tc-operator-bars">{selectedOperators.map((x)=>{const max=Math.max(...record,1);const prev=historyIdx>=4?history.values[historyIdx-4][x.index]:undefined;return <div className="tc-bar" key={x.name}><div><b>{x.name}</b><span>{fa(x.count)}</span></div><div className="tc-track"><i style={{width:(x.count/max*100)+'%'}}/></div><small>{prev===undefined?'تغییر سالانه: فاقد مبنا':'تغییر سالانه: '+fa((x.count/prev-1)*100)+'٪'}</small></div>})}</div>
+    <div className="tc-chart-switch" role="group" aria-label="نمای مقایسه اپراتورها"><button type="button" aria-pressed={operatorView==='donut'} onClick={()=>setOperatorView('donut')}>سهم اپراتورها</button><button type="button" aria-pressed={operatorView==='area'} onClick={()=>setOperatorView('area')}>روند تاریخی</button></div>
+    <div className="tc-operator-visual"><AnalyticsChart key={period+operator+operatorView} title="اشتراک سیار اپراتورها" mode={operatorView} data={{series:selectedOperators.map(x=>history.values.slice(0,historyIdx+1).map(row=>row[x.index])),labels:selectedOperators.map(x=>x.name),categories:history.periods.slice(0,historyIdx+1),unit:'اشتراک'}}/></div>
     <p className="tc-note">داده ۲۴ فصل از صفحه ۲۵ فصلنامه ۵۷؛ مقادیر در انتظار کنترل تصویری منبع‌اند. این تعداد با کل سیم‌کارت‌های فعال متفاوت است.</p>
     <div className="tc-subheading">کیفیت اتصال 4G <span>{period===qos.period?'بهار ۱۴۰۵':'دوره نامنطبق'}</span></div>
-    {period===qos.period?<div className="tc-mini-list">{qos4g.filter(x=>operator==='all'||x.operator===operator).map(x=><div key={x.operator}><span>{x.operator}</span><b>{fa(x.value)}٪</b></div>)}</div>:<div className="tc-empty">برای فصل انتخاب‌شده داده قابل مقایسه کیفیت اتصال موجود نیست.</div>}
+    {period===qos.period?<div className="tc-mini-list tc-connection-bars">{qos4g.filter(x=>operator==='all'||x.operator===operator).map(x=><div key={x.operator}><span>{x.operator}</span><div className="tc-connection-track" role="img" aria-label={x.operator+'، موفقیت اتصال '+fa(x.value)+' درصد؛ مقیاس صفر تا صد'}><i style={{width:x.value+'%'}}/></div><b>{fa(x.value)}٪</b></div>)}</div>:<div className="tc-empty">برای فصل انتخاب‌شده داده قابل مقایسه کیفیت اتصال موجود نیست.</div>}
    </section>
    <section className="tc-panel tc-quality-panel"><div className="tc-heading"><div><span className="tc-eyebrow">QUALITY & RESILIENCE</span><h2>کیفیت و تاب‌آوری</h2></div>{sectionLink('qos','تحلیل کامل')}</div>
     <LatencyChart/>
@@ -86,6 +83,7 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
    </section>
   </div>
   <ModularDashboard selectedPeriod={period} selectedOperator={operator}/>
+  <details className="tc-insight-details"><summary>تفسیر، شواهد و خلأهای داده</summary>
   <div className="tc-main-grid">
    <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">PUBLIC EXPERIENCE</span><h2>تجربه کاربران</h2></div>{sectionLink('research','پژوهش‌ها')}</div>
     <div className="tc-surveys">{survey.observations.map(x=><article key={x.evidence_id}><strong>{fa(x.value)}٪</strong><span>{x.title}</span><small>{x.evidence_id} · Q5 تأیید نشده</small></article>)}</div>
@@ -97,6 +95,17 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
     <div className="tc-actions">{sectionLink('catalog','۱۳۰ شاخص رسمی')}{sectionLink('qos','تحلیل شکاف QoS/QoE')}{sectionLink('fixed','توسعه فیبر')}</div>
    </section>
   </div>
+  </details>
+  <details className="tc-insight-details tc-numeric-details"><summary>مقادیر دقیق و شاخص‌های مرجع</summary>
+  <div className="tc-tiles">
+   <Tile title="کل اشتراک اینترنت ثابت" value={fa(current.reported_total)} unit="اشتراک" note="CRA57، صفحه ۲۲"/>
+   <Tile title="اشتراک FTTx" value={fa(current.technology_values.FTTx)} unit="اشتراک" note={'تغییر نسبت به بهار ۱۴۰۴: '+fa(fiberChange)+'٪'}/>
+   <Tile title="اشتراک پهن‌باند سیار" value={fa(selectedOperators.reduce((a,x)=>a+x.count,0))} unit="اشتراک" note={period+' · مجموع اپراتورهای انتخابی · صفحه ۲۵'}/>
+   <Tile title="RTT داخلی شبکه ثابت" value={q('rtt','fixed','domestic')===undefined?'—':fa(q('rtt','fixed','domestic')!)} unit="ms" note="تجمیعی، نه اپراتوری · صفحه ۱۴"/>
+   <Tile title="RTT بین‌الملل شبکه سیار" value={q('rtt','mobile','international')===undefined?'—':fa(q('rtt','mobile','international')!)} unit="ms" note="تجمیعی، نه اپراتوری · صفحه ۱۴"/>
+   <Tile title="شاخص ملی اختلال لحظه‌ای" value="—" note="داده ملی معتبر و لحظه‌ای متصل نیست" status="missing"/>
+  </div>
+  </details>
   <footer className="tc-footer">مرکز فرماندهی هدف · نسخه توسعه · ارقام موجود برگرفته از قراردادهای داده و مشروط به گیت‌های اعتبار منبع · داده ساختگی وارد نشده است.</footer>
  </div>;
 }

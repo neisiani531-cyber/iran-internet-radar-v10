@@ -28,6 +28,21 @@ try {
  await page.getByText('برای فصل انتخاب‌شده داده قابل مقایسه کیفیت اتصال موجود نیست.',{exact:true}).waitFor();
  await page.getByRole('button',{name:'بازنشانی فیلترها',exact:true}).click();
  await page.locator('.tc-mini-list').waitFor();
+ // Visual-first overview retains exact values on demand and uses source-backed charts.
+ if(await page.locator('.tc-signal svg').count()!==3)throw Error('Three real trend signals expected');
+ if(await page.locator('.tc-tiles').isVisible())throw Error('Numeric cards dominate default overview');
+ const trendButton=page.getByRole('button',{name:'مشاهده جزئیات روند اشتراک اینترنت ثابت',exact:true});
+ await trendButton.click();
+ const fixedSnapshot=JSON.parse(await readFile('packages/contracts/public-fixed-access.snapshot.json','utf8'));
+ const exactFixed=new Intl.NumberFormat('fa-IR',{maximumFractionDigits:1}).format(fixedSnapshot.observations.at(-1).reported_total);
+ if(!(await page.locator('.tc-signal-detail').innerText()).includes(exactFixed))throw Error('Trend detail lost exact source total');
+ await trendButton.click();
+ await page.getByRole('button',{name:'روند تاریخی',exact:true}).click();
+ await page.locator('.tc-operator-visual .md-chart-svg').waitFor();
+ await page.getByRole('button',{name:'سهم اپراتورها',exact:true}).click();
+ await page.locator('.tc-operator-visual .md-donut').waitFor();
+ if(await page.locator('.tc-connection-track').count()!==3)throw Error('Source-backed connection bars missing');
+ await page.screenshot({path:'visual-review/visual-first-overview.png',fullPage:false});
  const widgets=page.locator('.md-widget');
  if(await widgets.count()!==3)throw new Error('Expected three analytics widgets');
  await page.getByRole('button',{name:'ویرایش چیدمان'}).click();
