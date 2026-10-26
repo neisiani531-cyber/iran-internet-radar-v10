@@ -309,6 +309,38 @@ try {
  if(await invalid.locator('.md-widget').count()!==3)throw Error('Invalid stored order not recovered');
  if(await invalid.locator('[data-widget="survey"] select').inputValue()!=='bar')throw Error('Invalid stored chart mode accepted');
  await invalid.close();
+ // Reject incomplete or malformed source contracts, then recover without resetting layout.
+ for(const fault of ['network','missing-quarter','duplicate-period','fractional-household','null-row']){
+  const recovery=await browser.newPage({viewport:{width:1600,height:900}});
+  recovery.on('pageerror',error=>errors.push(error.message));
+  let broken=true;
+  await recovery.route('**/data/v917-official-catalog.json',async route=>{
+   if(!broken)return route.continue();
+   if(fault==='network')return route.fulfill({status:503,body:'Unavailable'});
+   const payload=JSON.parse(JSON.stringify(official));
+   const rows=payload.observations.filter(row=>row.id.startsWith('CRA57-FIBER-COV-'));
+   if(fault==='missing-quarter')rows[0].id='OTHER-COVERAGE';
+   if(fault==='duplicate-period')rows[1].period=rows[0].period;
+   if(fault==='fractional-household')rows[0].value=123.5;
+   if(fault==='null-row')payload.observations[0]=null;
+   return route.fulfill({json:payload});
+  });
+  await recovery.goto(base,{waitUntil:'networkidle'});
+  await recovery.getByRole('button',{name:'کتابخانه ویجت‌ها',exact:true}).click();
+  await recovery.getByRole('button',{name:'افزودن روند خانوارهای تحت پوشش فیبر',exact:true}).click();
+  const panel=recovery.locator('[data-widget="fiberCoverage"]');
+  await panel.getByRole('alert').waitFor();
+  if(await panel.locator('.md-chart-svg,table').count()!==0)throw Error('Invalid fiber contract rendered: '+fault);
+  await panel.getByRole('combobox').selectOption('bar');
+  broken=false;
+  await panel.getByRole('button',{name:'تلاش مجدد برای بارگذاری منبع',exact:true}).click();
+  await panel.locator('.md-chart-svg').waitFor();
+  if(await panel.getByRole('combobox').inputValue()!=='bar')throw Error('Retry reset chart preference');
+  if(await panel.getByRole('alert').count()!==0)throw Error('Retry retained stale error');
+  await panel.locator('.md-data-table summary').click();
+  if(await panel.locator('tbody tr').count()!==10)throw Error('Retry failed to recover all quarters');
+  await recovery.close();
+ }
  if(errors.length)throw new Error('Browser runtime errors: '+errors.join(' | '));
  console.log('PASS: 31 provinces; native and two-axis resize; trailing drop preview; combined width/order/hide/recovery; independent profiles; mobile persistence; legacy migration; desktop/TV/mobile screenshots');
 } catch(error){

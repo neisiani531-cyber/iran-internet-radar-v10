@@ -57,16 +57,20 @@ const fa=(v:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:1}).fo
 export default function ModularDashboard({selectedPeriod=history.periods[history.periods.length-1],selectedOperator='all'}:{selectedPeriod?:string;selectedOperator?:string}){
  const [fiberRows,setFiberRows]=useState<CatalogRow[]>([]);
  const [catalogError,setCatalogError]=useState('');
+ const [catalogAttempt,setCatalogAttempt]=useState(0);
  useEffect(()=>{
   const controller=new AbortController();
+  setCatalogError('');setFiberRows([]);
+  const timeout=window.setTimeout(()=>controller.abort('timeout'),15000);
   fetch(new URL('data/v917-official-catalog.json',document.baseURI),{signal:controller.signal}).then(response=>{if(!response.ok)throw Error('HTTP '+response.status);return response.json();}).then(catalog=>{
-   if(catalog.total!==130||catalog.observations?.length!==130||new Set(catalog.observations.map((row:CatalogRow)=>row.id)).size!==130)throw Error('Catalog integrity');
+   if(catalog.total!==130||!Array.isArray(catalog.observations)||catalog.observations.length!==130||catalog.observations.some((row:CatalogRow)=>!row||typeof row.id!=='string')||new Set(catalog.observations.map((row:CatalogRow)=>row.id)).size!==130)throw Error('Catalog integrity');
    const rows=(catalog.observations as CatalogRow[]).filter(row=>row.id.startsWith('CRA57-FIBER-COV-')).sort((a,b)=>canonicalPeriod(a.period).localeCompare(canonicalPeriod(b.period)));
-   if(!rows.length||rows.some(row=>!Number.isFinite(row.value)||row.value<0||row.unit!=='خانوار'||row.page!==4||row.source!=='CRA57'))throw Error('Fiber coverage contract');
+   const periods=['1402-Q4','1403-Q1','1403-Q2','1403-Q3','1403-Q4','1404-Q1','1404-Q2','1404-Q3','1404-Q4','1405-Q1'];
+   if(rows.length!==periods.length||rows.some((row,index)=>typeof row.period!=='string'||canonicalPeriod(row.period)!==periods[index]||canonicalPeriod(row.id.slice('CRA57-FIBER-COV-'.length))!==periods[index]||!Number.isSafeInteger(row.value)||row.value<0||row.unit!=='خانوار'||row.page!==4||row.source!=='CRA57'))throw Error('Fiber coverage contract');
    setFiberRows(rows);
-  }).catch(error=>{if(error.name!=='AbortError')setCatalogError('بارگذاری یا کنترل کاتالوگ منبع ناموفق بود.');});
-  return ()=>controller.abort();
- },[]);
+  }).catch(()=>{if(!controller.signal.aborted||controller.signal.reason==='timeout')setCatalogError('بارگذاری یا کنترل کاتالوگ منبع ناموفق بود.');}).finally(()=>window.clearTimeout(timeout));
+  return ()=>{window.clearTimeout(timeout);controller.abort();};
+ },[catalogAttempt]);
  const [saved,setSaved]=useState<LayoutStore>(defaultStore);
  const {active,layouts}=saved;
  const {order,modes,hidden,wide,heights,widths}=layouts[active];
@@ -183,6 +187,7 @@ export default function ModularDashboard({selectedPeriod=history.periods[history
    <div className="md-header"><div>{edit&&<button type="button" className="md-grip" draggable onDragStart={e=>{if(resizeSession.current){e.preventDefault();return;}dragId.current=id;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',id)}} onDragEnd={()=>{dragId.current=null;setDragOver(null)}} title="برای تغییر ترتیب بکشید" aria-label={'دستگیره جابه‌جایی '+d.title}>⠿ جابه‌جایی</button>}<small>{d.source}</small><h3>{d.title}</h3></div><div className="md-controls"><label>نوع نمودار <select aria-label={'نوع نمودار '+d.title} value={mode} onChange={e=>setModes(v=>({...v,[id]:e.target.value as Mode}))}>{d.available.map(x=><option key={x} value={x}>{({line:'خطی',bar:'میله‌ای',area:'سطحی',donut:'حلقه‌ای',heatmap:'نقشه حرارتی',scatter:'پراکندگی'} as const)[x]}</option>)}</select></label></div></div>
    <p className="md-scope">{id==='mobile'?'بازه تاریخی تا '+periodLabel(selectedPeriod)+' · '+(selectedOperator==='all'?'هر سه اپراتور':selectedOperator):id==='access'||id==='drop'||id==='qualityPair'?'فصل انتخابی: '+periodLabel(selectedPeriod)+' · '+(selectedOperator==='all'?'هر سه اپراتور':selectedOperator):id==='fiberCoverage'?'خانوار دارای امکان اتصال · مستقل از اپراتور سیار؛ معادل اشتراک فعال نیست.':id==='fixed'?'فناوری‌های ثابت · دوره‌های مستقل منبع؛ فیلتر اپراتور سیار اعمال نمی‌شود.':'پیمایش ملت · جامعه پاسخ‌گویان مستقل؛ قابل انتساب به اپراتور انتخابی نیست.'}</p>
    <div className={"md-size-body"+(edit?" md-resizable":"")} style={{height:heights[id]}} data-widget-id={id}>{mode==='scatter'?<QoSScatter key={id+selectedPeriod+selectedOperator} data={metric} title={d.title}/>:<AnalyticsChart key={id+selectedPeriod+selectedOperator} data={metric} mode={mode} title={d.title}/>}</div>
+   {id==='fiberCoverage'&&catalogError&&<div className="md-catalog-error" role="alert"><span>{catalogError}</span><button type="button" onClick={()=>setCatalogAttempt(value=>value+1)}>تلاش مجدد برای بارگذاری منبع</button></div>}
    <ChartDataTable data={metric} title={d.title}/>
    <WidgetProvenance title={d.title} metadata={{
     source:id==='survey'?'پیمایش ملت · گزارش ۲۱۹۲۱':'فصلنامه ۵۷ سازمان تنظیم مقررات',
