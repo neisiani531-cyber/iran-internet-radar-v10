@@ -1,4 +1,5 @@
 import { chromium } from 'playwright';
+import {testLegacyNative} from './legacy-native-smoke.mjs';
 import { mkdir,readFile } from 'node:fs/promises';
 
 const base=process.env.RADAR_PREVIEW_URL||'http://127.0.0.1:4173/iran-internet-radar-v10/';
@@ -364,7 +365,7 @@ try {
  if(await navigation.locator('.sidebar').count()!==0)throw Error('Vertical navigation remains');
  await navigation.getByRole('button',{name:'همه بخش‌ها',exact:false}).click();
  const menu=navigation.getByRole('navigation',{name:'همه بخش‌های رادار',exact:true});
- if(await menu.getByRole('button').count()!==15)throw Error('Top navigation lost a destination');
+ if(await menu.getByRole('button').count()!==16)throw Error('Top navigation lost a destination');
  await menu.getByRole('button',{name:'کاوشگر ۱۳۰ شاخص رسمی',exact:false}).click();
  await navigation.getByRole('button',{name:'مرکز فرماندهی',exact:true}).click();
  await navigation.getByRole('heading',{name:'مرکز فرماندهی اینترنت ایران',exact:true}).waitFor();
@@ -401,6 +402,7 @@ try {
  if(!await menu.getByRole('button',{name:'کیفیت و تجربه',exact:false}).isVisible())throw Error('Mobile navigation destination inaccessible');
  if(await navigation.evaluate(()=>document.documentElement.scrollWidth)>392)throw Error('Mobile top navigation overflows');
  await navigation.close();
+ await testLegacyNative(browser,base);
  if(errors.length)throw new Error('Browser runtime errors: '+errors.join(' | '));
  console.log('PASS: 31 provinces; native and two-axis resize; trailing drop preview; combined width/order/hide/recovery; independent profiles; mobile persistence; legacy migration; desktop/TV/mobile screenshots');
 } catch(error){

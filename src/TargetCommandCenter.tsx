@@ -13,8 +13,9 @@ import ModularDashboard from './ModularDashboard';
 import AnalyticsChart from './AnalyticsChart';
 import OverviewSignals from './OverviewSignals';
 import PanelExpandButton from './PanelExpandButton';
+import LegacyCatalogLibrary from './LegacyCatalogLibrary';
 
-type Destination='fixed'|'mobile'|'qos'|'research'|'evidence'|'catalog'|'live';
+type Destination='fixed'|'mobile'|'qos'|'research'|'evidence'|'catalog'|'live'|'archive';
 type Focus='national'|'operator'|'experience';
 const fa=(n:number)=>new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2}).format(n);
 const current=fixed.observations[fixed.observations.length-1];
@@ -84,6 +85,9 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
    </section>
   </div>
   <ModularDashboard selectedPeriod={period} selectedOperator={operator}/>
+  <section className="archive-access"><div><b>داده‌ها و ابزارهای نسخه ۹٫۱۷</b><p>۱۳۰ مشاهده رسمی، بانک شواهد، منابع، سناریوها و تصاویر گزارش در رابط جدید</p></div>{sectionLink('archive','ورود به کتابخانه بومی')}</section>
+  <LegacyCatalogLibrary dashboard/>
+
   <details className="tc-insight-details"><summary>تفسیر، شواهد و خلأهای داده</summary>
   <div className="tc-main-grid">
    <section className="tc-panel"><div className="tc-heading"><div><span className="tc-eyebrow">PUBLIC EXPERIENCE</span><h2>تجربه کاربران</h2></div>{sectionLink('research','پژوهش‌ها')}</div>

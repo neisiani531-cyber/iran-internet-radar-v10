@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './CommandNavigation.css';
-type Area='command'|'target'|'fixed'|'mobile'|'research'|'qos'|'social'|'evidence'|'legacy'|'catalog'|'reach'|'services'|'studio'|'researchlab'|'live';
+type Area='command'|'target'|'fixed'|'mobile'|'research'|'qos'|'social'|'evidence'|'legacy'|'catalog'|'reach'|'services'|'studio'|'researchlab'|'live'|'archive';
 const primary:{id:Area;label:string;path:string}[]=[
  {id:'target',label:'مرکز فرماندهی',path:'M3 12a9 9 0 1 0 9-9v9h9M12 12l-5 5M12 3v4M3 12h4'},
  {id:'fixed',label:'ثابت و فیبر',path:'M4 7h16v10H4zM8 7V4m8 3V4M8 20v-3m8 3v-3M7 12h10'},
@@ -9,7 +9,7 @@ const primary:{id:Area;label:string;path:string}[]=[
  {id:'research',label:'پژوهش‌ها',path:'M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-3H4zM13 7a3 3 0 0 1 3-3h5v14h-4a4 4 0 0 0-4 3'},
  {id:'evidence',label:'شواهد و منابع',path:'M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h7'}
 ];
-const extra:{id:Area;label:string}[]=[{id:'live',label:'پایش زنده BGP'},{id:'social',label:'نبض جامعه و شبکه‌های اجتماعی'},{id:'reach',label:'دسترسی و پوشش مناطق'},{id:'services',label:'خدمات ارتباطی و مصرف'},{id:'studio',label:'آزمایشگاه رسمی داده‌ها'},{id:'catalog',label:'کاوشگر ۱۳۰ شاخص رسمی'},{id:'researchlab',label:'آزمایشگاه پژوهشی Tor و TIC'},{id:'command',label:'نمای فرماندهی قبلی'},{id:'legacy',label:'نسخه کامل V9.17'}];
+const extra:{id:Area;label:string}[]=[{id:'archive',label:'کتابخانه بومی نسخه ۹٫۱۷'},{id:'live',label:'پایش زنده BGP'},{id:'social',label:'نبض جامعه و شبکه‌های اجتماعی'},{id:'reach',label:'دسترسی و پوشش مناطق'},{id:'services',label:'خدمات ارتباطی و مصرف'},{id:'studio',label:'آزمایشگاه رسمی داده‌ها'},{id:'catalog',label:'کاوشگر ۱۳۰ شاخص رسمی'},{id:'researchlab',label:'آزمایشگاه پژوهشی Tor و TIC'},{id:'command',label:'نمای فرماندهی قبلی'},{id:'legacy',label:'نسخه کامل V9.17'}];
 export default function CommandNavigation({area,onNavigate}:{area:Area;onNavigate:(area:Area)=>void}){
  const [open,setOpen]=useState(false);
  const navigate=(id:Area)=>{onNavigate(id);setOpen(false);window.scrollTo(0,0);};
