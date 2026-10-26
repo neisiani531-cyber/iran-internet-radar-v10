@@ -7,6 +7,7 @@ import './ModularDashboard.css';
 import AnalyticsChart,{ChartDataTable} from './AnalyticsChart';
 import QoSScatter from './QoSScatter';
 import WidgetProvenance from './WidgetProvenance';
+import PanelExpandButton from './PanelExpandButton';
 type Mode='line'|'bar'|'area'|'donut'|'heatmap'|'scatter';
 type WidgetId='mobile'|'fixed'|'survey'|'access'|'drop'|'qualityPair'|'fiberCoverage';
 type Widget={id:WidgetId;title:string;source:string;available:Mode[];initialHidden?:boolean};
@@ -19,18 +20,19 @@ const defs:Widget[]=[
  {id:'qualityPair',title:'رابطه موفقیت و قطع اتصال داده',source:'CRA57 · صفحه ۱۵ · بهار ۱۴۰۵ · در انتظار QA تصویری',available:['scatter'],initialHidden:true},
  {id:'fiberCoverage',title:'روند خانوارهای تحت پوشش فیبر',source:'CRA57 · صفحه ۴ · کاتالوگ V9.17 · در انتظار QA تصویری',available:['line','bar','area'],initialHidden:true}
 ];
-type Profile='analyst'|'manager'|'tv';
+type Profile='analyst'|'manager'|'tv'|'command';
 type Layout={order:WidgetId[];modes:Record<WidgetId,Mode>;hidden:WidgetId[];wide:WidgetId[];heights:Record<WidgetId,number>;widths:Record<WidgetId,number>};
 type LayoutStore={active:Profile;layouts:Record<Profile,Layout>};
 const storageKey='radar-widget-layout-v2';
-const profileNames:Record<Profile,string>={analyst:'تحلیلگر',manager:'مدیریتی',tv:'نمایشگر بزرگ'};
+const profileNames:Record<Profile,string>={analyst:'تحلیلگر',manager:'مدیریتی',tv:'نمایشگر بزرگ',command:'فرماندهی متراکم'};
 function defaultLayout(profile:Profile):Layout{
+ if(profile==='command')return {order:['mobile','fixed','qualityPair','access','survey','fiberCoverage','drop'],modes:{mobile:'area',fixed:'donut',survey:'bar',access:'heatmap',drop:'bar',qualityPair:'scatter',fiberCoverage:'line'},hidden:['drop'],wide:[],widths:Object.fromEntries(defs.map(d=>[d.id,4])) as Record<WidgetId,number>,heights:Object.fromEntries(defs.map(d=>[d.id,180])) as Record<WidgetId,number>};
  return {order:defs.map(d=>d.id),modes:{mobile:'area',fixed:'line',survey:'bar',access:'bar',drop:'heatmap',qualityPair:'scatter',fiberCoverage:'area'},
   hidden:[...(profile==='manager'?['survey' as WidgetId]:[]),...defs.filter(d=>d.initialHidden).map(d=>d.id)],wide:profile==='tv'?[]:['mobile'],
   widths:Object.fromEntries(defs.map(d=>[d.id,profile!=='tv'&&d.id==='mobile'?12:6])) as Record<WidgetId,number>,
   heights:Object.fromEntries(defs.map(d=>[d.id,profile==='tv'?300:d.id==='mobile'?240:210])) as Record<WidgetId,number>};
 }
-function defaultStore():LayoutStore{return {active:'analyst',layouts:{analyst:defaultLayout('analyst'),manager:defaultLayout('manager'),tv:defaultLayout('tv')}};}
+function defaultStore():LayoutStore{return {active:'analyst',layouts:{analyst:defaultLayout('analyst'),manager:defaultLayout('manager'),tv:defaultLayout('tv'),command:defaultLayout('command')}};}
 function validId(value:unknown):value is WidgetId{return defs.some(d=>d.id===value);}
 function readLayout(value:unknown,profile:Profile):Layout{
  const result=defaultLayout(profile);
@@ -43,7 +45,7 @@ function readLayout(value:unknown,profile:Profile):Layout{
  for(const d of defs){
   if(v.modes&&d.available.includes(v.modes[d.id]))result.modes[d.id]=v.modes[d.id];
   const width=v.widths?.[d.id];
-  result.widths[d.id]=typeof width==='number'&&Number.isFinite(width)?Math.max(6,Math.min(12,Math.round(width))):(result.wide.includes(d.id)?12:6);
+  result.widths[d.id]=typeof width==='number'&&Number.isFinite(width)?Math.max(profile==='command'?4:6,Math.min(12,Math.round(width))):(result.wide.includes(d.id)?12:6);
   const height=v.heights?.[d.id];
   if(typeof height==='number'&&Number.isFinite(height))result.heights[d.id]=Math.max(180,Math.min(480,Math.round(height)));
  }
@@ -103,7 +105,7 @@ export default function ModularDashboard({selectedPeriod=history.periods[history
   const session=resizeSession.current;
   if(!session||session.pointerId!==e.pointerId)return;
   const dx=(e.clientX-session.x)*(session.rtl?-1:1);
-  const span=Math.max(6,Math.min(12,Math.round((session.width+dx+12)/(session.gridWidth+12)*12)));
+  const span=Math.max(session.profile==='command'?4:6,Math.min(12,Math.round((session.width+dx+12)/(session.gridWidth+12)*12)));
   const height=Math.max(180,Math.min(480,Math.round(session.height+e.clientY-session.y)));
   const singleColumn=window.matchMedia('(max-width:900px)').matches;
   setSaved(old=>{const layout=old.layouts[session.profile];const nextWidths={...layout.widths,[session.id]:singleColumn?layout.widths[session.id]:span};return {...old,layouts:{...old.layouts,[session.profile]:{...layout,widths:nextWidths,wide:defs.filter(d=>nextWidths[d.id]>6).map(d=>d.id),heights:{...layout.heights,[session.id]:height}}}};});
@@ -133,7 +135,7 @@ export default function ModularDashboard({selectedPeriod=history.periods[history
  useEffect(()=>{
   if(!edit||!hydrated||!gridRef.current)return;
   const observer=new ResizeObserver(entries=>{
-   if(resizeSession.current)return;
+   if(resizeSession.current||document.fullscreenElement)return;
    for(const entry of entries){
     const id=(entry.target as HTMLElement).dataset.widgetId as WidgetId;
     const height=Math.max(180,Math.min(480,Math.round(entry.borderBoxSize[0]?.blockSize??entry.target.getBoundingClientRect().height)));
@@ -172,9 +174,10 @@ export default function ModularDashboard({selectedPeriod=history.periods[history
   setOrder(old=>{const next=old.filter(x=>x!==source);next.splice(next.indexOf(target)+(after?1:0),0,source);return next});
  }
  function move(id:WidgetId,delta:number){setOrder(old=>{const i=old.indexOf(id),j=i+delta;if(j<0||j>=old.length)return old;const next=[...old];[next[i],next[j]]=[next[j],next[i]];return next})}
- return <section className="md-root" aria-label="ویجت‌های قابل تنظیم">
+ return <section className={'md-root'+(active==='command'?' md-command':'')} aria-label="ویجت‌های قابل تنظیم">
   <div className="md-toolbar"><div><span>VISUAL ANALYTICS STUDIO</span><h2>تحلیل‌های تصویری و چیدمان شخصی</h2></div><div className="md-tools">
    <label className="md-profile">چیدمان <select aria-label="چیدمان شخصی" value={active} onChange={e=>switchProfile(e.target.value as Profile)}>{(Object.keys(profileNames) as Profile[]).map(profile=><option key={profile} value={profile}>{profileNames[profile]}</option>)}</select></label>
+   {active!=='command'&&<button className="md-command-preset" onClick={()=>switchProfile('command')}>فرماندهی متراکم</button>}
    <button onClick={()=>setLibraryOpen(v=>!v)} aria-expanded={libraryOpen} aria-controls="md-library">کتابخانه ویجت‌ها</button>
    <button onClick={()=>{dragId.current=null;setDragOver(null);setEdit(x=>!x)}} aria-pressed={edit}>{edit?'پایان ویرایش':'ویرایش چیدمان'}</button>
    <button onClick={resetLayout}>چیدمان پیش‌فرض</button>{hidden.length>0&&<button onClick={()=>setHidden([])}>نمایش همه ویجت‌ها ({fa(hidden.length)})</button>}
@@ -184,9 +187,9 @@ export default function ModularDashboard({selectedPeriod=history.periods[history
   {hidden.length===defs.length&&<div className="md-empty" role="status">همه ویجت‌های این چیدمان پنهان شده‌اند.<button onClick={()=>setHidden([])}>بازیابی ویجت‌ها</button></div>}
   <div className="md-grid" ref={gridRef}>{order.filter(id=>!hidden.includes(id)).map(id=>{const d=defs.find(x=>x.id===id)!;const metric=data[id];const mode=d.available.includes(modes[id])?modes[id]:d.available[0];return <article key={id} data-widget={id} style={{gridColumn:'span '+widths[id]}} className={'md-widget '+(wide.includes(id)?'md-wide':'')+(dragOver?.id===id?' md-drop-target':'')+(resizing===id?' md-resizing':'')} onDragOver={e=>{if(edit&&!resizeSession.current&&dragId.current&&dragId.current!==id){e.preventDefault();e.dataTransfer.dropEffect='move';const box=e.currentTarget.getBoundingClientRect();setDragOver({id,after:e.clientY>box.y+box.height/2})}}} onDrop={e=>{e.preventDefault();const source=dragId.current;if(edit&&!resizeSession.current&&source&&source!==id){const box=e.currentTarget.getBoundingClientRect();reorder(source,id,e.clientY>box.y+box.height/2);}dragId.current=null;setDragOver(null)}}>
    {dragOver?.id===id&&<div className={'md-drop-marker '+(dragOver.after?'md-drop-after':'md-drop-before')} aria-hidden="true">{dragOver.after?'قرارگیری پس از این پنل':'قرارگیری پیش از این پنل'}</div>}
-   <div className="md-header"><div>{edit&&<button type="button" className="md-grip" draggable onDragStart={e=>{if(resizeSession.current){e.preventDefault();return;}dragId.current=id;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',id)}} onDragEnd={()=>{dragId.current=null;setDragOver(null)}} title="برای تغییر ترتیب بکشید" aria-label={'دستگیره جابه‌جایی '+d.title}>⠿ جابه‌جایی</button>}<small>{d.source}</small><h3>{d.title}</h3></div><div className="md-controls"><label>نوع نمودار <select aria-label={'نوع نمودار '+d.title} value={mode} onChange={e=>setModes(v=>({...v,[id]:e.target.value as Mode}))}>{d.available.map(x=><option key={x} value={x}>{({line:'خطی',bar:'میله‌ای',area:'سطحی',donut:'حلقه‌ای',heatmap:'نقشه حرارتی',scatter:'پراکندگی'} as const)[x]}</option>)}</select></label></div></div>
+   <div className="md-header"><div>{edit&&<button type="button" className="md-grip" draggable onDragStart={e=>{if(resizeSession.current){e.preventDefault();return;}dragId.current=id;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',id)}} onDragEnd={()=>{dragId.current=null;setDragOver(null)}} title="برای تغییر ترتیب بکشید" aria-label={'دستگیره جابه‌جایی '+d.title}>⠿ جابه‌جایی</button>}<small>{d.source}</small><h3>{d.title}</h3></div><div className="md-controls"><PanelExpandButton title={d.title}/><label>نوع نمودار <select aria-label={'نوع نمودار '+d.title} value={mode} onChange={e=>setModes(v=>({...v,[id]:e.target.value as Mode}))}>{d.available.map(x=><option key={x} value={x}>{({line:'خطی',bar:'میله‌ای',area:'سطحی',donut:'حلقه‌ای',heatmap:'نقشه حرارتی',scatter:'پراکندگی'} as const)[x]}</option>)}</select></label></div></div>
    <p className="md-scope">{id==='mobile'?'بازه تاریخی تا '+periodLabel(selectedPeriod)+' · '+(selectedOperator==='all'?'هر سه اپراتور':selectedOperator):id==='access'||id==='drop'||id==='qualityPair'?'فصل انتخابی: '+periodLabel(selectedPeriod)+' · '+(selectedOperator==='all'?'هر سه اپراتور':selectedOperator):id==='fiberCoverage'?'خانوار دارای امکان اتصال · مستقل از اپراتور سیار؛ معادل اشتراک فعال نیست.':id==='fixed'?'فناوری‌های ثابت · دوره‌های مستقل منبع؛ فیلتر اپراتور سیار اعمال نمی‌شود.':'پیمایش ملت · جامعه پاسخ‌گویان مستقل؛ قابل انتساب به اپراتور انتخابی نیست.'}</p>
-   <div className={"md-size-body"+(edit?" md-resizable":"")} style={{height:heights[id]}} data-widget-id={id}>{mode==='scatter'?<QoSScatter key={id+selectedPeriod+selectedOperator} data={metric} title={d.title}/>:<AnalyticsChart key={id+selectedPeriod+selectedOperator} data={metric} mode={mode} title={d.title}/>}</div>
+   <div className={"md-size-body"+(edit?" md-resizable":"")} style={{height:heights[id]}} data-widget-id={id} title="برای نمای بزرگ، دوبار کلیک کنید" onDoubleClick={event=>{if(!edit)event.currentTarget.closest('article')?.querySelector<HTMLButtonElement>('.panel-expand')?.click();}}>{mode==='scatter'?<QoSScatter key={id+selectedPeriod+selectedOperator} data={metric} title={d.title}/>:<AnalyticsChart key={id+selectedPeriod+selectedOperator} data={metric} mode={mode} title={d.title}/>}</div>
    {id==='fiberCoverage'&&catalogError&&<div className="md-catalog-error" role="alert"><span>{catalogError}</span><button type="button" onClick={()=>setCatalogAttempt(value=>value+1)}>تلاش مجدد برای بارگذاری منبع</button></div>}
    <ChartDataTable data={metric} title={d.title}/>
    <WidgetProvenance title={d.title} metadata={{
@@ -204,7 +207,7 @@ export default function ModularDashboard({selectedPeriod=history.periods[history
    {id==='fiberCoverage'&&<p className="md-warning">خانوار تحت پوشش، تعداد اشتراک فعال فیبر نیست؛ مقادیر کاتالوگ هنوز به تأیید تصویری منبع نیاز دارند.</p>}
    {(id==='access'||id==='drop')&&<p className="md-warning">{id==='access'?'موفقیت اتصال: مقدار بیشتر مطلوب‌تر است.':'قطع اتصال: مقدار کمتر مطلوب‌تر است.'} داده فقط برای بهار ۱۴۰۵ موجود است؛ روند زمانی یا امتیاز کلی اپراتور نیست.{mode==='heatmap'?' شدت رنگ صرفاً مقدار همان شاخص را نشان می‌دهد.':''}</p>}
    {id==='survey'&&<p className="md-warning">درصدهای پرسش‌های متفاوت قابل جمع یا مقایسه مستقیم به‌عنوان یک سهم واحد نیستند؛ نمودار حلقه‌ای فقط در گروه‌های دارای مخرج مشترک مجاز است.</p>}
-   {edit&&<button type="button" className="md-resize-handle" aria-label={'تغییر اندازه دوبعدی '+d.title} title="برای تغییر عرض و ارتفاع بکشید؛ با کلیدهای جهت نیز قابل تنظیم است" onPointerDown={e=>startResize(e,id)} onPointerMove={resizeMove} onPointerUp={e=>{resizeMove(e);endResize();}} onPointerCancel={endResize} onLostPointerCapture={endResize} onKeyDown={e=>{if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();setHeights(v=>({...v,[id]:Math.max(180,Math.min(480,v[id]+(e.key==='ArrowUp'?-30:30)))}));}if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();if(!window.matchMedia('(max-width:900px)').matches)setWidth(id,Math.max(6,Math.min(12,widths[id]+(e.key==='ArrowLeft'?1:-1))));}}}>⤢</button>}
+   {edit&&<button type="button" className="md-resize-handle" aria-label={'تغییر اندازه دوبعدی '+d.title} title="برای تغییر عرض و ارتفاع بکشید؛ با کلیدهای جهت نیز قابل تنظیم است" onPointerDown={e=>startResize(e,id)} onPointerMove={resizeMove} onPointerUp={e=>{resizeMove(e);endResize();}} onPointerCancel={endResize} onLostPointerCapture={endResize} onKeyDown={e=>{if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();setHeights(v=>({...v,[id]:Math.max(180,Math.min(480,v[id]+(e.key==='ArrowUp'?-30:30)))}));}if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();if(!window.matchMedia('(max-width:900px)').matches)setWidth(id,Math.max(active==='command'?4:6,Math.min(12,widths[id]+(e.key==='ArrowLeft'?1:-1))));}}}>⤢</button>}
    {edit&&<div className="md-edit"><label className="md-height-label">ارتفاع نمودار <input aria-label={'ارتفاع نمودار '+d.title} type="range" min="180" max="480" step="30" value={heights[id]} onChange={e=>setHeights(v=>({...v,[id]:Number(e.target.value)}))}/><span>{fa(heights[id])} px</span></label><button onClick={()=>move(id,-1)}>جابه‌جایی به قبل</button><button onClick={()=>move(id,1)}>جابه‌جایی به بعد</button><button onClick={()=>setWidth(id,wide.includes(id)?6:12)}>{wide.includes(id)?'عرض معمولی':'عریض کردن'}</button><button onClick={()=>setHidden(v=>[...v,id])}>پنهان کردن</button></div>}
   </article>})}</div>
  </section>;

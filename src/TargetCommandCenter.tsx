@@ -12,6 +12,7 @@ import IranProvinceMap from './IranProvinceMap';
 import ModularDashboard from './ModularDashboard';
 import AnalyticsChart from './AnalyticsChart';
 import OverviewSignals from './OverviewSignals';
+import PanelExpandButton from './PanelExpandButton';
 
 type Destination='fixed'|'mobile'|'qos'|'research'|'evidence'|'catalog'|'live';
 type Focus='national'|'operator'|'experience';
@@ -64,19 +65,19 @@ export default function TargetCommandCenter({onNavigate}:{onNavigate:(d:Destinat
    <div><i className="tc-dot muted"/><span>پوشش شاخص استانی<strong>داده متصل نیست</strong></span><small>مرزبندی ۳۱ استان فعال است</small></div>
   </div>
   <div className="tc-hero-grid">
-   <section className="tc-panel tc-map-panel"><div className="tc-heading"><div><span className="tc-eyebrow">GEO INTELLIGENCE</span><h2>نقشه پایش استانی ایران</h2></div><span className="tc-pill">پوشش داده استانی: ناموجود</span></div>
+   <section className="tc-panel tc-map-panel"><div className="tc-heading"><div><span className="tc-eyebrow">GEO INTELLIGENCE</span><h2>نقشه پایش استانی ایران</h2></div><div className="tc-panel-actions"><span className="tc-pill">پوشش داده استانی: ناموجود</span><PanelExpandButton title="نقشه پایش استانی ایران"/></div></div>
     <div className="tc-layer">{([['quality','کیفیت'],['outage','اختلالات'],['coverage','پوشش']] as const).map(([id,label])=><button key={id} className={mapLayer===id?'selected':''} onClick={()=>{setMapLayer(id);}}>{label}</button>)}</div>
     <IranProvinceMap layer={mapLayer==='quality'?'کیفیت':mapLayer==='outage'?'اختلالات':'پوشش'}/>
     <div className="tc-panel-foot">نقشه مرزی ۳۱ استان فعال است؛ داده‌های استانی معتبر برای رنگ‌بندی شاخص‌ها هنوز لازم است.</div>
    </section>
-   <section className="tc-panel tc-op-panel"><div className="tc-heading"><div><span className="tc-eyebrow">OPERATOR INTELLIGENCE</span><h2>مقایسه تاریخی اپراتورها</h2></div>{sectionLink('mobile','جزئیات')}</div>
+   <section className="tc-panel tc-op-panel"><div className="tc-heading"><div><span className="tc-eyebrow">OPERATOR INTELLIGENCE</span><h2>مقایسه تاریخی اپراتورها</h2></div><div className="tc-panel-actions">{sectionLink('mobile','جزئیات')}<PanelExpandButton title="مقایسه تاریخی اپراتورها"/></div></div>
     <div className="tc-chart-switch" role="group" aria-label="نمای مقایسه اپراتورها"><button type="button" aria-pressed={operatorView==='donut'} onClick={()=>setOperatorView('donut')}>سهم اپراتورها</button><button type="button" aria-pressed={operatorView==='area'} onClick={()=>setOperatorView('area')}>روند تاریخی</button></div>
     <div className="tc-operator-visual"><AnalyticsChart key={period+operator+operatorView} title="اشتراک سیار اپراتورها" mode={operatorView} data={{series:selectedOperators.map(x=>history.values.slice(0,historyIdx+1).map(row=>row[x.index])),labels:selectedOperators.map(x=>x.name),categories:history.periods.slice(0,historyIdx+1),unit:'اشتراک'}}/></div>
     <p className="tc-note">داده ۲۴ فصل از صفحه ۲۵ فصلنامه ۵۷؛ مقادیر در انتظار کنترل تصویری منبع‌اند. این تعداد با کل سیم‌کارت‌های فعال متفاوت است.</p>
     <div className="tc-subheading">کیفیت اتصال 4G <span>{period===qos.period?'بهار ۱۴۰۵':'دوره نامنطبق'}</span></div>
     {period===qos.period?<div className="tc-mini-list tc-connection-bars">{qos4g.filter(x=>operator==='all'||x.operator===operator).map(x=><div key={x.operator}><span>{x.operator}</span><div className="tc-connection-track" role="img" aria-label={x.operator+'، موفقیت اتصال '+fa(x.value)+' درصد؛ مقیاس صفر تا صد'}><i style={{width:x.value+'%'}}/></div><b>{fa(x.value)}٪</b></div>)}</div>:<div className="tc-empty">برای فصل انتخاب‌شده داده قابل مقایسه کیفیت اتصال موجود نیست.</div>}
    </section>
-   <section className="tc-panel tc-quality-panel"><div className="tc-heading"><div><span className="tc-eyebrow">QUALITY & RESILIENCE</span><h2>کیفیت و تاب‌آوری</h2></div>{sectionLink('qos','تحلیل کامل')}</div>
+   <section className="tc-panel tc-quality-panel"><div className="tc-heading"><div><span className="tc-eyebrow">QUALITY & RESILIENCE</span><h2>کیفیت و تاب‌آوری</h2></div><div className="tc-panel-actions">{sectionLink('qos','تحلیل کامل')}<PanelExpandButton title="کیفیت و تاب‌آوری"/></div></div>
     <LatencyChart/>
     <div className="tc-jitter-summary"><span>Jitter · ms</span>{['fixed','mobile'].map(network=><div key={network}><b>{network==='fixed'?'ثابت':'سیار'}</b><span>داخلی {q('jitter',network,'domestic')===undefined?'فاقد داده':fa(q('jitter',network,'domestic')!)}</span><span>بین‌الملل {q('jitter',network,'international')===undefined?'فاقد داده':fa(q('jitter',network,'international')!)}</span></div>)}</div>
     <p className="tc-note">CRA57 · صفحه ۱۴ · بهار ۱۴۰۵ · در انتظار کنترل تصویری. مقادیر تجمیعی‌اند؛ به اپراتور خاص نسبت داده نمی‌شوند.</p>
