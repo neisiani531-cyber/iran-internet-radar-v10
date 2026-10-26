@@ -96,6 +96,19 @@ try {
  const firstCell=await mobile.locator('.md-data-table tbody tr').first().locator('td').first().innerText();
  if(firstCell!==formatValue(mobileSource.values[0][0]))throw Error('Data table differs from source observation');
  await mobile.locator('.md-data-table summary').click();
+ await mobile.locator('.md-provenance summary').click();
+ const mobileProvenance=mobile.locator('.md-provenance');
+ if(!(await mobileProvenance.innerText()).includes('در انتظار کنترل تصویری'))throw Error('Source QA gate missing');
+ await mobileProvenance.getByRole('button',{name:'مشاهده متن صفحه مرجع',exact:true}).click();
+ await mobileProvenance.getByRole('heading',{name:'متن استخراج‌شده صفحه 25 از فصلنامه ۵۷',exact:true}).waitFor();
+ await mobileProvenance.locator('select option[value="25"]').waitFor({state:'attached'});
+ if(await mobileProvenance.locator('select').inputValue()!=='25')throw Error('Widget opened wrong source page');
+ await mobileProvenance.getByRole('button',{name:'بستن متن صفحه مرجع',exact:true}).click();
+ await mobile.locator('.md-provenance summary').click();
+ await survey.locator('.md-provenance summary').click();
+ if(!(await survey.locator('.md-provenance').innerText()).includes('Q5_PENDING'))throw Error('Survey admission gate absent');
+ if(await survey.locator('.md-provenance button').count()!==0)throw Error('Survey attributed to CRA page');
+ await survey.locator('.md-provenance summary').click();
  await survey.locator('.md-chart-svg').focus();
  await survey.locator('.md-chart-svg').press('End');
  const surveyReadout=await survey.locator('.md-chart-readout').innerText();
@@ -188,6 +201,21 @@ try {
  if(!(await scatter.locator('.qsc-readout').innerText()).includes('همراه اول · 3G'))throw Error('Scatter Home inspection failed');
  await scatter.locator('svg').press('Escape');
  await scatter.screenshot({path:'visual-review/qos-scatter.png'});
+ await page.getByRole('button',{name:'افزودن روند خانوارهای تحت پوشش فیبر',exact:true}).click();
+ const fiber=page.locator('[data-widget="fiberCoverage"]');
+ await fiber.locator('.md-chart-svg').waitFor();
+ const official=JSON.parse(await readFile('public/data/v917-official-catalog.json','utf8'));
+ const coverageSource=official.observations.filter(row=>row.id.startsWith('CRA57-FIBER-COV-'));
+ await fiber.locator('.md-data-table summary').click();
+ if(await fiber.locator('tbody tr').count()!==coverageSource.length)throw Error('Fiber coverage source rows lost');
+ for(let i=0;i<coverageSource.length;i++)if(await fiber.locator('tbody tr').nth(i).locator('td').innerText()!==formatValue(coverageSource[i].value))throw Error('Fiber coverage differs from catalog');
+ await fiber.locator('.md-data-table summary').click();
+ await fiber.locator('.md-provenance summary').click();
+ const fiberMetadata=await fiber.locator('.md-provenance').innerText();
+ if(!fiberMetadata.includes('اشتراک فعال نیست')||!fiberMetadata.includes('تکرار مقدار'))throw Error('Fiber coverage limitations missing');
+ await fiber.screenshot({path:'visual-review/fiber-source-provenance.png'});
+ await fiber.locator('.md-provenance summary').click();
+
  // Linked scope: historical cutoff and operator selection must agree across views.
  const periodFilter=page.locator('.tc-filters select').nth(0);
  const operatorFilter=page.locator('.tc-filters select').nth(1);
@@ -219,6 +247,7 @@ try {
  await access.getByRole('button',{name:'پنهان کردن',exact:true}).click();
  await drop.getByRole('button',{name:'پنهان کردن',exact:true}).click();
  await scatter.getByRole('button',{name:'پنهان کردن',exact:true}).click();
+ await fiber.getByRole('button',{name:'پنهان کردن',exact:true}).click();
  await fixed.locator('.md-grip').dragTo(survey.locator('h3'),{targetPosition:{x:20,y:5}});
  const analystOrder=await widgets.evaluateAll(nodes=>nodes.map(el=>el.dataset.widget).join(','));
  await page.getByRole('combobox',{name:'چیدمان شخصی',exact:true}).selectOption('manager');
@@ -241,7 +270,7 @@ try {
  // Hide all, recover via explicit empty state, and verify mobile controls.
  for(let i=0;i<3;i++)await widgets.first().getByRole('button',{name:'پنهان کردن',exact:true}).click();
  await page.getByRole('button',{name:'بازیابی ویجت‌ها',exact:true}).click();
- if(await widgets.count()!==6)throw Error('Empty layout recovery failed');
+ if(await widgets.count()!==7)throw Error('Empty layout recovery failed');
  await page.setViewportSize({width:390,height:844});
  await fixed.getByRole('slider').fill('270');
  await fixed.getByRole('button',{name:'جابه‌جایی به قبل',exact:true}).click();
