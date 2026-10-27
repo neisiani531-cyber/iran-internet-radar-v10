@@ -1,0 +1,1352 @@
+{
+  "officialObservations": [
+    {
+      "id": "CRA57-MOB-1404",
+      "panel": "annual-MOB",
+      "domain": "communications",
+      "unit": "خط فعال",
+      "value": 164192024
+    },
+    {
+      "id": "CRA57-MOB-1405",
+      "panel": "annual-MOB",
+      "domain": "communications",
+      "unit": "خط فعال",
+      "value": 174355156
+    },
+    {
+      "id": "CRA57-MOBB-1404",
+      "panel": "annual-MOBB",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 121248470
+    },
+    {
+      "id": "CRA57-MOBB-1405",
+      "panel": "annual-MOBB",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 127662055
+    },
+    {
+      "id": "CRA57-FIXEDTEL-1404",
+      "panel": "annual-FIXEDTEL",
+      "domain": "communications",
+      "unit": "خط",
+      "value": 27973865
+    },
+    {
+      "id": "CRA57-FIXEDTEL-1405",
+      "panel": "annual-FIXEDTEL",
+      "domain": "communications",
+      "unit": "خط",
+      "value": 27481957
+    },
+    {
+      "id": "CRA57-FIXBB-1404",
+      "panel": "annual-FIXBB",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 11269057
+    },
+    {
+      "id": "CRA57-FIXBB-1405",
+      "panel": "annual-FIXBB",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 10470912
+    },
+    {
+      "id": "CRA57-FIBER-COV-۱۴۰۲-۴",
+      "panel": "fiber-coverage",
+      "domain": "communications",
+      "unit": "خانوار",
+      "value": 7079542
+    },
+    {
+      "id": "CRA57-FIBER-COV-۱۴۰۳-۱",
+      "panel": "fiber-coverage",
+      "domain": "communications",
+      "unit": "خانوار",
+      "value": 8069565
+    },
+    {
+      "id": "CRA57-FIBER-COV-۱۴۰۳-۲",
+      "panel": "fiber-coverage",
+      "domain": "communications",
+      "unit": "خانوار",
+      "value": 8069565
+    },
+    {
+      "id": "CRA57-FIBER-COV-۱۴۰۳-۳",
+      "panel": "fiber-coverage",
+      "domain": "communications",
+      "unit": "خانوار",
+      "value": 8069565
+    },
+    {
+      "id": "CRA57-FIBER-COV-۱۴۰۳-۴",
+      "panel": "fiber-coverage",
+      "domain": "communications",
+      "unit": "خانوار",
+      "value": 8069565
+    },
+    {
+      "id": "CRA57-FIBER-COV-۱۴۰۴-۱",
+      "panel": "fiber-coverage",
+      "domain": "communications",
+      "unit": "خانوار",
+      "value": 8227920
+    },
+    {
+      "id": "CRA57-FIBER-COV-۱۴۰۴-۲",
+      "panel": "fiber-coverage",
+      "domain": "communications",
+      "unit": "خانوار",
+      "value": 8709087
+    },
+    {
+      "id": "CRA57-FIBER-COV-۱۴۰۴-۳",
+      "panel": "fiber-coverage",
+      "domain": "communications",
+      "unit": "خانوار",
+      "value": 9205496
+    },
+    {
+      "id": "CRA57-FIBER-COV-۱۴۰۴-۴",
+      "panel": "fiber-coverage",
+      "domain": "communications",
+      "unit": "خانوار",
+      "value": 10734562
+    },
+    {
+      "id": "CRA57-FIBER-COV-۱۴۰۵-۱",
+      "panel": "fiber-coverage",
+      "domain": "communications",
+      "unit": "خانوار",
+      "value": 11126281
+    },
+    {
+      "id": "CRA57-FIXSHARE-XDSL",
+      "panel": "fixed-shares",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 62.68
+    },
+    {
+      "id": "CRA57-FIXSHARE-FTTX",
+      "panel": "fixed-shares",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 9.9
+    },
+    {
+      "id": "CRA57-FIXSHARE-WIFI",
+      "panel": "fixed-shares",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 3.53
+    },
+    {
+      "id": "CRA57-FIXSHARE-TDLTE",
+      "panel": "fixed-shares",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 23.89
+    },
+    {
+      "id": "CRA57-TECH-X-DSL",
+      "panel": "fixed-counts",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 6562655
+    },
+    {
+      "id": "CRA57-TECH-FTTx",
+      "panel": "fixed-counts",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 1037577
+    },
+    {
+      "id": "CRA57-TECH-TD-LTE",
+      "panel": "fixed-counts",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 2501421
+    },
+    {
+      "id": "CRA57-TECH-WiFi",
+      "panel": "fixed-counts",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 369259
+    },
+    {
+      "id": "CRA57-MOBBB-3G",
+      "panel": "mobile-generation",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 4275378
+    },
+    {
+      "id": "CRA57-MOBBB-4G",
+      "panel": "mobile-generation",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 116939156
+    },
+    {
+      "id": "CRA57-MOBBB-5G",
+      "panel": "mobile-generation",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 6447521
+    },
+    {
+      "id": "CRA57-MCI-active",
+      "panel": "operators-active",
+      "domain": "communications",
+      "unit": "خط",
+      "value": 94788376
+    },
+    {
+      "id": "CRA57-MTN-active",
+      "panel": "operators-active",
+      "domain": "communications",
+      "unit": "خط",
+      "value": 73405375
+    },
+    {
+      "id": "CRA57-RIGHTEL-active",
+      "panel": "operators-active",
+      "domain": "communications",
+      "unit": "خط",
+      "value": 6161405
+    },
+    {
+      "id": "CRA57-MCI-sites5g",
+      "panel": "operators-sites5g",
+      "domain": "communications",
+      "unit": "سایت",
+      "value": 1432
+    },
+    {
+      "id": "CRA57-MTN-sites5g",
+      "panel": "operators-sites5g",
+      "domain": "communications",
+      "unit": "سایت",
+      "value": 1171
+    },
+    {
+      "id": "CRA57-RIGHTEL-sites5g",
+      "panel": "operators-sites5g",
+      "domain": "communications",
+      "unit": "سایت",
+      "value": 18
+    },
+    {
+      "id": "CRA57-MCI-sites4g",
+      "panel": "operators-sites4g",
+      "domain": "communications",
+      "unit": "سایت",
+      "value": 27701
+    },
+    {
+      "id": "CRA57-MTN-sites4g",
+      "panel": "operators-sites4g",
+      "domain": "communications",
+      "unit": "سایت",
+      "value": 20274
+    },
+    {
+      "id": "CRA57-RIGHTEL-sites4g",
+      "panel": "operators-sites4g",
+      "domain": "communications",
+      "unit": "سایت",
+      "value": 4022
+    },
+    {
+      "id": "CRA57-MCI-coverage4g",
+      "panel": "operators-coverage4g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 99.46
+    },
+    {
+      "id": "CRA57-MTN-coverage4g",
+      "panel": "operators-coverage4g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 94.52
+    },
+    {
+      "id": "CRA57-RIGHTEL-coverage4g",
+      "panel": "operators-coverage4g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 58.94
+    },
+    {
+      "id": "CRA57-MCI-coverage3g",
+      "panel": "operators-coverage3g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 99.62
+    },
+    {
+      "id": "CRA57-MTN-coverage3g",
+      "panel": "operators-coverage3g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 97.04
+    },
+    {
+      "id": "CRA57-RIGHTEL-coverage3g",
+      "panel": "operators-coverage3g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 60.89
+    },
+    {
+      "id": "CRA57-MCI-roadKm",
+      "panel": "operators-roadKm",
+      "domain": "communications",
+      "unit": "کیلومتر",
+      "value": 82830
+    },
+    {
+      "id": "CRA57-MTN-roadKm",
+      "panel": "operators-roadKm",
+      "domain": "communications",
+      "unit": "کیلومتر",
+      "value": 64350
+    },
+    {
+      "id": "CRA57-RIGHTEL-roadKm",
+      "panel": "operators-roadKm",
+      "domain": "communications",
+      "unit": "کیلومتر",
+      "value": 27563
+    },
+    {
+      "id": "CRA57-MCI-villages",
+      "panel": "operators-villages",
+      "domain": "communications",
+      "unit": "روستا",
+      "value": 44918
+    },
+    {
+      "id": "CRA57-MTN-villages",
+      "panel": "operators-villages",
+      "domain": "communications",
+      "unit": "روستا",
+      "value": 19312
+    },
+    {
+      "id": "CRA57-RIGHTEL-villages",
+      "panel": "operators-villages",
+      "domain": "communications",
+      "unit": "روستا",
+      "value": 946
+    },
+    {
+      "id": "CRA57-MCI-cities4g",
+      "panel": "operators-cities4g",
+      "domain": "communications",
+      "unit": "شهر",
+      "value": 1454
+    },
+    {
+      "id": "CRA57-MTN-cities4g",
+      "panel": "operators-cities4g",
+      "domain": "communications",
+      "unit": "شهر",
+      "value": 1420
+    },
+    {
+      "id": "CRA57-RIGHTEL-cities4g",
+      "panel": "operators-cities4g",
+      "domain": "communications",
+      "unit": "شهر",
+      "value": 406
+    },
+    {
+      "id": "CRA57-MCI-ping3g",
+      "panel": "operators-ping3g",
+      "domain": "communications",
+      "unit": "Mbps",
+      "value": 4.26
+    },
+    {
+      "id": "CRA57-MTN-ping3g",
+      "panel": "operators-ping3g",
+      "domain": "communications",
+      "unit": "Mbps",
+      "value": 2.84
+    },
+    {
+      "id": "CRA57-RIGHTEL-ping3g",
+      "panel": "operators-ping3g",
+      "domain": "communications",
+      "unit": "Mbps",
+      "value": 3.82
+    },
+    {
+      "id": "CRA57-MCI-ping4g",
+      "panel": "operators-ping4g",
+      "domain": "communications",
+      "unit": "Mbps",
+      "value": 22.78
+    },
+    {
+      "id": "CRA57-MTN-ping4g",
+      "panel": "operators-ping4g",
+      "domain": "communications",
+      "unit": "Mbps",
+      "value": 16.07
+    },
+    {
+      "id": "CRA57-RIGHTEL-ping4g",
+      "panel": "operators-ping4g",
+      "domain": "communications",
+      "unit": "Mbps",
+      "value": 19.39
+    },
+    {
+      "id": "CRA57-MCI-success3g",
+      "panel": "operators-success3g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 99.42
+    },
+    {
+      "id": "CRA57-MTN-success3g",
+      "panel": "operators-success3g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 97.88
+    },
+    {
+      "id": "CRA57-RIGHTEL-success3g",
+      "panel": "operators-success3g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 99.33
+    },
+    {
+      "id": "CRA57-MCI-success4g",
+      "panel": "operators-success4g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 99.65
+    },
+    {
+      "id": "CRA57-MTN-success4g",
+      "panel": "operators-success4g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 99.31
+    },
+    {
+      "id": "CRA57-RIGHTEL-success4g",
+      "panel": "operators-success4g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 99.46
+    },
+    {
+      "id": "CRA57-MCI-drop3g",
+      "panel": "operators-drop3g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 0.31
+    },
+    {
+      "id": "CRA57-MTN-drop3g",
+      "panel": "operators-drop3g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 0.42
+    },
+    {
+      "id": "CRA57-RIGHTEL-drop3g",
+      "panel": "operators-drop3g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 0.55
+    },
+    {
+      "id": "CRA57-MCI-drop4g",
+      "panel": "operators-drop4g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 0.23
+    },
+    {
+      "id": "CRA57-MTN-drop4g",
+      "panel": "operators-drop4g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 0.22
+    },
+    {
+      "id": "CRA57-RIGHTEL-drop4g",
+      "panel": "operators-drop4g",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 0.16
+    },
+    {
+      "id": "CRA57-MCI-m2m",
+      "panel": "operators-m2m",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 7410760
+    },
+    {
+      "id": "CRA57-MTN-m2m",
+      "panel": "operators-m2m",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 2931902
+    },
+    {
+      "id": "CRA57-RIGHTEL-m2m",
+      "panel": "operators-m2m",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 20050
+    },
+    {
+      "id": "CRA57-MCI-roamingCountries",
+      "panel": "operators-roamingCountries",
+      "domain": "communications",
+      "unit": "کشور",
+      "value": 140
+    },
+    {
+      "id": "CRA57-MTN-roamingCountries",
+      "panel": "operators-roamingCountries",
+      "domain": "communications",
+      "unit": "کشور",
+      "value": 132
+    },
+    {
+      "id": "CRA57-RIGHTEL-roamingCountries",
+      "panel": "operators-roamingCountries",
+      "domain": "communications",
+      "unit": "کشور",
+      "value": 134
+    },
+    {
+      "id": "CRA57-MCI-roamingOperators",
+      "panel": "operators-roamingOperators",
+      "domain": "communications",
+      "unit": "اپراتور",
+      "value": 325
+    },
+    {
+      "id": "CRA57-MTN-roamingOperators",
+      "panel": "operators-roamingOperators",
+      "domain": "communications",
+      "unit": "اپراتور",
+      "value": 256
+    },
+    {
+      "id": "CRA57-RIGHTEL-roamingOperators",
+      "panel": "operators-roamingOperators",
+      "domain": "communications",
+      "unit": "اپراتور",
+      "value": 190
+    },
+    {
+      "id": "CRA57-RTT-fixed-domestic",
+      "panel": "quality-rtt",
+      "domain": "communications",
+      "unit": "میلی‌ثانیه",
+      "value": 21.14
+    },
+    {
+      "id": "CRA57-RTT-fixed-international",
+      "panel": "quality-rtt",
+      "domain": "communications",
+      "unit": "میلی‌ثانیه",
+      "value": 84.23
+    },
+    {
+      "id": "CRA57-RTT-mobile-domestic",
+      "panel": "quality-rtt",
+      "domain": "communications",
+      "unit": "میلی‌ثانیه",
+      "value": 45.6
+    },
+    {
+      "id": "CRA57-RTT-mobile-international",
+      "panel": "quality-rtt",
+      "domain": "communications",
+      "unit": "میلی‌ثانیه",
+      "value": 104.1
+    },
+    {
+      "id": "CRA57-JITTER-fixed-domestic",
+      "panel": "quality-jitter",
+      "domain": "communications",
+      "unit": "میلی‌ثانیه",
+      "value": 2.1
+    },
+    {
+      "id": "CRA57-JITTER-fixed-international",
+      "panel": "quality-jitter",
+      "domain": "communications",
+      "unit": "میلی‌ثانیه",
+      "value": 2.41
+    },
+    {
+      "id": "CRA57-JITTER-mobile-domestic",
+      "panel": "quality-jitter",
+      "domain": "communications",
+      "unit": "میلی‌ثانیه",
+      "value": 9.41
+    },
+    {
+      "id": "CRA57-JITTER-mobile-international",
+      "panel": "quality-jitter",
+      "domain": "communications",
+      "unit": "میلی‌ثانیه",
+      "value": 13.57
+    },
+    {
+      "id": "CRA57-VOICE-MCI",
+      "panel": "share-VOICE",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 67
+    },
+    {
+      "id": "CRA57-VOICE-MTN",
+      "panel": "share-VOICE",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 31
+    },
+    {
+      "id": "CRA57-VOICE-RIGHTEL",
+      "panel": "share-VOICE",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 2
+    },
+    {
+      "id": "CRA57-SMS-MCI",
+      "panel": "share-SMS",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 60
+    },
+    {
+      "id": "CRA57-SMS-MTN",
+      "panel": "share-SMS",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 34
+    },
+    {
+      "id": "CRA57-SMS-RIGHTEL",
+      "panel": "share-SMS",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 6
+    },
+    {
+      "id": "CRA57-M2M-MCI",
+      "panel": "share-M2M",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 71.51
+    },
+    {
+      "id": "CRA57-M2M-MTN",
+      "panel": "share-M2M",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 28.29
+    },
+    {
+      "id": "CRA57-M2M-RIGHTEL",
+      "panel": "share-M2M",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 0.2
+    },
+    {
+      "id": "CRA57-4G-SITES-MCI",
+      "panel": "share-4G-SITES",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 53
+    },
+    {
+      "id": "CRA57-4G-SITES-MTN",
+      "panel": "share-4G-SITES",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 39
+    },
+    {
+      "id": "CRA57-4G-SITES-RIGHTEL",
+      "panel": "share-4G-SITES",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 8
+    },
+    {
+      "id": "CRA57-COMP-MOBILEVOICE",
+      "panel": "citizen-complaints",
+      "domain": "people",
+      "unit": "شکایت",
+      "value": 6301
+    },
+    {
+      "id": "CRA57-COMP-FIXTEL",
+      "panel": "citizen-complaints",
+      "domain": "people",
+      "unit": "شکایت",
+      "value": 11962
+    },
+    {
+      "id": "CRA57-COMP-FIXBB",
+      "panel": "citizen-complaints",
+      "domain": "people",
+      "unit": "شکایت",
+      "value": 20768
+    },
+    {
+      "id": "CRA57-MOB-PEN",
+      "panel": "CRA57-MOB-PEN",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 200.1
+    },
+    {
+      "id": "CRA57-MOB-GROWTH",
+      "panel": "CRA57-MOB-GROWTH",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 6.19
+    },
+    {
+      "id": "CRA57-MOBB-PEN",
+      "panel": "CRA57-MOBB-PEN",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 146.51
+    },
+    {
+      "id": "CRA57-MOBB-GROWTH",
+      "panel": "CRA57-MOBB-GROWTH",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 5.29
+    },
+    {
+      "id": "CRA57-FIXEDTEL-PEN",
+      "panel": "CRA57-FIXEDTEL-PEN",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 31.54
+    },
+    {
+      "id": "CRA57-FIXEDTEL-GROWTH",
+      "panel": "CRA57-FIXEDTEL-GROWTH",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": -1.76
+    },
+    {
+      "id": "CRA57-FIXBB-PEN",
+      "panel": "CRA57-FIXBB-PEN",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": 12.02
+    },
+    {
+      "id": "CRA57-FIXBB-GROWTH",
+      "panel": "CRA57-FIXBB-GROWTH",
+      "domain": "communications",
+      "unit": "درصد",
+      "value": -7.08
+    },
+    {
+      "id": "CRA57-VOICE-TOTAL",
+      "panel": "CRA57-VOICE-TOTAL",
+      "domain": "applications",
+      "unit": "دقیقه",
+      "value": 100602179092
+    },
+    {
+      "id": "CRA57-VOICE-AVG",
+      "panel": "CRA57-VOICE-AVG",
+      "domain": "applications",
+      "unit": "دقیقه",
+      "value": 192.33
+    },
+    {
+      "id": "CRA57-SMS-TOTAL",
+      "panel": "CRA57-SMS-TOTAL",
+      "domain": "applications",
+      "unit": "پیامک",
+      "value": 86146632239
+    },
+    {
+      "id": "CRA57-SMS-AVG",
+      "panel": "CRA57-SMS-AVG",
+      "domain": "applications",
+      "unit": "پیامک",
+      "value": 164.7
+    },
+    {
+      "id": "CRA57-RURAL-TELE",
+      "panel": "CRA57-RURAL-TELE",
+      "domain": "communications",
+      "unit": "روستا",
+      "value": 47573
+    },
+    {
+      "id": "CRA57-RURAL-CONN",
+      "panel": "CRA57-RURAL-CONN",
+      "domain": "communications",
+      "unit": "روستا",
+      "value": 51492
+    },
+    {
+      "id": "CRA57-RURAL-SUB",
+      "panel": "CRA57-RURAL-SUB",
+      "domain": "communications",
+      "unit": "اشتراک",
+      "value": 3871894
+    },
+    {
+      "id": "CRA57-ROAD-GSM",
+      "panel": "CRA57-ROAD-GSM",
+      "domain": "communications",
+      "unit": "عدد",
+      "value": 1175
+    },
+    {
+      "id": "CRA57-PUBLIC-PHONE",
+      "panel": "CRA57-PUBLIC-PHONE",
+      "domain": "communications",
+      "unit": "عدد",
+      "value": 51396
+    },
+    {
+      "id": "CRA57-POSTAL-TOTAL",
+      "panel": "CRA57-POSTAL-TOTAL",
+      "domain": "applications",
+      "unit": "مرسوله",
+      "value": 74324065
+    },
+    {
+      "id": "CRA57-POSTAL-INTERNATIONAL",
+      "panel": "CRA57-POSTAL-INTERNATIONAL",
+      "domain": "applications",
+      "unit": "مرسوله",
+      "value": 422
+    },
+    {
+      "id": "CRA57-POSTAL-SUCCESS",
+      "panel": "CRA57-POSTAL-SUCCESS",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 95.93
+    },
+    {
+      "id": "CRA57-POSTAL-RETURN",
+      "panel": "CRA57-POSTAL-RETURN",
+      "domain": "applications",
+      "unit": "درصد",
+      "value": 4.07
+    },
+    {
+      "id": "CRA57-POSTAL-URBAN",
+      "panel": "CRA57-POSTAL-URBAN",
+      "domain": "applications",
+      "unit": "واحد",
+      "value": 12162
+    },
+    {
+      "id": "CRA57-POSTAL-RURAL",
+      "panel": "CRA57-POSTAL-RURAL",
+      "domain": "applications",
+      "unit": "واحد",
+      "value": 3942
+    },
+    {
+      "id": "CRA57-POSTAL-OFFICE",
+      "panel": "CRA57-POSTAL-OFFICE",
+      "domain": "applications",
+      "unit": "دفتر",
+      "value": 8432
+    },
+    {
+      "id": "CRA57-ICT-RURAL",
+      "panel": "CRA57-ICT-RURAL",
+      "domain": "applications",
+      "unit": "دفتر",
+      "value": 2252
+    },
+    {
+      "id": "CRA57-SAT-VSAT",
+      "panel": "CRA57-SAT-VSAT",
+      "domain": "communications",
+      "unit": "پایانه",
+      "value": 4007
+    },
+    {
+      "id": "CRA57-SAT-MHZ",
+      "panel": "CRA57-SAT-MHZ",
+      "domain": "communications",
+      "unit": "MHz",
+      "value": 320.01
+    }
+  ],
+  "panels": [
+    {
+      "id": "annual-MOB",
+      "title": "خطوط فعال سیار در دو بهار",
+      "domain": "communications",
+      "count": 2,
+      "chart": true
+    },
+    {
+      "id": "annual-MOBB",
+      "title": "اشتراک پهن‌باند سیار در دو بهار",
+      "domain": "communications",
+      "count": 2,
+      "chart": true
+    },
+    {
+      "id": "annual-FIXEDTEL",
+      "title": "خطوط تلفن ثابت در دو بهار",
+      "domain": "communications",
+      "count": 2,
+      "chart": true
+    },
+    {
+      "id": "annual-FIXBB",
+      "title": "اشتراک پهن‌باند ثابت در دو بهار",
+      "domain": "communications",
+      "count": 2,
+      "chart": true
+    },
+    {
+      "id": "fiber-coverage",
+      "title": "روند خانوار تحت پوشش فیبر",
+      "domain": "communications",
+      "count": 10,
+      "chart": true
+    },
+    {
+      "id": "fixed-shares",
+      "title": "سهم فناوری‌های دسترسی ثابت",
+      "domain": "communications",
+      "count": 4,
+      "chart": true
+    },
+    {
+      "id": "fixed-counts",
+      "title": "اشتراک فناوری‌های دسترسی ثابت",
+      "domain": "communications",
+      "count": 4,
+      "chart": true
+    },
+    {
+      "id": "mobile-generation",
+      "title": "اشتراک پهن‌باند به تفکیک نسل",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-active",
+      "title": "خطوط فعال اپراتورها",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-sites5g",
+      "title": "سایت‌های فعال 5G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-sites4g",
+      "title": "سایت‌های فعال 4G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-coverage4g",
+      "title": "پوشش جمعیتی 4G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-coverage3g",
+      "title": "پوشش جمعیتی 3G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-roadKm",
+      "title": "پوشش جاده‌ای اپراتورها",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-villages",
+      "title": "روستاهای تحت پوشش اپراتورها",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-cities4g",
+      "title": "شهرهای تحت پوشش 4G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-ping3g",
+      "title": "سرعت دانلود 3G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-ping4g",
+      "title": "سرعت دانلود 4G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-success3g",
+      "title": "موفقیت اتصال داده 3G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-success4g",
+      "title": "موفقیت اتصال داده 4G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-drop3g",
+      "title": "قطع اتصال داده 3G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-drop4g",
+      "title": "قطع اتصال داده 4G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-m2m",
+      "title": "اشتراک M2M اپراتورها",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-roamingCountries",
+      "title": "کشورهای دارای رومینگ",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "operators-roamingOperators",
+      "title": "شرکای خارجی رومینگ",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "quality-rtt",
+      "title": "RTT ثابت و سیار · داخلی و بین‌الملل",
+      "domain": "communications",
+      "count": 4,
+      "chart": true
+    },
+    {
+      "id": "quality-jitter",
+      "title": "Jitter ثابت و سیار · داخلی و بین‌الملل",
+      "domain": "communications",
+      "count": 4,
+      "chart": true
+    },
+    {
+      "id": "share-VOICE",
+      "title": "سهم ترافیک مکالمه",
+      "domain": "applications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "share-SMS",
+      "title": "سهم پیامک",
+      "domain": "applications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "share-M2M",
+      "title": "سهم اتصالات M2M",
+      "domain": "applications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "share-4G-SITES",
+      "title": "سهم سایت‌های 4G",
+      "domain": "communications",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "citizen-complaints",
+      "title": "تعداد شکایات به تفکیک خدمت",
+      "domain": "people",
+      "count": 3,
+      "chart": true
+    },
+    {
+      "id": "CRA57-MOB-PEN",
+      "title": "خطوط فعال سیار · ضریب نفوذ",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-MOB-GROWTH",
+      "title": "خطوط فعال سیار · رشد گزارش‌شده",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-MOBB-PEN",
+      "title": "اشتراک پهن‌باند سیار · ضریب نفوذ",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-MOBB-GROWTH",
+      "title": "اشتراک پهن‌باند سیار · رشد گزارش‌شده",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-FIXEDTEL-PEN",
+      "title": "خطوط تلفن ثابت · ضریب نفوذ",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-FIXEDTEL-GROWTH",
+      "title": "خطوط تلفن ثابت · رشد گزارش‌شده",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-FIXBB-PEN",
+      "title": "اشتراک پهن‌باند ثابت · ضریب نفوذ",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-FIXBB-GROWTH",
+      "title": "اشتراک پهن‌باند ثابت · رشد گزارش‌شده",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-VOICE-TOTAL",
+      "title": "مجموع دقیقه مکالمه شبکه سیار",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-VOICE-AVG",
+      "title": "متوسط مکالمه ماهانه به ازای کاربر",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-SMS-TOTAL",
+      "title": "مجموع پیامک شبکه سیار",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-SMS-AVG",
+      "title": "متوسط پیامک ماهانه به ازای کاربر",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-RURAL-TELE",
+      "title": "روستاهای دارای تلفن خانگی",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-RURAL-CONN",
+      "title": "روستاهای دارای ارتباط",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-RURAL-SUB",
+      "title": "اشتراک تلفن روستایی",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-ROAD-GSM",
+      "title": "تلفن همگانی جاده‌ای",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-PUBLIC-PHONE",
+      "title": "تلفن همگانی",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-POSTAL-TOTAL",
+      "title": "ترافیک کل پست",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-POSTAL-INTERNATIONAL",
+      "title": "ترافیک بین‌المللی پست",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-POSTAL-SUCCESS",
+      "title": "توزیع موفق در مقصد",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-POSTAL-RETURN",
+      "title": "مرسولات برگشتی",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-POSTAL-URBAN",
+      "title": "واحدهای پستی شهری",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-POSTAL-RURAL",
+      "title": "واحدهای پستی روستایی",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-POSTAL-OFFICE",
+      "title": "دفاتر پیشخوان خدمات",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-ICT-RURAL",
+      "title": "دفاتر ICT روستایی",
+      "domain": "applications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-SAT-VSAT",
+      "title": "پایانه‌های VSAT",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    },
+    {
+      "id": "CRA57-SAT-MHZ",
+      "title": "پهنای باند ماهواره مصرف‌شده",
+      "domain": "communications",
+      "count": 1,
+      "chart": false
+    }
+  ],
+  "editorialExcludedIds": [
+    "EXT-A19-02",
+    "EXT-A19-03",
+    "EXT-AI-02",
+    "EXT-AI-03",
+    "EXT-RSF-01",
+    "EXT-RSF-03",
+    "EXT-RSF-04",
+    "EXT-EU-01",
+    "EXT-EU-02",
+    "EXT-EU-03",
+    "EXT-UN-03",
+    "EXT-A19-04",
+    "EXT-A19-05"
+  ],
+  "note": "Exclusions affect managerial presentation only. Original source records are retained; exclusions do not alter numeric evidence.",
+  "verification": {
+    "officialIdsValuesUnitsExact": true,
+    "files": 6,
+    "sheets": 33,
+    "nonemptyCells": 52468,
+    "qualityObservations": 28
+  }
+}
