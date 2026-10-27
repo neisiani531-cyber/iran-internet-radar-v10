@@ -5,24 +5,17 @@ import type {LegacyRecord} from './LegacyDataBridge';
 import PanelExpandButton from './PanelExpandButton';
 import inventory from './command-statistics.json';
 import infra from './command-infrastructure.json';
+import registry from './domain-registry.json';
 const fa=(v:number)=>v.toLocaleString('fa-IR',{maximumFractionDigits:4});
 const excluded=new Set(['EXT-A19-02','EXT-A19-03','EXT-AI-02','EXT-AI-03','EXT-RSF-01','EXT-RSF-03','EXT-RSF-04','EXT-EU-01','EXT-EU-02','EXT-EU-03','EXT-UN-03','EXT-A19-04','EXT-A19-05']);
 export function managerialEligible(id:string){return !excluded.has(id)}
-export function domainForRecord(r:{section:string;label:string;raw:unknown}){
- const x=r.raw as Record<string,unknown>,theme=String(x.theme||x.group||'');
- if(/^CRA57-(4G-SITES|SAT)-/.test(String(x.id)))return 'communications';
- if(/سایبری|DDoS|API incidents/.test(r.label))return 'security';
- if(/P\/E|EPS|زیان مالی|سرمایه.گذاری|درآمد|ارزش بازار/.test(r.label))return 'governance';
- if(/مرکز داده|مراکز داده|دیتاسنتر|میزبانی|کش.شده|CDN/.test(r.label))return 'information';
- if(r.section.includes('سکوها')||theme==='platforms')return 'base';
- if(r.section.includes('پیمایش')||['experience','access','economy','regional','citizen'].includes(theme))return 'people';
- if(theme==='governance')return 'governance';
- if(theme==='resilience')return 'security';
- if(['mobile','fixed','operators','isps','quality','reach','overview'].includes(theme))return 'communications';
- if(['services','other'].includes(theme))return 'applications';
- if(theme==='infrastructure')return /cloud|CDN|مرکز داده|مراکز داده|کش|میزبانی|ابر/i.test(r.label)?'information':'communications';
- return 'governance';
+export function domainForRecord(r:{section:string;label:string;row_id?:string;raw:unknown}){
+ const raw=r.raw as Record<string,unknown>;
+ const id=r.row_id??String(raw.id??raw.evidence_id??'');
+ const mapping=(registry.entries as Record<string,{domain:string|null}>)[r.section+'::'+id];
+ return mapping?.domain??'unassigned';
 }
+
 const official=inventory.records.filter(r=>r.section==='رسمی نسخه ۹٫۱۷').map(r=>r.raw as unknown as LegacyRecord);
 const panels=buildLegacyCatalogPanels(official);
 function Panel({p}:{p:CatalogPanel}){

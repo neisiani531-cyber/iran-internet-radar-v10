@@ -1,0 +1,5753 @@
+{
+  "version": "1.0.0",
+  "policy": "Runtime uses exact source-section and record ID. Unknown future records remain UNASSIGNED; no default governance mapping.",
+  "entries": {
+    "رسمی نسخه ۹٫۱۷::CRA57-MOB-1405": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOB-1405"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MOB-1404": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOB-1404"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MOB-PEN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOB-PEN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MOB-GROWTH": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOB-GROWTH"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MOBB-1405": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBB-1405"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MOBB-1404": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBB-1404"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MOBB-PEN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBB-PEN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MOBB-GROWTH": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBB-GROWTH"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXEDTEL-1405": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXEDTEL-1405"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXEDTEL-1404": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXEDTEL-1404"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXEDTEL-PEN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXEDTEL-PEN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXEDTEL-GROWTH": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXEDTEL-GROWTH"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXBB-1405": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXBB-1405"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXBB-1404": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXBB-1404"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXBB-PEN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXBB-PEN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXBB-GROWTH": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXBB-GROWTH"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۲-۴": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۲-۴"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۳-۱": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۳-۱"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۳-۲": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۳-۲"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۳-۳": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۳-۳"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۳-۴": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۳-۴"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۴-۱": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۴-۱"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۴-۲": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۴-۲"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۴-۳": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۴-۳"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۴-۴": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۴-۴"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۵-۱": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۵-۱"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-VOICE-TOTAL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-VOICE-TOTAL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-VOICE-AVG": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-VOICE-AVG"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-SMS-TOTAL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-SMS-TOTAL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-SMS-AVG": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-SMS-AVG"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RURAL-TELE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RURAL-TELE"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RURAL-CONN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RURAL-CONN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RURAL-SUB": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RURAL-SUB"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-ROAD-GSM": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-ROAD-GSM"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-PUBLIC-PHONE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-PUBLIC-PHONE"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXSHARE-XDSL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXSHARE-XDSL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXSHARE-FTTX": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXSHARE-FTTX"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXSHARE-WIFI": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXSHARE-WIFI"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-FIXSHARE-TDLTE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXSHARE-TDLTE"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-TECH-X-DSL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-TECH-X-DSL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-TECH-FTTx": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-TECH-FTTx"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-TECH-TD-LTE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-TECH-TD-LTE"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-TECH-WiFi": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-TECH-WiFi"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MOBBB-3G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBBB-3G"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MOBBB-4G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBBB-4G"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MOBBB-5G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBBB-5G"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-active": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-active"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-sites5g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-sites5g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-sites4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-sites4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-coverage4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-coverage4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-coverage3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-coverage3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-roadKm": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-roadKm"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-villages": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-villages"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-cities4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-cities4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-ping3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-ping3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-ping4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-ping4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-success3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-success3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-success4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-success4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-drop3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-drop3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-drop4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-drop4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-m2m": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-m2m"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-roamingCountries": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-roamingCountries"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MCI-roamingOperators": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-roamingOperators"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-active": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-active"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-sites5g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-sites5g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-sites4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-sites4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-coverage4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-coverage4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-coverage3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-coverage3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-roadKm": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-roadKm"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-villages": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-villages"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-cities4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-cities4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-ping3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-ping3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-ping4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-ping4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-success3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-success3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-success4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-success4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-drop3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-drop3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-drop4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-drop4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-m2m": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-m2m"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-roamingCountries": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-roamingCountries"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-MTN-roamingOperators": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-roamingOperators"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-active": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-active"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-sites5g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-sites5g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-sites4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-sites4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-coverage4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-coverage4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-coverage3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-coverage3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-roadKm": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-roadKm"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-villages": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-villages"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-cities4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-cities4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-ping3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-ping3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-ping4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-ping4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-success3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-success3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-success4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-success4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-drop3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-drop3g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-drop4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-drop4g"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-m2m": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-m2m"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-roamingCountries": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-roamingCountries"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RIGHTEL-roamingOperators": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-roamingOperators"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RTT-fixed-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RTT-fixed-domestic"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-JITTER-fixed-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-JITTER-fixed-domestic"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RTT-fixed-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RTT-fixed-international"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-JITTER-fixed-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-JITTER-fixed-international"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RTT-mobile-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RTT-mobile-domestic"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-JITTER-mobile-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-JITTER-mobile-domestic"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-RTT-mobile-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-RTT-mobile-international"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-JITTER-mobile-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-JITTER-mobile-international"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-VOICE-MCI": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-VOICE-MCI"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-VOICE-MTN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-VOICE-MTN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-VOICE-RIGHTEL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-VOICE-RIGHTEL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-SMS-MCI": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-SMS-MCI"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-SMS-MTN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-SMS-MTN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-SMS-RIGHTEL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-SMS-RIGHTEL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-M2M-MCI": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-M2M-MCI"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-M2M-MTN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-M2M-MTN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-M2M-RIGHTEL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-M2M-RIGHTEL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-4G-SITES-MCI": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_TECHNICAL_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-4G-SITES-MCI"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-4G-SITES-MTN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_TECHNICAL_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-4G-SITES-MTN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-4G-SITES-RIGHTEL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_TECHNICAL_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-4G-SITES-RIGHTEL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-COMP-MOBILEVOICE": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-COMP-MOBILEVOICE"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-COMP-FIXTEL": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-COMP-FIXTEL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-COMP-FIXBB": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-COMP-FIXBB"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-POSTAL-TOTAL": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-TOTAL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-POSTAL-INTERNATIONAL": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-INTERNATIONAL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-POSTAL-SUCCESS": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-SUCCESS"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-POSTAL-RETURN": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-RETURN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-POSTAL-URBAN": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-URBAN"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-POSTAL-RURAL": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-RURAL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-POSTAL-OFFICE": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-OFFICE"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-ICT-RURAL": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-ICT-RURAL"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-SAT-VSAT": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_TECHNICAL_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-SAT-VSAT"
+    },
+    "رسمی نسخه ۹٫۱۷::CRA57-SAT-MHZ": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_TECHNICAL_FAMILY",
+      "source_section": "رسمی نسخه ۹٫۱۷",
+      "record_id": "CRA57-SAT-MHZ"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOB-1405": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOB-1405"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOB-1404": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOB-1404"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOB-PEN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOB-PEN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOB-GROWTH": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOB-GROWTH"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOBB-1405": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBB-1405"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOBB-1404": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBB-1404"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOBB-PEN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBB-PEN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOBB-GROWTH": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBB-GROWTH"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXEDTEL-1405": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXEDTEL-1405"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXEDTEL-1404": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXEDTEL-1404"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXEDTEL-PEN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXEDTEL-PEN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXEDTEL-GROWTH": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXEDTEL-GROWTH"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXBB-1405": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXBB-1405"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXBB-1404": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXBB-1404"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXBB-PEN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXBB-PEN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXBB-GROWTH": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXBB-GROWTH"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۲-۴": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۲-۴"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۳-۱": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۳-۱"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۳-۲": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۳-۲"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۳-۳": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۳-۳"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۳-۴": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۳-۴"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۴-۱": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۴-۱"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۴-۲": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۴-۲"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۴-۳": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۴-۳"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۴-۴": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۴-۴"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIBER-COV-۱۴۰۵-۱": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIBER-COV-۱۴۰۵-۱"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-VOICE-TOTAL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-VOICE-TOTAL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-VOICE-AVG": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-VOICE-AVG"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-SMS-TOTAL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-SMS-TOTAL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-SMS-AVG": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-SMS-AVG"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RURAL-TELE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RURAL-TELE"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RURAL-CONN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RURAL-CONN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RURAL-SUB": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RURAL-SUB"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-ROAD-GSM": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-ROAD-GSM"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-PUBLIC-PHONE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-PUBLIC-PHONE"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXSHARE-XDSL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXSHARE-XDSL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXSHARE-FTTX": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXSHARE-FTTX"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXSHARE-WIFI": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXSHARE-WIFI"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-FIXSHARE-TDLTE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-FIXSHARE-TDLTE"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-TECH-X-DSL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-TECH-X-DSL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-TECH-FTTx": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-TECH-FTTx"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-TECH-TD-LTE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-TECH-TD-LTE"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-TECH-WiFi": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-TECH-WiFi"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOBBB-3G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBBB-3G"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOBBB-4G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBBB-4G"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MOBBB-5G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MOBBB-5G"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-active": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-active"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-sites5g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-sites5g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-sites4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-sites4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-coverage4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-coverage4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-coverage3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-coverage3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-roadKm": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-roadKm"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-villages": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-villages"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-cities4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-cities4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-ping3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-ping3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-ping4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-ping4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-success3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-success3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-success4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-success4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-drop3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-drop3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-drop4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-drop4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-m2m": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-m2m"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-roamingCountries": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-roamingCountries"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MCI-roamingOperators": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MCI-roamingOperators"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-active": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-active"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-sites5g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-sites5g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-sites4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-sites4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-coverage4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-coverage4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-coverage3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-coverage3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-roadKm": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-roadKm"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-villages": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-villages"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-cities4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-cities4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-ping3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-ping3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-ping4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-ping4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-success3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-success3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-success4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-success4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-drop3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-drop3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-drop4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-drop4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-m2m": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-m2m"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-roamingCountries": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-roamingCountries"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-MTN-roamingOperators": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-MTN-roamingOperators"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-active": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-active"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-sites5g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-sites5g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-sites4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-sites4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-coverage4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-coverage4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-coverage3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-coverage3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-roadKm": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-roadKm"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-villages": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-villages"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-cities4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-cities4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-ping3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-ping3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-ping4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-ping4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-success3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-success3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-success4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-success4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-drop3g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-drop3g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-drop4g": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-drop4g"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-m2m": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-m2m"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-roamingCountries": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-roamingCountries"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RIGHTEL-roamingOperators": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RIGHTEL-roamingOperators"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RTT-fixed-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RTT-fixed-domestic"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-JITTER-fixed-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-JITTER-fixed-domestic"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RTT-fixed-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RTT-fixed-international"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-JITTER-fixed-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-JITTER-fixed-international"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RTT-mobile-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RTT-mobile-domestic"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-JITTER-mobile-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-JITTER-mobile-domestic"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-RTT-mobile-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-RTT-mobile-international"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-JITTER-mobile-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-JITTER-mobile-international"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-VOICE-MCI": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-VOICE-MCI"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-VOICE-MTN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-VOICE-MTN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-VOICE-RIGHTEL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-VOICE-RIGHTEL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-SMS-MCI": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-SMS-MCI"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-SMS-MTN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-SMS-MTN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-SMS-RIGHTEL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-SMS-RIGHTEL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-M2M-MCI": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-M2M-MCI"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-M2M-MTN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-M2M-MTN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-M2M-RIGHTEL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-M2M-RIGHTEL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-4G-SITES-MCI": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_TECHNICAL_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-4G-SITES-MCI"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-4G-SITES-MTN": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_TECHNICAL_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-4G-SITES-MTN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-4G-SITES-RIGHTEL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_TECHNICAL_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-4G-SITES-RIGHTEL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-COMP-MOBILEVOICE": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-COMP-MOBILEVOICE"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-COMP-FIXTEL": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-COMP-FIXTEL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-COMP-FIXBB": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-COMP-FIXBB"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-POSTAL-TOTAL": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-TOTAL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-POSTAL-INTERNATIONAL": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-INTERNATIONAL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-POSTAL-SUCCESS": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-SUCCESS"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-POSTAL-RETURN": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-RETURN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-POSTAL-URBAN": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-URBAN"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-POSTAL-RURAL": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-RURAL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-POSTAL-OFFICE": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-POSTAL-OFFICE"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-ICT-RURAL": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_SERVICE_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-ICT-RURAL"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-SAT-VSAT": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_TECHNICAL_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-SAT-VSAT"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA57-SAT-MHZ": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_TECHNICAL_FAMILY",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA57-SAT-MHZ"
+    },
+    "شواهد نسخه ۹٫۱۷::EV-P01-001": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EV-P01-001"
+    },
+    "شواهد نسخه ۹٫۱۷::EV-P01-002": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EV-P01-002"
+    },
+    "شواهد نسخه ۹٫۱۷::EV-P01-003": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EV-P01-003"
+    },
+    "شواهد نسخه ۹٫۱۷::EV-P01-004": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EV-P01-004"
+    },
+    "شواهد نسخه ۹٫۱۷::EV-P01-005": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EV-P01-005"
+    },
+    "شواهد نسخه ۹٫۱۷::ISPA-01": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISPA-01"
+    },
+    "شواهد نسخه ۹٫۱۷::ISPA-02": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISPA-02"
+    },
+    "شواهد نسخه ۹٫۱۷::ISPA-03": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISPA-03"
+    },
+    "شواهد نسخه ۹٫۱۷::ISPA-04": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISPA-04"
+    },
+    "شواهد نسخه ۹٫۱۷::ISPA-05": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISPA-05"
+    },
+    "شواهد نسخه ۹٫۱۷::ISPA-06": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISPA-06"
+    },
+    "شواهد نسخه ۹٫۱۷::ISPA-07": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISPA-07"
+    },
+    "شواهد نسخه ۹٫۱۷::ITU-4G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ITU-4G"
+    },
+    "شواهد نسخه ۹٫۱۷::ITU-5G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ITU-5G"
+    },
+    "شواهد نسخه ۹٫۱۷::ITU-PRICE-5GB": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ITU-PRICE-5GB"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA53-MCI-SPD": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA53-MCI-SPD"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA53-MCI-DROP": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA53-MCI-DROP"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA53-MCI-SUCC": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA53-MCI-SUCC"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA53-MTN-SPD": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA53-MTN-SPD"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA53-MTN-DROP": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA53-MTN-DROP"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA53-MTN-SUCC": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA53-MTN-SUCC"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA53-RIT-SPD": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA53-RIT-SPD"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA53-RIT-DROP": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA53-RIT-DROP"
+    },
+    "شواهد نسخه ۹٫۱۷::CRA53-RIT-SUCC": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CRA53-RIT-SUCC"
+    },
+    "شواهد نسخه ۹٫۱۷::IRB-DNSHTTP": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "IRB-DNSHTTP"
+    },
+    "شواهد نسخه ۹٫۱۷::IRB-UDP": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "IRB-UDP"
+    },
+    "شواهد نسخه ۹٫۱۷::IRB-FQDN": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "IRB-FQDN"
+    },
+    "شواهد نسخه ۹٫۱۷::IRB-APEX": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "IRB-APEX"
+    },
+    "شواهد نسخه ۹٫۱۷::IRB-BLANKET": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "IRB-BLANKET"
+    },
+    "شواهد نسخه ۹٫۱۷::TOR-MAX": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "TOR-MAX"
+    },
+    "شواهد نسخه ۹٫۱۷::TOR-MIN": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "TOR-MIN"
+    },
+    "شواهد نسخه ۹٫۱۷::TOR-FRAC-MIN": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "TOR-FRAC-MIN"
+    },
+    "شواهد نسخه ۹٫۱۷::TOR-FRAC-MAX": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "TOR-FRAC-MAX"
+    },
+    "شواهد نسخه ۹٫۱۷::DATAAK-LOW": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "DATAAK-LOW"
+    },
+    "شواهد نسخه ۹٫۱۷::DATAAK-MID": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "DATAAK-MID"
+    },
+    "شواهد نسخه ۹٫۱۷::DATAAK-HIGH": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "DATAAK-HIGH"
+    },
+    "شواهد نسخه ۹٫۱۷::MELLAT-VPN-COST-A": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "MELLAT-VPN-COST-A"
+    },
+    "شواهد نسخه ۹٫۱۷::MELLAT-VPN-COST-B": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "MELLAT-VPN-COST-B"
+    },
+    "شواهد نسخه ۹٫۱۷::MELLAT-INC": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "MELLAT-INC"
+    },
+    "شواهد نسخه ۹٫۱۷::CGI-1403": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "CGI-1403"
+    },
+    "شواهد نسخه ۹٫۱۷::TIC-Q-RTT": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "TIC-Q-RTT"
+    },
+    "شواهد نسخه ۹٫۱۷::TIC-Q-PLR": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "TIC-Q-PLR"
+    },
+    "شواهد نسخه ۹٫۱۷::TIC-Q-JITTER": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "TIC-Q-JITTER"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-RUBIKA-MAU": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-RUBIKA-MAU"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-RUBIKA-DAU": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-RUBIKA-DAU"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-BALE-MAU": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-BALE-MAU"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-BALE-DAU": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-BALE-DAU"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-BALE-GOV-KALAB": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-BALE-GOV-KALAB"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-BALE-GOV-BARQ": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-BALE-GOV-BARQ"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-BALE-GOV-YARANEH": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-BALE-GOV-YARANEH"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-SOROUSH-MAU": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-SOROUSH-MAU"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-SOROUSH-DAU": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-SOROUSH-DAU"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-EITAA-MAU": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-EITAA-MAU"
+    },
+    "شواهد نسخه ۹٫۱۷::PLAT-EITAA-DAU": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "PLAT-EITAA-DAU"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-MCI-SUBS": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-MCI-SUBS"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-MCI-SHARE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-MCI-SHARE"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-MCI-DATA": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-MCI-DATA"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-MCI-5G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-MCI-5G"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-MCI-TRAFFIC": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-MCI-TRAFFIC"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-MTN-SUBS": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-MTN-SUBS"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-MTN-SHARE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-MTN-SHARE"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-MTN-DATA": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-MTN-DATA"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-MTN-5G-SITES": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-MTN-5G-SITES"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-MTN-TRAFFIC-REC": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-MTN-TRAFFIC-REC"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-RIT-SUBS": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-RIT-SUBS"
+    },
+    "شواهد نسخه ۹٫۱۷::OP-RIT-SPEED": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "OP-RIT-SPEED"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-TCI-PHONE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-TCI-PHONE"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-TCI-BB": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-TCI-BB"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-TCI-FIBER": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-TCI-FIBER"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-ASIATECH-SUBS": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-ASIATECH-SUBS"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-ASIATECH-PE": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-ASIATECH-PE"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-ASIATECH-EPS": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-ASIATECH-EPS"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-SHATEL-SUBS": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-SHATEL-SUBS"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-SHATEL-OFFICES": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-SHATEL-OFFICES"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-HIWEB-DC": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-HIWEB-DC"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-HIWEB-VILLAGES": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-HIWEB-VILLAGES"
+    },
+    "شواهد نسخه ۹٫۱۷::ISP-HIWEB-LOSS": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "ISP-HIWEB-LOSS"
+    },
+    "شواهد نسخه ۹٫۱۷::FIBER-TOTAL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "FIBER-TOTAL"
+    },
+    "شواهد نسخه ۹٫۱۷::REG-FIXED-PHONE-1401": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "REG-FIXED-PHONE-1401"
+    },
+    "شواهد نسخه ۹٫۱۷::REG-FIXED-ACTIVE-1401": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "REG-FIXED-ACTIVE-1401"
+    },
+    "شواهد نسخه ۹٫۱۷::REG-MOBILE-PEN-1401": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "REG-MOBILE-PEN-1401"
+    },
+    "شواهد نسخه ۹٫۱۷::REG-BB-FIXED-1401": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "REG-BB-FIXED-1401"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-A19-01": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-A19-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-A19-02": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-A19-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-A19-03": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-A19-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-A19-04": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-A19-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-A19-05": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-A19-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-HRW-01": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-HRW-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-HRW-02": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-HRW-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-HRW-03": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-HRW-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-HRW-04": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-HRW-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-HRW-05": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-HRW-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-HRW-06": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-HRW-06"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-AI-01": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-AI-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-AI-02": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-AI-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-AI-03": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-AI-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-RSF-01": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-RSF-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-RSF-02": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-RSF-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-RSF-03": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-RSF-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-RSF-04": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-RSF-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-RSF-05": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-RSF-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-01": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-02": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-03": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-04": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-05": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-06": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-06"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-07": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-07"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-08": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-08"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-09": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-09"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-10": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-10"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-WB-11": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-WB-11"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-01": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-02": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-03": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-04": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-05": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-06": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-06"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-07": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-07"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-08": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-08"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-09": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-09"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-10": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-10"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-11": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-11"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-12": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-12"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-13": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-13"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-14": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-14"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-15": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-15"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-16": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-16"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-17": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-17"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-18": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-18"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-19": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-19"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ISOC-20": {
+      "domain": "applications",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ISOC-20"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-PSI-01": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-PSI-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-PSI-02": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-PSI-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-PSI-03": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-PSI-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-PSI-04": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-PSI-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-PSI-05": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-PSI-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-PSI-06": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-PSI-06"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-PSI-07": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-PSI-07"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-PSI-08": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-PSI-08"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-IPINFO-01": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-IPINFO-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-IPINFO-02": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-IPINFO-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-IPINFO-03": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-IPINFO-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-IPINFO-04": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-IPINFO-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-IPINFO-05": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-IPINFO-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-IPINFO-06": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-IPINFO-06"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-IPINFO-07": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-IPINFO-07"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-IPINFO-08": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-IPINFO-08"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-IPINFO-09": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-IPINFO-09"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-IPINFO-10": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-IPINFO-10"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARX-01": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARX-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARX-02": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARX-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARX-03": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARX-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARX-04": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARX-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARX-05": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARX-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARX-06": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARX-06"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARX-07": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARX-07"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARX-08": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARX-08"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARXS-01": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARXS-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARXS-02": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARXS-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARXS-03": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARXS-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARXS-04": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARXS-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARXS-05": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARXS-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-ARXS-06": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-ARXS-06"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-DR-01": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-DR-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-DR-02": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-DR-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-DR-03": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-DR-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-DR-04": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-DR-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-DR-05": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-DR-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-DR-06": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-DR-06"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-DR-07": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-DR-07"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-DR-08": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-DR-08"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-CABLE-01": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-CABLE-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-CABLE-02": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-CABLE-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-CABLE-03": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-CABLE-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-CABLE-04": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-CABLE-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-AKAM-01": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-AKAM-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-AKAM-02": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-AKAM-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-AKAM-03": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-AKAM-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-AKAM-04": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-AKAM-04"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-AKAM-05": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-AKAM-05"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-CFBGP-01": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-CFBGP-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-CFBGP-02": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-CFBGP-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-CFBGP-03": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "EXPLICIT_ID_OVERRIDE",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-CFBGP-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-UN-01": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-UN-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-UN-02": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-UN-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-UN-03": {
+      "domain": "security",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-UN-03"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-EU-01": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-EU-01"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-EU-02": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-EU-02"
+    },
+    "شواهد نسخه ۹٫۱۷::EXT-EU-03": {
+      "domain": "governance",
+      "status": "MAPPED",
+      "rule": "DECLARED_SOURCE_THEME",
+      "source_section": "شواهد نسخه ۹٫۱۷",
+      "record_id": "EXT-EU-03"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-001": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-001"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-002": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-002"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-003": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-003"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-004": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-004"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-005": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-005"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-006": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-006"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-007": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-007"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-008": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-008"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-009": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-009"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-010": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-010"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-011": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-011"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-012": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-012"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-013": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-013"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-014": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-014"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-015": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-015"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-016": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-016"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-017": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-017"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-018": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-018"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-019": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-019"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-020": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-020"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-021": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-021"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-022": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-022"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-023": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-023"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-024": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-024"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-025": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-025"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-026": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-026"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-027": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-027"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-028": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-028"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-029": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-029"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-030": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-030"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-031": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-031"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-032": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-032"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-033": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-033"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-034": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-034"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-035": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-035"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-036": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-036"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-037": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-037"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-038": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-038"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-039": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-039"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-040": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-040"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-041": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-041"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-042": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-042"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-043": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-043"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-044": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-044"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-045": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-045"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-046": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-046"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-047": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-047"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-048": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-048"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-049": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-049"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-050": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-050"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-051": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-051"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-052": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-052"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-053": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-053"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-054": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-054"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-055": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-055"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-056": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-056"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-057": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-057"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-058": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-058"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-059": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-059"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-060": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-060"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-061": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-061"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-062": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-062"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-063": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-063"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-064": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-064"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-065": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-065"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-066": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-066"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-067": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-067"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-068": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-068"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-069": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-069"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-070": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-070"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-071": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-071"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-072": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-072"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-073": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-073"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-074": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-074"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-075": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-075"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-076": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-076"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-077": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-077"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-078": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-078"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-079": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-079"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-080": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-080"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-081": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-081"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-082": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-082"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-083": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-083"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-084": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-084"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-085": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-085"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-086": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-086"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-087": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-087"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-088": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-088"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-089": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-089"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-090": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-090"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-091": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-091"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-092": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-092"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-093": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-093"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-094": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-094"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-095": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-095"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-096": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-096"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-097": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-097"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-098": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-098"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-099": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-099"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-100": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-100"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-101": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-101"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-102": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-102"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-103": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-103"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-104": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-104"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-105": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-105"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-106": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-106"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-107": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-107"
+    },
+    "سکوها؛ شش‌ماهه::NCC1405H1-108": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ شش‌ماهه",
+      "record_id": "NCC1405H1-108"
+    },
+    "سکوها؛ مرداد::NCC1405M05-001": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-001"
+    },
+    "سکوها؛ مرداد::NCC1405M05-002": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-002"
+    },
+    "سکوها؛ مرداد::NCC1405M05-003": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-003"
+    },
+    "سکوها؛ مرداد::NCC1405M05-004": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-004"
+    },
+    "سکوها؛ مرداد::NCC1405M05-005": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-005"
+    },
+    "سکوها؛ مرداد::NCC1405M05-006": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-006"
+    },
+    "سکوها؛ مرداد::NCC1405M05-007": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-007"
+    },
+    "سکوها؛ مرداد::NCC1405M05-008": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-008"
+    },
+    "سکوها؛ مرداد::NCC1405M05-009": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-009"
+    },
+    "سکوها؛ مرداد::NCC1405M05-010": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-010"
+    },
+    "سکوها؛ مرداد::NCC1405M05-011": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-011"
+    },
+    "سکوها؛ مرداد::NCC1405M05-012": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-012"
+    },
+    "سکوها؛ مرداد::NCC1405M05-013": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-013"
+    },
+    "سکوها؛ مرداد::NCC1405M05-014": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-014"
+    },
+    "سکوها؛ مرداد::NCC1405M05-015": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-015"
+    },
+    "سکوها؛ مرداد::NCC1405M05-016": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-016"
+    },
+    "سکوها؛ مرداد::NCC1405M05-017": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-017"
+    },
+    "سکوها؛ مرداد::NCC1405M05-018": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-018"
+    },
+    "سکوها؛ مرداد::NCC1405M05-019": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-019"
+    },
+    "سکوها؛ مرداد::NCC1405M05-020": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-020"
+    },
+    "سکوها؛ مرداد::NCC1405M05-021": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-021"
+    },
+    "سکوها؛ مرداد::NCC1405M05-022": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-022"
+    },
+    "سکوها؛ مرداد::NCC1405M05-023": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-023"
+    },
+    "سکوها؛ مرداد::NCC1405M05-024": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-024"
+    },
+    "سکوها؛ مرداد::NCC1405M05-025": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-025"
+    },
+    "سکوها؛ مرداد::NCC1405M05-026": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-026"
+    },
+    "سکوها؛ مرداد::NCC1405M05-027": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-027"
+    },
+    "سکوها؛ مرداد::NCC1405M05-028": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-028"
+    },
+    "سکوها؛ مرداد::NCC1405M05-029": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-029"
+    },
+    "سکوها؛ مرداد::NCC1405M05-030": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-030"
+    },
+    "سکوها؛ مرداد::NCC1405M05-031": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-031"
+    },
+    "سکوها؛ مرداد::NCC1405M05-032": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-032"
+    },
+    "سکوها؛ مرداد::NCC1405M05-033": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-033"
+    },
+    "سکوها؛ مرداد::NCC1405M05-034": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-034"
+    },
+    "سکوها؛ مرداد::NCC1405M05-035": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-035"
+    },
+    "سکوها؛ مرداد::NCC1405M05-036": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-036"
+    },
+    "سکوها؛ مرداد::NCC1405M05-037": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-037"
+    },
+    "سکوها؛ مرداد::NCC1405M05-038": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-038"
+    },
+    "سکوها؛ مرداد::NCC1405M05-039": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-039"
+    },
+    "سکوها؛ مرداد::NCC1405M05-040": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-040"
+    },
+    "سکوها؛ مرداد::NCC1405M05-041": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-041"
+    },
+    "سکوها؛ مرداد::NCC1405M05-042": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-042"
+    },
+    "سکوها؛ مرداد::NCC1405M05-043": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-043"
+    },
+    "سکوها؛ مرداد::NCC1405M05-044": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-044"
+    },
+    "سکوها؛ مرداد::NCC1405M05-045": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-045"
+    },
+    "سکوها؛ مرداد::NCC1405M05-046": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-046"
+    },
+    "سکوها؛ مرداد::NCC1405M05-047": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-047"
+    },
+    "سکوها؛ مرداد::NCC1405M05-048": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-048"
+    },
+    "سکوها؛ مرداد::NCC1405M05-049": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-049"
+    },
+    "سکوها؛ مرداد::NCC1405M05-050": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-050"
+    },
+    "سکوها؛ مرداد::NCC1405M05-051": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-051"
+    },
+    "سکوها؛ مرداد::NCC1405M05-052": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-052"
+    },
+    "سکوها؛ مرداد::NCC1405M05-053": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-053"
+    },
+    "سکوها؛ مرداد::NCC1405M05-054": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-054"
+    },
+    "سکوها؛ مرداد::NCC1405M05-055": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-055"
+    },
+    "سکوها؛ مرداد::NCC1405M05-056": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-056"
+    },
+    "سکوها؛ مرداد::NCC1405M05-057": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-057"
+    },
+    "سکوها؛ مرداد::NCC1405M05-058": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-058"
+    },
+    "سکوها؛ مرداد::NCC1405M05-059": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-059"
+    },
+    "سکوها؛ مرداد::NCC1405M05-060": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-060"
+    },
+    "سکوها؛ مرداد::NCC1405M05-061": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-061"
+    },
+    "سکوها؛ مرداد::NCC1405M05-062": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-062"
+    },
+    "سکوها؛ مرداد::NCC1405M05-063": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-063"
+    },
+    "سکوها؛ مرداد::NCC1405M05-064": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-064"
+    },
+    "سکوها؛ مرداد::NCC1405M05-065": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-065"
+    },
+    "سکوها؛ مرداد::NCC1405M05-066": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-066"
+    },
+    "سکوها؛ مرداد::NCC1405M05-067": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ مرداد",
+      "record_id": "NCC1405M05-067"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-001": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-001"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-002": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-002"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-003": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-003"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-004": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-004"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-005": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-005"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-006": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-006"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-007": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-007"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-008": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-008"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-009": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-009"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-010": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-010"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-011": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-011"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-012": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-012"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-013": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-013"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-014": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-014"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-015": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-015"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-016": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-016"
+    },
+    "سکوها؛ نقل تکمیلی::NCC1405H1-ANA-017": {
+      "domain": "base",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سکوها؛ نقل تکمیلی",
+      "record_id": "NCC1405H1-ANA-017"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q1-FTTx": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q1-FTTx"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q1-XDSL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q1-XDSL"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q1-TDLTE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q1-TDLTE"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q1-WiFi": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q1-WiFi"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q1-reported_total": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q1-reported_total"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q2-FTTx": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q2-FTTx"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q2-XDSL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q2-XDSL"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q2-TDLTE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q2-TDLTE"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q2-WiFi": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q2-WiFi"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q2-reported_total": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q2-reported_total"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q3-FTTx": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q3-FTTx"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q3-XDSL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q3-XDSL"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q3-TDLTE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q3-TDLTE"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q3-WiFi": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q3-WiFi"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q3-reported_total": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q3-reported_total"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q4-FTTx": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q4-FTTx"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q4-XDSL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q4-XDSL"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q4-TDLTE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q4-TDLTE"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q4-WiFi": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q4-WiFi"
+    },
+    "ثابت؛ قرارداد جاری::1404-Q4-reported_total": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1404-Q4-reported_total"
+    },
+    "ثابت؛ قرارداد جاری::1405-Q1-FTTx": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1405-Q1-FTTx"
+    },
+    "ثابت؛ قرارداد جاری::1405-Q1-XDSL": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1405-Q1-XDSL"
+    },
+    "ثابت؛ قرارداد جاری::1405-Q1-TDLTE": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1405-Q1-TDLTE"
+    },
+    "ثابت؛ قرارداد جاری::1405-Q1-WiFi": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1405-Q1-WiFi"
+    },
+    "ثابت؛ قرارداد جاری::1405-Q1-reported_total": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "ثابت؛ قرارداد جاری",
+      "record_id": "1405-Q1-reported_total"
+    },
+    "سیار؛ قرارداد جاری::active_5g_sites-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سیار؛ قرارداد جاری",
+      "record_id": "active_5g_sites-همراه اول"
+    },
+    "سیار؛ قرارداد جاری::active_5g_sites-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سیار؛ قرارداد جاری",
+      "record_id": "active_5g_sites-ایرانسل"
+    },
+    "سیار؛ قرارداد جاری::active_5g_sites-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سیار؛ قرارداد جاری",
+      "record_id": "active_5g_sites-رایتل"
+    },
+    "سیار؛ قرارداد جاری::population_4g_coverage-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سیار؛ قرارداد جاری",
+      "record_id": "population_4g_coverage-همراه اول"
+    },
+    "سیار؛ قرارداد جاری::population_4g_coverage-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سیار؛ قرارداد جاری",
+      "record_id": "population_4g_coverage-ایرانسل"
+    },
+    "سیار؛ قرارداد جاری::population_4g_coverage-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "سیار؛ قرارداد جاری",
+      "record_id": "population_4g_coverage-رایتل"
+    },
+    "کیفیت اتصال::access_success-همراه اول-3G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "access_success-همراه اول-3G"
+    },
+    "کیفیت اتصال::access_success-همراه اول-4G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "access_success-همراه اول-4G"
+    },
+    "کیفیت اتصال::access_success-ایرانسل-3G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "access_success-ایرانسل-3G"
+    },
+    "کیفیت اتصال::access_success-ایرانسل-4G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "access_success-ایرانسل-4G"
+    },
+    "کیفیت اتصال::access_success-رایتل-3G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "access_success-رایتل-3G"
+    },
+    "کیفیت اتصال::access_success-رایتل-4G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "access_success-رایتل-4G"
+    },
+    "کیفیت اتصال::drop_rate-همراه اول-3G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "drop_rate-همراه اول-3G"
+    },
+    "کیفیت اتصال::drop_rate-همراه اول-4G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "drop_rate-همراه اول-4G"
+    },
+    "کیفیت اتصال::drop_rate-ایرانسل-3G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "drop_rate-ایرانسل-3G"
+    },
+    "کیفیت اتصال::drop_rate-ایرانسل-4G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "drop_rate-ایرانسل-4G"
+    },
+    "کیفیت اتصال::drop_rate-رایتل-3G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "drop_rate-رایتل-3G"
+    },
+    "کیفیت اتصال::drop_rate-رایتل-4G": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "کیفیت اتصال",
+      "record_id": "drop_rate-رایتل-4G"
+    },
+    "RTT و Jitter::rtt-fixed-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "RTT و Jitter",
+      "record_id": "rtt-fixed-domestic"
+    },
+    "RTT و Jitter::rtt-fixed-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "RTT و Jitter",
+      "record_id": "rtt-fixed-international"
+    },
+    "RTT و Jitter::rtt-mobile-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "RTT و Jitter",
+      "record_id": "rtt-mobile-domestic"
+    },
+    "RTT و Jitter::rtt-mobile-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "RTT و Jitter",
+      "record_id": "rtt-mobile-international"
+    },
+    "RTT و Jitter::jitter-fixed-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "RTT و Jitter",
+      "record_id": "jitter-fixed-domestic"
+    },
+    "RTT و Jitter::jitter-fixed-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "RTT و Jitter",
+      "record_id": "jitter-fixed-international"
+    },
+    "RTT و Jitter::jitter-mobile-domestic": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "RTT و Jitter",
+      "record_id": "jitter-mobile-domestic"
+    },
+    "RTT و Jitter::jitter-mobile-international": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "RTT و Jitter",
+      "record_id": "jitter-mobile-international"
+    },
+    "تاریخچه سیار::1399-Q2-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1399-Q2-ایرانسل"
+    },
+    "تاریخچه سیار::1399-Q2-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1399-Q2-رایتل"
+    },
+    "تاریخچه سیار::1399-Q2-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1399-Q2-همراه اول"
+    },
+    "تاریخچه سیار::1399-Q3-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1399-Q3-ایرانسل"
+    },
+    "تاریخچه سیار::1399-Q3-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1399-Q3-رایتل"
+    },
+    "تاریخچه سیار::1399-Q3-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1399-Q3-همراه اول"
+    },
+    "تاریخچه سیار::1399-Q4-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1399-Q4-ایرانسل"
+    },
+    "تاریخچه سیار::1399-Q4-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1399-Q4-رایتل"
+    },
+    "تاریخچه سیار::1399-Q4-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1399-Q4-همراه اول"
+    },
+    "تاریخچه سیار::1400-Q1-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q1-ایرانسل"
+    },
+    "تاریخچه سیار::1400-Q1-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q1-رایتل"
+    },
+    "تاریخچه سیار::1400-Q1-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q1-همراه اول"
+    },
+    "تاریخچه سیار::1400-Q2-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q2-ایرانسل"
+    },
+    "تاریخچه سیار::1400-Q2-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q2-رایتل"
+    },
+    "تاریخچه سیار::1400-Q2-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q2-همراه اول"
+    },
+    "تاریخچه سیار::1400-Q3-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q3-ایرانسل"
+    },
+    "تاریخچه سیار::1400-Q3-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q3-رایتل"
+    },
+    "تاریخچه سیار::1400-Q3-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q3-همراه اول"
+    },
+    "تاریخچه سیار::1400-Q4-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q4-ایرانسل"
+    },
+    "تاریخچه سیار::1400-Q4-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q4-رایتل"
+    },
+    "تاریخچه سیار::1400-Q4-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1400-Q4-همراه اول"
+    },
+    "تاریخچه سیار::1401-Q1-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q1-ایرانسل"
+    },
+    "تاریخچه سیار::1401-Q1-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q1-رایتل"
+    },
+    "تاریخچه سیار::1401-Q1-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q1-همراه اول"
+    },
+    "تاریخچه سیار::1401-Q2-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q2-ایرانسل"
+    },
+    "تاریخچه سیار::1401-Q2-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q2-رایتل"
+    },
+    "تاریخچه سیار::1401-Q2-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q2-همراه اول"
+    },
+    "تاریخچه سیار::1401-Q3-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q3-ایرانسل"
+    },
+    "تاریخچه سیار::1401-Q3-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q3-رایتل"
+    },
+    "تاریخچه سیار::1401-Q3-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q3-همراه اول"
+    },
+    "تاریخچه سیار::1401-Q4-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q4-ایرانسل"
+    },
+    "تاریخچه سیار::1401-Q4-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q4-رایتل"
+    },
+    "تاریخچه سیار::1401-Q4-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1401-Q4-همراه اول"
+    },
+    "تاریخچه سیار::1402-Q1-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q1-ایرانسل"
+    },
+    "تاریخچه سیار::1402-Q1-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q1-رایتل"
+    },
+    "تاریخچه سیار::1402-Q1-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q1-همراه اول"
+    },
+    "تاریخچه سیار::1402-Q2-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q2-ایرانسل"
+    },
+    "تاریخچه سیار::1402-Q2-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q2-رایتل"
+    },
+    "تاریخچه سیار::1402-Q2-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q2-همراه اول"
+    },
+    "تاریخچه سیار::1402-Q3-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q3-ایرانسل"
+    },
+    "تاریخچه سیار::1402-Q3-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q3-رایتل"
+    },
+    "تاریخچه سیار::1402-Q3-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q3-همراه اول"
+    },
+    "تاریخچه سیار::1402-Q4-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q4-ایرانسل"
+    },
+    "تاریخچه سیار::1402-Q4-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q4-رایتل"
+    },
+    "تاریخچه سیار::1402-Q4-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1402-Q4-همراه اول"
+    },
+    "تاریخچه سیار::1403-Q1-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q1-ایرانسل"
+    },
+    "تاریخچه سیار::1403-Q1-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q1-رایتل"
+    },
+    "تاریخچه سیار::1403-Q1-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q1-همراه اول"
+    },
+    "تاریخچه سیار::1403-Q2-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q2-ایرانسل"
+    },
+    "تاریخچه سیار::1403-Q2-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q2-رایتل"
+    },
+    "تاریخچه سیار::1403-Q2-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q2-همراه اول"
+    },
+    "تاریخچه سیار::1403-Q3-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q3-ایرانسل"
+    },
+    "تاریخچه سیار::1403-Q3-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q3-رایتل"
+    },
+    "تاریخچه سیار::1403-Q3-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q3-همراه اول"
+    },
+    "تاریخچه سیار::1403-Q4-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q4-ایرانسل"
+    },
+    "تاریخچه سیار::1403-Q4-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q4-رایتل"
+    },
+    "تاریخچه سیار::1403-Q4-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1403-Q4-همراه اول"
+    },
+    "تاریخچه سیار::1404-Q1-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q1-ایرانسل"
+    },
+    "تاریخچه سیار::1404-Q1-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q1-رایتل"
+    },
+    "تاریخچه سیار::1404-Q1-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q1-همراه اول"
+    },
+    "تاریخچه سیار::1404-Q2-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q2-ایرانسل"
+    },
+    "تاریخچه سیار::1404-Q2-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q2-رایتل"
+    },
+    "تاریخچه سیار::1404-Q2-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q2-همراه اول"
+    },
+    "تاریخچه سیار::1404-Q3-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q3-ایرانسل"
+    },
+    "تاریخچه سیار::1404-Q3-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q3-رایتل"
+    },
+    "تاریخچه سیار::1404-Q3-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q3-همراه اول"
+    },
+    "تاریخچه سیار::1404-Q4-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q4-ایرانسل"
+    },
+    "تاریخچه سیار::1404-Q4-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q4-رایتل"
+    },
+    "تاریخچه سیار::1404-Q4-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1404-Q4-همراه اول"
+    },
+    "تاریخچه سیار::1405-Q1-ایرانسل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1405-Q1-ایرانسل"
+    },
+    "تاریخچه سیار::1405-Q1-رایتل": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1405-Q1-رایتل"
+    },
+    "تاریخچه سیار::1405-Q1-همراه اول": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "تاریخچه سیار",
+      "record_id": "1405-Q1-همراه اول"
+    },
+    "پیمایش ملت::EV-P01-002": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "پیمایش ملت",
+      "record_id": "EV-P01-002"
+    },
+    "پیمایش ملت::EV-P01-003": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "پیمایش ملت",
+      "record_id": "EV-P01-003"
+    },
+    "پیمایش ملت::EV-P01-004": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "پیمایش ملت",
+      "record_id": "EV-P01-004"
+    },
+    "پیمایش ملت::EV-P01-005": {
+      "domain": "people",
+      "status": "MAPPED",
+      "rule": "SOURCE_CONTRACT_OWNER",
+      "source_section": "پیمایش ملت",
+      "record_id": "EV-P01-005"
+    },
+    "پژوهش ساختاریافته · t08::T08-HW-001": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t08",
+      "record_id": "T08-HW-001"
+    },
+    "پژوهش ساختاریافته · t08::T08-HW-002": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t08",
+      "record_id": "T08-HW-002"
+    },
+    "پژوهش ساختاریافته · t08::T08-HW-003": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t08",
+      "record_id": "T08-HW-003"
+    },
+    "پژوهش ساختاریافته · t08::T08-IR-001": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t08",
+      "record_id": "T08-IR-001"
+    },
+    "پژوهش ساختاریافته · t08::T08-IR-002": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t08",
+      "record_id": "T08-IR-002"
+    },
+    "پژوهش ساختاریافته · t08::T08-IR-003": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t08",
+      "record_id": "T08-IR-003"
+    },
+    "پژوهش ساختاریافته · t08::T08-IR-004": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t08",
+      "record_id": "T08-IR-004"
+    },
+    "پژوهش ساختاریافته · t08::T08-IR-005": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t08",
+      "record_id": "T08-IR-005"
+    },
+    "پژوهش ساختاریافته · t08::T08-AS-PAYAM-001": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t08",
+      "record_id": "T08-AS-PAYAM-001"
+    },
+    "پژوهش ساختاریافته · t08::T08-AS-MIR-001": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t08",
+      "record_id": "T08-AS-MIR-001"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-001": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-001"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-002": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-002"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-003": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-003"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-004": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-004"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-005": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-005"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-006": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-006"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-007": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-007"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-008": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-008"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-009": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-009"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-010": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-010"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-011": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-011"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-012": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-012"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-013": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-013"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-014": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-014"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-015": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-015"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-016": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-016"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-017": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-017"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-018": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-018"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-019": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-019"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-020": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-020"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-021": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-021"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-022": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-022"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-023": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-023"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-PRICE-024": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-PRICE-024"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-server": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-server"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-cdn": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-cdn"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-dns": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-dns"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-storage": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-storage"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-container": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-container"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-database": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-database"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-aiaas": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-aiaas"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-edge": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-edge"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-logs": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-logs"
+    },
+    "پژوهش ساختاریافته · t09::ARVAN-vpc": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "ARVAN-vpc"
+    },
+    "پژوهش ساختاریافته · t09::HAMRAVESH-1": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "HAMRAVESH-1"
+    },
+    "پژوهش ساختاریافته · t09::HAMRAVESH-2": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "HAMRAVESH-2"
+    },
+    "پژوهش ساختاریافته · t09::HAMRAVESH-3": {
+      "domain": "information",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t09",
+      "record_id": "HAMRAVESH-3"
+    },
+    "پژوهش ساختاریافته · t06::T06-M01": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t06",
+      "record_id": "T06-M01"
+    },
+    "پژوهش ساختاریافته · t06::T06-M02": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t06",
+      "record_id": "T06-M02"
+    },
+    "پژوهش ساختاریافته · t06::T06-M03": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t06",
+      "record_id": "T06-M03"
+    },
+    "پژوهش ساختاریافته · t06::T06-M04": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t06",
+      "record_id": "T06-M04"
+    },
+    "پژوهش ساختاریافته · t06::T06-M05": {
+      "domain": "communications",
+      "status": "MAPPED",
+      "rule": "STRUCTURED_PACKAGE_OWNER",
+      "source_section": "پژوهش ساختاریافته · t06",
+      "record_id": "T06-M05"
+    }
+  }
+}

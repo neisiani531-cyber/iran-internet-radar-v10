@@ -619,63 +619,63 @@
     {
       "id": "CRA57-VOICE-MCI",
       "panel": "share-VOICE",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "درصد",
       "value": 67
     },
     {
       "id": "CRA57-VOICE-MTN",
       "panel": "share-VOICE",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "درصد",
       "value": 31
     },
     {
       "id": "CRA57-VOICE-RIGHTEL",
       "panel": "share-VOICE",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "درصد",
       "value": 2
     },
     {
       "id": "CRA57-SMS-MCI",
       "panel": "share-SMS",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "درصد",
       "value": 60
     },
     {
       "id": "CRA57-SMS-MTN",
       "panel": "share-SMS",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "درصد",
       "value": 34
     },
     {
       "id": "CRA57-SMS-RIGHTEL",
       "panel": "share-SMS",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "درصد",
       "value": 6
     },
     {
       "id": "CRA57-M2M-MCI",
       "panel": "share-M2M",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "درصد",
       "value": 71.51
     },
     {
       "id": "CRA57-M2M-MTN",
       "panel": "share-M2M",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "درصد",
       "value": 28.29
     },
     {
       "id": "CRA57-M2M-RIGHTEL",
       "panel": "share-M2M",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "درصد",
       "value": 0.2
     },
@@ -780,28 +780,28 @@
     {
       "id": "CRA57-VOICE-TOTAL",
       "panel": "CRA57-VOICE-TOTAL",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "دقیقه",
       "value": 100602179092
     },
     {
       "id": "CRA57-VOICE-AVG",
       "panel": "CRA57-VOICE-AVG",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "دقیقه",
       "value": 192.33
     },
     {
       "id": "CRA57-SMS-TOTAL",
       "panel": "CRA57-SMS-TOTAL",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "پیامک",
       "value": 86146632239
     },
     {
       "id": "CRA57-SMS-AVG",
       "panel": "CRA57-SMS-AVG",
-      "domain": "applications",
+      "domain": "communications",
       "unit": "پیامک",
       "value": 164.7
     },
@@ -1104,21 +1104,21 @@
     {
       "id": "share-VOICE",
       "title": "سهم ترافیک مکالمه",
-      "domain": "applications",
+      "domain": "communications",
       "count": 3,
       "chart": true
     },
     {
       "id": "share-SMS",
       "title": "سهم پیامک",
-      "domain": "applications",
+      "domain": "communications",
       "count": 3,
       "chart": true
     },
     {
       "id": "share-M2M",
       "title": "سهم اتصالات M2M",
-      "domain": "applications",
+      "domain": "communications",
       "count": 3,
       "chart": true
     },
@@ -1195,28 +1195,28 @@
     {
       "id": "CRA57-VOICE-TOTAL",
       "title": "مجموع دقیقه مکالمه شبکه سیار",
-      "domain": "applications",
+      "domain": "communications",
       "count": 1,
       "chart": false
     },
     {
       "id": "CRA57-VOICE-AVG",
       "title": "متوسط مکالمه ماهانه به ازای کاربر",
-      "domain": "applications",
+      "domain": "communications",
       "count": 1,
       "chart": false
     },
     {
       "id": "CRA57-SMS-TOTAL",
       "title": "مجموع پیامک شبکه سیار",
-      "domain": "applications",
+      "domain": "communications",
       "count": 1,
       "chart": false
     },
     {
       "id": "CRA57-SMS-AVG",
       "title": "متوسط پیامک ماهانه به ازای کاربر",
-      "domain": "applications",
+      "domain": "communications",
       "count": 1,
       "chart": false
     },

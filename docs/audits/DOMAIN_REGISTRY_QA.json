@@ -1,0 +1,20 @@
+{
+  "records": 821,
+  "unassigned": 0,
+  "technical_contract_rows_corrected": 123,
+  "by_domain": {
+    "communications": 413,
+    "people": 61,
+    "applications": 22,
+    "security": 53,
+    "governance": 19,
+    "base": 203,
+    "information": 50
+  },
+  "checks": {
+    "no_default_governance": true,
+    "all_123_technical_rows_communications": true,
+    "all_keys_unique": true,
+    "all_source_rows_retained": true
+  }
+}

@@ -1,19 +1,20 @@
-import React,{useMemo,useState} from 'react';
+import React,{useMemo} from 'react';
+import {useStoredControl} from './useStoredControl';
 import AnalyticsChart,{ChartDataTable} from './AnalyticsChart';
 import IranProvinceMap from './IranProvinceMap';
 import PanelExpandButton from './PanelExpandButton';
 import data from './command-access-normalized.json';
 const fa=(n:number)=>n.toLocaleString('fa-IR',{maximumFractionDigits:4});
 export default function CommandAccessExplorer(){
- const [mode,setMode]=useState<'province'|'speed'>('province'),[portId,setPortId]=useState('port-7'),[column,setColumn]=useState<number|null>(null),[province,setProvince]=useState<string|null>(null),[speedId,setSpeedId]=useState('speed-6'),[company,setCompany]=useState(-1),[shape,setShape]=useState<'bar'|'donut'>('bar');
- const port=data.ports.find(t=>t.id===portId)!;const defaultColumn=port.columns.findIndex(c=>c.active&&c.aggregate);const ci=column!==null&&column<port.columns.length?column:Math.max(0,defaultColumn);const field=port.columns[ci];
+ const [mode,setMode]=useStoredControl<'province'|'speed'>('access-mode','province'),[portId,setPortId]=useStoredControl<string>('access-port','port-7'),[column,setColumn]=useStoredControl<number|null>('access-column',null),[province,setProvince]=useStoredControl<string|null>('access-province',null),[speedId,setSpeedId]=useStoredControl<string>('access-speed','speed-6'),[company,setCompany]=useStoredControl<number>('access-company',-1),[shape,setShape]=useStoredControl<'bar'|'donut'>('access-shape','bar');
+ const port=data.ports.find(t=>t.id===portId)??data.ports[7];const defaultColumn=port.columns.findIndex(c=>c.active&&c.aggregate);const ci=column!==null&&column<port.columns.length?column:Math.max(0,defaultColumn);const field=port.columns[ci];
  const unit=field.metric.includes('منصوبه')?'پورت منصوبه':'تعداد گزارش‌شده';
  const values=port.rows.map(r=>({name:r.province,id:r.iso,value:r.values[ci],row:r.row}));
  const numeric=values.filter(x=>typeof x.value==='number') as {name:string;id:string;value:number;row:number}[];
  const mapValues=useMemo(()=>Object.fromEntries(values.map(r=>[r.id,r.value])),[portId,ci]);
  const selected=values.find(r=>r.id===province);const total=port.total?.values[ci];const sum=numeric.reduce((n,r)=>n+r.value,0);const delta=numeric.length===31&&typeof total==='number'?sum-total:null;
  const top=[...numeric].sort((a,b)=>b.value-a.value).slice(0,10);
- const speed=data.speed.find(t=>t.id===speedId)!;const sr=company<0?speed.total:speed.rows[company];const bands=speed.bands.map(b=>sr?.values[b.total_index]??null);const complete=bands.every(v=>typeof v==='number');const reported=sr?.values[23];const bandSum=complete?bands.reduce<number>((s,v)=>s+Number(v),0):null;
+ const speed=data.speed.find(t=>t.id===speedId)??data.speed[6];const sr=company<0?speed.total:speed.rows[company];const bands=speed.bands.map(b=>sr?.values[b.total_index]??null);const complete=bands.every(v=>typeof v==='number');const reported=sr?.values[23];const bandSum=complete?bands.reduce<number>((s,v)=>s+Number(v),0):null;
  const speedChart={series:shape==='donut'?bands.map(v=>[Number(v)]):[bands.map(v=>Number(v))],labels:shape==='donut'?speed.bands.map(b=>b.label):['مشترک ثبت‌شده'],categories:shape==='donut'?[sr?.company||'جمع گزارش‌شده']:speed.bands.map(b=>b.label),unit:'اشتراک در باند سرعت سرویس'};
  const companies=[...speed.rows].filter(r=>typeof r.values[23]==='number').sort((a,b)=>Number(b.values[23])-Number(a.values[23])).slice(0,12);
  return <section className="ca-root" id="ca-access"><header className="ca-title"><div><span className="nc-kicker">ACCESS INTELLIGENCE / SHAHRIVAR 1405</span><h2>کاوشگر استانی و باند سرعت سرویس</h2><p>استان، شرکت و فناوری را انتخاب کنید؛ منبع و محاسبات همراه انتخاب تغییر می‌کنند.</p></div><div className="cw-modes"><button onClick={()=>{const current=mode==='province'?{file:port.file,sheet:port.sheet,period:port.period,field,values,total,delta}:{file:speed.file,sheet:speed.sheet,period:speed.period,company:sr,bands:speed.bands,issues:speed.issues};const u=URL.createObjectURL(new Blob([JSON.stringify(current,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download='radar-access-selection.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}}>دریافت داده انتخاب ↓</button><button aria-pressed={mode==='province'} onClick={()=>setMode('province')}>پورت و اشتراک استانی</button><button aria-pressed={mode==='speed'} onClick={()=>setMode('speed')}>توزیع سرعت سرویس</button></div></header>

@@ -1,0 +1,7 @@
+{
+  "route_round_trip_cases": 189,
+  "invalid_route_fallback": true,
+  "unknown_record_not_governance": true,
+  "technical_rows_corrected": 123,
+  "source_keys_registered": 821
+}

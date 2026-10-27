@@ -9,7 +9,7 @@
     "preview": "vite preview --host 0.0.0.0",
     "data:v917": "node scripts/extract-v917-official.mjs",
     "test:migration": "node scripts/extract-v917-official.mjs && node scripts/verify-v917-migration.mjs",
-    "build:offline": "tsc --noEmit && vite build --outDir build-r4 --emptyOutDir && python scripts/package-national-command.py"
+    "build:offline": "tsc --noEmit && vite build --outDir build-r5 --emptyOutDir && python scripts/package-national-command.py"
   },
   "dependencies": {
     "react": "^18.3.1",
