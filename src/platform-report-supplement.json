@@ -1,0 +1,282 @@
+{
+  "sources": [
+    {
+      "id": "ANA1092432",
+      "title": "آنا · گزارش نشست ارزیابی سکوها، ۴ آبان ۱۴۰۵",
+      "url": "https://ana.ir/fa/news/1092432/",
+      "accessed": "2026-10-27",
+      "scope": "نقل سخنان رئیس مرکز پایش؛ تأیید مستقل روش اندازه‌گیری نیست"
+    },
+    {
+      "id": "YJC9142400",
+      "title": "باشگاه خبرنگاران جوان · گزارش همان نشست",
+      "url": "https://www.yjc.ir/fa/amp/news/9142400",
+      "accessed": "2026-10-27",
+      "scope": "فقط برای ثبت اختلاف نقل؛ جایگزین داده مرجع نمی‌شود"
+    }
+  ],
+  "records": [
+    {
+      "id": "NCC1405H1-ANA-001",
+      "platform": "RUBIKA",
+      "topic": "سیاسی–امنیتی",
+      "metric": "سهم محتوا",
+      "value": 52,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": true
+    },
+    {
+      "id": "NCC1405H1-ANA-002",
+      "platform": "RUBIKA",
+      "topic": "سیاسی–امنیتی",
+      "metric": "سهم بازدید",
+      "value": 50,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": true
+    },
+    {
+      "id": "NCC1405H1-ANA-003",
+      "platform": "RUBIKA",
+      "topic": "سرگرمی",
+      "metric": "سهم محتوا",
+      "value": 16.7,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-004",
+      "platform": "RUBIKA",
+      "topic": "سرگرمی",
+      "metric": "سهم بازدید",
+      "value": 15.7,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-005",
+      "platform": "RUBIKA",
+      "topic": "اقتصادی",
+      "metric": "سهم محتوا",
+      "value": 15.6,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-006",
+      "platform": "RUBIKA",
+      "topic": "اقتصادی",
+      "metric": "سهم بازدید",
+      "value": 18.1,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-007",
+      "platform": "VIRASTY",
+      "topic": "سیاسی",
+      "metric": "سهم محتوا",
+      "value": 42.7,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-008",
+      "platform": "VIRASTY",
+      "topic": "سیاسی",
+      "metric": "سهم ضریب نفوذ",
+      "value": 44.7,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-009",
+      "platform": "VIRASTY",
+      "topic": "دینی–انقلابی",
+      "metric": "سهم محتوا",
+      "value": 23.7,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-010",
+      "platform": "VIRASTY",
+      "topic": "دینی–انقلابی",
+      "metric": "سهم ضریب نفوذ",
+      "value": 27.6,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-011",
+      "platform": "VIRASTY",
+      "topic": "اجتماعی–فرهنگی",
+      "metric": "سهم محتوا",
+      "value": 9.6,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-012",
+      "platform": "VIRASTY",
+      "topic": "اجتماعی–فرهنگی",
+      "metric": "سهم ضریب نفوذ",
+      "value": 8.1,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-013",
+      "platform": "BALE",
+      "topic": "اقتصاد و معیشت",
+      "metric": "سهم محتوا",
+      "value": 19.4,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-014",
+      "platform": "BALE",
+      "topic": "اقتصاد و معیشت",
+      "metric": "سهم بازدید",
+      "value": 21.5,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-015",
+      "platform": "EITAA",
+      "topic": "اجتماعی و سبک زندگی",
+      "metric": "سهم محتوا",
+      "value": 23.5,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-016",
+      "platform": "EITAA",
+      "topic": "اجتماعی و سبک زندگی",
+      "metric": "سهم بازدید",
+      "value": 28.2,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": false
+    },
+    {
+      "id": "NCC1405H1-ANA-017",
+      "platform": "BALE",
+      "topic": "سیاسی، امنیتی و سیاست خارجی",
+      "metric": "سهم محتوا",
+      "value": 48.3,
+      "unit": "درصد",
+      "period": "نیمه نخست ۱۴۰۵؛ دوره دقیق زیرشاخص در خبر تفکیک نشده",
+      "source": "ANA1092432",
+      "status": "CONFERENCE_REPORT_PENDING_PRIMARY",
+      "approx": true
+    }
+  ],
+  "discrepancies": [
+    {
+      "id": "BALE-ACTIVE",
+      "label": "کانال / صفحه فعال بله",
+      "claims": [
+        {
+          "source": "Borna2406958",
+          "value": 216.2,
+          "unit": "هزار کانال"
+        },
+        {
+          "source": "YJC9142400",
+          "value": 26,
+          "unit": "هزار صفحه"
+        }
+      ],
+      "resolution": "اختلاف مقدار و عنوان واحد؛ هیچ‌کدام به‌عنوان تصحیح قطعی دیگری پذیرفته نشده است."
+    },
+    {
+      "id": "RUBIKA-POLITICAL",
+      "label": "سهم محتوای سیاسی–امنیتی روبیکا",
+      "claims": [
+        {
+          "source": "ANA1092432",
+          "value": 52,
+          "unit": "درصد؛ حدود"
+        },
+        {
+          "source": "YJC9142400",
+          "value": 53,
+          "unit": "درصد؛ نزدیک"
+        }
+      ],
+      "resolution": "نقل‌های تقریبی متفاوت؛ با داده دقیق تصویری تطبیق نشده‌اند."
+    },
+    {
+      "id": "SOROUSH-VIEWS",
+      "label": "میانگین بازدید هر محتوا در سروش‌پلاس",
+      "claims": [
+        {
+          "source": "Borna2406958",
+          "value": 605,
+          "unit": "بازدید / محتوا"
+        },
+        {
+          "source": "ANA1092432",
+          "value": 65,
+          "unit": "بازدید / محتوا"
+        },
+        {
+          "source": "YJC9142400",
+          "value": 65,
+          "unit": "بازدید / محتوا"
+        }
+      ],
+      "resolution": "تقسیم اعداد گرد‌شدهٔ ۱۴٫۱ میلیارد و ۲۳٫۳ میلیون حدود ۶۰۵٫۱۵ است؛ این محاسبه منشأ خطا را اثبات نمی‌کند."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+name: Radar V10 browser visual smoke
+on:
+  push:
+    branches: [integration/radar-v10-20261017]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "scripts/**"
+      - "package*.json"
+      - "vite.config.*"
+      - ".github/workflows/browser-visual.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Install isolated browser tester
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install chromium --with-deps
+      - name: Start static preview
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/radar-preview.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4173/iran-internet-radar-v10/ -o /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/radar-preview.log
+          exit 1
+      - name: Capture actual browser screenshots
+        run: node scripts/visual-smoke.mjs
+      - name: Upload visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-visual-review
+          path: visual-review/
+          if-no-files-found: warn
+          retention-days: 7

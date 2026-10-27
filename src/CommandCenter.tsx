@@ -1,3 +1,5 @@
+import OfficialIntelligence from './OfficialIntelligence';
+import RegulatoryPulse from './RegulatoryPulse';
 import React, {useState} from 'react';
 import fixed from '../packages/contracts/public-fixed-access.snapshot.json';
 import mobile from '../packages/contracts/public-mobile-operators.snapshot.json';
@@ -40,7 +42,7 @@ function Trend({technology}:{technology:Tech}){
 function MetricTile({eyebrow,value,note,trend,icon}:{eyebrow:string,value:string,note:string,trend?:number,icon:string}){
  return <article className="cc-metric"><div className="cc-metric-top"><span className="cc-metric-symbol">{icon}</span><span className="cc-muted">{eyebrow}</span></div><strong>{value}</strong><div className="cc-metric-bottom"><span>{note}</span>{trend!==undefined&&<b className={trend>=0?'cc-up':'cc-down'}>{trend>=0?'+':''}{nf(trend)}٪</b>}</div></article>
 }
-export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mobile'|'qos'|'research'|'catalog'|'studio'|'researchlab'|'evidence'|'reach'|'services')=>void}){
+export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mobile'|'qos'|'research'|'catalog'|'studio'|'researchlab'|'evidence'|'reach'|'services',evidenceId?:string)=>void}){
  const [selectedFinding,setSelectedFinding]=useState<string>(surveyPreview.observations[0].evidence_id);
  const [tech,setTech]=useState<Tech>('FTTx');
  const [mobileMetric,setMobileMetric]=useState<Metric>('active_5g_sites');
@@ -89,6 +91,8 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
    </div>
    <p className="cc-micro">دسترسی به داده به معنی تأیید علمی نهایی نیست. روابط علّی، مقادیر مفقود و دوره‌های ناهمسان بدون سند معتبر قطعی معرفی نمی‌شوند.</p>
   </section>
+  <RegulatoryPulse onNavigate={onNavigate}/>
+  <OfficialIntelligence onNavigate={onNavigate}/>
   <div className="cc-section-name"><span>نمای کلان ملی</span><div className="cc-toolbar"><label>دوره اینترنت ثابت <select value={periodIndex} onChange={e=>setPeriodIndex(Number(e.target.value))}>{metricRows.map((r,i)=><option key={r.period} value={i}>{r.period_label}</option>)}</select></label><button onClick={exportCsv} className="cc-text-button">دریافت CSV پنج‌فصلی ↓</button><button onClick={printReport} className="cc-text-button">چاپ گزارش مدیریتی</button></div></div>
   <section className="cc-metrics">
    <MetricTile icon="◈" eyebrow="اشتراک اینترنت ثابت" value={nf(current.reported_total)} note={periodIndex===0?"دوره مبنا":"تغییر نسبت به فصل قبل"} trend={changeFromPrevious}/>
@@ -107,7 +111,96 @@ export default function CommandCenter({onNavigate}:{onNavigate:(area:'fixed'|'mo
    <div className="cc-finding-detail" aria-live="polite"><div><span className="cc-overline">FINDING / EVIDENCE / INTERPRETATION</span><h3>{activeFinding.title}</h3><p>{activeFinding.description}</p><p>شاهد ثبت‌شده: {findingEvidence?.description||"شرح شاهد موجود نیست"}؛ وضعیت بررسی: {findingEvidence?.verification_status||"نامشخص"}</p></div><div><strong>ردیابی علمی</strong><p>منبع: {findingEvidence?.source_id||"نامشخص"} · شناسه شاهد: {selectedFinding}</p><p>ادعای مرتبط: {findingClaims.length?findingClaims.map(x=>x.claim_id).join("، "):"در قرارداد عمومی ثبت نشده"}</p><p>محدودیت: این نتیجه پیمایشی، سهم علّی نارضایتی یا سنجش مستقیم کیفیت شبکه نیست. گیت Q5 هنوز تأیید نشده است.</p><button className="cc-text-button" onClick={()=>onNavigate("research")}>بررسی فرضیه‌ها و سازوکارهای S01 ←</button></div></div>
    <div className="cc-intelligence-bottom"><div><strong>شواهد تاریخی آماده بررسی</strong><p>{nf(historicalPreview.observations.filter(x=>x.display_status==='RESEARCH_PREVIEW_NOT_Q5').length)} مشاهده از حوزه‌های کیفیت، پوشش، دسترسی و استطاعت پرداخت؛ هر مشاهده فقط با تعریف، دوره و منبع خودش قابل تفسیر است.</p></div><div><strong>کنترل انتشار</strong><p>{nf(historicalPreview.observations.filter(x=>x.display_status==='BLOCKED_FINANCIAL_ORIGINAL_MISSING').length)} رکورد مالی فاقد سند اصلی از نمایش عددی مسدود است. هیچ شاهدی مجوز Q5 ندارد.</p></div></div>
   </section>
-  <section className="cc-surface cc-decision-bridge"><div className="cc-panel-header"><div><span className="cc-overline">S01 → S02 / DECISION SUPPORT</span><h2>از تشخیص مسئله تا تصمیم قابل ارزیابی</h2><p>شش سازوکار پژوهشی، پیوند شواهد و اقدامات پیشنهادی. مقایسه ناهم‌دوره و نتیجه‌گیری علّی مجاز نیست.</p></div></div><div className="cc-decision-grid">{decisionBridge.records.map(d=><article key={d.mechanism_id} className="cc-decision-card"><div className="cc-decision-top"><strong>{d.title}</strong><small>{d.mechanism_id} · {d.priority}</small></div><p className="cc-decision-evidence">شاهد نگرشی: {d.user_evidence_id||'خلأ شاهد هم‌نمونه'}<br/>شواهد فنی مرتبط: {d.technical_evidence_ids.length?d.technical_evidence_ids.join('، '):'در قرارداد عمومی موجود نیست'}</p><div className="cc-decision-warning"><b>مرز اعتبار</b><p>{d.limitation}</p></div><div className="cc-decision-action"><b>اقدام پیشنهادی S02، نه مصوب</b><p>{d.proposed_action}</p></div><details className="cc-action-brief"><summary>پرونده اجرایی و گیت تصمیم</summary><p><b>پیش‌نیاز:</b> {d.implementation_prerequisite}</p><p><b>شاخص ارزیابی پیشنهادی:</b> {d.evaluation_indicator_definition}</p><p><b>ریسک اصلی:</b> {d.principal_risk}</p><p><b>شرط تصمیم:</b> {d.decision_gate}</p><p><b>۳۰ روز:</b> {d.timeline_30_days}</p><p><b>۹۰ روز:</b> {d.timeline_90_days}</p><p><b>۱۸۰ روز:</b> {d.timeline_180_days}</p><p><b>۳۶۵ روز:</b> {d.timeline_365_days}</p></details><small>متولی قانونی، KPI مبنا و هدف عددی، بودجه و تصویب: تأییدنشده</small></article>)}</div></section>
+  <section className="cc-surface cc-decision-bridge"><div className="cc-panel-header"><div><span className="cc-overline">S01 → S02 / DECISION SUPPORT</span><h2>از تشخیص مسئله تا تصمیم قابل ارزیابی</h2><p>شش سازوکار پژوهشی، پیوند شواهد و اقدامات پیشنهادی. مقایسه ناهم‌دوره و نتیجه‌گیری علّی مجاز نیست.</p></div></div><div className="cc-decision-grid">{decisionBridge.records.map(d=><article key={d.mechanism_id} className="cc-decision-card"><div className="cc-decision-top"><strong>{d.title}</strong><small>{d.mechanism_id} · {d.priority}</small></div><p className="cc-decision-evidence">شاهد نگرشی: {d.user_evidence_id||'خلأ شاهد هم‌نمونه'}<br/>شواهد فنی مرتبط: {d.technical_evidence_ids.length?d.technical_evidence_ids.join('، '):'در قرارداد عمومی موجود نیست'}</p>
+
+<div style={{
+ padding:14,
+ border:'1px solid #385970',
+ borderRadius:12,
+ margin:'12px 0',
+ background:'#102b3b'
+}}>
+ <strong>پرونده شواهد و قابلیت تصمیم</strong>
+ {(() => {
+  const ids = d.technical_evidence_ids;
+  const records = ids.map(id => ({
+   id,
+   evidence: publicEvidence.observations.find(
+    e => e.evidence_id === id
+   )
+  }));
+
+  const missing = records.filter(x => !x.evidence);
+  const matched = records.filter(x => Boolean(x.evidence));
+
+  return <>
+   <p>
+    {nf(matched.length)} شاهد قابل ردیابی از
+    {' '}{nf(ids.length)} ارجاع فنی
+   </p>
+
+   {records.map(x =>
+    <div key={x.id} style={{
+     padding:'12px 0',
+     borderTop:'1px solid #345063'
+    }}>
+     <strong>{x.id}</strong>
+     {x.evidence ? <>
+      <p>{x.evidence.description}</p>
+      <small>
+       پرونده: {x.evidence.dossier_id}
+       {' '} | منبع: {x.evidence.source_id}
+      </small>
+      <p>
+       وضعیت بررسی:
+       {' '}{x.evidence.verification_status}
+      </p>
+      <small>
+       تأیید برای نمایش رسمی:
+       {' '}{x.evidence.official_dashboard_approved
+          ? 'ثبت‌شده'
+          : 'تأیید نشده'}
+      </small>
+     </> : <p>
+      شناسنامه این ارجاع در قرارداد عمومی موجود نیست.
+     </p>}
+    </div>
+   )}
+
+   {ids.length === 0 && <p>
+    شاهد فنی متناظر در قرارداد تصمیم ثبت نشده است.
+    این وضعیت به معنی نبود شاهد در همه منابع پژوهشی نیست.
+   </p>}
+
+   {missing.length > 0 && <p>
+    ارجاع‌های نیازمند تطبیق:
+    {' '}{missing.map(x => x.id).join('، ')}
+   </p>}
+
+   <div style={{
+    marginTop:12,
+    paddingTop:12,
+    borderTop:'1px solid #345063'
+   }}>
+    <p><b>مانع مقایسه:</b> {d.comparability_gate}</p>
+    <p><b>شرط تصمیم:</b> {d.decision_gate}</p>
+    <p><b>شاخص ارزیابی:</b>
+       {' '}{d.evaluation_indicator_definition}</p>
+    <p>
+     وضعیت: پیشنهاد در انتظار ارزیابی؛
+     پذیرش علمی Q5 و تصویب سیاستی احراز نشده‌اند.
+    </p>
+    <button
+     type="button"
+     onClick={() => onNavigate('evidence', d.technical_evidence_ids[0] || d.user_evidence_id || undefined)}
+     className="cc-text-button">
+     ورود به اتاق شواهد ←
+    </button>
+   </div>
+  </>;
+ })()}
+</div>
+<div className="cc-decision-warning"><b>مرز اعتبار</b><p>{d.limitation}</p></div><div className="cc-decision-action"><b>اقدام پیشنهادی S02، نه مصوب</b><p>{d.proposed_action}</p></div><details className="cc-action-brief"><summary>پرونده اجرایی و گیت تصمیم</summary><p><b>پیش‌نیاز:</b> {d.implementation_prerequisite}</p><p><b>شاخص ارزیابی پیشنهادی:</b> {d.evaluation_indicator_definition}</p><p><b>ریسک اصلی:</b> {d.principal_risk}</p><p><b>شرط تصمیم:</b> {d.decision_gate}</p><p><b>۳۰ روز:</b> {d.timeline_30_days}</p><p><b>۹۰ روز:</b> {d.timeline_90_days}</p><p><b>۱۸۰ روز:</b> {d.timeline_180_days}</p><p><b>۳۶۵ روز:</b> {d.timeline_365_days}</p></details><small>متولی قانونی، KPI مبنا و هدف عددی، بودجه و تصویب: تأییدنشده</small></article>)}</div></section>
   <div className="cc-dashboard-grid">
    <section className="cc-surface cc-trends"><div className="cc-panel-header"><div><span className="cc-overline">TECHNOLOGY TRANSITION</span><h2>روند تحول دسترسی ثابت</h2><p>پنج فصل متوالی، با تفکیک فناوری و امکان مقایسه روند</p></div><button className="cc-text-button" onClick={()=>onNavigate('fixed')}>تحلیل کامل ←</button></div>
    <div className="cc-tech-tabs">{technologies.map(t=><button key={t.key} className={t.key===tech?'on':''} onClick={()=>setTech(t.key)}><span style={{background:t.color}}/>{t.title}</button>)}</div>
