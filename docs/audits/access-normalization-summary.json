@@ -1,0 +1,233 @@
+{
+  "validation": {
+    "speed_tables": 12,
+    "port_tables": 14,
+    "speed_rows": 373,
+    "port_province_rows": 434,
+    "fractional_cells": 39,
+    "unmapped_provinces": 0
+  },
+  "raw_only": [
+    {
+      "file": "Port _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "تجمیع",
+      "status": "RAW_ONLY_OVERLAPPING_AGGREGATION"
+    }
+  ],
+  "sources": [
+    {
+      "file": "Speed _ Fcp & Unsp _ 1405.06.xlsx",
+      "sha256": "b144309955a3b8c895b635e6017d8fafd99a64534930f183249035e5aa223580"
+    },
+    {
+      "file": "سرعت 06-1405.xlsx",
+      "sha256": "9f217a9e5fed086a07317dd55ca58c199f160e4cde4e9389927a7a122aa014f3"
+    },
+    {
+      "file": "Port _ Fcp & Unsp _ 1405.06.xlsx",
+      "sha256": "81fdf20f035e80d7a9a9675d27d05918a949219ff53df7f3ae1ea653a312dfbb"
+    },
+    {
+      "file": "پورت 06-1405.xlsx",
+      "sha256": "45d8c0584947d90acf5c597bac8b91b2a8b533a10036ceb01486a03ec5423640"
+    }
+  ],
+  "port_checks": [
+    {
+      "id": "port-0",
+      "file": "Port _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "ADSL",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-1",
+      "file": "Port _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "VDSL",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-2",
+      "file": "Port _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "G.",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-3",
+      "file": "Port _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "XDSL",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-4",
+      "file": "Port _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "WIFI",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-5",
+      "file": "Port _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "TD_LTE",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-6",
+      "file": "Port _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "TELEPHONE",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-7",
+      "file": "Port _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "FTTH",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-8",
+      "file": "پورت 06-1405.xlsx",
+      "sheet": "ADSL Format",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-9",
+      "file": "پورت 06-1405.xlsx",
+      "sheet": "VDSL",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-10",
+      "file": "پورت 06-1405.xlsx",
+      "sheet": "WIFI Format",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-11",
+      "file": "پورت 06-1405.xlsx",
+      "sheet": "TD_LTE Format",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-12",
+      "file": "پورت 06-1405.xlsx",
+      "sheet": "فیبر",
+      "provinces": 31,
+      "deltas": 0
+    },
+    {
+      "id": "port-13",
+      "file": "پورت 06-1405.xlsx",
+      "sheet": "Telephone format",
+      "provinces": 31,
+      "deltas": 0
+    }
+  ],
+  "speed_checks": [
+    {
+      "id": "speed-0",
+      "file": "Speed _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "ADSL",
+      "companies": 22,
+      "issues": 0,
+      "deltas": 0
+    },
+    {
+      "id": "speed-1",
+      "file": "Speed _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "VDSL",
+      "companies": 22,
+      "issues": 0,
+      "deltas": 0
+    },
+    {
+      "id": "speed-2",
+      "file": "Speed _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "G.",
+      "companies": 22,
+      "issues": 0,
+      "deltas": 0
+    },
+    {
+      "id": "speed-3",
+      "file": "Speed _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "XDSL",
+      "companies": 22,
+      "issues": 0,
+      "deltas": 0
+    },
+    {
+      "id": "speed-4",
+      "file": "Speed _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "WIFI",
+      "companies": 22,
+      "issues": 0,
+      "deltas": 0
+    },
+    {
+      "id": "speed-5",
+      "file": "Speed _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "TD_LTE",
+      "companies": 22,
+      "issues": 12,
+      "deltas": 0
+    },
+    {
+      "id": "speed-6",
+      "file": "Speed _ Fcp & Unsp _ 1405.06.xlsx",
+      "sheet": "FTTH",
+      "companies": 22,
+      "issues": 0,
+      "deltas": 0
+    },
+    {
+      "id": "speed-7",
+      "file": "سرعت 06-1405.xlsx",
+      "sheet": "ADSL",
+      "companies": 71,
+      "issues": 0,
+      "deltas": 0
+    },
+    {
+      "id": "speed-8",
+      "file": "سرعت 06-1405.xlsx",
+      "sheet": "VDSL",
+      "companies": 2,
+      "issues": 0,
+      "deltas": 0
+    },
+    {
+      "id": "speed-9",
+      "file": "سرعت 06-1405.xlsx",
+      "sheet": "WIFI",
+      "companies": 71,
+      "issues": 27,
+      "deltas": 0
+    },
+    {
+      "id": "speed-10",
+      "file": "سرعت 06-1405.xlsx",
+      "sheet": "TD_LTE",
+      "companies": 71,
+      "issues": 0,
+      "deltas": 0
+    },
+    {
+      "id": "speed-11",
+      "file": "سرعت 06-1405.xlsx",
+      "sheet": "فیبر",
+      "companies": 4,
+      "issues": 0,
+      "deltas": 0
+    }
+  ]
+}

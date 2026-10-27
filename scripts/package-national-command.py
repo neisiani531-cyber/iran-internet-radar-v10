@@ -1,7 +1,10 @@
 from pathlib import Path
 import re,json
 root=Path(__file__).resolve().parents[1];dist=root/'dist';out=root/'deliverables';out.mkdir(exist_ok=True)
-index=(dist/'index.html').read_text();js=next((dist/'assets').glob('index-*.js')).read_text();css=next((dist/'assets').glob('index-*.css')).read_text()
+index=(dist/'index.html').read_text()
+js_name=Path(re.search(r'<script[^>]+src="([^"]+)"',index).group(1)).name
+css_name=Path(re.search(r'<link[^>]+href="([^"]+\.css)"',index).group(1)).name
+js=(dist/'assets'/js_name).read_text();css=(dist/'assets'/css_name).read_text()
 css=css[css.index(':root'):] if css.startswith('@import') else css
 legacy=(root/'public/legacy/v9-17.html').read_text()
 font=re.search(r'@font-face\{font-family:"RadarPersian";.*?\}',legacy)

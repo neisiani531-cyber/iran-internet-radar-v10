@@ -1,0 +1,11 @@
+{
+  "exact_source_cells_checked": 49819,
+  "province_tables": 14,
+  "province_rows": 434,
+  "speed_tables": 12,
+  "company_rows": 373,
+  "all_provincial_total_checks_clear": true,
+  "fractional_subscriber_cells_held": 39,
+  "sources_not_merged": true,
+  "missing_not_zero": true
+}

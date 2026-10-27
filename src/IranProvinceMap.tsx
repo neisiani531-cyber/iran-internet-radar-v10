@@ -36,7 +36,7 @@ function projectPoint(point:number[],bounds:{minX:number;maxX:number;minY:number
  const dy=(height-(bounds.maxY-bounds.minY)*scale)/2;
  return [dx+(point[0]-bounds.minX)*scale,dy+(bounds.maxY-point[1])*scale];
 }
-export default function IranProvinceMap({layer}:{layer:string}){
+export default function IranProvinceMap({layer,valuesByIso,unit='تعداد',onSelectIso}:{layer:string;valuesByIso?:Record<string,number|null>;unit?:string;onSelectIso?:(id:string)=>void}){
  const [features,setFeatures]=useState<Feature[]|null>(null);
  const [error,setError]=useState('');
  const [selected,setSelected]=useState<Feature|null>(null);
@@ -54,14 +54,19 @@ export default function IranProvinceMap({layer}:{layer:string}){
   const bounds={minX:Math.min(...xs),maxX:Math.max(...xs),minY:Math.min(...ys),maxY:Math.max(...ys)};
   return features.map(f=>({feature:f,path:rings(f).map(poly=>poly.map(r=>r.map((p,i)=>{const [x,y]=projectPoint(p,bounds);return (i?'L':'M')+x.toFixed(2)+','+y.toFixed(2)}).join(' ')+' Z').join(' ')).join(' ')}));
  },[features]);
+ const numeric=Object.values(valuesByIso||{}).filter((v):v is number=>typeof v==='number'&&Number.isFinite(v));
+ const max=Math.max(...numeric,1);
+ const val=(f:Feature)=>valuesByIso?.[getId(f.properties)];
+ const desc=(f:Feature)=>{const v=val(f);return name(f.properties)+'، '+(valuesByIso?(typeof v==='number'?v.toLocaleString('fa-IR')+' '+unit:'داده ثبت نشده'):'داده استانی موجود نیست')};
+ const select=(f:Feature)=>{setSelected(f);onSelectIso?.(getId(f.properties))};
  return <div className="ipm-wrap">
   {!features&&!error&&<div className="ipm-msg" role="status">در حال دریافت نقشه ۳۱ استان…</div>}
   {error&&<div className="ipm-msg" role="alert">{error}</div>}
   {features&&<div className="ipm-inner">
-   <svg viewBox={'0 0 '+width+' '+height} role="img" aria-label="نقشه واقعی مرزهای ۳۱ استان ایران؛ داده شاخص استانی هنوز موجود نیست">
-    {shapes.map(({feature,path})=><path key={getId(feature.properties)} d={path} fill={selected&&getId(selected.properties)===getId(feature.properties)?'#28788b':'#164256'} fillRule="evenodd" stroke="#3f7189" strokeWidth=".6" tabIndex={0} role="button" aria-label={name(feature.properties)+'، داده استانی موجود نیست'} onClick={()=>setSelected(feature)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setSelected(feature)}}}/>)}
+   <svg viewBox={'0 0 '+width+' '+height} role="img" aria-label={valuesByIso?'نقشه ۳۱ استان؛ '+layer:'نقشه واقعی مرزهای ۳۱ استان ایران؛ داده شاخص استانی هنوز موجود نیست'}>
+    {shapes.map(({feature,path})=><path key={getId(feature.properties)} d={path} fill={selected&&getId(selected.properties)===getId(feature.properties)?'#ffc376':valuesByIso?(typeof val(feature)==='number'?'hsl(175 57% '+(18+40*Number(val(feature))/max)+'%)':'#35414a'):'#164256'} fillRule="evenodd" stroke="#3f7189" strokeWidth=".6" tabIndex={0} role="button" aria-label={desc(feature)} onClick={()=>select(feature)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(feature)}}}/>)}
    </svg>
-   <div className="ipm-detail"><b>{selected?name(selected.properties):'۳۱ استان ثبت‌شده'}</b><span>لایه {layer} | داده استانی قابل استناد موجود نیست</span><small>رنگ‌ها صرفاً مرزبندی و انتخاب را نشان می‌دهند، نه عملکرد استان</small></div>
+   <div className="ipm-detail"><b>{selected?name(selected.properties):'۳۱ استان ثبت‌شده'}</b><span>لایه {layer} | {valuesByIso?(selected?desc(selected):numeric.length+' استان دارای مقدار عددی'):'داده استانی قابل استناد موجود نیست'}</span><small>{valuesByIso?'شدت رنگ: مقدار مطلق؛ نه کیفیت یا سرانه':'رنگ‌ها صرفاً مرزبندی و انتخاب را نشان می‌دهند، نه عملکرد استان'}</small></div>
   </div>}
   <div className="ipm-attrib">داده مرزها: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap contributors</a> · ODbL 1.0 · <a href="https://github.com/ssepehrnoush/Iran-geojson-map-boundaries" target="_blank" rel="noreferrer">مخزن منبع</a></div>
  </div>;
