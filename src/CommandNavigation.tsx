@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
 import './CommandNavigation.css';
-type Area='command'|'target'|'fixed'|'mobile'|'research'|'qos'|'social'|'evidence'|'legacy'|'catalog'|'reach'|'services'|'studio'|'researchlab'|'live'|'archive'|'platforms';
+type Area='command'|'target'|'fixed'|'mobile'|'research'|'qos'|'social'|'evidence'|'legacy'|'catalog'|'reach'|'services'|'studio'|'researchlab'|'live'|'archive'|'platforms'|'access';
 const primary:{id:Area;label:string;path:string}[]=[
+ {id:'access',label:'نقشه و تحلیل استانی',path:'M3 5l6-2 6 3 6-2v15l-6 2-6-3-6 2zM9 3v15M15 6v15'},
  {id:'target',label:'مرکز فرماندهی',path:'M3 12a9 9 0 1 0 9-9v9h9M12 12l-5 5M12 3v4M3 12h4'},
  {id:'fixed',label:'ثابت و فیبر',path:'M4 7h16v10H4zM8 7V4m8 3V4M8 20v-3m8 3v-3M7 12h10'},
  {id:'mobile',label:'شبکه سیار',path:'m9 21 3-13 3 13M6 4a9 9 0 0 0 0 13M18 4a9 9 0 0 1 0 13M9 7a5 5 0 0 0 0 7M15 7a5 5 0 0 1 0 7'},
@@ -15,7 +16,7 @@ export default function CommandNavigation({area,onNavigate}:{area:Area;onNavigat
  const [open,setOpen]=useState(false);
  const navigate=(id:Area)=>{onNavigate(id);setOpen(false);window.scrollTo(0,0);};
  return <header className="command-nav" dir="rtl">
-  <button type="button" className="command-brand" onClick={()=>navigate('target')} aria-label="خانه رادار اینترنت ایران"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="4"/><path d="M20 3v17l12 12"/><circle cx="28" cy="12" r="2" className="brand-point"/></svg><span>رادار اینترنت ایران<small>INTERNET OBSERVATORY · V10</small></span></button>
+  <button type="button" className="command-brand" onClick={()=>navigate('target')} aria-label="خانه رادار اینترنت ایران"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="4"/><path d="M20 3v17l12 12"/><circle cx="28" cy="12" r="2" className="brand-point"/></svg><span>رادار اینترنت ایران<small>INTERNET OBSERVATORY · V10 / R4</small></span></button>
   <nav className="command-primary" aria-label="ناوبری اصلی">{primary.map(item=><button key={item.id} type="button" aria-current={area===item.id?'page':undefined} onClick={()=>navigate(item.id)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={item.path}/></svg><span>{item.label}</span></button>)}</nav>
   <div className="command-nav-tools"><button type="button" className="command-more-toggle" aria-expanded={open} aria-controls="command-more" onClick={()=>setOpen(value=>!value)}>همه بخش‌ها <span aria-hidden="true">⌄</span></button><button type="button" className="command-assistant" onClick={()=>document.getElementById('radar-assistant-toggle')?.click()}>✦ <span>دستیار</span></button></div>
   {open&&<nav id="command-more" className="command-more" aria-label="همه بخش‌های رادار" onKeyDown={event=>{if(event.key==='Escape'){setOpen(false);document.querySelector<HTMLButtonElement>('.command-more-toggle')?.focus();}}}>{[...primary,...extra].map(item=><button key={item.id} type="button" aria-current={area===item.id?'page':undefined} onClick={()=>navigate(item.id)}>{item.label}<span aria-hidden="true">↗</span></button>)}</nav>}
