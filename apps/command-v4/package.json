@@ -1,0 +1,19 @@
+{
+  "name": "radar-command-v4",
+  "private": true,
+  "description": "رادار فرماندهی شبکه ملی اطلاعات v4 — single-file offline build + Playwright acceptance tests",
+  "scripts": {
+    "build": "python3 build.py",
+    "test": "node tests/nav.js dist/Radar_NII_Command_v4.html && node tests/assistant.js && node tests/review.js && node tests/nin.js && node tests/v44.js",
+    "test:connected": "node tests/connected.js http://127.0.0.1:8765",
+    "nin": "python3 scripts/nin_extract.py",
+    "bundle": "node tests/export_bundle.js ../../packages/contracts/radar-bundle-v4.json"
+  },
+  "dependencies": {
+    "d3": "7.9.0",
+    "@fontsource/vazirmatn": "5.0.17"
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0"
+  }
+}
