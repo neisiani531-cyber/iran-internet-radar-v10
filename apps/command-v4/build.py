@@ -21,7 +21,7 @@ data = (SRC / 'data3.json').read_text()
 geo = (SRC / 'prov_d3.geojson').read_text()
 nin = (SRC / 'nin.json').read_text()
 # curated cyber-incident register: single source of truth lives with the server (apps/api/app/online/cyber_register.json)
-cyber = (ROOT.parent / 'api' / 'app' / 'online' / 'cyber_register.json').read_text()
+cyber = (ROOT / 'data' / 'cyber_register.json').read_text()
 js = '\n'.join((SRC / f).read_text() for f in JS)
 css = (SRC / 'styles.css').read_text()
 # full Vazirmatn 33.0.3 TTF (npm vazirmatn@33.0.3, SIL OFL) for the report studio's «دریافت فونت» button

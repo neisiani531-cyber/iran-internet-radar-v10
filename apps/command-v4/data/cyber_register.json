@@ -1,0 +1,170 @@
+{
+  "version": "CYBER_REGISTER_V1",
+  "updated": "2026-10-29",
+  "method": "فقط رخدادهایی که در منابع عمومی قابل‌پیگیری گزارش شده‌اند. هر رخداد سطح شاهد جدا دارد: ادعای مهاجم، تأیید قربانی یا مقام رسمی، و تأیید فنی مستقل. انتساب به گروه یا دولت فقط وقتی «تأییدشده» نوشته می‌شود که منبع فنی مستقل آن را گفته باشد؛ در غیر این صورت «ادعا» یا «انتساب» است. این فهرست کامل نیست و نبود رخداد در آن به معنی نبود حمله نیست.",
+  "evidence_levels": {
+    "claimed": "ادعای مهاجم",
+    "victim_confirmed": "تأیید قربانی یا مقام رسمی",
+    "independent": "تحلیل فنی مستقل"
+  },
+  "incidents": [
+    {
+      "id": "CYB-2021-07-RAIL",
+      "date": "2021-07-09",
+      "date_fa": "۱۸ تیر ۱۴۰۰",
+      "title": "حمله به راه‌آهن و وزارت راه و شهرسازی",
+      "target": "راه‌آهن جمهوری اسلامی ایران؛ وزارت راه و شهرسازی (۱۹ تیر)",
+      "sector": "حمل‌ونقل",
+      "effects": "نمایش پیام تأخیر و لغو قطارها روی تابلوهای ایستگاه‌ها؛ از دسترس خارج شدن وب‌سایت‌های وزارتخانه؛ پاک‌سازی برگشت‌ناپذیر دستگاه‌های آلوده",
+      "claimed_by": "ادعای عمومی هم‌زمان ثبت نشده؛ گنجشک درنده بعدها حملات ۲۰۲۱ به ریل را به خود نسبت داد",
+      "attribution": "Check Point با شباهت ابزار و روش، آن را به گروه Indra نسبت داده (استنباط، نه یافته قطعی)",
+      "malware": "Meteor (BreakWin در تحلیل امن‌پرداز)",
+      "evidence": [
+        "independent"
+      ],
+      "sources": [
+        {
+          "title": "Indra — Hackers Behind Recent Attacks on Iran",
+          "publisher": "Check Point Research",
+          "url": "https://research.checkpoint.com/2021/indra-hackers-behind-recent-attacks-on-iran/",
+          "kind": "technical"
+        }
+      ],
+      "keywords": [
+        "راه آهن",
+        "راه‌آهن",
+        "قطار",
+        "وزارت راه",
+        "meteor"
+      ]
+    },
+    {
+      "id": "CYB-2021-10-FUEL",
+      "date": "2021-10-26",
+      "date_fa": "۴ آبان ۱۴۰۰",
+      "title": "اختلال سامانه سوخت و کارت سوخت یارانه‌ای",
+      "target": "سامانه هوشمند سوخت؛ حدود ۴۳۰۰ جایگاه",
+      "sector": "انرژی",
+      "effects": "ناتوانی جایگاه‌ها در پردازش پرداخت و کارت سوخت؛ پیام روی بیلبوردهای دیجیتال؛ ادامه اختلال تا آبان ۱۴۰۰ و سهمیه جبرانی",
+      "claimed_by": "گنجشک درنده (Predatory Sparrow)",
+      "attribution": "مقام‌های ایرانی به «بازیگر دولتی» نسبت دادند؛ انتساب مستقل فنی منتشر نشده",
+      "evidence": [
+        "claimed",
+        "victim_confirmed"
+      ],
+      "confirmation": "رئیس‌جمهور وقت حمله سایبری را تأیید کرد؛ وزارت نفت ابتدا آن را خطای فنی خواند",
+      "sources": [
+        {
+          "title": "2021 Iranian fuel cyberattack",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/2021_Iranian_fuel_cyberattack",
+          "kind": "summary"
+        },
+        {
+          "title": "Iran's president says cyberattack was meant to create disorder at gas pumps",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2021/10/27/1049566231/irans-president-says-cyberattack-was-meant-to-create-disorder-at-gas-pumps",
+          "kind": "news"
+        }
+      ],
+      "keywords": [
+        "سوخت",
+        "بنزین",
+        "جایگاه",
+        "کارت سوخت"
+      ]
+    },
+    {
+      "id": "CYB-2023-12-FUEL",
+      "date": "2023-12-18",
+      "date_fa": "۲۷ آذر ۱۴۰۲",
+      "title": "اختلال گسترده جایگاه‌های سوخت",
+      "target": "شبکه جایگاه‌های سوخت؛ گزارش اختلال در حدود ۷۰٪ جایگاه‌ها",
+      "sector": "انرژی",
+      "effects": "توقف سوخت‌رسانی در بخش بزرگی از جایگاه‌ها؛ وزیر نفت گفت دست‌کم ۳۰٪ جایگاه‌ها کار می‌کنند",
+      "claimed_by": "گنجشک درنده (Predatory Sparrow)",
+      "attribution": "ادعای گروه؛ اسرائیل اظهارنظر نکرد",
+      "evidence": [
+        "claimed",
+        "victim_confirmed"
+      ],
+      "confirmation": "اختلال را مقام‌ها تأیید کردند؛ درباره علت روایت رسمی یکسان نبود (سخنگوی انجمن جایگاه‌داران «مشکل نرم‌افزاری» گفت)",
+      "sources": [
+        {
+          "title": "Iran points at Israeli-linked group as cyberattack disrupts fuel network",
+          "publisher": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2023/12/18/iran-says-cyberattack-disrupts-petrol-stations-across-country",
+          "kind": "news"
+        }
+      ],
+      "keywords": [
+        "سوخت",
+        "بنزین",
+        "جایگاه"
+      ]
+    },
+    {
+      "id": "CYB-2025-06-SEPAH",
+      "date": "2025-06-17",
+      "date_fa": "۲۷ خرداد ۱۴۰۴",
+      "title": "حمله به بانک سپه",
+      "target": "بانک سپه",
+      "sector": "بانکی",
+      "effects": "گزارش رسانه‌ای از اختلال گسترده خودپردازها",
+      "claimed_by": "گنجشک درنده (Predatory Sparrow)",
+      "attribution": "ادعای گروه",
+      "evidence": [
+        "claimed"
+      ],
+      "confirmation": "در منابع بررسی‌شده تأیید یا تکذیب رسمی بانک ثبت نشده است",
+      "sources": [
+        {
+          "title": "Predatory Sparrow claims cyberattack on Bank Sepah",
+          "publisher": "Iran International",
+          "url": "https://www.iranintl.com/en/202506176243",
+          "kind": "news"
+        },
+        {
+          "title": "Hackers steal and destroy millions from Iran's largest crypto exchange",
+          "publisher": "TechCrunch",
+          "url": "https://techcrunch.com/2025/06/18/hackers-steal-and-destroy-millions-from-irans-largest-crypto-exchange/",
+          "kind": "news"
+        }
+      ],
+      "keywords": [
+        "سپه"
+      ]
+    },
+    {
+      "id": "CYB-2025-06-NOBITEX",
+      "date": "2025-06-18",
+      "date_fa": "۲۸ خرداد ۱۴۰۴",
+      "title": "نفوذ به صرافی رمزارز نوبیتکس",
+      "target": "نوبیتکس؛ کیف پول داغ",
+      "sector": "مالی و رمزارز",
+      "effects": "دست‌کم ۹۰ میلیون دلار از کیف پول داغ خارج و به نشانی‌های غیرقابل‌دسترس فرستاده شد (سوزانده شد)؛ وب‌سایت و اپ از دسترس خارج شد",
+      "claimed_by": "گنجشک درنده (Predatory Sparrow)",
+      "attribution": "ادعای گروه",
+      "evidence": [
+        "claimed",
+        "victim_confirmed",
+        "independent"
+      ],
+      "confirmation": "نوبیتکس دسترسی غیرمجاز به زیرساخت و کیف پول داغ را اعلام کرد؛ Elliptic سوزاندن وجوه را از داده بلاک‌چین گزارش کرد",
+      "sources": [
+        {
+          "title": "Hackers steal and destroy millions from Iran's largest crypto exchange",
+          "publisher": "TechCrunch",
+          "url": "https://techcrunch.com/2025/06/18/hackers-steal-and-destroy-millions-from-irans-largest-crypto-exchange/",
+          "kind": "news"
+        }
+      ],
+      "keywords": [
+        "نوبیتکس",
+        "nobitex",
+        "رمزارز",
+        "صرافی"
+      ]
+    }
+  ]
+}
